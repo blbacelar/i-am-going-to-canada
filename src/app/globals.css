@@ -1549,7 +1549,14 @@ p {
   }
   .mobile-navigation summary { font-size: var(--type-eyebrow); }
   .hero-copy h1 { font-size: var(--type-h1); }
-  .home-hero { padding-bottom: 70px; }
+  .home-hero {
+    padding-bottom: 70px;
+    background-position: 78% bottom;
+    background-size: auto 60%;
+  }
+  .home-hero::before {
+    background: color-mix(in srgb, var(--surface) 32%, transparent);
+  }
   .team-mosaic { padding-left: 0; }
   .team-mosaic-grid { gap: 8px; }
   .team-mosaic-grid a { border-radius: 12px; }
