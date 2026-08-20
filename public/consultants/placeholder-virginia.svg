@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Temporary portrait artwork for Virginia Melo</title>
+  <desc id="desc">Abstract maple, mist and paper composition with Virginia Melo's initials. Replace with an approved portrait.</desc>
+  <rect width="800" height="1000" fill="#F4F1E9"/>
+  <path d="M0 220C210 350 430 390 800 270V0H0Z" fill="#B93530"/>
+  <path d="M0 1000V540c251-86 464-51 800 106v354Z" fill="#DCE6E1"/>
+  <path d="M50 770C256 655 493 590 860 600" fill="none" stroke="#183F37" stroke-width="18"/>
+  <text x="72" y="145" fill="#F4F1E9" font-family="Georgia,serif" font-size="88">VM</text>
+  <text x="72" y="925" fill="#17211D" font-family="Arial,sans-serif" font-size="25" letter-spacing="3">PORTRAIT TO BE REPLACED</text>
+</svg>

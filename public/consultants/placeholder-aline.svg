@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Temporary portrait artwork for Aline</title>
+  <desc id="desc">Abstract sky and paper composition with Aline's initial. Replace with an approved portrait.</desc>
+  <rect width="800" height="1000" fill="#C9DDE2"/>
+  <path d="M0 0h360l205 1000H0Z" fill="#F4F1E9"/>
+  <path d="M-80 782C221 623 492 581 880 690" fill="none" stroke="#183F37" stroke-width="18"/>
+  <circle cx="596" cy="274" r="116" fill="#B93530"/>
+  <text x="72" y="145" fill="#17211D" font-family="Georgia,serif" font-size="88">A</text>
+  <text x="72" y="925" fill="#17211D" font-family="Arial,sans-serif" font-size="25" letter-spacing="3">PORTRAIT TO BE REPLACED</text>
+</svg>

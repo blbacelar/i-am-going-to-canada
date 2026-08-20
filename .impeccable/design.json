@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-20T22:31:54Z",
+  "title": "Design System: I Am Going To Canada",
+  "extensions": {
+    "colorMeta": {
+      "accent": { "role": "primary", "displayName": "Conversation Navy", "canonical": "#2f4b7c", "tonalRamp": ["oklch(0.150 0.089 260.9)", "oklch(0.265 0.089 260.9)", "oklch(0.380 0.089 260.9)", "oklch(0.495 0.089 260.9)", "oklch(0.610 0.089 260.9)", "oklch(0.725 0.089 260.9)", "oklch(0.840 0.089 260.9)", "oklch(0.950 0.089 260.9)"] },
+      "accent-hover": { "role": "primary", "displayName": "Pressed Navy", "canonical": "#26406b", "tonalRamp": ["oklch(0.150 0.081 260.0)", "oklch(0.265 0.081 260.0)", "oklch(0.380 0.081 260.0)", "oklch(0.495 0.081 260.0)", "oklch(0.610 0.081 260.0)", "oklch(0.725 0.081 260.0)", "oklch(0.840 0.081 260.0)", "oklch(0.950 0.081 260.0)"] },
+      "accent-tint": { "role": "tertiary", "displayName": "Navy Tint", "canonical": "#e9eef6", "tonalRamp": ["oklch(0.150 0.012 259.8)", "oklch(0.265 0.012 259.8)", "oklch(0.380 0.012 259.8)", "oklch(0.495 0.012 259.8)", "oklch(0.610 0.012 259.8)", "oklch(0.725 0.012 259.8)", "oklch(0.840 0.012 259.8)", "oklch(0.950 0.012 259.8)"] },
+      "accent-border": { "role": "tertiary", "displayName": "Navy Border", "canonical": "#cdd8ec", "tonalRamp": ["oklch(0.150 0.030 262.5)", "oklch(0.265 0.030 262.5)", "oklch(0.380 0.030 262.5)", "oklch(0.495 0.030 262.5)", "oklch(0.610 0.030 262.5)", "oklch(0.725 0.030 262.5)", "oklch(0.840 0.030 262.5)", "oklch(0.950 0.030 262.5)"] },
+      "ink": { "role": "neutral", "displayName": "Carbon Ink", "canonical": "#171b24", "tonalRamp": ["oklch(0.150 0.019 266.1)", "oklch(0.265 0.019 266.1)", "oklch(0.380 0.019 266.1)", "oklch(0.495 0.019 266.1)", "oklch(0.610 0.019 266.1)", "oklch(0.725 0.019 266.1)", "oklch(0.840 0.019 266.1)", "oklch(0.950 0.019 266.1)"] },
+      "ink-2": { "role": "neutral", "displayName": "Strong Slate", "canonical": "#3a4150", "tonalRamp": ["oklch(0.150 0.027 265.4)", "oklch(0.265 0.027 265.4)", "oklch(0.380 0.027 265.4)", "oklch(0.495 0.027 265.4)", "oklch(0.610 0.027 265.4)", "oklch(0.725 0.027 265.4)", "oklch(0.840 0.027 265.4)", "oklch(0.950 0.027 265.4)"] },
+      "muted": { "role": "neutral", "displayName": "Measured Slate", "canonical": "#5b6472", "tonalRamp": ["oklch(0.150 0.025 259.2)", "oklch(0.265 0.025 259.2)", "oklch(0.380 0.025 259.2)", "oklch(0.495 0.025 259.2)", "oklch(0.610 0.025 259.2)", "oklch(0.725 0.025 259.2)", "oklch(0.840 0.025 259.2)", "oklch(0.950 0.025 259.2)"] },
+      "muted-2": { "role": "neutral", "displayName": "Secondary Slate", "canonical": "#6b7280", "tonalRamp": ["oklch(0.150 0.023 264.4)", "oklch(0.265 0.023 264.4)", "oklch(0.380 0.023 264.4)", "oklch(0.495 0.023 264.4)", "oklch(0.610 0.023 264.4)", "oklch(0.725 0.023 264.4)", "oklch(0.840 0.023 264.4)", "oklch(0.950 0.023 264.4)"] },
+      "background": { "role": "neutral", "displayName": "Cool Ground", "canonical": "#f6f7f9", "tonalRamp": ["oklch(0.150 0.003 264.5)", "oklch(0.265 0.003 264.5)", "oklch(0.380 0.003 264.5)", "oklch(0.495 0.003 264.5)", "oklch(0.610 0.003 264.5)", "oklch(0.725 0.003 264.5)", "oklch(0.840 0.003 264.5)", "oklch(0.950 0.003 264.5)"] },
+      "surface": { "role": "neutral", "displayName": "White Surface", "canonical": "#ffffff", "tonalRamp": ["oklch(0.150 0.000 0.0)", "oklch(0.265 0.000 0.0)", "oklch(0.380 0.000 0.0)", "oklch(0.495 0.000 0.0)", "oklch(0.610 0.000 0.0)", "oklch(0.725 0.000 0.0)", "oklch(0.840 0.000 0.0)", "oklch(0.950 0.000 0.0)"] },
+      "surface-alt": { "role": "neutral", "displayName": "Quiet Panel", "canonical": "#f3f5f9", "tonalRamp": ["oklch(0.150 0.006 264.5)", "oklch(0.265 0.006 264.5)", "oklch(0.380 0.006 264.5)", "oklch(0.495 0.006 264.5)", "oklch(0.610 0.006 264.5)", "oklch(0.725 0.006 264.5)", "oklch(0.840 0.006 264.5)", "oklch(0.950 0.006 264.5)"] },
+      "fill": { "role": "neutral", "displayName": "Track Fill", "canonical": "#eef1f6", "tonalRamp": ["oklch(0.150 0.007 260.7)", "oklch(0.265 0.007 260.7)", "oklch(0.380 0.007 260.7)", "oklch(0.495 0.007 260.7)", "oklch(0.610 0.007 260.7)", "oklch(0.725 0.007 260.7)", "oklch(0.840 0.007 260.7)", "oklch(0.950 0.007 260.7)"] },
+      "border": { "role": "neutral", "displayName": "Fine Border", "canonical": "#e2e6ee", "tonalRamp": ["oklch(0.150 0.012 264.5)", "oklch(0.265 0.012 264.5)", "oklch(0.380 0.012 264.5)", "oklch(0.495 0.012 264.5)", "oklch(0.610 0.012 264.5)", "oklch(0.725 0.012 264.5)", "oklch(0.840 0.012 264.5)", "oklch(0.950 0.012 264.5)"] },
+      "verified": { "role": "tertiary", "displayName": "Verified Field", "canonical": "#dcecdf", "tonalRamp": ["oklch(0.150 0.024 151.2)", "oklch(0.265 0.024 151.2)", "oklch(0.380 0.024 151.2)", "oklch(0.495 0.024 151.2)", "oklch(0.610 0.024 151.2)", "oklch(0.725 0.024 151.2)", "oklch(0.840 0.024 151.2)", "oklch(0.950 0.024 151.2)"] },
+      "verified-ink": { "role": "tertiary", "displayName": "Verified Ink", "canonical": "#2f6b3d", "tonalRamp": ["oklch(0.150 0.097 149.1)", "oklch(0.265 0.097 149.1)", "oklch(0.380 0.097 149.1)", "oklch(0.495 0.097 149.1)", "oklch(0.610 0.097 149.1)", "oklch(0.725 0.097 149.1)", "oklch(0.840 0.097 149.1)", "oklch(0.950 0.097 149.1)"] },
+      "pending": { "role": "neutral", "displayName": "Pending Slate", "canonical": "#a2aab8", "tonalRamp": ["oklch(0.150 0.022 261.8)", "oklch(0.265 0.022 261.8)", "oklch(0.380 0.022 261.8)", "oklch(0.495 0.022 261.8)", "oklch(0.610 0.022 261.8)", "oklch(0.725 0.022 261.8)", "oklch(0.840 0.022 261.8)", "oklch(0.950 0.022 261.8)"] },
+      "placeholder": { "role": "neutral", "displayName": "Portrait Placeholder", "canonical": "#e7ebf2", "tonalRamp": ["oklch(0.150 0.010 261.8)", "oklch(0.265 0.010 261.8)", "oklch(0.380 0.010 261.8)", "oklch(0.495 0.010 261.8)", "oklch(0.610 0.010 261.8)", "oklch(0.725 0.010 261.8)", "oklch(0.840 0.010 261.8)", "oklch(0.950 0.010 261.8)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Compact hero and closing statements." },
+      "page-heading": { "displayName": "Page Heading", "purpose": "Page-level H1 headings." },
+      "section-heading": { "displayName": "Section Heading", "purpose": "Major H2 headings and concierge questions." },
+      "title": { "displayName": "Title", "purpose": "Consultant names, services and FAQ prompts." },
+      "body-large": { "displayName": "Body Large", "purpose": "High-priority explanatory copy." },
+      "body": { "displayName": "Body", "purpose": "Default reading and control copy across all locales." },
+      "eyebrow": { "displayName": "Evidence Label", "purpose": "Uppercase evidence, credential, metadata and status language." }
+    },
+    "shadows": [
+      { "name": "floating-panel", "value": "0 18px 48px rgba(23, 27, 36, 0.12)", "purpose": "Mobile navigation and the dark concierge panel." },
+      { "name": "action-lift", "value": "0 12px 28px color-mix(in srgb, #171b24 16%, transparent)", "purpose": "Filled actions on hover." },
+      { "name": "focus-halo", "value": "0 0 0 2px #cdd8ec", "purpose": "Secondary halo paired with the 3px navy keyboard-focus outline." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Movement, image response and the route draw." },
+      { "name": "control-state", "value": "180ms", "purpose": "Buttons, links, choice rows and disclosure markers." },
+      { "name": "portrait-response", "value": "450ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Subtle consultant portrait scale on hover." },
+      { "name": "route-draw", "value": "1.25s 300ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "One authored entrance for the hero route line." },
+      { "name": "reduced-motion", "value": "0.01ms", "purpose": "Removes perceptible animation and reveals route geometry immediately." }
+    ],
+    "breakpoints": [
+      { "name": "navigation", "value": "1180px" },
+      { "name": "stack", "value": "900px" },
+      { "name": "mobile", "value": "700px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default high-confidence action on light and neutral surfaces.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Find your consultant <svg viewBox=\"0 0 40 16\" aria-hidden=\"true\"><path d=\"M1 8h36M30 1l7 7-7 7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a>",
+      "css": ".ds-btn-primary { min-height: 52px; width: fit-content; display: inline-flex; align-items: center; justify-content: center; gap: 16px; padding: 13px 22px; border: 0; border-radius: 12px; background: #2f4b7c; color: #ffffff; font-family: 'Schibsted Grotesk', sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), background 180ms ease, box-shadow 180ms ease; } .ds-btn-primary svg { width: 38px; height: 16px; } .ds-btn-primary:hover { transform: translateY(-2px); background: #26406b; box-shadow: 0 12px 28px rgba(23, 27, 36, 0.16); } .ds-btn-primary:active { transform: translateY(0); } .ds-btn-primary:focus-visible { outline: 3px solid #2f4b7c; outline-offset: 4px; box-shadow: 0 0 0 2px #cdd8ec; }"
+    },
+    {
+      "name": "Editorial Link",
+      "kind": "button",
+      "description": "Quiet secondary action with the recurring route arrow.",
+      "html": "<a class=\"ds-editorial-link\" href=\"#\">Meet the team <svg viewBox=\"0 0 40 16\" aria-hidden=\"true\"><path d=\"M1 8h36M30 1l7 7-7 7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a>",
+      "css": ".ds-editorial-link { min-height: 44px; display: inline-flex; align-items: center; gap: 12px; color: #171b24; font-family: 'Schibsted Grotesk', sans-serif; font-size: 15px; font-weight: 700; text-decoration-line: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; } .ds-editorial-link svg { width: 38px; height: 16px; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-editorial-link:hover svg { transform: translateX(4px); } .ds-editorial-link:active svg { transform: translateX(2px); } .ds-editorial-link:focus-visible { outline: 3px solid #2f4b7c; outline-offset: 4px; box-shadow: 0 0 0 2px #cdd8ec; }"
+    },
+    {
+      "name": "Language Selector",
+      "kind": "nav",
+      "refersTo": "language-selector",
+      "description": "Persistent three-locale selector with one visible active state.",
+      "html": "<nav class=\"ds-language-selector\" aria-label=\"Language\"><a href=\"#\" aria-current=\"page\">EN</a><a href=\"#\">FR</a><a href=\"#\">PT</a></nav>",
+      "css": ".ds-language-selector { width: fit-content; display: flex; align-items: center; overflow: hidden; border: 1px solid #e2e6ee; border-radius: 999px; background: transparent; } .ds-language-selector a { min-width: 44px; min-height: 44px; display: grid; place-items: center; padding: 0 8px; color: #5b6472; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-decoration: none; } .ds-language-selector a[aria-current=\"page\"] { background: #2f4b7c; color: #ffffff; } .ds-language-selector a:hover:not([aria-current=\"page\"]) { background: #e9eef6; color: #26406b; } .ds-language-selector a:focus-visible { outline: 3px solid #2f4b7c; outline-offset: -3px; box-shadow: inset 0 0 0 2px #cdd8ec; }"
+    },
+    {
+      "name": "Content Status Chip",
+      "kind": "chip",
+      "refersTo": "content-status",
+      "description": "Compact evidence state with a distinct unapproved TODO variant.",
+      "html": "<div class=\"ds-chip-row\"><span class=\"ds-status-chip\">Owner confirmation required</span><span class=\"ds-status-chip ds-status-chip-todo\">TODO_CONTENT</span><span class=\"ds-match-chip\">Language match</span></div>",
+      "css": ".ds-chip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: 'Space Mono', monospace; } .ds-status-chip, .ds-match-chip { width: fit-content; padding: 5px 9px; border-radius: 999px; background: #e9eef6; color: #2f4b7c; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; line-height: 1.45; text-transform: uppercase; } .ds-status-chip-todo { background: #e7ebf2; color: #3a4150; } .ds-match-chip { padding: 3px 7px; background: #dcecdf; color: #2f6b3d; letter-spacing: 0; text-transform: none; }"
+    },
+    {
+      "name": "Consultant Card",
+      "kind": "card",
+      "description": "Open profile unit with a bordered portrait, public metadata and direct action.",
+      "html": "<article class=\"ds-consultant-card\"><a class=\"ds-consultant-portrait\" href=\"#\"><span class=\"ds-portrait-label\">MS</span><b>PORTRAIT PLACEHOLDER</b></a><span class=\"ds-consultant-status\">Owner confirmation required</span><h3>Marina Snyder</h3><p class=\"ds-consultant-role\">Immigration consultant</p><p>Compare published languages and broad service areas before continuing.</p><dl><div><dt>Languages</dt><dd>English · French · Portuguese</dd></div><div><dt>Service areas</dt><dd>Temporary residence · Permanent residence</dd></div></dl><a class=\"ds-consultant-link\" href=\"#\">View profile <svg viewBox=\"0 0 40 16\" aria-hidden=\"true\"><path d=\"M1 8h36M30 1l7 7-7 7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a></article>",
+      "css": ".ds-consultant-card { max-width: 520px; color: #171b24; font-family: 'Schibsted Grotesk', sans-serif; } .ds-consultant-portrait { position: relative; aspect-ratio: 4 / 5; display: block; margin-bottom: 26px; overflow: hidden; border: 1px solid #e2e6ee; border-radius: 14px; background: #e7ebf2; color: #171b24; text-decoration: none; } .ds-consultant-portrait::after { content: ''; position: absolute; inset: auto 0 0; height: 36%; background: #2f4b7c; } .ds-portrait-label { position: absolute; z-index: 1; top: 28px; left: 28px; font-size: 44px; font-weight: 600; letter-spacing: -0.025em; } .ds-consultant-portrait b { position: absolute; z-index: 1; left: 28px; bottom: 24px; color: #ffffff; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.08em; } .ds-consultant-portrait:hover .ds-portrait-label { transform: scale(1.02); } .ds-consultant-portrait:focus-visible, .ds-consultant-link:focus-visible { outline: 3px solid #2f4b7c; outline-offset: 4px; box-shadow: 0 0 0 2px #cdd8ec; } .ds-consultant-status { display: inline-block; padding: 5px 9px; border-radius: 999px; background: #e9eef6; color: #2f4b7c; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; } .ds-consultant-card h3 { margin: 12px 0 5px; font-size: 24px; font-weight: 600; line-height: 1.12; letter-spacing: -0.025em; } .ds-consultant-card p { margin: 0 0 16px; color: #5b6472; font-size: 15px; line-height: 1.6; } .ds-consultant-card .ds-consultant-role { color: #2f4b7c; font-weight: 600; } .ds-consultant-card dl { display: grid; gap: 12px; margin: 24px 0 28px; padding: 18px 0; border-top: 1px solid #e2e6ee; border-bottom: 1px solid #e2e6ee; } .ds-consultant-card dl div { display: grid; grid-template-columns: 150px 1fr; gap: 20px; } .ds-consultant-card dt { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; } .ds-consultant-card dd { margin: 0; color: #5b6472; font-size: 15px; } .ds-consultant-link { min-height: 44px; display: inline-flex; align-items: center; gap: 12px; color: #171b24; font-size: 15px; font-weight: 700; text-underline-offset: 6px; } .ds-consultant-link svg { width: 38px; height: 16px; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-consultant-link:hover svg { transform: translateX(4px); }"
+    },
+    {
+      "name": "Concierge Choice",
+      "kind": "custom",
+      "refersTo": "concierge-panel",
+      "description": "One-question decision field with a visible advice boundary and directional choices.",
+      "html": "<section class=\"ds-concierge\"><div class=\"ds-concierge-top\"><p>STEP 1 OF 3</p><div class=\"ds-progress\" aria-hidden=\"true\"><span class=\"ds-active\"></span><span></span><span></span></div></div><p class=\"ds-boundary\">This tool organizes public service information. It does not assess eligibility or provide immigration advice.</p><fieldset><legend>Which consultation language do you prefer?</legend><button type=\"button\"><span>English</span><span aria-hidden=\"true\">↗</span></button><button type=\"button\"><span>French</span><span aria-hidden=\"true\">↗</span></button><button type=\"button\"><span>Portuguese</span><span aria-hidden=\"true\">↗</span></button></fieldset></section>",
+      "css": ".ds-concierge { max-width: 820px; min-height: 520px; padding: clamp(28px, 4vw, 52px); border-radius: 14px; background: #171b24; color: #ffffff; box-shadow: 0 18px 48px rgba(23, 27, 36, 0.12); font-family: 'Schibsted Grotesk', sans-serif; } .ds-concierge-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; } .ds-concierge-top p, .ds-boundary { color: #cdd8ec; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; } .ds-progress { width: 160px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; } .ds-progress span { height: 3px; background: rgba(255, 255, 255, 0.22); } .ds-progress .ds-active { background: #2f4b7c; } .ds-boundary { max-width: 66ch; margin: 20px 0 42px; } .ds-concierge fieldset { margin: 0; padding: 0; border: 0; } .ds-concierge legend { max-width: 720px; margin-bottom: 30px; font-size: 34px; font-weight: 600; line-height: 1.08; letter-spacing: -0.025em; } .ds-concierge button { min-height: 68px; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 16px 4px; border: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.25); background: transparent; color: #ffffff; cursor: pointer; text-align: left; font-size: 18px; font-weight: 600; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), color 180ms ease; } .ds-concierge button:hover { transform: translateX(8px); color: #cdd8ec; } .ds-concierge button:active { transform: translateX(4px); } .ds-concierge button:focus-visible { outline: 3px solid #2f4b7c; outline-offset: 4px; box-shadow: 0 0 0 2px #cdd8ec; }"
+    },
+    {
+      "name": "Service Index Row",
+      "kind": "custom",
+      "description": "Open service navigation with a navy waypoint and route arrow.",
+      "html": "<a class=\"ds-service-row\" href=\"#\"><span class=\"ds-service-dot\" aria-hidden=\"true\"></span><span><strong>Temporary residence</strong><small>Compare published support areas before continuing to a consultant.</small></span><svg viewBox=\"0 0 40 16\" aria-hidden=\"true\"><path d=\"M1 8h36M30 1l7 7-7 7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a>",
+      "css": ".ds-service-row { min-height: 130px; display: grid; grid-template-columns: 16px 1fr auto; align-items: center; gap: 20px; padding: 26px 4px; border-top: 1px solid #2f4b7c; border-bottom: 1px solid #e2e6ee; color: #171b24; font-family: 'Schibsted Grotesk', sans-serif; text-decoration: none; } .ds-service-dot { width: 8px; height: 8px; border-radius: 50%; background: #2f4b7c; } .ds-service-row strong { display: block; margin-bottom: 5px; font-size: 24px; font-weight: 600; letter-spacing: -0.025em; transition: color 180ms ease; } .ds-service-row small { display: block; max-width: 62ch; color: #5b6472; font-size: 15px; line-height: 1.5; } .ds-service-row svg { width: 38px; height: 16px; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-service-row:hover strong { color: #26406b; } .ds-service-row:hover svg { transform: translateX(4px); } .ds-service-row:active svg { transform: translateX(2px); } .ds-service-row:focus-visible { outline: 3px solid #2f4b7c; outline-offset: 4px; box-shadow: 0 0 0 2px #cdd8ec; }"
+    },
+    {
+      "name": "FAQ Disclosure",
+      "kind": "custom",
+      "description": "Sans-serif question row with a navy disclosure marker and open reading measure.",
+      "html": "<details class=\"ds-faq\"><summary>Does the consultant finder assess my eligibility?</summary><p>No. It organizes public service information and does not assess eligibility.</p></details>",
+      "css": ".ds-faq { max-width: 780px; border-top: 1px solid #2f4b7c; border-bottom: 1px solid #e2e6ee; color: #171b24; font-family: 'Schibsted Grotesk', sans-serif; } .ds-faq summary { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 30px; cursor: pointer; list-style: none; font-size: 24px; font-weight: 600; letter-spacing: -0.025em; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq summary::after { content: '+'; flex: 0 0 auto; color: #2f4b7c; font-size: 26px; font-weight: 400; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-faq[open] summary::after { transform: rotate(45deg); } .ds-faq summary:hover { color: #26406b; } .ds-faq summary:focus-visible { outline: 3px solid #2f4b7c; outline-offset: 4px; box-shadow: 0 0 0 2px #cdd8ec; } .ds-faq p { max-width: 68ch; margin: 0; padding: 0 70px 30px 0; color: #5b6472; font-size: 15px; line-height: 1.6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Calm Comparison Desk",
+    "overview": "The system makes professional choice clearer through calm comparison. Cool slate grounds, white surfaces and one disciplined navy accent create an orderly, contemporary setting in which four consultants can be understood at equal scale. The owner-pinned style reference (seed `f33503b8`) establishes the world; the implemented CSS is normative wherever details diverge.\n\nClarity comes from compact sans-serif hierarchy, visible public attributes and Space Mono evidence labels—not decorative travel imagery or a personality-first composition. The visitor should understand the team, compare broad services and languages, then continue to a direct professional conversation without mistaking navigation for an eligibility assessment.",
+    "keyCharacteristics": [
+      "Cool slate page grounds with crisp white working surfaces.",
+      "One navy accent for brand, action, links and focus.",
+      "Schibsted Grotesk hierarchy paired with Space Mono evidence labels.",
+      "Four consultants presented with equal visual authority.",
+      "Open comparison layouts, restrained borders and selective depth.",
+      "No decorative travel imagery or invented proof."
+    ],
+    "rules": [
+      { "name": "The One-Navy Rule", "body": "Navy carries brand and action throughout the system; do not introduce a second decorative accent.", "section": "colors" },
+      { "name": "The Factual-Green Rule", "body": "Green is reserved for verified match evidence and never becomes a general brand colour.", "section": "colors" },
+      { "name": "The Evidence-Voice Rule", "body": "Use Space Mono only when text names evidence, metadata, credential, locale or interface state; all narrative and action copy stays in Schibsted Grotesk.", "section": "typography" },
+      { "name": "The French-Fit Rule", "body": "Heading wraps and controls must accommodate Canadian French without shrinking below the established hierarchy.", "section": "typography" },
+      { "name": "The Equal-Scale Rule", "body": "Marina Snyder, Aline, Virginia Melo and Beatriz Dias receive equal portrait scale and comparable information hierarchy; offset rhythm must not imply rank.", "section": "layout" },
+      { "name": "The Direct-Route Rule", "body": "Every major sequence should move from team understanding to public-attribute comparison to a direct professional conversation.", "section": "layout" },
+      { "name": "The Flat-by-Default Rule", "body": "Use border and tonal contrast for structure; reserve shadow for floating panels and action response.", "section": "elevation" },
+      { "name": "The Reserved-Pill Rule", "body": "A pill means locale, credential or status—not a generic action.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do use cool neutral fields and white surfaces to make public attributes easy to compare.",
+      "Do present Marina Snyder, Aline, Virginia Melo and Beatriz Dias with equal visual authority.",
+      "Do reserve navy for brand, action, focus and directional cues.",
+      "Do use Space Mono for uppercase evidence, credentials, metadata and status.",
+      "Do keep TODO_CONTENT states and the non-assessment boundary visible.",
+      "Do preserve 44px targets, visible keyboard focus and reduced-motion behavior.",
+      "Do verify raster provenance before an image ships."
+    ],
+    "donts": [
+      "Don't use decorative travel imagery, flag clichés or destination photography as atmosphere.",
+      "Don't introduce a personality-first hero or scale one consultant above the team.",
+      "Don't introduce a second decorative accent, gradients, glassmorphism or glow effects.",
+      "Don't turn every comparison item into a floating rounded card.",
+      "Don't invent credentials, testimonials, statistics, services, prices, links or outcomes.",
+      "Don't use matching language or route graphics to imply eligibility, approval or predicted success."
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Temporary portrait artwork for Marina Snyder</title>
+  <desc id="desc">Abstract forest and paper composition with Marina Snyder's initials. Replace with an approved portrait.</desc>
+  <rect width="800" height="1000" fill="#DCE6E1"/>
+  <path d="M0 680C175 575 288 535 445 552c145 15 249 82 355 168v280H0Z" fill="#183F37"/>
+  <path d="M-50 510C154 438 358 386 850 314" fill="none" stroke="#B93530" stroke-width="18"/>
+  <circle cx="590" cy="245" r="118" fill="#F4F1E9"/>
+  <text x="72" y="145" fill="#17211D" font-family="Georgia,serif" font-size="88">MS</text>
+  <text x="72" y="925" fill="#F4F1E9" font-family="Arial,sans-serif" font-size="25" letter-spacing="3">PORTRAIT TO BE REPLACED</text>
+</svg>

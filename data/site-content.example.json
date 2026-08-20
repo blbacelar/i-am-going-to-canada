@@ -1,0 +1,81 @@
+{
+  "brand": {
+    "name": "I Am Going To Canada",
+    "legalName": "TODO_CONTENT",
+    "url": "https://iamgoingtocanada.ca/"
+  },
+  "navigation": {
+    "home": {"en": "Home", "fr": "Accueil", "pt": "Início"},
+    "consultants": {"en": "Consultants", "fr": "Consultantes", "pt": "Consultoras"},
+    "services": {"en": "Services", "fr": "Services", "pt": "Serviços"},
+    "about": {"en": "About", "fr": "À propos", "pt": "Sobre"},
+    "faq": {"en": "FAQ", "fr": "FAQ", "pt": "Dúvidas"},
+    "book": {"en": "Find a consultant", "fr": "Trouver une consultante", "pt": "Encontrar uma consultora"}
+  },
+  "home": {
+    "hero": {
+      "eyebrow": {
+        "en": "Canadian immigration guidance, in your language",
+        "fr": "Accompagnement en immigration canadienne, dans votre langue",
+        "pt": "Orientação em imigração canadense, no seu idioma"
+      },
+      "title": {
+        "en": "Your Canadian journey starts with the right conversation.",
+        "fr": "Votre projet canadien commence par la bonne conversation.",
+        "pt": "Seu projeto no Canadá começa com a conversa certa."
+      },
+      "body": {
+        "en": "Meet a multilingual team of immigration professionals and find the consultant whose services align with what you need today.",
+        "fr": "Découvrez une équipe multilingue de professionnelles en immigration et trouvez la consultante dont les services correspondent à vos besoins actuels.",
+        "pt": "Conheça uma equipe multilíngue de profissionais de imigração e encontre a consultora cujos serviços combinam com o que você precisa agora."
+      },
+      "primaryCta": {"en": "Find your consultant", "fr": "Trouver ma consultante", "pt": "Encontrar minha consultora"},
+      "secondaryCta": {"en": "Meet the team", "fr": "Découvrir l’équipe", "pt": "Conhecer a equipe"}
+    },
+    "team": {
+      "title": {
+        "en": "Four professionals. One commitment to clear guidance.",
+        "fr": "Quatre professionnelles. Un même engagement envers un accompagnement clair.",
+        "pt": "Quatro profissionais. Um só compromisso com uma orientação clara."
+      },
+      "body": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"}
+    }
+  },
+  "concierge": {
+    "title": {"en": "What kind of support are you looking for?", "fr": "Quel type d’accompagnement recherchez-vous?", "pt": "Que tipo de apoio você procura?"},
+    "intro": {
+      "en": "Tell us what kind of support you are looking for. We will show professionals who offer that service. This is not an eligibility assessment.",
+      "fr": "Indiquez le type d’accompagnement que vous recherchez. Nous vous présenterons les professionnelles qui offrent ce service. Il ne s’agit pas d’une évaluation d’admissibilité.",
+      "pt": "Conte que tipo de apoio você procura. Mostraremos as profissionais que oferecem esse serviço. Isto não é uma avaliação de elegibilidade."
+    },
+    "viewAll": {"en": "View all consultants", "fr": "Voir toutes les consultantes", "pt": "Ver todas as consultoras"},
+    "restart": {"en": "Start again", "fr": "Recommencer", "pt": "Recomeçar"},
+    "back": {"en": "Back", "fr": "Retour", "pt": "Voltar"},
+    "noExactMatch": {
+      "en": "We did not find an exact match for those selections. You can review the full team or contact us for help choosing a service.",
+      "fr": "Nous n’avons pas trouvé de correspondance exacte. Vous pouvez consulter toute l’équipe ou nous contacter pour choisir un service.",
+      "pt": "Não encontramos uma correspondência exata. Você pode conhecer toda a equipe ou entrar em contato para escolher um serviço."
+    }
+  },
+  "services": [
+    {
+      "id": "TODO_SERVICE_ID",
+      "label": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
+      "shortDescription": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
+      "active": false,
+      "order": 1
+    }
+  ],
+  "legal": {
+    "generalDisclaimer": {
+      "en": "TODO_LEGAL_REVIEW",
+      "fr": "TODO_LEGAL_REVIEW",
+      "pt": "TODO_LEGAL_REVIEW"
+    },
+    "conciergeDisclaimer": {
+      "en": "This tool helps you navigate public service information. It does not assess eligibility or provide immigration advice.",
+      "fr": "Cet outil vous aide à consulter les renseignements publics sur nos services. Il n’évalue pas l’admissibilité et ne fournit pas de conseils en immigration.",
+      "pt": "Esta ferramenta ajuda você a navegar pelas informações públicas dos serviços. Ela não avalia elegibilidade nem fornece aconselhamento migratório."
+    }
+  }
+}
