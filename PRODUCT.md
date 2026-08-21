@@ -53,7 +53,7 @@ Visitors use the public website on mobile and desktop, choose EN, FR or PT, brow
 - Current public site at `https://iamgoingtocanada.ca/`.
 - Current published profile and booking information for Marina Snyder, Virginia Melo and Beatriz Dias.
 - Current Calendly links for Marina, Virginia and Beatriz.
-- Owner-supplied information confirms Aline Costa, RCIC R710053, lawyer in Brazil, serving clients in English, French, Spanish and Portuguese. Her full biography, service areas and Calendly link remain pending.
+- Owner-supplied information confirms Aline Costa, RCIC R710053, lawyer in Brazil, a graduate of Bow Valley College’s Immigration Consulting program, holder of an MBA in Insurance Law from Universidade Candido Mendes in Rio de Janeiro, resident in Canada with her family for more than 15 years, and serving clients in English, French, Spanish and Portuguese. Her service areas and Calendly link remain pending.
 - No approved testimonials or final legal copy supplied for this build.
 
 All current-site professional facts remain subject to owner verification before production publication.

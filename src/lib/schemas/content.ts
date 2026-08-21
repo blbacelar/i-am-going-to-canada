@@ -70,6 +70,22 @@ export const serviceSchema = z.object({
 });
 
 const faqItemSchema = z.object({ question: localizedStringSchema, answer: localizedStringSchema });
+const legalSectionSchema = z.object({
+  title: localizedStringSchema,
+  paragraphs: z.array(localizedStringSchema).min(1),
+});
+const legalPageSchema = z.object({
+  title: localizedStringSchema,
+  intro: localizedStringSchema,
+  updatedAt: localizedStringSchema,
+  reviewNotice: localizedStringSchema,
+  sections: z.array(legalSectionSchema).min(3),
+  resourcesTitle: localizedStringSchema,
+  resources: z.array(z.object({
+    label: localizedStringSchema,
+    url: z.union([z.url(), z.string().startsWith("mailto:")]),
+  })).min(1),
+});
 
 export const siteContentSchema = z.object({
   brand: z.object({
@@ -129,8 +145,8 @@ export const siteContentSchema = z.object({
     consultants: z.object({ title: localizedStringSchema, body: localizedStringSchema }),
     services: z.object({ title: localizedStringSchema, body: localizedStringSchema }),
     about: z.object({ title: localizedStringSchema, body: localizedStringSchema }),
-    privacy: z.object({ title: localizedStringSchema, body: localizedStringSchema }),
-    disclaimer: z.object({ title: localizedStringSchema, body: localizedStringSchema }),
+    privacy: legalPageSchema,
+    disclaimer: legalPageSchema,
   }),
   common: z.object({
     viewProfile: localizedStringSchema,
