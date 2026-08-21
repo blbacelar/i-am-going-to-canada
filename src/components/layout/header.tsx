@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Brand } from "@/components/ui/brand";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { MobileNavigation } from "@/components/layout/mobile-navigation";
 import { localized, localePath, type Locale } from "@/lib/i18n/config";
 import { getArticleRouteMap, siteContent } from "@/lib/content/data";
 
@@ -30,15 +31,12 @@ export function Header({ locale }: { locale: Locale }) {
             {localized(nav.find, locale)}
           </Link>
         </div>
-        <details className="mobile-navigation">
-          <summary>{localized(nav.menu, locale)}</summary>
-          <div className="mobile-navigation-panel">
-            {links.map((link) => (
-              <Link href={link.href} key={link.href}>{link.label}</Link>
-            ))}
-            <Link href={localePath(locale, "/find-a-consultant")}>{localized(nav.find, locale)}</Link>
-          </div>
-        </details>
+        <MobileNavigation
+          menuLabel={localized(nav.menu, locale)}
+          links={links}
+          findHref={localePath(locale, "/find-a-consultant")}
+          findLabel={localized(nav.find, locale)}
+        />
       </div>
     </header>
   );

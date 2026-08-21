@@ -19,3 +19,16 @@ test("language switch preserves a consultant profile route", async ({ page }) =>
   await expect(page).toHaveURL(/\/pt\/consultants\/marina-snyder$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "pt");
 });
+
+test("mobile navigation closes after selecting a route", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 800 });
+  await page.goto("/pt");
+
+  const menu = page.locator(".mobile-navigation");
+  await menu.getByText("Menu", { exact: true }).click();
+  await expect(menu).toHaveAttribute("open", "");
+  await menu.getByRole("link", { name: "Artigos" }).click();
+
+  await expect(page).toHaveURL(/\/pt\/blog$/);
+  await expect(page.locator(".mobile-navigation")).not.toHaveAttribute("open", "");
+});
