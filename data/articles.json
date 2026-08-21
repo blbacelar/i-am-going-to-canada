@@ -1,0 +1,424 @@
+{
+  "ui": {
+    "eyebrow": {"en": "Canada immigration newsroom", "fr": "Salle de presse sur l’immigration canadienne", "pt": "Redação de imigração canadense"},
+    "title": {"en": "Official updates, with the context that matters.", "fr": "Les mises à jour officielles, avec le contexte qui compte.", "pt": "Atualizações oficiais, com o contexto que importa."},
+    "intro": {"en": "Our editorial team reads the official documents, separates announcements from rules in force and explains what the published information does — and does not — establish.", "fr": "Notre équipe éditoriale lit les documents officiels, distingue les annonces des règles en vigueur et explique ce que les renseignements publiés permettent — ou non — d’établir.", "pt": "Nossa equipe editorial lê os documentos oficiais, separa anúncios de regras em vigor e explica o que as informações publicadas permitem — e não permitem — concluir."},
+    "readArticle": {"en": "Read the full article", "fr": "Lire l’article complet", "pt": "Ler o artigo completo"},
+    "backToBlog": {"en": "Back to articles", "fr": "Retour aux articles", "pt": "Voltar aos artigos"},
+    "facts": {"en": "Key facts", "fr": "Faits saillants", "pt": "Fatos principais"},
+    "contents": {"en": "In this article", "fr": "Dans cet article", "pt": "Neste artigo"},
+    "sources": {"en": "Official sources", "fr": "Sources officielles", "pt": "Fontes oficiais"},
+    "internalLinks": {"en": "Continue exploring", "fr": "Pour aller plus loin", "pt": "Continue explorando"},
+    "lastVerified": {"en": "Last verified", "fr": "Dernière vérification", "pt": "Última verificação"},
+    "nextReview": {"en": "Next editorial review", "fr": "Prochaine révision éditoriale", "pt": "Próxima revisão editorial"},
+    "author": {"en": "By", "fr": "Par", "pt": "Por"},
+    "ctaButton": {"en": "Find a consultant", "fr": "Trouver une consultante", "pt": "Encontrar uma consultora"},
+    "officialSource": {"en": "Official source", "fr": "Source officielle", "pt": "Fonte oficial"}
+  },
+  "articles": [
+    {
+      "id": "express-entry-august-rounds",
+      "order": 1,
+      "status": "approved_for_publish",
+      "articleType": "NewsArticle",
+      "draftedAt": "2026-08-21",
+      "lastVerifiedAt": "2026-08-21",
+      "freshnessReviewAt": "2026-08-28",
+      "publishedAt": "2026-08-21",
+      "modifiedAt": null,
+      "author": "I Am Going To Canada Editorial Team",
+      "reviewer": "Marina Snyder",
+      "reviewerCredential": "RCIC-IRB R519265",
+      "slugs": {
+        "en": "express-entry-three-rounds-crs-cutoffs-explained",
+        "fr": "entree-express-trois-rondes-seuils-scg-expliques",
+        "pt": "express-entry-tres-rodadas-cortes-crs-explicados"
+      },
+      "category": {"en": "Express Entry", "fr": "Entrée express", "pt": "Express Entry"},
+      "title": {
+        "en": "Why Express Entry cut-off scores were 760, 523 and 382 in the same week",
+        "fr": "Pourquoi les seuils du SCG d’Entrée express étaient de 760, 523 et 382 la même semaine",
+        "pt": "Por que o Express Entry teve cortes de CRS de 760, 523 e 382 na mesma semana"
+      },
+      "dek": {
+        "en": "Canada held three Express Entry rounds from August 17 to 19, 2026, but each round selected from a different group. The three minimum scores therefore do not form a single general cut-off.",
+        "fr": "Le Canada a tenu trois rondes d’Entrée express du 17 au 19 août 2026, mais chacune visait un groupe différent. Les trois scores minimaux ne forment donc pas un seuil général unique.",
+        "pt": "O Canadá realizou três rodadas do Express Entry entre 17 e 19 de agosto de 2026, mas cada uma selecionou uma população diferente. Por isso, as três pontuações mínimas não formam um único corte geral."
+      },
+      "metaTitle": {
+        "en": "Express Entry cut-off scores: 760, 523 and 382",
+        "fr": "Entrée express : comprendre les seuils 760, 523 et 382",
+        "pt": "Express Entry: entenda os cortes 760, 523 e 382"
+      },
+      "metaDescription": {
+        "en": "IRCC issued 6,442 invitations in three Express Entry rounds from August 17 to 19. Learn why cut-offs of 760, 523 and 382 are not one general score.",
+        "fr": "IRCC a envoyé 6 442 invitations dans trois rondes d’Entrée express du 17 au 19 août. Les seuils de 760, 523 et 382 ne visaient pas le même groupe.",
+        "pt": "O IRCC emitiu 6.442 convites em três rodadas do Express Entry de 17 a 19 de agosto. Entenda por que os cortes não representam uma nota geral."
+      },
+      "keyFacts": [
+        {
+          "label": {"en": "What happened", "fr": "Ce qui s’est passé", "pt": "O que aconteceu"},
+          "value": {"en": "IRCC issued 6,442 invitations across three separate Express Entry rounds.", "fr": "IRCC a envoyé 6 442 invitations à présenter une demande dans trois rondes distinctes d’Entrée express.", "pt": "O IRCC emitiu 6.442 convites em três rodadas distintas do Express Entry."},
+          "sourceIds": ["express-entry-results"]
+        },
+        {
+          "label": {"en": "Dates", "fr": "Dates", "pt": "Datas"},
+          "value": {"en": "August 17, 18 and 19, 2026.", "fr": "17, 18 et 19 août 2026.", "pt": "17, 18 e 19 de agosto de 2026."},
+          "sourceIds": ["express-entry-results"]
+        },
+        {
+          "label": {"en": "Minimum scores", "fr": "Scores minimaux", "pt": "Pontuações mínimas"},
+          "value": {"en": "760 for the Provincial Nominee Program, 523 for the Canadian Experience Class and 382 for French-language proficiency.", "fr": "760 pour le Programme des candidats des provinces, 523 pour la Catégorie de l’expérience canadienne et 382 pour la compétence linguistique en français.", "pt": "760 para o Provincial Nominee Program, 523 para a Canadian Experience Class e 382 para proficiência em francês."},
+          "sourceIds": ["express-entry-results"]
+        },
+        {
+          "label": {"en": "What this does not mean", "fr": "Ce que cela ne signifie pas", "pt": "O que isso não significa"},
+          "value": {"en": "No single cut-off of 382, 523 or 760 applied to every Express Entry profile.", "fr": "Aucun seuil unique de 382, 523 ou 760 ne s’appliquait à tous les profils.", "pt": "Não houve um único corte de 382, 523 ou 760 aplicável a todos os perfis."},
+          "sourceIds": ["rounds-explainer"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "three-rounds",
+          "heading": {"en": "Three rounds, three selection groups", "fr": "Trois rondes, trois groupes de sélection", "pt": "Três rodadas, três grupos de seleção"},
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": {"en": "The Express Entry rounds held from August 17 to 19 produced three very different Comprehensive Ranking System (CRS) scores: 760, 523 and 382. Without context, those numbers may seem contradictory. They are not. Each score belongs to a specific round with its own targeted selection group and number of invitations.", "fr": "Les rondes d’Entrée express tenues du 17 au 19 août ont produit trois scores très différents dans le Système de classement global (SCG) : 760, 523 et 382. Pris hors contexte, ces chiffres peuvent sembler contradictoires. Ils ne le sont pas. Chaque score appartient à une ronde précise, qui avait son propre groupe de candidats et son propre nombre d’invitations.", "pt": "As rodadas do Express Entry realizadas entre 17 e 19 de agosto produziram três pontuações muito diferentes no Comprehensive Ranking System (CRS): 760, 523 e 382. Sem contexto, esses números podem parecer contraditórios. Eles não são. Cada pontuação pertence a uma rodada específica, com seu próprio público e número de convites."},
+              "sourceIds": ["express-entry-results", "rounds-explainer"]
+            },
+            {
+              "type": "paragraph",
+              "text": {"en": "On August 17, round #435 targeted the Provincial Nominee Program (PNP). IRCC issued 442 invitations, and the minimum CRS score was 760. On August 18, round #436 selected Canadian Experience Class (CEC) candidates: 1,000 invitations with a minimum score of 523. On August 19, round #437 targeted French-language proficiency, issuing 5,000 invitations with a minimum score of 382.", "fr": "Le 17 août, la ronde no 435 visait le Programme des candidats des provinces (PCP). IRCC a envoyé 442 invitations, et le score minimal était de 760. Le 18 août, la ronde no 436 a sélectionné des candidats de la Catégorie de l’expérience canadienne (CEC) : 1 000 invitations, avec un score minimal de 523. Le 19 août, la ronde no 437 visait la compétence linguistique en français : 5 000 invitations et un score minimal de 382.", "pt": "Em 17 de agosto, a rodada nº 435 foi destinada ao Provincial Nominee Program (PNP). O IRCC emitiu 442 convites, e a pontuação mínima foi 760. Em 18 de agosto, a rodada nº 436 selecionou candidatos da Canadian Experience Class (CEC): 1.000 convites, com pontuação mínima de 523. No dia 19, a rodada nº 437 foi direcionada à proficiência em francês: 5.000 convites e pontuação mínima de 382."},
+              "sourceIds": ["express-entry-results"]
+            },
+            {
+              "type": "paragraph",
+              "text": {"en": "Together, the three rounds produced 6,442 invitations. That total combines selections made under different criteria. It does not turn the three rounds into one competition or create a common minimum score.", "fr": "Ensemble, les trois rondes ont produit 6 442 invitations. Ce total réunit toutefois des sélections effectuées selon des critères différents. Il ne transforme pas les rondes en un seul concours et ne crée pas de score minimal commun.", "pt": "Somadas, as três rodadas resultaram em 6.442 convites. Esse total reúne seleções feitas sob critérios diferentes. Ele não transforma as rodadas em uma única disputa nem cria uma pontuação mínima comum."},
+              "sourceIds": ["express-entry-results"]
+            }
+          ]
+        },
+        {
+          "id": "different-scores",
+          "heading": {"en": "Why were the scores so different?", "fr": "Pourquoi les scores étaient-ils si différents?", "pt": "Por que as pontuações foram tão diferentes?"},
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": {"en": "The CRS ranks candidates by score, but an Express Entry round does not have to consider every profile in the system. The government may hold rounds for a particular program or category, as it did during this sequence.", "fr": "Le SCG classe les candidats selon leur score, mais une ronde d’Entrée express n’a pas à considérer tous les profils du système. Le gouvernement peut tenir des rondes propres à un programme ou axées sur une catégorie, comme il l’a fait dans cette séquence.", "pt": "O CRS organiza candidatos por pontuação, mas uma rodada do Express Entry não precisa considerar todos os perfis do sistema. O governo pode realizar rodadas voltadas a um programa ou a uma categoria específica, como ocorreu nessa sequência."},
+              "sourceIds": ["rounds-explainer"]
+            },
+            {"type": "heading3", "id": "pnp-round", "text": {"en": "Provincial Nominee Program round: CRS 760", "fr": "Ronde du Programme des candidats des provinces : SCG 760", "pt": "Rodada do Provincial Nominee Program: CRS 760"}},
+            {
+              "type": "paragraph",
+              "text": {"en": "The August 17 round considered Provincial Nominee Program candidates. Its 442 invitations and minimum score of 760 apply only to round #435. That result should not be used as a reference cut-off for the Canadian Experience Class or the French-language proficiency round.", "fr": "La ronde du 17 août portait sur les candidats du Programme des candidats des provinces. Ses 442 invitations et son score minimal de 760 s’appliquent uniquement à la ronde no 435. Ce résultat ne devrait pas servir de seuil de référence pour la Catégorie de l’expérience canadienne ou la ronde de compétence linguistique en français.", "pt": "A rodada de 17 de agosto considerou candidatos do Provincial Nominee Program. Seus 442 convites e a pontuação mínima de 760 pertencem exclusivamente à rodada nº 435. Esse resultado não deve ser usado como corte de referência para a Canadian Experience Class ou para a rodada de proficiência em francês."},
+              "sourceIds": ["express-entry-results"]
+            },
+            {"type": "heading3", "id": "cec-round", "text": {"en": "Canadian Experience Class round: CRS 523", "fr": "Ronde de la Catégorie de l’expérience canadienne : SCG 523", "pt": "Rodada da Canadian Experience Class: CRS 523"}},
+            {
+              "type": "paragraph",
+              "text": {"en": "Round #436 issued 1,000 invitations to Canadian Experience Class candidates with a minimum score of 523. That number alone does not mean every profile with 523 points would have received an invitation. The program targeted by the round and the other applicable conditions still matter.", "fr": "La ronde no 436 a envoyé 1 000 invitations aux candidats de la Catégorie de l’expérience canadienne, avec un score minimal de 523. Ce nombre ne permet pas de conclure que tous les profils ayant obtenu 523 points auraient reçu une invitation. Le programme visé et les autres conditions applicables demeurent pertinents.", "pt": "A rodada nº 436 emitiu 1.000 convites para candidatos da Canadian Experience Class, com pontuação mínima de 523. Esse número, sozinho, não significa que qualquer perfil com 523 pontos teria recebido um convite. O programa selecionado e as demais condições aplicáveis continuam sendo relevantes."},
+              "sourceIds": ["express-entry-results"]
+            },
+            {"type": "heading3", "id": "french-round", "text": {"en": "French-language proficiency round: CRS 382", "fr": "Ronde de compétence linguistique en français : SCG 382", "pt": "Rodada de proficiência em francês: CRS 382"}},
+            {
+              "type": "paragraph",
+              "text": {"en": "Round #437 issued 5,000 invitations in the French-language proficiency category with a minimum score of 382. This was the lowest of the week's three scores, but it was not a general reduction in the Express Entry cut-off. It applies to the group considered in that specific round.", "fr": "La ronde no 437 a envoyé 5 000 invitations dans la catégorie de compétence linguistique en français, avec un score minimal de 382. Il s’agissait du plus faible des trois scores de la semaine, mais pas d’une baisse générale du seuil d’Entrée express. Ce résultat s’applique au groupe considéré dans cette ronde précise.", "pt": "A rodada nº 437 emitiu 5.000 convites na categoria de proficiência em francês, com pontuação mínima de 382. Esse foi o menor dos três números da semana, mas não representa uma redução geral da pontuação do Express Entry. O resultado vale para a população considerada nessa rodada específica."},
+              "sourceIds": ["express-entry-results", "rounds-explainer"]
+            }
+          ]
+        },
+        {
+          "id": "what-results-show",
+          "heading": {"en": "What the results do and do not tell us", "fr": "Ce que les résultats permettent de conclure, et leurs limites", "pt": "O que os resultados permitem concluir — e o que não permitem"},
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": {"en": "The official data show that IRCC held three consecutive rounds with different scopes, invitation totals and minimum scores. They do not explain why the government chose to issue exactly 442, 1,000 or 5,000 invitations. IRCC did not state its reason for the size of each round, so any further explanation would be speculation.", "fr": "Les données officielles montrent qu’IRCC a tenu trois rondes consécutives avec des portées, des nombres d’invitations et des scores minimaux différents. Elles n’expliquent pas pourquoi le gouvernement a choisi d’envoyer exactement 442, 1 000 ou 5 000 invitations. IRCC n’a pas donné la raison de la taille de chaque ronde; toute autre explication serait spéculative.", "pt": "Os dados oficiais mostram que o IRCC realizou três rodadas consecutivas, com escopos, quantidades de convites e pontuações mínimas diferentes. Eles não explicam por que o governo escolheu emitir exatamente 442, 1.000 ou 5.000 convites. O IRCC não informou o motivo de cada tamanho de rodada; qualquer explicação adicional seria especulação."},
+              "sourceIds": ["express-entry-results"]
+            },
+            {
+              "type": "paragraph",
+              "text": {"en": "It is also unsafe to use one round's minimum score to predict the next. A future round may consider a different group, issue a different number of invitations or produce a different score. An invitation to apply is not an approval of permanent residence or admission to Canada. It allows the candidate to move to another stage, where IRCC assesses the application.", "fr": "Il n’est pas prudent d’utiliser le score minimal d’une ronde pour prévoir la suivante. Une prochaine ronde pourrait viser un autre groupe, envoyer un nombre différent d’invitations ou produire un autre score. Une invitation à présenter une demande n’est ni une approbation de la résidence permanente ni une admission au Canada. Elle permet de passer à une autre étape, au cours de laquelle IRCC évalue la demande.", "pt": "Também não é seguro tratar a pontuação mínima de uma rodada como previsão para a seguinte. Outra rodada pode considerar um grupo diferente, emitir outra quantidade de convites ou apresentar outra pontuação. Um convite para apresentar uma solicitação não equivale à aprovação da residência permanente nem à admissão no Canadá. Ele permite avançar para outra etapa, na qual o IRCC analisa o pedido."},
+              "sourceIds": ["rounds-explainer"]
+            }
+          ]
+        },
+        {
+          "id": "safe-next-steps",
+          "heading": {"en": "Safe next steps", "fr": "Prochaines étapes prudentes", "pt": "Próximos passos seguros"},
+          "blocks": [
+            {
+              "type": "orderedList",
+              "items": [
+                {"en": "Confirm each round's number, category and date on IRCC's official rounds page.", "fr": "Confirmer le numéro, la catégorie et la date de chaque ronde sur la page officielle d’IRCC.", "pt": "Confirmar o número, a categoria e a data de cada rodada na página oficial do IRCC."},
+                {"en": "Avoid comparing scores from different categories as though they were one cut-off.", "fr": "Éviter de comparer les scores de catégories différentes comme s’il s’agissait d’un seul seuil.", "pt": "Evitar comparar pontuações de categorias diferentes como se fossem um único corte."},
+                {"en": "Review profile information and supporting documents without assuming a past round will repeat.", "fr": "Vérifier les renseignements du profil et les documents sans supposer qu’une ronde passée se répétera.", "pt": "Revisar as informações do perfil e os documentos sem presumir que uma rodada passada se repetirá."},
+                {"en": "Seek professional guidance before making decisions based on individual circumstances.", "fr": "Demander un accompagnement professionnel avant de prendre une décision fondée sur une situation personnelle.", "pt": "Procurar orientação profissional antes de tomar decisões baseadas em circunstâncias individuais."}
+              ],
+              "sourceIds": ["rounds-explainer"]
+            }
+          ]
+        },
+        {
+          "id": "limits-review",
+          "heading": {"en": "Unknowns, limits and next review", "fr": "Inconnues, limites et prochaine révision", "pt": "Desconhecidos, limites e próxima revisão"},
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": {"en": "IRCC did not explain why it selected the size of each round. The published information also does not confirm the category, number of invitations or minimum score of a future round.", "fr": "IRCC n’a pas expliqué pourquoi il avait choisi la taille de chaque ronde. Les renseignements publiés ne confirment pas non plus la catégorie, le nombre d’invitations ou le score minimal d’une future ronde.", "pt": "O IRCC não declarou por que escolheu o tamanho de cada rodada. As informações publicadas também não confirmam a categoria, o número de convites ou a pontuação mínima de uma rodada futura."},
+              "sourceIds": ["express-entry-results"]
+            },
+            {
+              "type": "paragraph",
+              "text": {"en": "This article should be reviewed after another Express Entry round or any revision to the official data. The next editorial review is proposed for August 28, 2026.", "fr": "Cet article devrait être révisé après une nouvelle ronde d’Entrée express ou une modification des données officielles. La prochaine révision éditoriale est proposée pour le 28 août 2026.", "pt": "Este artigo deve ser revisto se houver uma nova rodada do Express Entry ou uma alteração nos dados oficiais. A próxima revisão editorial está proposta para 28 de agosto de 2026."},
+              "sourceIds": []
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "express-entry-results",
+          "owner": "Immigration, Refugees and Citizenship Canada",
+          "label": {"en": "Official Express Entry round results", "fr": "Résultats officiels des rondes d’Entrée express", "pt": "Resultados oficiais das rodadas do Express Entry"},
+          "url": {"en": "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json", "fr": "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_fr.json", "pt": "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json"}
+        },
+        {
+          "id": "rounds-explainer",
+          "owner": "Immigration, Refugees and Citizenship Canada",
+          "label": {"en": "How Express Entry rounds work", "fr": "Fonctionnement des rondes d’Entrée express", "pt": "Como funcionam as rodadas do Express Entry"},
+          "url": {"en": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/rounds-invitations.html", "fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/immigrer-canada/entree-express/rondes-invitations.html", "pt": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/rounds-invitations.html"}
+        }
+      ],
+      "internalLinks": [
+        {"path": "/services/permanent-residence", "label": {"en": "Permanent residence services", "fr": "Services de résidence permanente", "pt": "Serviços de residência permanente"}},
+        {"path": "/consultants", "label": {"en": "Meet the consulting team", "fr": "Découvrir l’équipe de consultantes", "pt": "Conhecer a equipe de consultoras"}}
+      ],
+      "cta": {
+        "title": {"en": "Would you like to discuss your circumstances?", "fr": "Souhaitez-vous discuter de votre situation?", "pt": "Quer conversar sobre a sua situação?"},
+        "body": {"en": "An authorized professional can help you understand which official Express Entry rules may be relevant. Booking a consultation does not affect government decisions or outcomes.", "fr": "Une professionnelle autorisée peut vous aider à comprendre quelles règles officielles d’Entrée express pourraient être pertinentes. Prendre rendez-vous ne change pas les décisions ni les résultats du gouvernement.", "pt": "Uma profissional autorizada pode ajudar a entender quais regras oficiais do Express Entry podem ser relevantes. Marcar uma consulta não altera decisões nem resultados do governo."}
+      },
+      "disclaimer": {
+        "en": "This article provides general information and is not legal or immigration advice. Programs and policies can change, and individual circumstances matter. Review the linked official sources and consult an authorized professional for advice about your situation.",
+        "fr": "Cet article fournit des renseignements généraux et ne constitue pas un avis juridique ou en immigration. Les programmes et politiques peuvent changer, et chaque situation est particulière. Consultez les sources officielles liées et demandez conseil à une professionnelle autorisée au sujet de votre situation.",
+        "pt": "Este artigo apresenta informações gerais e não constitui aconselhamento jurídico ou migratório. Programas e políticas podem mudar, e as circunstâncias individuais são importantes. Consulte as fontes oficiais indicadas e procure uma profissional autorizada para receber orientação sobre a sua situação."
+      }
+    },
+    {
+      "id": "tfwp-low-wage-cap",
+      "order": 2,
+      "status": "approved_for_publish",
+      "articleType": "Article",
+      "draftedAt": "2026-08-21",
+      "lastVerifiedAt": "2026-08-21",
+      "freshnessReviewAt": "2026-08-28",
+      "publishedAt": "2026-08-21",
+      "modifiedAt": null,
+      "author": "I Am Going To Canada Editorial Team",
+      "reviewer": "Marina Snyder",
+      "reviewerCredential": "RCIC-IRB R519265",
+      "slugs": {"en": "tfwp-low-wage-cap-small-work-locations", "fr": "ptet-limite-postes-bas-salaire-petits-lieux-travail", "pt": "tfwp-limite-vagas-baixa-remuneracao-locais-pequenos"},
+      "category": {"en": "Temporary Foreign Worker Program", "fr": "Programme des travailleurs étrangers temporaires", "pt": "Programa de Trabalhadores Estrangeiros Temporários"},
+      "title": {"en": "TFWP low-wage cap: how the calculation works at work locations with fewer than 10 employees", "fr": "PTET : comment fonctionne le calcul de la limite des postes à bas salaire dans les lieux de travail comptant moins de 10 employés", "pt": "TFWP: como funciona o cálculo do limite para vagas de baixa remuneração em locais de trabalho com menos de 10 funcionários"},
+      "dek": {"en": "Guidance updated by ESDC uses a workforce size of 10 to calculate the cap for certain smaller work locations. August 18, 2026 is the page update date, not a separately stated effective date.", "fr": "Une directive mise à jour par EDSC utilise un effectif de 10 employés pour calculer la limite applicable à certains lieux de travail plus petits. Le 18 août 2026 est la date de mise à jour de la page, et non une date d’entrée en vigueur distincte.", "pt": "Uma orientação atualizada pelo ESDC usa um quadro de dez pessoas para calcular o limite aplicável a determinados locais menores. 18 de agosto de 2026 é a data da atualização da página, não uma data de entrada em vigor separada."},
+      "metaTitle": {"en": "TFWP low-wage cap for work locations under 10 employees", "fr": "PTET : limite pour les lieux de travail de moins de 10 employés", "pt": "TFWP: limite para locais com menos de 10 funcionários"},
+      "metaDescription": {"en": "Federal guidance updated August 18 explains the low-wage cap calculation for work locations with fewer than 10 employees. No separate effective date is stated.", "fr": "Les directives fédérales du 18 août expliquent le calcul pour les lieux de moins de 10 employés, sans date d’entrée en vigueur distincte.", "pt": "A orientação federal atualizada em 18 de agosto explica o cálculo para locais com menos de 10 funcionários, sem indicar uma data de vigência separada."},
+      "keyFacts": [
+        {"label": {"en": "Who it applies to", "fr": "À qui cela s’applique", "pt": "A quem se aplica"}, "value": {"en": "Work locations with fewer than 10 employees when the LMIA is subject to the applicable low-wage cap.", "fr": "Lieux de travail comptant moins de 10 employés lorsque l’EIMT est assujettie à la limite applicable aux postes à bas salaire.", "pt": "Locais de trabalho com menos de dez funcionários quando a LMIA está sujeita ao limite aplicável a vagas de baixa remuneração."}, "sourceIds": ["low-wage-requirements"]},
+        {"label": {"en": "Calculation base", "fr": "Base du calcul", "pt": "Base do cálculo"}, "value": {"en": "A workforce size of 10.", "fr": "Un effectif de 10 employés.", "pt": "Um quadro de dez pessoas."}, "sourceIds": ["low-wage-requirements"]},
+        {"label": {"en": "Maximum result", "fr": "Résultat maximal", "pt": "Resultado máximo"}, "value": {"en": "One temporary foreign worker under the 10% cap; two under the 20% cap.", "fr": "Un travailleur étranger temporaire pour la limite de 10 %; deux pour celle de 20 %.", "pt": "Um trabalhador estrangeiro temporário no limite de 10%; dois no limite de 20%."}, "sourceIds": ["low-wage-requirements"]},
+        {"label": {"en": "Date", "fr": "Date", "pt": "Data"}, "value": {"en": "The page was updated August 18, 2026, but states no separate effective date for the variation.", "fr": "La page a été mise à jour le 18 août 2026, sans date d’entrée en vigueur distincte pour cette variante.", "pt": "A página foi atualizada em 18 de agosto de 2026, mas não informa uma data de vigência separada para a variação."}, "sourceIds": ["low-wage-requirements"]}
+      ],
+      "sections": [
+        {
+          "id": "direct-answer",
+          "heading": {"en": "The direct answer", "fr": "La réponse directe", "pt": "A resposta direta"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "For a work location with fewer than 10 employees, the variation described by Employment and Social Development Canada (ESDC) uses a workforce size of 10 to calculate the cap on temporary foreign workers in low-wage positions. Using that base, the maximum is one worker when the 10% cap applies or two workers when the 20% cap applies.", "fr": "Pour un lieu de travail comptant moins de 10 employés, la variante décrite par Emploi et Développement social Canada (EDSC) utilise un effectif de 10 employés pour calculer la limite de travailleurs étrangers temporaires dans des postes à bas salaire. Avec cette base, le maximum est d’un travailleur lorsque la limite de 10 % s’applique ou de deux travailleurs lorsque la limite est de 20 %.", "pt": "Para um local de trabalho com menos de dez funcionários, a variação descrita pela Employment and Social Development Canada (ESDC) usa um quadro de dez pessoas no cálculo do limite de trabalhadores estrangeiros temporários em vagas de baixa remuneração. Com essa base, o máximo é de um trabalhador quando se aplica o limite de 10%, ou de dois quando se aplica o limite de 20%."}, "sourceIds": ["low-wage-requirements"]},
+            {"type": "paragraph", "text": {"en": "There is an important limit to this explanation. It does not determine which cap applies to a particular LMIA. Its safe scope is an LMIA that is already subject to the applicable cap.", "fr": "Cette explication comporte une limite importante. Elle ne détermine pas, à elle seule, quelle limite s’applique à une EIMT donnée. Sa portée sûre se limite à une EIMT déjà assujettie à la limite applicable.", "pt": "Essa explicação exige uma ressalva importante: ela não determina, por si só, qual limite se aplica a uma LMIA específica. Seu escopo seguro é uma LMIA que já esteja sujeita ao limite aplicável."}, "sourceIds": ["low-wage-requirements"]}
+          ]
+        },
+        {
+          "id": "workforce-count",
+          "heading": {"en": "What counts toward the workforce size", "fr": "Ce qui entre dans le calcul de l’effectif", "pt": "O que entra no quadro usado no cálculo"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "The calculation includes more than the people physically working full-time on the day it is made. According to ESDC, the workforce count includes:", "fr": "Le calcul ne se limite pas aux personnes qui travaillent physiquement à temps plein le jour où il est effectué. Selon EDSC, l’effectif comprend :", "pt": "A contagem não se limita às pessoas que estão fisicamente trabalhando em tempo integral no dia em que o cálculo é feito. Segundo o ESDC, o quadro considerado inclui:"}, "sourceIds": ["low-wage-requirements"]},
+            {"type": "unorderedList", "items": [
+              {"en": "full-time and part-time employees;", "fr": "les employés à temps plein et à temps partiel;", "pt": "funcionários em tempo integral e em meio período;"},
+              {"en": "employees on leave who are expected to return;", "fr": "les employés en congé qui devraient reprendre le travail;", "pt": "funcionários em licença que devem retornar ao trabalho;"},
+              {"en": "vacant positions requested on the LMIA application;", "fr": "les postes vacants demandés dans la demande d’EIMT;", "pt": "vagas solicitadas na LMIA;"},
+              {"en": "temporary foreign workers named in previously approved LMIAs who have not yet started work.", "fr": "les travailleurs étrangers temporaires visés par des EIMT approuvées antérieurement qui n’ont pas encore commencé à travailler.", "pt": "trabalhadores incluídos em LMIAs aprovadas anteriormente que ainda não começaram a trabalhar."}
+            ], "sourceIds": ["low-wage-requirements"]},
+            {"type": "paragraph", "text": {"en": "A part-time employee working fewer than 30 hours per week counts as 0.5 of an employee. The correct count may therefore differ from the number of names on a current payroll: requested positions and approved workers who have not started also form part of the calculation.", "fr": "Un employé à temps partiel qui travaille moins de 30 heures par semaine compte pour 0,5 employé. Le bon total peut donc différer du nombre de noms sur une feuille de paie : les postes demandés et les travailleurs approuvés qui n’ont pas commencé font aussi partie du calcul.", "pt": "Um funcionário em meio período que trabalhe menos de 30 horas por semana conta como 0,5. O total correto pode, portanto, ser diferente do número de nomes na folha de pagamento: vagas incluídas no pedido e trabalhadores aprovados que ainda não começaram também entram no cálculo."}, "sourceIds": ["low-wage-requirements"]}
+          ]
+        },
+        {
+          "id": "small-location-variation",
+          "heading": {"en": "What changes for a work location with fewer than 10 employees", "fr": "Ce qui change pour un lieu de travail de moins de 10 employés", "pt": "O que muda para um local com menos de dez funcionários"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "For this specific calculation, ESDC uses a workforce size of 10 even when the location has fewer employees. Applying 10% to that base results in a maximum of one low-wage position; applying 20% results in a maximum of two.", "fr": "Pour ce calcul précis, EDSC utilise un effectif de 10 employés même si le lieu de travail en compte moins. L’application de 10 % à cette base donne un maximum d’un poste à bas salaire; l’application de 20 % donne un maximum de deux postes.", "pt": "Para esse cálculo específico, o ESDC usa um quadro de dez pessoas mesmo quando o local tem menos funcionários. Aplicar 10% sobre essa base resulta no máximo de uma vaga de baixa remuneração; aplicar 20% resulta no máximo de duas."}, "sourceIds": ["low-wage-requirements"]},
+            {"type": "paragraph", "text": {"en": "Those results do not mean every employer may choose between one or two workers. The outcome depends on the cap that applies to the case. This article does not determine how an individual business, position or LMIA should be classified.", "fr": "Ces résultats ne signifient pas que chaque employeur peut choisir entre un ou deux travailleurs. Le résultat dépend de la limite applicable au dossier. Cet article ne détermine pas le classement d’une entreprise, d’un poste ou d’une EIMT en particulier.", "pt": "Esses resultados não significam que todo empregador possa escolher entre um ou dois trabalhadores. O resultado depende do limite aplicável ao caso. Este artigo não determina o enquadramento de uma empresa, vaga ou LMIA individual."}, "sourceIds": []}
+          ]
+        },
+        {
+          "id": "update-not-effective-date",
+          "heading": {"en": "The update date is not an effective date", "fr": "La date de mise à jour n’est pas une date d’entrée en vigueur", "pt": "A data de atualização não é uma data de vigência"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "ESDC marks the variation as updated on August 18, 2026. The page does not provide a separate effective date for it. August 18 should therefore not be described as the date the variation took effect. The cited pages also do not support a claim that the change applies retroactively.", "fr": "EDSC indique que la variante a été mise à jour le 18 août 2026. La page ne donne toutefois pas de date d’entrée en vigueur distincte. Il ne faut donc pas présenter le 18 août comme la date à laquelle la variante a commencé à s’appliquer. Les pages citées ne permettent pas non plus d’affirmer que la modification a un effet rétroactif.", "pt": "O ESDC identifica a variação como atualizada em 18 de agosto de 2026. A página, contudo, não fornece uma data de entrada em vigor separada. Por isso, não é correto descrever 18 de agosto como sua data de vigência. Também não há base nas páginas indicadas para afirmar que a mudança tenha aplicação retroativa."}, "sourceIds": ["low-wage-requirements"]},
+            {"type": "paragraph", "text": {"en": "The distinction matters. An update date tells readers when web content was revised; an effective date tells them when a rule begins to apply. Without a stated effective date for this variation, the article must preserve that uncertainty.", "fr": "La distinction est importante. Une date de mise à jour indique quand le contenu Web a été révisé; une date d’entrée en vigueur indique quand une règle commence à produire ses effets. En l’absence d’une date d’entrée en vigueur déclarée, l’article doit conserver cette incertitude.", "pt": "A diferença é relevante. Uma data de atualização informa quando o conteúdo da página foi revisado; uma data de vigência informa quando uma regra começa a produzir efeitos. Sem uma data declarada para essa variação, o artigo deve preservar essa incerteza."}, "sourceIds": []}
+          ]
+        },
+        {
+          "id": "official-contexts",
+          "heading": {"en": "The same calculation appears in two official contexts", "fr": "Le même calcul figure dans deux contextes officiels", "pt": "O mesmo cálculo aparece em dois contextos oficiais"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "ESDC presents the variation in both its general requirements for low-wage positions and its requirements for positions supporting permanent residence with dual intent.", "fr": "EDSC présente cette variante dans les exigences générales visant les postes à bas salaire ainsi que dans les exigences relatives aux postes qui appuient une demande de résidence permanente à double intention.", "pt": "O ESDC apresenta a variação tanto nos requisitos gerais para vagas de baixa remuneração quanto nos requisitos relacionados ao apoio à residência permanente com intenção dupla."}, "sourceIds": ["low-wage-requirements", "permanent-requirements"]},
+            {"type": "paragraph", "text": {"en": "Its appearance in both documents does not automatically extend the calculation to every LMIA. The safe description remains: the calculation applies when the LMIA in question is subject to the applicable cap.", "fr": "La présence du calcul dans les deux documents ne l’étend pas automatiquement à toutes les EIMT. La formulation prudente reste la même : le calcul s’applique lorsque l’EIMT concernée est assujettie à la limite applicable.", "pt": "A presença do cálculo nos dois documentos não amplia automaticamente a regra para toda LMIA. A formulação segura continua sendo: o cálculo se aplica quando a LMIA em questão está sujeita ao limite aplicável."}, "sourceIds": ["low-wage-requirements", "permanent-requirements"]}
+          ]
+        },
+        {
+          "id": "employer-next-steps",
+          "heading": {"en": "Safe next steps for employers", "fr": "Prochaines étapes prudentes pour les employeurs", "pt": "Próximos passos seguros para empregadores"},
+          "blocks": [
+            {"type": "orderedList", "items": [
+              {"en": "Check the current official page for the relevant type of LMIA.", "fr": "Consulter la version actuelle de la page officielle correspondant au type d’EIMT.", "pt": "Verificar a versão atual da página oficial correspondente ao tipo de LMIA."},
+              {"en": "Do not use this article alone to determine whether the LMIA is subject to a cap or which percentage applies; check the current official guidance and seek authorized professional advice when needed.", "fr": "Ne vous fiez pas uniquement à cet article pour déterminer si l’EIMT est assujettie à une limite ou quel pourcentage s’applique; consultez les directives officielles actuelles et, au besoin, demandez conseil à une professionnelle autorisée.", "pt": "Não use apenas este artigo para determinar se a LMIA está sujeita a um limite ou qual percentual se aplica; consulte a orientação oficial atual e, quando necessário, procure uma profissional autorizada."},
+              {"en": "Count full-time and part-time employees, people on leave expected to return, requested vacancies and approved workers who have not yet started.", "fr": "Compter les employés à temps plein et à temps partiel, les personnes en congé qui devraient revenir, les postes demandés et les travailleurs approuvés qui n’ont pas commencé.", "pt": "Contabilizar funcionários em tempo integral e meio período, pessoas em licença com retorno esperado, vagas solicitadas e trabalhadores aprovados que ainda não começaram."},
+              {"en": "Retain the date and version of the guidance consulted.", "fr": "Conserver la date et la version des directives consultées.", "pt": "Guardar a data e a versão da orientação consultada."},
+              {"en": "Seek professional review for questions about a specific classification or transition.", "fr": "Demander une révision professionnelle pour toute question précise de classement ou de transition.", "pt": "Buscar revisão profissional para questões específicas de enquadramento ou transição."}
+            ], "sourceIds": ["low-wage-requirements"]}
+          ]
+        },
+        {
+          "id": "tfwp-limits-review",
+          "heading": {"en": "Unknowns, limits and next review", "fr": "Inconnues, limites et prochaine révision", "pt": "Desconhecidos, limites e próxima revisão"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "The page does not state a separate effective date. This article also does not assess the caps, exemptions or circumstances of an individual LMIA.", "fr": "La page ne précise aucune date d’entrée en vigueur distincte. Cet article n’évalue pas non plus les limites, les exemptions ou les circonstances d’une EIMT particulière.", "pt": "A página não informa uma data de entrada em vigor separada. Este artigo também não avalia limites, exceções ou circunstâncias de uma LMIA individual."}, "sourceIds": ["low-wage-requirements"]},
+            {"type": "paragraph", "text": {"en": "The content should be reviewed if ESDC publishes an effective date or changes the formula, LMIA form, caps or exemptions. The next editorial review is proposed for August 28, 2026.", "fr": "Le contenu devrait être révisé si EDSC publie une date d’entrée en vigueur ou modifie la formule, le formulaire d’EIMT, les limites ou les exemptions. La prochaine révision éditoriale est proposée pour le 28 août 2026.", "pt": "O conteúdo deverá ser revisto se o ESDC publicar uma data de vigência ou alterar a fórmula, o formulário de LMIA, os limites ou as exceções. A próxima revisão editorial está proposta para 28 de agosto de 2026."}, "sourceIds": []}
+          ]
+        }
+      ],
+      "sources": [
+        {"id": "low-wage-requirements", "owner": "Employment and Social Development Canada", "label": {"en": "Program requirements for low-wage positions", "fr": "Exigences du programme pour les postes à bas salaire", "pt": "Requisitos do programa para vagas de baixa remuneração"}, "url": {"en": "https://www.canada.ca/en/employment-social-development/services/foreign-workers/median-wage/low/requirements.html", "fr": "https://www.canada.ca/fr/emploi-developpement-social/services/travailleurs-etrangers/salaire-moyen/bas/exigences.html", "pt": "https://www.canada.ca/en/employment-social-development/services/foreign-workers/median-wage/low/requirements.html"}},
+        {"id": "permanent-requirements", "owner": "Employment and Social Development Canada", "label": {"en": "Requirements for positions supporting permanent residence", "fr": "Exigences relatives aux postes appuyant la résidence permanente", "pt": "Requisitos para vagas que apoiam residência permanente"}, "url": {"en": "https://www.canada.ca/en/employment-social-development/services/foreign-workers/permanent/requirements.html", "fr": "https://www.canada.ca/fr/emploi-developpement-social/services/travailleurs-etrangers/permanent/exigences.html", "pt": "https://www.canada.ca/en/employment-social-development/services/foreign-workers/permanent/requirements.html"}}
+      ],
+      "internalLinks": [
+        {"path": "/services/employer-services", "label": {"en": "Employer services", "fr": "Services aux employeurs", "pt": "Serviços para empregadores"}},
+        {"path": "/services/temporary-residence", "label": {"en": "Temporary residence", "fr": "Résidence temporaire", "pt": "Residência temporária"}}
+      ],
+      "cta": {"title": {"en": "Do you need to review a specific situation?", "fr": "Devez-vous examiner une situation précise?", "pt": "Precisa revisar uma situação específica?"}, "body": {"en": "Review the current ESDC guidance before relying on the calculation. For case-specific immigration questions, consult an authorized professional. A consultation does not influence a government decision.", "fr": "Consultez les directives actuelles d’EDSC avant de vous fier au calcul. Pour une question propre à votre situation, adressez-vous à une professionnelle autorisée. Une consultation n’influence pas une décision gouvernementale.", "pt": "Consulte a orientação atual do ESDC antes de usar esse cálculo. Para dúvidas migratórias específicas, procure uma profissional autorizada. Uma consulta não influencia a decisão governamental."}},
+      "disclaimer": {"en": "This article provides general information and is not legal or immigration advice. Programs and policies can change, and individual circumstances matter. Review the linked official sources and consult an authorized professional for advice about your situation.", "fr": "Cet article fournit des renseignements généraux et ne constitue pas un avis juridique ou en immigration. Les programmes et politiques peuvent changer, et chaque situation est particulière. Consultez les sources officielles liées et demandez conseil à une professionnelle autorisée au sujet de votre situation.", "pt": "Este artigo apresenta informações gerais e não constitui aconselhamento jurídico ou migratório. Programas e políticas podem mudar, e as circunstâncias individuais são importantes. Consulte as fontes oficiais indicadas e procure uma profissional autorizada para receber orientação sobre a sua situação."}
+    },
+    {
+      "id": "pei-worker-protection-consultation",
+      "order": 3,
+      "status": "approved_for_publish",
+      "articleType": "NewsArticle",
+      "draftedAt": "2026-08-21",
+      "lastVerifiedAt": "2026-08-21",
+      "freshnessReviewAt": "2026-09-18",
+      "publishedAt": "2026-08-21",
+      "modifiedAt": null,
+      "author": "I Am Going To Canada Editorial Team",
+      "reviewer": "Marina Snyder",
+      "reviewerCredential": "RCIC-IRB R519265",
+      "slugs": {"en": "pei-temporary-foreign-worker-regulations-consultation", "fr": "ile-du-prince-edouard-consultation-travailleurs-etrangers-temporaires", "pt": "ilha-principe-eduardo-consulta-trabalhadores-estrangeiros-temporarios"},
+      "category": {"en": "Prince Edward Island", "fr": "Île-du-Prince-Édouard", "pt": "Ilha do Príncipe Eduardo"},
+      "title": {"en": "PEI proposes employer registry and penalties to protect temporary foreign workers", "fr": "L’Île-du-Prince-Édouard propose un registre des employeurs et des sanctions pour protéger les travailleuses et travailleurs étrangers temporaires", "pt": "Ilha do Príncipe Eduardo propõe registro de empregadores e sanções para proteger trabalhadores estrangeiros temporários"},
+      "dek": {"en": "Prince Edward Island has opened a consultation on rules that would introduce employer registration, a public registry and administrative penalties. The text is still a draft and is not in force.", "fr": "L’Île-du-Prince-Édouard a lancé une consultation sur un projet de règlement qui instaurerait l’inscription des employeurs, un registre public et des sanctions administratives. Le texte demeure à l’état de projet et n’est pas en vigueur.", "pt": "Prince Edward Island abriu uma consulta sobre regras que incluiriam registro de empregadores, um cadastro público e penalidades administrativas. O texto ainda é uma minuta e não está em vigor."},
+      "metaTitle": {"en": "PEI consultation on temporary foreign worker rules", "fr": "Î.-P.-É. consulte sur les travailleurs étrangers temporaires", "pt": "PEI consulta regras para trabalhadores estrangeiros temporários"},
+      "metaDescription": {"en": "PEI opened consultation on a proposed employer registry and penalties on August 20. Feedback closes September 17; the draft rules are not yet in force.", "fr": "L’Île-du-Prince-Édouard consulte le public sur un registre des employeurs et des sanctions. Commentaires jusqu’au 17 septembre; le projet n’est pas en vigueur.", "pt": "A PEI consulta o público sobre registro de empregadores e sanções. As contribuições vão até 17 de setembro; as regras propostas ainda não estão em vigor."},
+      "keyFacts": [
+        {"label": {"en": "What happened", "fr": "Ce qui s’est passé", "pt": "O que aconteceu"}, "value": {"en": "PEI opened a public consultation on the second phase of regulations concerning temporary foreign workers.", "fr": "L’Île-du-Prince-Édouard a lancé une consultation publique sur la deuxième phase du règlement concernant les travailleuses et travailleurs étrangers temporaires.", "pt": "Prince Edward Island abriu uma consulta pública sobre a segunda fase de regulamentos relativos a trabalhadores estrangeiros temporários."}, "sourceIds": ["pei-consultation"]},
+        {"label": {"en": "Deadline", "fr": "Échéance", "pt": "Prazo"}, "value": {"en": "The consultation opened August 20 and accepts feedback until September 17, 2026.", "fr": "La consultation a commencé le 20 août et accepte les commentaires jusqu’au 17 septembre 2026.", "pt": "A consulta começou em 20 de agosto e recebe contribuições até 17 de setembro de 2026."}, "sourceIds": ["pei-consultation"]},
+        {"label": {"en": "What the draft proposes", "fr": "Ce que propose le projet", "pt": "O que a minuta propõe"}, "value": {"en": "Employer registration, a public registry, information requirements and administrative penalties from C$500 to C$3,000.", "fr": "Inscription des employeurs, registre public, exigences en matière de renseignements et sanctions administratives allant de 500 $ CA à 3 000 $ CA.", "pt": "Registro de empregadores, cadastro público, requisitos de informação e multas administrativas de C$500 a C$3.000."}, "sourceIds": ["pei-draft"]},
+        {"label": {"en": "Legal status", "fr": "Situation juridique", "pt": "Situação jurídica"}, "value": {"en": "The draft is not in force, and its commencement field is blank.", "fr": "Le projet n’est pas en vigueur, et sa disposition d’entrée en vigueur est laissée en blanc.", "pt": "A minuta não está em vigor e seu campo de início de vigência está em branco."}, "sourceIds": ["pei-draft"]}
+      ],
+      "sections": [
+        {
+          "id": "consultation-scope",
+          "heading": {"en": "What Prince Edward Island is consulting on", "fr": "Ce sur quoi porte la consultation de l’Île-du-Prince-Édouard", "pt": "O que Prince Edward Island está consultando"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "The Government of Prince Edward Island opened a consultation on August 20, 2026 about a new phase of regulations intended to protect temporary foreign workers.", "fr": "Le gouvernement de l’Île-du-Prince-Édouard a lancé, le 20 août 2026, une consultation sur une nouvelle phase du règlement visant à protéger les travailleuses et travailleurs étrangers temporaires.", "pt": "O governo de Prince Edward Island abriu, em 20 de agosto de 2026, uma consulta sobre uma nova fase de regulamentos voltados à proteção de trabalhadores estrangeiros temporários."}, "sourceIds": ["pei-consultation"]},
+            {"type": "paragraph", "text": {"en": "The proposal would require covered employers to register and provide specific information. It would also create a publicly accessible employer registry and an administrative penalty system. The official deadline for comments is September 17, 2026.", "fr": "La proposition obligerait les employeurs visés à s’inscrire et à fournir certains renseignements. Elle créerait aussi un registre des employeurs accessible au public et un régime de sanctions administratives. La date limite officielle pour transmettre des commentaires est le 17 septembre 2026.", "pt": "A proposta prevê que empregadores abrangidos façam registro e forneçam determinadas informações. Também prevê um cadastro de empregadores acessível ao público e um sistema de penalidades administrativas. O prazo oficial para enviar comentários termina em 17 de setembro de 2026."}, "sourceIds": ["pei-consultation"]},
+            {"type": "paragraph", "text": {"en": "These measures remain proposals. Opening a consultation does not make the draft regulations current law.", "fr": "Ces mesures demeurent des propositions. L’ouverture d’une consultation ne met pas le projet de règlement en vigueur.", "pt": "Essas medidas continuam sendo propostas. A abertura da consulta não transforma a minuta em regra vigente."}, "sourceIds": ["pei-consultation", "pei-draft"]}
+          ]
+        },
+        {
+          "id": "phase-two-draft",
+          "heading": {"en": "What appears in the phase-two draft", "fr": "Ce que contient le projet de la deuxième phase", "pt": "O que aparece na minuta da segunda fase"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "The draft regulations contain four main components:", "fr": "Le projet de règlement contient quatre éléments principaux :", "pt": "O texto preliminar dos regulamentos apresenta quatro componentes centrais:"}, "sourceIds": ["pei-draft"]},
+            {"type": "orderedList", "items": [
+              {"en": "employer registration;", "fr": "l’inscription des employeurs;", "pt": "registro de empregadores;"},
+              {"en": "a publicly accessible employer registry;", "fr": "un registre des employeurs accessible au public;", "pt": "cadastro de empregadores acessível ao público;"},
+              {"en": "information requirements;", "fr": "des exigences en matière de renseignements;", "pt": "requisitos de informação;"},
+              {"en": "administrative penalties.", "fr": "des sanctions administratives.", "pt": "penalidades administrativas."}
+            ], "sourceIds": ["pei-draft"]},
+            {"type": "paragraph", "text": {"en": "The proposed penalties range from C$500 to C$3,000, depending on the violation. If the same person commits repeated violations within three years, the proposal would allow the corresponding penalty to be doubled. These amounts and mechanisms describe the draft, not penalties currently in force under phase two.", "fr": "Les sanctions proposées vont de 500 $ CA à 3 000 $ CA, selon l’infraction. Si la même personne commet plusieurs infractions au cours de trois ans, le projet permettrait de doubler la sanction correspondante. Ces montants et mécanismes décrivent le projet, et non des sanctions actuellement applicables dans la deuxième phase.", "pt": "As multas propostas variam de C$500 a C$3.000, conforme a infração. Se a mesma pessoa cometer violações repetidas dentro de três anos, a proposta permite dobrar a penalidade correspondente. Esses valores e mecanismos descrevem a minuta, não multas atualmente aplicáveis na segunda fase."}, "sourceIds": ["pei-draft"]}
+          ]
+        },
+        {
+          "id": "not-in-force",
+          "heading": {"en": "The proposal is not yet in force", "fr": "La proposition n’est pas encore en vigueur", "pt": "A proposta ainda não entrou em vigor"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "The commencement field in the draft is blank. The document therefore does not announce a date when the phase-two regulations would begin to apply. The consultation materials do not establish whether the text will be adopted as published, whether it will change or when a final version might take effect.", "fr": "La disposition d’entrée en vigueur du projet est laissée en blanc. Le document n’annonce donc pas la date à laquelle la deuxième phase commencerait à s’appliquer. Les documents de consultation ne permettent pas de savoir si le texte sera adopté tel quel, s’il sera modifié ou quand une version définitive pourrait entrer en vigueur.", "pt": "O campo de início de vigência da minuta está em branco. O documento não anuncia uma data em que os regulamentos da segunda fase começariam a valer. Os materiais da consulta não estabelecem se o texto será aprovado como publicado, se mudará ou quando uma versão final poderia entrar em vigor."}, "sourceIds": ["pei-draft"]},
+            {"type": "paragraph", "text": {"en": "August 20 is the consultation opening date, and September 17 is the feedback deadline. Neither is an effective date for the proposed rules. The provincial announcement asks for feedback; it does not announce adoption of a final rule.", "fr": "Le 20 août est la date d’ouverture de la consultation, et le 17 septembre est la date limite pour les commentaires. Aucune n’est une date d’entrée en vigueur des règles proposées. Le communiqué provincial sollicite des commentaires; il n’annonce pas l’adoption d’une règle définitive.", "pt": "20 de agosto é a data de abertura da consulta, e 17 de setembro é o prazo para contribuições. Nenhuma delas é data de vigência das regras propostas. O comunicado provincial busca comentários; ele não anuncia a adoção de uma regra final."}, "sourceIds": ["pei-consultation", "pei-announcement"]}
+          ]
+        },
+        {
+          "id": "phase-one-context",
+          "heading": {"en": "What has been in force since 2025", "fr": "Ce qui est en vigueur depuis 2025", "pt": "O que já está em vigor desde 2025"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "Phase one of PEI's measures took effect on April 1, 2025 and introduced recruiter licensing. That provides context for the current consultation, but it does not bring phase two into force. Employer registration and the proposed penalty system remain proposals unless PEI adopts them and announces a commencement date.", "fr": "La première phase des mesures de l’Île-du-Prince-Édouard est entrée en vigueur le 1er avril 2025 et a instauré l’obligation d’obtenir un permis pour les recruteurs. Ce contexte ne met pas la deuxième phase en vigueur. L’inscription des employeurs et le régime de sanctions demeurent des propositions tant que la province ne les a pas adoptés et n’a pas annoncé de date d’entrée en vigueur.", "pt": "A primeira fase das medidas de PEI entrou em vigor em 1º de abril de 2025 e introduziu o licenciamento de recrutadores. Esse contexto não antecipa a vigência da segunda fase. O registro de empregadores e o regime de penalidades continuam sendo propostas enquanto a província não os adotar e anunciar uma data de início."}, "sourceIds": ["pei-announcement"]},
+            {"type": "heading3", "id": "phase-one", "text": {"en": "Phase one", "fr": "Première phase", "pt": "Fase um"}},
+            {"type": "paragraph", "text": {"en": "In force since April 1, 2025; covers recruiter licensing.", "fr": "En vigueur depuis le 1er avril 2025; porte sur les permis des recruteurs.", "pt": "Em vigor desde 1º de abril de 2025; trata do licenciamento de recrutadores."}, "sourceIds": ["pei-announcement"]},
+            {"type": "heading3", "id": "phase-two", "text": {"en": "Phase two", "fr": "Deuxième phase", "pt": "Fase dois"}},
+            {"type": "paragraph", "text": {"en": "Under consultation; includes employer registration, required information and proposed penalties. It is not yet in force.", "fr": "En consultation; comprend l’inscription des employeurs, les renseignements exigés et les sanctions proposées. Elle n’est pas encore en vigueur.", "pt": "Em consulta; inclui registro de empregadores, informações exigidas e penalidades propostas. Ainda não está em vigor."}, "sourceIds": ["pei-consultation", "pei-draft"]}
+          ]
+        },
+        {
+          "id": "who-should-follow",
+          "heading": {"en": "Who may want to follow the consultation", "fr": "Qui pourrait vouloir suivre la consultation", "pt": "Quem pode querer acompanhar a consulta"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "Employers that use or are considering temporary foreign workers in PEI may wish to examine the draft because it proposes obligations related to registration and information disclosure. Temporary foreign workers and organizations that support them may also wish to follow the process, particularly because it includes a public employer registry and penalty mechanisms.", "fr": "Les employeurs qui embauchent ou envisagent d’embaucher des travailleuses et travailleurs étrangers temporaires à l’Île-du-Prince-Édouard pourraient examiner le projet, puisqu’il propose des obligations d’inscription et de communication de renseignements. Les travailleurs et les organismes qui les soutiennent peuvent aussi suivre le processus, notamment en raison du registre public et des mécanismes de sanction.", "pt": "Empregadores que utilizam ou consideram utilizar trabalhadores estrangeiros temporários em PEI podem querer examinar a minuta, pois ela propõe obrigações de registro e fornecimento de informações. Trabalhadores estrangeiros temporários e organizações de apoio também podem acompanhar o processo, especialmente por causa do cadastro público e dos mecanismos de penalidade."}, "sourceIds": ["pei-draft"]},
+            {"type": "paragraph", "text": {"en": "The document applies to Prince Edward Island and should not be generalized to other provinces, territories or federal processes. It may not affect every situation in the same way.", "fr": "Le document se limite à l’Île-du-Prince-Édouard et ne doit pas être généralisé aux autres provinces, aux territoires ou aux processus fédéraux. Il pourrait ne pas toucher toutes les situations de la même façon.", "pt": "O documento se limita a Prince Edward Island e não deve ser generalizado para outras províncias, territórios ou processos federais. Ele pode não afetar todas as situações da mesma forma."}, "sourceIds": ["pei-draft"]}
+          ]
+        },
+        {
+          "id": "consultation-next-steps",
+          "heading": {"en": "Safe next steps", "fr": "Prochaines étapes prudentes", "pt": "Próximos passos seguros"},
+          "blocks": [
+            {"type": "orderedList", "items": [
+              {"en": "Visit the official consultation page.", "fr": "Consulter la page officielle de la consultation.", "pt": "Acessar a página oficial da consulta."},
+              {"en": "Read the draft before submitting comments.", "fr": "Lire le projet avant de transmettre des commentaires.", "pt": "Ler a minuta antes de enviar comentários."},
+              {"en": "Provide feedback by September 17, 2026 using the methods listed by the province.", "fr": "Présenter des observations d’ici le 17 septembre 2026 par les moyens indiqués par la province.", "pt": "Enviar contribuições até 17 de setembro de 2026 pelos meios indicados pela província."},
+              {"en": "Watch for a revised or final version.", "fr": "Surveiller la publication d’une version révisée ou définitive.", "pt": "Acompanhar uma eventual versão revisada ou final."},
+              {"en": "Do not treat the proposed requirements and amounts as current phase-two rules.", "fr": "Ne pas traiter les exigences et les montants proposés comme des règles actuelles de la deuxième phase.", "pt": "Não tratar os requisitos e valores propostos como regras atuais da segunda fase."}
+            ], "sourceIds": ["pei-consultation", "pei-draft"]}
+          ]
+        },
+        {
+          "id": "pei-limits-review",
+          "heading": {"en": "Unknowns, limits and next review", "fr": "Inconnues, limites et prochaine révision", "pt": "Desconhecidos, limites e próxima revisão"},
+          "blocks": [
+            {"type": "paragraph", "text": {"en": "It is not yet known whether PEI will adopt the draft, whether its content will change or when it might take effect. The commencement field remains blank in the document reviewed.", "fr": "On ne sait pas encore si l’Île-du-Prince-Édouard adoptera le projet, si son contenu changera ou quand il pourrait entrer en vigueur. La disposition d’entrée en vigueur demeure vide dans le document consulté.", "pt": "Ainda não se sabe se PEI adotará a minuta, se seu conteúdo mudará ou quando poderia entrar em vigor. O campo de início de vigência permanece em branco no documento consultado."}, "sourceIds": ["pei-draft"]},
+            {"type": "paragraph", "text": {"en": "This article should be updated if PEI extends or closes the consultation, revises or adopts the draft, or announces an effective date. The next editorial review is proposed for September 18, 2026.", "fr": "Cet article devrait être mis à jour si la province prolonge ou clôt la consultation, révise ou adopte le projet, ou annonce une date d’entrée en vigueur. La prochaine révision éditoriale est proposée pour le 18 septembre 2026.", "pt": "Este artigo deverá ser atualizado se PEI prorrogar ou encerrar a consulta, revisar ou adotar a minuta, ou anunciar uma data de vigência. A próxima revisão editorial está proposta para 18 de setembro de 2026."}, "sourceIds": []}
+          ]
+        }
+      ],
+      "sources": [
+        {"id": "pei-consultation", "owner": "Government of Prince Edward Island", "label": {"en": "Consultation on the foreign worker employer registry", "fr": "Consultation sur le registre des employeurs de travailleurs étrangers", "pt": "Consulta sobre o registro de empregadores de trabalhadores estrangeiros"}, "url": {"en": "https://www.princeedwardisland.ca/en/information/workforce-and-advanced-learning/consultation-on-new-foreign-worker-employer-registry", "fr": "https://www.princeedwardisland.ca/fr/information/main-doeuvre-et-etudes-superieures/consultation-on-new-foreign-worker-employer-registry", "pt": "https://www.princeedwardisland.ca/en/information/workforce-and-advanced-learning/consultation-on-new-foreign-worker-employer-registry"}},
+        {"id": "pei-draft", "owner": "Government of Prince Edward Island", "label": {"en": "Phase two consultation draft regulations", "fr": "Projet de règlement de la deuxième phase", "pt": "Minuta dos regulamentos da segunda fase"}, "url": {"en": "https://www.princeedwardisland.ca/sites/default/files/8344/Temporary%20Foreign%20Worker%20Act%20Regs%20-%20Phase%202%20-%20Consultation%20Draft.pdf", "fr": "https://www.princeedwardisland.ca/sites/default/files/8344/Temporary%20Foreign%20Worker%20Act%20Regs%20-%20Phase%202%20-%20Consultation%20Draft.pdf", "pt": "https://www.princeedwardisland.ca/sites/default/files/8344/Temporary%20Foreign%20Worker%20Act%20Regs%20-%20Phase%202%20-%20Consultation%20Draft.pdf"}},
+        {"id": "pei-announcement", "owner": "Government of Prince Edward Island", "label": {"en": "Official consultation announcement", "fr": "Communiqué officiel sur la consultation", "pt": "Comunicado oficial sobre a consulta"}, "url": {"en": "https://lite.princeedwardisland.ca/province-seeks-feedback-regulations-protect-temporary-foreign-workers", "fr": "https://lite.princeedwardisland.ca/fr/node/81053", "pt": "https://lite.princeedwardisland.ca/province-seeks-feedback-regulations-protect-temporary-foreign-workers"}}
+      ],
+      "internalLinks": [
+        {"path": "/services/employer-services", "label": {"en": "Employer services", "fr": "Services aux employeurs", "pt": "Serviços para empregadores"}},
+        {"path": "/services/temporary-residence", "label": {"en": "Temporary residence", "fr": "Résidence temporaire", "pt": "Residência temporária"}}
+      ],
+      "cta": {"title": {"en": "Do you need to understand what is currently in force?", "fr": "Souhaitez-vous comprendre ce qui est actuellement en vigueur?", "pt": "Precisa entender o que está atualmente em vigor?"}, "body": {"en": "Read the draft and consultation instructions on PEI's official website. For personal immigration questions, consult an authorized professional. Booking a consultation does not improve or guarantee any government outcome.", "fr": "Consultez le projet et les modalités de participation sur le site officiel de la province. Pour une question personnelle, adressez-vous à une professionnelle autorisée. Prendre rendez-vous n’améliore pas et ne garantit aucun résultat gouvernemental.", "pt": "Leia a minuta e as instruções da consulta no site oficial de PEI. Para dúvidas migratórias pessoais, procure uma profissional autorizada. Agendar uma consulta não melhora nem garante qualquer resultado governamental."}},
+      "disclaimer": {"en": "This article provides general information and is not legal or immigration advice. Programs and policies can change, and individual circumstances matter. Review the linked official sources and consult an authorized professional for advice about your situation.", "fr": "Cet article fournit des renseignements généraux et ne constitue pas un avis juridique ou en immigration. Les programmes et politiques peuvent changer, et chaque situation est particulière. Consultez les sources officielles liées et demandez conseil à une professionnelle autorisée au sujet de votre situation.", "pt": "Este artigo apresenta informações gerais e não constitui aconselhamento jurídico ou migratório. Programas e políticas podem mudar, e as circunstâncias individuais são importantes. Consulte as fontes oficiais indicadas e procure uma profissional autorizada para receber orientação sobre a sua situação."}
+    }
+  ]
+}

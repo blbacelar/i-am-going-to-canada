@@ -95,6 +95,7 @@ export const siteContentSchema = z.object({
   }),
   navigation: z.object({
     home: localizedStringSchema,
+    blog: localizedStringSchema,
     consultants: localizedStringSchema,
     services: localizedStringSchema,
     about: localizedStringSchema,
@@ -183,3 +184,129 @@ export const siteContentSchema = z.object({
 export type Consultant = z.infer<typeof consultantSchema>;
 export type Service = z.infer<typeof serviceSchema>;
 export type SiteContent = z.infer<typeof siteContentSchema>;
+
+const articleSourceSchema = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  owner: z.string().min(1),
+  label: localizedStringSchema,
+  url: z.object({ en: z.url(), fr: z.url(), pt: z.url() }),
+});
+
+const articleParagraphBlockSchema = z.object({
+  type: z.literal("paragraph"),
+  text: localizedStringSchema,
+  sourceIds: z.array(z.string().regex(/^[a-z0-9-]+$/)).default([]),
+});
+
+const articleHeadingBlockSchema = z.object({
+  type: z.literal("heading3"),
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  text: localizedStringSchema,
+});
+
+const articleListBlockSchema = z.object({
+  type: z.enum(["unorderedList", "orderedList"]),
+  items: z.array(localizedStringSchema).min(1),
+  sourceIds: z.array(z.string().regex(/^[a-z0-9-]+$/)).default([]),
+});
+
+const articleBlockSchema = z.discriminatedUnion("type", [
+  articleParagraphBlockSchema,
+  articleHeadingBlockSchema,
+  articleListBlockSchema,
+]);
+
+const articleSectionSchema = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  heading: localizedStringSchema,
+  blocks: z.array(articleBlockSchema).min(1),
+});
+
+export const articleSchema = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  order: z.number().int().nonnegative(),
+  status: z.enum(["ready_for_human_review", "approved_for_publish"]),
+  articleType: z.enum(["Article", "NewsArticle"]),
+  draftedAt: z.iso.date(),
+  lastVerifiedAt: z.iso.date(),
+  freshnessReviewAt: z.iso.date(),
+  publishedAt: z.iso.date().nullable(),
+  modifiedAt: z.iso.date().nullable(),
+  author: z.literal("I Am Going To Canada Editorial Team"),
+  reviewer: z.string().min(1),
+  reviewerCredential: z.string().min(1),
+  slugs: localizedStringSchema,
+  category: localizedStringSchema,
+  title: localizedStringSchema,
+  dek: localizedStringSchema,
+  metaTitle: localizedStringSchema,
+  metaDescription: localizedStringSchema,
+  keyFacts: z.array(z.object({
+    label: localizedStringSchema,
+    value: localizedStringSchema,
+    sourceIds: z.array(z.string().regex(/^[a-z0-9-]+$/)).default([]),
+  })).min(3),
+  sections: z.array(articleSectionSchema).min(3),
+  sources: z.array(articleSourceSchema).min(1),
+  internalLinks: z.array(z.object({
+    path: z.string().startsWith("/"),
+    label: localizedStringSchema,
+  })).min(1),
+  cta: z.object({
+    title: localizedStringSchema,
+    body: localizedStringSchema,
+  }),
+  disclaimer: localizedStringSchema,
+});
+
+export const blogContentSchema = z.object({
+  ui: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+    intro: localizedStringSchema,
+    readArticle: localizedStringSchema,
+    backToBlog: localizedStringSchema,
+    facts: localizedStringSchema,
+    contents: localizedStringSchema,
+    sources: localizedStringSchema,
+    internalLinks: localizedStringSchema,
+    lastVerified: localizedStringSchema,
+    nextReview: localizedStringSchema,
+    author: localizedStringSchema,
+    ctaButton: localizedStringSchema,
+    officialSource: localizedStringSchema,
+  }),
+  articles: z.array(articleSchema).min(1),
+}).superRefine((content, ctx) => {
+  const ids = new Set<string>();
+  const slugs = { en: new Set<string>(), fr: new Set<string>(), pt: new Set<string>() };
+
+  content.articles.forEach((article, articleIndex) => {
+    if (ids.has(article.id)) {
+      ctx.addIssue({ code: "custom", message: `Duplicate article id: ${article.id}`, path: ["articles", articleIndex, "id"] });
+    }
+    ids.add(article.id);
+
+    (Object.keys(slugs) as Array<keyof typeof slugs>).forEach((locale) => {
+      const slug = article.slugs[locale];
+      if (slugs[locale].has(slug)) {
+        ctx.addIssue({ code: "custom", message: `Duplicate ${locale} article slug: ${slug}`, path: ["articles", articleIndex, "slugs", locale] });
+      }
+      slugs[locale].add(slug);
+    });
+
+    const sourceIds = new Set(article.sources.map((source) => source.id));
+    const referencedSourceIds = [
+      ...article.keyFacts.flatMap((fact) => fact.sourceIds),
+      ...article.sections.flatMap((section) => section.blocks.flatMap((block) => "sourceIds" in block ? block.sourceIds : [])),
+    ];
+    referencedSourceIds.forEach((sourceId) => {
+      if (!sourceIds.has(sourceId)) {
+        ctx.addIssue({ code: "custom", message: `Article ${article.id} references unknown source ${sourceId}`, path: ["articles", articleIndex, "sources"] });
+      }
+    });
+  });
+});
+
+export type Article = z.infer<typeof articleSchema>;
+export type BlogContent = z.infer<typeof blogContentSchema>;

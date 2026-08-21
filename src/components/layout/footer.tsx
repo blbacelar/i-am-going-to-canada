@@ -18,6 +18,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <p>{localized(footer.statement, locale)}</p>
         </div>
         <nav aria-label={labels.navigation} className="footer-links">
+          <Link href={localePath(locale, "/blog")}>{localized(navigation.blog, locale)}</Link>
           <Link href={localePath(locale, "/consultants")}>{localized(navigation.consultants, locale)}</Link>
           <Link href={localePath(locale, "/services")}>{localized(navigation.services, locale)}</Link>
           <Link href={localePath(locale, "/about")}>{localized(navigation.about, locale)}</Link>

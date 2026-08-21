@@ -6,6 +6,7 @@
   },
   "navigation": {
     "home": {"en": "Home", "fr": "Accueil", "pt": "Início"},
+    "blog": {"en": "Articles", "fr": "Articles", "pt": "Artigos"},
     "consultants": {"en": "Consultants", "fr": "Consultantes", "pt": "Consultoras"},
     "services": {"en": "Services", "fr": "Services", "pt": "Serviços"},
     "about": {"en": "About", "fr": "À propos", "pt": "Sobre"},

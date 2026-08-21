@@ -7,7 +7,17 @@ import { trackJourneyEvent } from "@/lib/analytics/track";
 
 const shortLabels: Record<Locale, string> = { en: "EN", fr: "FR", pt: "PT" };
 
-export function LanguageSwitcher({ locale, label }: { locale: Locale; label: string }) {
+type ArticleRoute = { id: string; slugs: Record<Locale, string> };
+
+export function LanguageSwitcher({
+  locale,
+  label,
+  articleRoutes,
+}: {
+  locale: Locale;
+  label: string;
+  articleRoutes: ArticleRoute[];
+}) {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
 
@@ -19,6 +29,10 @@ export function LanguageSwitcher({ locale, label }: { locale: Locale; label: str
           nextSegments[0] = targetLocale;
         } else {
           nextSegments.unshift(targetLocale);
+        }
+        if (nextSegments[1] === "blog" && nextSegments[2]) {
+          const article = articleRoutes.find((route) => Object.values(route.slugs).includes(nextSegments[2]));
+          if (article) nextSegments[2] = article.slugs[targetLocale];
         }
         const href = `/${nextSegments.join("/")}`;
         return (

@@ -1,13 +1,17 @@
 import consultantData from "../../../data/consultants.json";
+import blogContentData from "../../../data/articles.json";
 import siteContentData from "../../../data/site-content.json";
 import {
+  blogContentSchema,
   consultantsSchema,
   siteContentSchema,
+  type Article,
   type Consultant,
   type Service,
 } from "@/lib/schemas/content";
 
 export const consultants = consultantsSchema.parse(consultantData);
+export const blogContent = blogContentSchema.parse(blogContentData);
 export const siteContent = siteContentSchema.parse(siteContentData);
 
 const serviceIdSet = new Set(siteContent.services.map((service) => service.id));
@@ -42,4 +46,20 @@ export function getServiceBySlug(slug: string): Service | undefined {
 
 export function getServiceById(id: string): Service | undefined {
   return getActiveServices().find((service) => service.id === id);
+}
+
+export function getArticles(): Article[] {
+  return blogContent.articles.toSorted((a, b) => a.order - b.order);
+}
+
+export function getArticleBySlug(slug: string, locale: "en" | "fr" | "pt"): Article | undefined {
+  return getArticles().find((article) => article.slugs[locale] === slug);
+}
+
+export function getArticlePath(article: Article, locale: "en" | "fr" | "pt"): string {
+  return `/${locale}/blog/${article.slugs[locale]}`;
+}
+
+export function getArticleRouteMap() {
+  return getArticles().map((article) => ({ id: article.id, slugs: article.slugs }));
 }

@@ -5,6 +5,12 @@ export type ConsultantLanguage = Locale | "es";
 
 export type LocalizedString = Record<Locale, string>;
 
+export const localeTags: Record<Locale, "en-CA" | "fr-CA" | "pt-BR"> = {
+  en: "en-CA",
+  fr: "fr-CA",
+  pt: "pt-BR",
+};
+
 export function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
 }

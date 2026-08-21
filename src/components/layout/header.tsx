@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Brand } from "@/components/ui/brand";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { localized, localePath, type Locale } from "@/lib/i18n/config";
-import { siteContent } from "@/lib/content/data";
+import { getArticleRouteMap, siteContent } from "@/lib/content/data";
 
 export function Header({ locale }: { locale: Locale }) {
   const nav = siteContent.navigation;
@@ -12,6 +12,7 @@ export function Header({ locale }: { locale: Locale }) {
     { href: localePath(locale, "/services"), label: localized(nav.services, locale) },
     { href: localePath(locale, "/about"), label: localized(nav.about, locale) },
     { href: localePath(locale, "/faq"), label: localized(nav.faq, locale) },
+    { href: localePath(locale, "/blog"), label: localized(nav.blog, locale) },
   ];
 
   return (
@@ -24,7 +25,7 @@ export function Header({ locale }: { locale: Locale }) {
           ))}
         </nav>
         <div className="header-actions">
-          <LanguageSwitcher locale={locale} label={localized(nav.language, locale)} />
+          <LanguageSwitcher locale={locale} label={localized(nav.language, locale)} articleRoutes={getArticleRouteMap()} />
           <Link className="button button-small" href={localePath(locale, "/find-a-consultant")}>
             {localized(nav.find, locale)}
           </Link>
