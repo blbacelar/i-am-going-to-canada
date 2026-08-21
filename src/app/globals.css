@@ -337,6 +337,12 @@ p {
   box-shadow: var(--action-shadow);
 }
 
+.button:active,
+.booking-link:active,
+.editorial-link:active {
+  transform: translateY(0);
+}
+
 .button-small {
   min-height: 42px;
   padding: 9px 16px;
@@ -401,9 +407,9 @@ p {
 
 .home-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(430px, 0.98fr);
+  grid-template-columns: minmax(0, 1.16fr) minmax(400px, 0.84fr);
   align-items: center;
-  gap: clamp(60px, 8vw, 130px);
+  gap: clamp(48px, 5vw, 80px);
 }
 
 .hero-copy {
@@ -412,7 +418,8 @@ p {
 
 .hero-copy h1 {
   margin-bottom: 32px;
-  font-size: var(--type-display);
+  max-width: 30ch;
+  font-size: var(--type-h1);
   line-height: 1.02;
 }
 
