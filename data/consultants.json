@@ -68,7 +68,7 @@
       "pt": "Aline Costa é consultora de imigração canadense regulamentada, formada em Immigration Consulting pelo Bow Valley College. Antes de imigrar, atuou como advogada no Brasil e possui MBA em Direito Securitário pela Universidade Candido Mendes, no Rio de Janeiro. Vive no Canadá há mais de 15 anos com sua família, unindo formação jurídica, experiência profissional e vivência como imigrante."
     },
     "languages": ["en", "fr", "es", "pt"],
-    "serviceIds": [],
+    "serviceIds": ["temporary-residence", "permanent-residence", "family-sponsorship", "citizenship", "employer-services"],
     "credentials": [
       {"label": "RCIC", "value": "R710053", "verificationUrl": null}
     ],
