@@ -48,7 +48,7 @@ Navigation is organized as separate language pages plus team/blog/booking rather
 | Eligibility and success-oriented phrases | Current localized copy | `do-not-migrate` | Replace with navigation-only language. |
 | Blog placeholder | Current `/blog` | `do-not-migrate` | Exclude until real, maintainable content exists. |
 | Testimonials | No approved package supplied | `needs-owner-confirmation` | Show a clearly labelled `TODO_CONTENT` trust placeholder, never invented quotes. |
-| Legal copy | No approved final wording supplied | `needs-owner-confirmation` | Keep `TODO_LEGAL_REVIEW`. |
+| Legal copy | Multilingual privacy and website-disclaimer drafts implemented from the site’s current data practices and official Canadian guidance | `needs-owner-confirmation` | Complete legal review before production publication. |
 
 ## Competitor and reference comparison
 
@@ -128,11 +128,11 @@ If the first viewport presents the company as a multilingual team and immediatel
 ## Open questions for Marina
 
 1. Confirm the legal business name, approved wordmark/logo and whether “I Am Going To Canada” is the public master brand.
-2. Supply Aline's full name, role, languages, services, biography, credentials, portrait and Calendly URL.
+2. Confirm Aline's service areas, portrait publication approval and Calendly URL; her full name, role, languages, biography and credentials have been supplied.
 3. Confirm which four consultants are in the initial public directory given the additional people currently listed on `/our-team`.
 4. Confirm regulated titles, licence numbers, jurisdictions and verification links for every consultant.
 5. Confirm each consultant's service-to-language mapping and the three current Calendly URLs.
 6. Confirm address, phone, email and social profiles for migration.
 7. Provide approved testimonials with consent, or confirm that v1 should launch without testimonials.
-8. Provide approved privacy, terms and immigration-information disclaimer copy.
+8. Review and approve the drafted privacy policy and website disclaimer before publication.
 9. Confirm whether any current pricing should be public; no price is included in the implementation until confirmed.

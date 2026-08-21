@@ -121,6 +121,6 @@ Consultant matching:
 ## Known delivery constraints
 
 - Official portraits and Aline's complete record are absent.
-- Final legal wording and testimonials are absent.
+- Multilingual privacy and website-disclaimer drafts are implemented but still require legal approval; approved testimonials remain absent.
 - The public logo/wordmark is not sufficiently established in the current rendered header.
 - A preview deployment will not be created on the production domain.

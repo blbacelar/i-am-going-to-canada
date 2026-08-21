@@ -58,14 +58,14 @@
       "pt": "Consultora de imigração canadense regulamentada (RCIC)"
     },
     "shortBio": {
-      "en": "Aline Costa is an RCIC (R710053) and a lawyer in Brazil. She serves clients in English, French, Spanish and Portuguese. Her full biography is pending.",
-      "fr": "Aline Costa est CRIC (R710053) et avocate au Brésil. Elle accompagne ses clients en anglais, français, espagnol et portugais. Sa biographie complète est à venir.",
-      "pt": "Aline Costa é RCIC (R710053) e advogada no Brasil. Atende em inglês, francês, espanhol e português. Sua biografia completa ainda será enviada."
+      "en": "Aline Costa is a regulated Canadian immigration consultant and graduate of Bow Valley College’s Immigration Consulting program. A former lawyer in Brazil with an MBA in Insurance Law, she has lived in Canada with her family for more than 15 years.",
+      "fr": "Aline Costa est consultante réglementée en immigration canadienne et diplômée du programme Immigration Consulting du Bow Valley College. Ancienne avocate au Brésil, titulaire d’un MBA en droit des assurances, elle vit au Canada avec sa famille depuis plus de 15 ans.",
+      "pt": "Aline Costa é consultora de imigração canadense regulamentada, formada em Immigration Consulting pelo Bow Valley College. Advogada no Brasil, possui MBA em Direito Securitário e vive no Canadá há mais de 15 anos com sua família."
     },
     "fullBio": {
-      "en": "Aline’s full biography will be added soon. Her service areas and booking link are also being finalized.",
-      "fr": "La biographie complète d’Aline sera ajoutée prochainement. Ses domaines de service et son lien de réservation sont également en cours de finalisation.",
-      "pt": "A biografia completa de Aline será adicionada em breve. Suas áreas de serviço e o link de agendamento também estão sendo finalizados."
+      "en": "Aline Costa is a regulated Canadian immigration consultant and a graduate of Bow Valley College’s Immigration Consulting program. Before immigrating, she practiced law in Brazil and earned an MBA in Insurance Law from Universidade Candido Mendes in Rio de Janeiro. She has lived in Canada with her family for more than 15 years, bringing together her legal education, professional experience and personal experience as an immigrant.",
+      "fr": "Aline Costa est consultante réglementée en immigration canadienne et diplômée du programme Immigration Consulting du Bow Valley College. Avant d’immigrer, elle a exercé comme avocate au Brésil et a obtenu un MBA en droit des assurances à l’Universidade Candido Mendes, à Rio de Janeiro. Elle vit au Canada avec sa famille depuis plus de 15 ans, alliant formation juridique, expérience professionnelle et vécu personnel de l’immigration.",
+      "pt": "Aline Costa é consultora de imigração canadense regulamentada, formada em Immigration Consulting pelo Bow Valley College. Antes de imigrar, atuou como advogada no Brasil e possui MBA em Direito Securitário pela Universidade Candido Mendes, no Rio de Janeiro. Vive no Canadá há mais de 15 anos com sua família, unindo formação jurídica, experiência profissional e vivência como imigrante."
     },
     "languages": ["en", "fr", "es", "pt"],
     "serviceIds": [],
@@ -78,11 +78,11 @@
     },
     "calendlyUrl": "TODO_CONTENT",
     "seo": {
-      "title": {"en": "Aline Costa | I Am Going To Canada", "fr": "Aline Costa | I Am Going To Canada", "pt": "Aline Costa | I Am Going To Canada"},
+      "title": {"en": "Aline Costa | Canadian Immigration Consultant", "fr": "Aline Costa | Consultante en immigration canadienne", "pt": "Aline Costa | Consultora de Imigração Canadense"},
       "description": {
-        "en": "Meet Aline Costa, RCIC R710053 and a lawyer in Brazil, serving clients in four languages.",
-        "fr": "Découvrez Aline Costa, CRIC R710053 et avocate au Brésil, au service de clients en quatre langues.",
-        "pt": "Conheça Aline Costa, RCIC R710053 e advogada no Brasil, com atendimento em quatro idiomas."
+        "en": "Meet Aline Costa, a regulated Canadian immigration consultant, former lawyer in Brazil and Canadian resident for more than 15 years.",
+        "fr": "Découvrez Aline Costa, consultante réglementée en immigration canadienne, ancienne avocate au Brésil et résidente du Canada depuis plus de 15 ans.",
+        "pt": "Conheça Aline Costa, consultora de imigração canadense regulamentada, advogada no Brasil e residente no Canadá há mais de 15 anos."
       }
     }
   },

@@ -202,12 +202,242 @@
       "body": {"en": "We are a multilingual team of immigration consultants led by Marina Snyder. Each consultant brings her own experience, languages and areas of work. Get to know our profiles and choose who you would like by your side.", "fr": "Nous sommes une équipe multilingue de consultantes en immigration dirigée par Marina Snyder. Chacune apporte son expérience, ses langues et ses domaines de pratique. Découvrez nos profils et choisissez qui vous souhaitez avoir à vos côtés.", "pt": "Somos uma equipe multilíngue de consultoras de imigração liderada por Marina Snyder. Cada profissional traz sua experiência, seus idiomas e suas áreas de atuação. Conheça nossos perfis e escolha quem você quer ter ao seu lado."}
     },
     "privacy": {
-      "title": {"en": "Privacy", "fr": "Confidentialité", "pt": "Privacidade"},
-      "body": {"en": "Our privacy policy is being reviewed. The consultant finder does not collect case details or store your answers. We will publish the complete policy before the site goes live.", "fr": "Notre politique de confidentialité est en cours de révision. L’outil de recherche ne recueille aucun détail de dossier et ne conserve pas vos réponses. Nous publierons la politique complète avant la mise en ligne du site.", "pt": "Nossa política de privacidade está em revisão. O localizador de consultoras não coleta detalhes do seu caso nem armazena suas respostas. A política completa será publicada antes do lançamento do site."}
+      "title": {"en": "Privacy policy", "fr": "Politique de confidentialité", "pt": "Política de privacidade"},
+      "intro": {
+        "en": "We keep this website simple and limit the information it collects. This policy explains what happens when you browse the site, use the consultant finder or continue to an external booking page.",
+        "fr": "Nous gardons ce site simple et limitons les renseignements qu’il recueille. Cette politique explique ce qui se passe lorsque vous consultez le site, utilisez l’outil de recherche ou accédez à une page de réservation externe.",
+        "pt": "Mantemos este site simples e limitamos as informações coletadas. Esta política explica o que acontece quando você navega pelo site, usa o localizador de consultoras ou segue para uma página externa de agendamento."
+      },
+      "updatedAt": {"en": "Last updated August 20, 2026", "fr": "Dernière mise à jour : 20 août 2026", "pt": "Última atualização: 20 de agosto de 2026"},
+      "reviewNotice": {
+        "en": "This version describes how the website currently works and requires legal review before publication.",
+        "fr": "Cette version décrit le fonctionnement actuel du site et doit faire l’objet d’une révision juridique avant sa publication.",
+        "pt": "Esta versão descreve o funcionamento atual do site e deve passar por revisão jurídica antes da publicação."
+      },
+      "sections": [
+        {
+          "title": {"en": "Information used on this website", "fr": "Renseignements utilisés sur ce site", "pt": "Informações usadas neste site"},
+          "paragraphs": [
+            {
+              "en": "You can browse this website without creating an account or completing a contact form. The consultant finder asks only for your preferred language and a broad service category. It does not ask for your name, contact details or information about your immigration history.",
+              "fr": "Vous pouvez consulter ce site sans créer de compte ni remplir de formulaire de contact. L’outil de recherche demande seulement votre langue préférée et une catégorie générale de service. Il ne demande ni votre nom, ni vos coordonnées, ni des renseignements sur votre parcours migratoire.",
+              "pt": "Você pode navegar pelo site sem criar uma conta ou preencher um formulário de contato. O localizador pergunta apenas o idioma de sua preferência e uma categoria geral de serviço. Ele não solicita seu nome, seus dados de contato nem informações sobre seu histórico migratório."
+            },
+            {
+              "en": "Your finder choices remain in your browser while you use the tool. We do not save them in a database, and they disappear when you reload or leave the page.",
+              "fr": "Vos choix restent dans votre navigateur pendant l’utilisation de l’outil. Nous ne les enregistrons pas dans une base de données, et ils disparaissent lorsque vous rechargez ou quittez la page.",
+              "pt": "Suas escolhas ficam no navegador enquanto você usa o localizador. Não salvamos essas respostas em banco de dados, e elas desaparecem quando você recarrega ou sai da página."
+            },
+            {
+              "en": "Our hosting infrastructure may process technical information, such as an IP address, browser or device type, requested page, and date and time, in logs needed to deliver and protect the website.",
+              "fr": "Notre infrastructure d’hébergement peut traiter des renseignements techniques, comme l’adresse IP, le type de navigateur ou d’appareil, la page demandée ainsi que la date et l’heure, dans les journaux nécessaires au fonctionnement et à la protection du site.",
+              "pt": "A infraestrutura de hospedagem pode processar informações técnicas, como endereço IP, tipo de navegador ou dispositivo, página acessada, data e horário, em registros necessários para entregar e proteger o site."
+            }
+          ]
+        },
+        {
+          "title": {"en": "Analytics and cookies", "fr": "Mesure d’audience et témoins", "pt": "Analytics e cookies"},
+          "paragraphs": [
+            {
+              "en": "We do not currently send your browsing activity or finder choices to an analytics or advertising provider. This website does not set analytics or advertising cookies.",
+              "fr": "Nous ne transmettons actuellement ni votre navigation ni vos choix dans l’outil à un fournisseur de mesure d’audience ou de publicité. Ce site ne dépose aucun témoin de mesure d’audience ou de publicité.",
+              "pt": "Atualmente, não enviamos sua navegação nem as escolhas feitas no localizador para ferramentas de analytics ou publicidade. O site não instala cookies de analytics ou publicidade."
+            },
+            {
+              "en": "If we add a service that changes this practice, we will update this policy and add any consent controls required before the service is activated.",
+              "fr": "Si nous ajoutons un service qui modifie cette pratique, nous mettrons cette politique à jour et ajouterons les mécanismes de consentement requis avant de l’activer.",
+              "pt": "Se adicionarmos um serviço que mude essa prática, atualizaremos esta política e incluiremos os controles de consentimento necessários antes da ativação."
+            }
+          ]
+        },
+        {
+          "title": {"en": "Booking through Calendly", "fr": "Réservation avec Calendly", "pt": "Agendamento pelo Calendly"},
+          "paragraphs": [
+            {
+              "en": "When you choose to book a consultation, we take you to the selected consultant’s Calendly page. Calendly and the consultant’s account may receive the information you provide there, such as your name, email address, time zone, appointment details and any message you enter.",
+              "fr": "Lorsque vous choisissez de réserver une consultation, vous accédez à la page Calendly de la consultante sélectionnée. Calendly et le compte de cette consultante peuvent recevoir les renseignements que vous y fournissez, comme votre nom, votre adresse courriel, votre fuseau horaire, les détails du rendez-vous et tout message saisi.",
+              "pt": "Quando você escolhe agendar uma consulta, direcionamos você para a página da consultora no Calendly. O Calendly e a conta dessa consultora podem receber as informações fornecidas ali, como nome, e-mail, fuso horário, detalhes do horário e qualquer mensagem que você escrever."
+            },
+            {
+              "en": "Calendly processes that information under its own privacy notice. Avoid adding sensitive case details to a booking field unless the consultant has asked you to use that channel for this purpose.",
+              "fr": "Calendly traite ces renseignements selon son propre avis de confidentialité. Évitez d’ajouter des renseignements sensibles sur votre dossier dans un champ de réservation, sauf si la consultante vous a demandé d’utiliser ce canal à cette fin.",
+              "pt": "O Calendly trata essas informações de acordo com a própria política de privacidade. Evite incluir detalhes sensíveis do seu caso no campo de agendamento, a menos que a consultora tenha orientado você a usar esse canal para essa finalidade."
+            }
+          ]
+        },
+        {
+          "title": {"en": "How information is used and shared", "fr": "Utilisation et communication des renseignements", "pt": "Como as informações são usadas e compartilhadas"},
+          "paragraphs": [
+            {
+              "en": "Technical information connected with the website is used to operate, secure and troubleshoot it. We do not sell personal information collected through this website.",
+              "fr": "Les renseignements techniques liés au site servent à le faire fonctionner, à le protéger et à résoudre les problèmes. Nous ne vendons pas les renseignements personnels recueillis au moyen de ce site.",
+              "pt": "As informações técnicas relacionadas ao site são usadas para seu funcionamento, segurança e correção de problemas. Não vendemos informações pessoais coletadas por meio deste site."
+            },
+            {
+              "en": "Service providers may process limited information on our behalf when needed to host the website or provide booking services. Information may also be disclosed when required by law or reasonably necessary to protect the website, our rights or another person’s safety.",
+              "fr": "Des fournisseurs peuvent traiter des renseignements limités pour notre compte lorsque cela est nécessaire à l’hébergement du site ou au service de réservation. Des renseignements peuvent aussi être communiqués lorsque la loi l’exige ou lorsque cela est raisonnablement nécessaire pour protéger le site, nos droits ou la sécurité d’une personne.",
+              "pt": "Prestadores de serviço podem processar informações limitadas em nosso nome quando isso for necessário para hospedar o site ou oferecer o agendamento. Também podemos divulgar informações quando a lei exigir ou quando isso for razoavelmente necessário para proteger o site, nossos direitos ou a segurança de alguém."
+            }
+          ]
+        },
+        {
+          "title": {"en": "Retention and security", "fr": "Conservation et sécurité", "pt": "Retenção e segurança"},
+          "paragraphs": [
+            {
+              "en": "We do not retain the choices made in the consultant finder. Technical logs are kept according to our hosting and security settings and only for as long as they are needed for those purposes.",
+              "fr": "Nous ne conservons pas les choix effectués dans l’outil de recherche. Les journaux techniques sont conservés selon nos paramètres d’hébergement et de sécurité, seulement pendant la période nécessaire à ces fins.",
+              "pt": "Não guardamos as escolhas feitas no localizador de consultoras. Os registros técnicos são mantidos conforme as configurações de hospedagem e segurança, somente pelo tempo necessário para essas finalidades."
+            },
+            {
+              "en": "We use reasonable administrative and technical measures to protect information under our control. No method of internet transmission or electronic storage is completely secure.",
+              "fr": "Nous utilisons des mesures administratives et techniques raisonnables pour protéger les renseignements sous notre contrôle. Aucune transmission par Internet ni aucun stockage électronique n’est entièrement sécurisé.",
+              "pt": "Adotamos medidas administrativas e técnicas razoáveis para proteger as informações sob nosso controle. Nenhuma transmissão pela internet ou forma de armazenamento eletrônico é totalmente segura."
+            }
+          ]
+        },
+        {
+          "title": {"en": "Your privacy choices", "fr": "Vos choix en matière de confidentialité", "pt": "Suas escolhas de privacidade"},
+          "paragraphs": [
+            {
+              "en": "Depending on the law that applies, you may ask about personal information under our control and request access, correction or deletion. Some information may need to be retained when the law permits or requires it.",
+              "fr": "Selon la loi applicable, vous pouvez vous renseigner sur les renseignements personnels sous notre contrôle et demander l’accès, la correction ou la suppression. Certains renseignements peuvent devoir être conservés lorsque la loi le permet ou l’exige.",
+              "pt": "Dependendo da lei aplicável, você pode perguntar sobre as informações pessoais sob nosso controle e solicitar acesso, correção ou exclusão. Algumas informações podem precisar ser mantidas quando a lei permitir ou exigir."
+            },
+            {
+              "en": "For a privacy question or request, email info@iamgoingtocanada.ca. If your question concerns information entered in Calendly, identify the consultant whose booking page you used so we can direct the request correctly.",
+              "fr": "Pour toute question ou demande concernant la confidentialité, écrivez à info@iamgoingtocanada.ca. Si votre demande concerne des renseignements saisis dans Calendly, indiquez la consultante dont vous avez utilisé la page afin que nous puissions l’acheminer correctement.",
+              "pt": "Para dúvidas ou solicitações sobre privacidade, escreva para info@iamgoingtocanada.ca. Se a questão envolver informações inseridas no Calendly, informe qual página de consultora você usou para que possamos direcionar o pedido corretamente."
+            }
+          ]
+        }
+      ],
+      "resourcesTitle": {"en": "Privacy resources", "fr": "Ressources sur la confidentialité", "pt": "Recursos sobre privacidade"},
+      "resources": [
+        {
+          "label": {"en": "Contact us about privacy", "fr": "Nous écrire au sujet de la confidentialité", "pt": "Falar conosco sobre privacidade"},
+          "url": "mailto:info@iamgoingtocanada.ca"
+        },
+        {
+          "label": {"en": "Read Calendly’s privacy notice", "fr": "Consulter l’avis de confidentialité de Calendly", "pt": "Ler a política de privacidade do Calendly"},
+          "url": "https://calendly.com/legal/privacy-notice"
+        },
+        {
+          "label": {"en": "Office of the Privacy Commissioner of Canada", "fr": "Commissariat à la protection de la vie privée du Canada", "pt": "Comissariado de Proteção da Privacidade do Canadá"},
+          "url": "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/"
+        }
+      ]
     },
     "disclaimer": {
-      "title": {"en": "Website information disclaimer", "fr": "Avis sur l’information du site", "pt": "Aviso sobre as informações do site"},
-      "body": {"en": "The information on this website is general and does not replace legal or immigration advice for your situation. Using the site does not create a professional-client relationship. The final wording of this notice is still under legal review.", "fr": "Les renseignements de ce site sont généraux et ne remplacent pas des conseils juridiques ou migratoires adaptés à votre situation. L’utilisation du site ne crée aucune relation professionnelle avec un client. Le texte final de cet avis est encore en révision juridique.", "pt": "As informações deste site são gerais e não substituem orientação jurídica ou migratória para a sua situação. O uso do site não cria uma relação profissional com a equipe. O texto final deste aviso ainda está em revisão jurídica."}
+      "title": {"en": "Website disclaimer", "fr": "Avis concernant le site", "pt": "Aviso legal"},
+      "intro": {
+        "en": "This website helps you learn about our team and services before a professional conversation. It does not assess your case or replace advice based on your circumstances.",
+        "fr": "Ce site vous aide à découvrir notre équipe et nos services avant une conversation professionnelle. Il n’évalue pas votre dossier et ne remplace pas des conseils adaptés à votre situation.",
+        "pt": "Este site ajuda você a conhecer nossa equipe e nossos serviços antes de uma conversa profissional. Ele não avalia seu caso nem substitui uma orientação baseada na sua situação."
+      },
+      "updatedAt": {"en": "Last updated August 20, 2026", "fr": "Dernière mise à jour : 20 août 2026", "pt": "Última atualização: 20 de agosto de 2026"},
+      "reviewNotice": {
+        "en": "This version describes the website’s current boundaries and requires legal review before publication.",
+        "fr": "Cette version décrit les limites actuelles du site et doit faire l’objet d’une révision juridique avant sa publication.",
+        "pt": "Esta versão descreve os limites atuais do site e deve passar por revisão jurídica antes da publicação."
+      },
+      "sections": [
+        {
+          "title": {"en": "General information", "fr": "Renseignements généraux", "pt": "Informações gerais"},
+          "paragraphs": [
+            {
+              "en": "The content on this website is provided for general information about Canadian immigration consulting services. Immigration rules, forms, fees, programs and processing practices can change. Always check the current instructions published by the responsible government authority.",
+              "fr": "Le contenu de ce site fournit des renseignements généraux sur les services de consultation en immigration canadienne. Les règles, formulaires, frais, programmes et pratiques de traitement peuvent changer. Consultez toujours les instructions à jour publiées par l’autorité gouvernementale responsable.",
+              "pt": "O conteúdo deste site apresenta informações gerais sobre serviços de consultoria em imigração canadense. Regras, formulários, taxas, programas e práticas de processamento podem mudar. Consulte sempre as instruções atuais publicadas pelo órgão governamental responsável."
+            },
+            {
+              "en": "We work to keep the website clear and accurate, but we cannot promise that every page is complete, current or suitable for a particular situation.",
+              "fr": "Nous veillons à ce que le site soit clair et exact, mais nous ne pouvons pas garantir que chaque page est complète, à jour ou adaptée à une situation particulière.",
+              "pt": "Trabalhamos para manter o site claro e correto, mas não podemos garantir que todas as páginas estejam completas, atualizadas ou adequadas a uma situação específica."
+            }
+          ]
+        },
+        {
+          "title": {"en": "No individual advice or eligibility assessment", "fr": "Aucun conseil individuel ni évaluation de l’admissibilité", "pt": "Sem orientação individual ou avaliação de elegibilidade"},
+          "paragraphs": [
+            {
+              "en": "Reading this website or using the consultant finder is not legal or immigration advice. The finder uses only the language and service category you select. It does not review documents, calculate points, assess eligibility, recommend a program or predict an outcome.",
+              "fr": "La consultation de ce site ou l’utilisation de l’outil de recherche ne constitue pas un conseil juridique ou en immigration. L’outil utilise seulement la langue et la catégorie de service choisies. Il n’examine aucun document, ne calcule aucun point, n’évalue pas l’admissibilité, ne recommande aucun programme et ne prédit aucun résultat.",
+              "pt": "Ler este site ou usar o localizador de consultoras não constitui orientação jurídica ou migratória. O localizador usa apenas o idioma e a categoria de serviço escolhidos. Ele não analisa documentos, calcula pontos, avalia elegibilidade, recomenda um programa ou prevê resultados."
+            },
+            {
+              "en": "Advice requires a professional review of the relevant facts and documents. Book a consultation if you want to discuss your circumstances with a consultant.",
+              "fr": "Un conseil exige l’examen professionnel des faits et des documents pertinents. Réservez une consultation si vous souhaitez discuter de votre situation avec une consultante.",
+              "pt": "Uma orientação exige análise profissional dos fatos e documentos relevantes. Agende uma consulta se quiser conversar sobre sua situação com uma consultora."
+            }
+          ]
+        },
+        {
+          "title": {"en": "Professional relationship", "fr": "Relation professionnelle", "pt": "Relação profissional"},
+          "paragraphs": [
+            {
+              "en": "Browsing the website, using the finder, sending an email or opening a booking page does not by itself create a consultant-client, lawyer-client or other professional relationship.",
+              "fr": "La consultation du site, l’utilisation de l’outil, l’envoi d’un courriel ou l’ouverture d’une page de réservation ne crée pas, à lui seul, une relation entre une consultante et un client, entre une avocate et un client, ni aucune autre relation professionnelle.",
+              "pt": "Navegar pelo site, usar o localizador, enviar um e-mail ou abrir uma página de agendamento não cria, por si só, uma relação entre consultora e cliente, advogada e cliente ou qualquer outra relação profissional."
+            },
+            {
+              "en": "The scope of a consultation or professional service is established through the written agreement required for that service and accepted by the consultant and client.",
+              "fr": "La portée d’une consultation ou d’un service professionnel est établie dans l’entente écrite requise pour ce service et acceptée par la consultante et le client.",
+              "pt": "O escopo de uma consulta ou serviço profissional é definido pelo acordo escrito exigido para aquele serviço e aceito pela consultora e pelo cliente."
+            }
+          ]
+        },
+        {
+          "title": {"en": "Decisions, timelines and outcomes", "fr": "Décisions, délais et résultats", "pt": "Decisões, prazos e resultados"},
+          "paragraphs": [
+            {
+              "en": "No consultant can guarantee approval, a processing time or any other result. Immigration, refugee and citizenship decisions are made by the responsible Canadian authorities under the rules and evidence that apply to each case.",
+              "fr": "Aucune consultante ne peut garantir une approbation, un délai de traitement ou un autre résultat. Les décisions en matière d’immigration, de réfugiés et de citoyenneté sont prises par les autorités canadiennes responsables selon les règles et les preuves propres à chaque dossier.",
+              "pt": "Nenhuma consultora pode garantir aprovação, prazo de processamento ou qualquer outro resultado. Decisões de imigração, refúgio e cidadania são tomadas pelas autoridades canadenses responsáveis, de acordo com as regras e provas aplicáveis a cada caso."
+            },
+            {
+              "en": "Hiring a representative does not give an application special treatment and does not remove the applicant’s responsibility to provide complete and truthful information.",
+              "fr": "Le recours à une représentante ne donne aucun traitement préférentiel à une demande et ne retire pas à la personne qui présente la demande la responsabilité de fournir des renseignements complets et véridiques.",
+              "pt": "Contratar uma representante não dá tratamento especial a uma solicitação nem retira da pessoa requerente a responsabilidade de fornecer informações completas e verdadeiras."
+            }
+          ]
+        },
+        {
+          "title": {"en": "Private website and official sources", "fr": "Site privé et sources officielles", "pt": "Site privado e fontes oficiais"},
+          "paragraphs": [
+            {
+              "en": "I Am Going To Canada is a private immigration consulting website. It is not a Government of Canada website and is not affiliated with Immigration, Refugees and Citizenship Canada.",
+              "fr": "I Am Going To Canada est un site privé de consultation en immigration. Il ne s’agit pas d’un site du gouvernement du Canada et il n’est pas affilié à Immigration, Réfugiés et Citoyenneté Canada.",
+              "pt": "I Am Going To Canada é um site privado de consultoria em imigração. Não é um site do Governo do Canadá e não possui vínculo com a Immigration, Refugees and Citizenship Canada."
+            },
+            {
+              "en": "Government forms and guides are available from official Canada.ca sources. Professional titles and licence numbers are shown where they have been supplied, and current licence status can be checked with the relevant regulator.",
+              "fr": "Les formulaires et guides gouvernementaux sont accessibles dans les sources officielles de Canada.ca. Les titres professionnels et numéros de permis sont affichés lorsqu’ils ont été fournis, et le statut actuel d’un permis peut être vérifié auprès de l’organisme de réglementation concerné.",
+              "pt": "Formulários e guias governamentais estão disponíveis nas fontes oficiais do Canada.ca. Títulos profissionais e números de licença são exibidos quando fornecidos, e a situação atual de cada licença pode ser consultada junto ao órgão regulador responsável."
+            }
+          ]
+        },
+        {
+          "title": {"en": "External websites", "fr": "Sites externes", "pt": "Sites externos"},
+          "paragraphs": [
+            {
+              "en": "Links to Calendly, government pages, regulators and other websites are provided for convenience. We do not control their content, availability, privacy practices or terms. Review the policies of the website you visit before providing personal information.",
+              "fr": "Les liens vers Calendly, les pages gouvernementales, les organismes de réglementation et d’autres sites sont fournis pour faciliter vos démarches. Nous ne contrôlons ni leur contenu, ni leur disponibilité, ni leurs pratiques de confidentialité, ni leurs conditions. Consultez les politiques du site visité avant de fournir des renseignements personnels.",
+              "pt": "Links para o Calendly, páginas governamentais, órgãos reguladores e outros sites são oferecidos para facilitar o acesso. Não controlamos o conteúdo, a disponibilidade, as práticas de privacidade ou os termos desses sites. Leia as políticas do site acessado antes de fornecer informações pessoais."
+            }
+          ]
+        }
+      ],
+      "resourcesTitle": {"en": "Official resources", "fr": "Ressources officielles", "pt": "Recursos oficiais"},
+      "resources": [
+        {
+          "label": {"en": "IRCC application forms and guides", "fr": "Formulaires et guides de demande d’IRCC", "pt": "Formulários e guias de solicitação do IRCC"},
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides.html"
+        },
+        {
+          "label": {"en": "College of Immigration and Citizenship Consultants public register", "fr": "Registre public du Collège des consultants en immigration et en citoyenneté", "pt": "Registro público do College of Immigration and Citizenship Consultants"},
+          "url": "https://college-ic.ca/protecting-the-public/find-an-immigration-consultant"
+        }
+      ]
     }
   },
   "common": {

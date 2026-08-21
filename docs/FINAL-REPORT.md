@@ -33,10 +33,10 @@ The critical browser journey verifies French locale rendering, consultant-finder
 
 ## Required owner approvals before production
 
-1. Supply Aline Costa's full biography, service areas and booking URL; her name, RCIC R710053, lawyer status in Brazil and four languages are confirmed.
+1. Supply Aline Costa's service areas and booking URL; her biography, name, RCIC R710053, lawyer status in Brazil, education, more than 15 years living in Canada and four languages are confirmed.
 2. Confirm Marina, Virginia and Beatriz's titles, licence details, biographies, languages, service mappings and booking URLs.
 3. Replace all four abstract portrait placeholders with approved photographs.
-4. Supply the official legal/business name and approved privacy/disclaimer wording.
+4. Supply the official legal/business name and approve the drafted privacy policy and website disclaimer.
 5. Approve Canadian English, Canadian French and Brazilian Portuguese copy.
 6. Provide consented testimonials if the trust-story placeholder is to be published.
 7. Decide on analytics and cookie-consent policy before connecting any vendor.

@@ -1469,8 +1469,7 @@ p {
   font-size: var(--type-h3);
 }
 
-.about-grid p,
-.legal-page p {
+.about-grid p {
   color: var(--muted-ink);
 }
 
@@ -1478,12 +1477,79 @@ p {
   margin-top: 70px;
 }
 
-.legal-page p {
-  padding: 32px;
-  border: 1px dashed var(--maple);
-  border-radius: var(--radius);
-  background: var(--surface);
+.legal-layout {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1.58fr);
+  align-items: start;
+  gap: clamp(48px, 8vw, 104px);
+}
+
+.legal-meta {
+  position: sticky;
+  top: 120px;
+}
+
+.legal-updated {
+  margin-bottom: 20px;
+  color: var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--type-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.legal-review-note {
+  max-width: 30ch;
+  padding-top: 20px;
+  border-top: 1px solid var(--forest);
+  color: var(--muted-ink);
+  font-size: var(--type-body);
+}
+
+.legal-sections {
+  border-top: 1px solid var(--forest);
+}
+
+.legal-section {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-section h2,
+.legal-resources h2 {
+  margin-bottom: 16px;
+  font-size: var(--type-h3);
+}
+
+.legal-section p {
+  max-width: 72ch;
+  color: var(--muted-ink);
   font-size: var(--type-body-large);
+}
+
+.legal-section p + p {
+  margin-top: 16px;
+}
+
+.legal-resources {
+  padding-top: 44px;
+}
+
+.legal-resources ul {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+}
+
+.legal-resources a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
 }
 
 @media (max-width: 1180px) {
@@ -1531,6 +1597,9 @@ p {
   .profile-grid { gap: 50px; }
   .profile-image { max-width: 620px; }
   .service-hero-grid { gap: 44px; align-items: start; }
+  .legal-layout { grid-template-columns: 1fr; gap: 42px; }
+  .legal-meta { position: static; }
+  .legal-review-note { max-width: 62ch; }
   .consultant-grid-related { grid-template-columns: 1fr 1fr; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
 }

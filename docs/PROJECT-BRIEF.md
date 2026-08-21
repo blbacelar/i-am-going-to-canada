@@ -15,7 +15,7 @@ Help a visitor understand the company, find the most relevant professional and b
 ## Initial consultant team
 
 - Marina Snyder
-- Aline Costa — RCIC R710053, lawyer in Brazil; English, French, Spanish and Portuguese confirmed. Full biography, service areas and booking link pending.
+- Aline Costa — RCIC R710053, lawyer in Brazil, graduate of Bow Valley College’s Immigration Consulting program, MBA in Insurance Law from Universidade Candido Mendes in Rio de Janeiro, and resident in Canada with her family for more than 15 years; English, French, Spanish and Portuguese confirmed. Service areas and booking link pending.
 - Virginia Melo
 - Beatriz Dias
 
