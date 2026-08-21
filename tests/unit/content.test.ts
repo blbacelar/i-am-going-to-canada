@@ -12,6 +12,7 @@ describe("content schemas", () => {
       name: "Aline Costa",
       languages: ["en", "fr", "es", "pt"],
       credentials: [{ label: "RCIC", value: "R710053" }],
+      calendlyUrl: "https://calendly.com/costalineimmigration",
     });
     expect(siteContentSchema.parse(rawContent).services).toHaveLength(6);
     const blog = blogContentSchema.parse(rawArticles);
