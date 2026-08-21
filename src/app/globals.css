@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #164b7a;
-  --accent-hover: #0f3558;
-  --accent-tint: #e8f0f8;
-  --accent-border: #c5d6e6;
+  --accent: #c6283d;
+  --accent-hover: #9f1e31;
+  --accent-tint: #f9e7ea;
+  --accent-border: #e8b8c0;
   --ink: #122033;
   --ink-2: #24364a;
   --muted: #536476;
@@ -20,8 +20,8 @@
   --placeholder: #e7eef4;
   --canvas: var(--background);
   --muted-ink: var(--muted);
-  --forest: var(--accent);
-  --forest-deep: var(--accent-hover);
+  --forest: #164b7a;
+  --forest-deep: #0f3558;
   --maple: #c6283d;
   --maple-dark: #9f1e31;
   --mist: var(--accent-tint);
@@ -259,7 +259,7 @@ p {
 }
 
 .language-switcher a[aria-current="page"] {
-  background: var(--forest);
+  background: var(--accent);
   color: var(--surface);
 }
 
@@ -314,7 +314,7 @@ p {
   padding: 13px 22px;
   border: 0;
   border-radius: 12px;
-  background: var(--forest);
+  background: var(--accent);
   color: var(--surface);
   text-decoration: none;
   font-size: var(--type-body);
@@ -333,7 +333,7 @@ p {
 .button:hover,
 .booking-link:hover {
   transform: translateY(-2px);
-  background: var(--forest-deep);
+  background: var(--accent-hover);
   box-shadow: var(--action-shadow);
 }
 
