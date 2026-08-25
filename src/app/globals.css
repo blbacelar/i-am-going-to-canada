@@ -9,7 +9,7 @@
   --ink-2: #303030;
   --muted: #5b5b5b;
   --muted-2: #777777;
-  --background: #f8f8f6;
+  --background: #ffffff;
   --surface: #ffffff;
   --surface-alt: #f1f1ef;
   --fill: #e6e6e3;
@@ -225,9 +225,10 @@ p {
 
 .brand-name {
   color: currentColor;
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.045em;
   white-space: nowrap;
 }
 
