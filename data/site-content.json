@@ -178,7 +178,7 @@
     },
     {
       "question": {"en": "What information does the finder store?", "fr": "Quels renseignements l’outil conserve-t-il?", "pt": "Quais informações o localizador armazena?"},
-      "answer": {"en": "We do not store your answers. The finder only asks for a language and a service. It does not request details about your case, age, citizenship, education, work or family.", "fr": "Nous ne conservons pas vos réponses. L’outil demande seulement une langue et un service. Il ne demande aucun détail sur votre dossier, votre âge, votre citoyenneté, vos études, votre travail ou votre famille.", "pt": "Não armazenamos suas respostas. O localizador pergunta apenas o idioma e o serviço. Ele não solicita detalhes do seu caso, idade, cidadania, escolaridade, trabalho ou família."}
+      "answer": {"en": "The finder does not save its answers. If you book through Calendly, the name, email, booking details and answers to Calendly’s required questions are copied to a restricted CRM database after confirmation so the team can coordinate the consultation.", "fr": "L’outil ne sauvegarde pas ses réponses. Si vous réservez par Calendly, le nom, le courriel, les détails de la réservation et les réponses aux questions obligatoires de Calendly sont copiés dans une base CRM à accès restreint après confirmation afin que l’équipe puisse coordonner la consultation.", "pt": "O localizador não salva suas respostas. Se você agendar pelo Calendly, o nome, o e-mail, os detalhes da reserva e as respostas às perguntas obrigatórias do Calendly serão copiados para um banco de dados CRM com acesso restrito após a confirmação, para que a equipe possa coordenar a consulta."}
     },
     {
       "question": {"en": "Can I review every consultant?", "fr": "Puis-je consulter toutes les consultantes?", "pt": "Posso conhecer todas as consultoras?"},
@@ -228,14 +228,14 @@
           "title": {"en": "Information used on this website", "fr": "Renseignements utilisés sur ce site", "pt": "Informações usadas neste site"},
           "paragraphs": [
             {
-              "en": "You can browse this website without creating an account or completing a contact form. The consultant finder asks only for your preferred language and a broad service category. It does not ask for your name, contact details or information about your immigration history.",
-              "fr": "Vous pouvez consulter ce site sans créer de compte ni remplir de formulaire de contact. L’outil de recherche demande seulement votre langue préférée et une catégorie générale de service. Il ne demande ni votre nom, ni vos coordonnées, ni des renseignements sur votre parcours migratoire.",
-              "pt": "Você pode navegar pelo site sem criar uma conta ou preencher um formulário de contato. O localizador pergunta apenas o idioma de sua preferência e uma categoria geral de serviço. Ele não solicita seu nome, seus dados de contato nem informações sobre seu histórico migratório."
+              "en": "You can browse this website without creating an account or completing a contact form. The consultant finder asks only for your preferred language and broad process categories. If you book through Calendly, the booking form separately asks for your name, email, full address and phone number, and information that may help prepare for the meeting.",
+              "fr": "Vous pouvez consulter ce site sans créer de compte ni remplir un formulaire de contact. L’outil de recherche demande seulement votre langue préférée et de grandes catégories de processus. Si vous réservez par Calendly, le formulaire de réservation demande séparément votre nom, votre courriel, votre adresse complète et votre numéro de téléphone, ainsi que des renseignements pouvant aider à préparer la rencontre.",
+              "pt": "Você pode navegar por este site sem criar uma conta ou preencher um formulário de contato. O localizador pergunta apenas o idioma de sua preferência e categorias amplas de processo. Se você agendar pelo Calendly, o formulário de agendamento solicitará separadamente seu nome, e-mail, endereço completo e telefone, além de informações que possam ajudar na preparação da reunião."
             },
             {
-              "en": "Your finder choices remain in your browser while you use the tool. We do not save them in a database, and they disappear when you reload or leave the page.",
-              "fr": "Vos choix restent dans votre navigateur pendant l’utilisation de l’outil. Nous ne les enregistrons pas dans une base de données, et ils disparaissent lorsque vous rechargez ou quittez la page.",
-              "pt": "Suas escolhas ficam no navegador enquanto você usa o localizador. Não salvamos essas respostas em banco de dados, e elas desaparecem quando você recarrega ou sai da página."
+              "en": "The finder choices remain in your browser while you use the tool and are not saved by this website. Calendly booking details are sent to Calendly and, after a confirmed booking, copied to our restricted CRM database so the team can coordinate the consultation.",
+              "fr": "Les choix effectués dans l’outil restent dans votre navigateur pendant son utilisation et ne sont pas enregistrés par ce site. Les renseignements de réservation sont transmis à Calendly et, après une réservation confirmée, copiés dans notre base CRM à accès restreint afin que l’équipe puisse coordonner la consultation.",
+              "pt": "As escolhas feitas no localizador ficam no navegador durante o uso e não são salvas por este site. Os dados do agendamento são enviados ao Calendly e, após uma reserva confirmada, copiados para nosso banco de dados CRM com acesso restrito para que a equipe possa coordenar a consulta."
             },
             {
               "en": "Our hosting infrastructure may process technical information, such as an IP address, browser or device type, requested page, and date and time, in logs needed to deliver and protect the website.",
@@ -263,9 +263,9 @@
           "title": {"en": "Booking through Calendly", "fr": "Réservation avec Calendly", "pt": "Agendamento pelo Calendly"},
           "paragraphs": [
             {
-              "en": "When you choose to book a consultation, we take you to the selected consultant’s Calendly page. Calendly and the consultant’s account may receive the information you provide there, such as your name, email address, time zone, appointment details and any message you enter.",
-              "fr": "Lorsque vous choisissez de réserver une consultation, vous accédez à la page Calendly de la consultante sélectionnée. Calendly et le compte de cette consultante peuvent recevoir les renseignements que vous y fournissez, comme votre nom, votre adresse courriel, votre fuseau horaire, les détails du rendez-vous et tout message saisi.",
-              "pt": "Quando você escolhe agendar uma consulta, direcionamos você para a página da consultora no Calendly. O Calendly e a conta dessa consultora podem receber as informações fornecidas ali, como nome, e-mail, fuso horário, detalhes do horário e qualquer mensagem que você escrever."
+              "en": "When you choose to book a consultation, the embedded Calendly page receives the information you provide there, such as your name, email address, full address and phone number, appointment details and any preparation message. After a confirmed booking, we receive the booking details through a signed Calendly webhook and store them in a restricted CRM database.",
+              "fr": "Lorsque vous choisissez de réserver une consultation, la page Calendly intégrée reçoit les renseignements que vous y fournissez, comme votre nom, votre adresse courriel, votre adresse complète et votre numéro de téléphone, les détails du rendez-vous et tout message de préparation. Après une réservation confirmée, nous recevons les détails au moyen d’un webhook Calendly signé et les enregistrons dans une base CRM à accès restreint.",
+              "pt": "Quando você escolhe agendar uma consulta, a página integrada do Calendly recebe as informações fornecidas ali, como nome, e-mail, endereço completo e telefone, detalhes do horário e qualquer mensagem de preparação. Após uma reserva confirmada, recebemos os dados por meio de um webhook assinado do Calendly e os armazenamos em um banco de dados CRM com acesso restrito."
             },
             {
               "en": "Calendly processes that information under its own privacy notice. Avoid adding sensitive case details to a booking field unless the consultant has asked you to use that channel for this purpose.",
@@ -293,9 +293,9 @@
           "title": {"en": "Retention and security", "fr": "Conservation et sécurité", "pt": "Retenção e segurança"},
           "paragraphs": [
             {
-              "en": "We do not retain the choices made in the consultant finder. Technical logs are kept according to our hosting and security settings and only for as long as they are needed for those purposes.",
-              "fr": "Nous ne conservons pas les choix effectués dans l’outil de recherche. Les journaux techniques sont conservés selon nos paramètres d’hébergement et de sécurité, seulement pendant la période nécessaire à ces fins.",
-              "pt": "Não guardamos as escolhas feitas no localizador de consultoras. Os registros técnicos são mantidos conforme as configurações de hospedagem e segurança, somente pelo tempo necessário para essas finalidades."
+              "en": "We do not retain the choices made in the consultant finder. Confirmed Calendly bookings are retained in the restricted CRM only for as long as needed to coordinate the consultation, comply with legal obligations and manage privacy requests; the owner should approve the exact retention period before publication.",
+              "fr": "Nous ne conservons pas les choix effectués dans l’outil de recherche. Les réservations Calendly confirmées sont conservées dans le CRM à accès restreint seulement pendant la période nécessaire pour coordonner la consultation, respecter les obligations légales et traiter les demandes de confidentialité; la propriétaire doit approuver la durée exacte avant la publication.",
+              "pt": "Não guardamos as escolhas feitas no localizador de consultoras. As reservas confirmadas do Calendly são mantidas no CRM com acesso restrito somente pelo período necessário para coordenar a consulta, cumprir obrigações legais e atender solicitações de privacidade; a proprietária deve aprovar o prazo exato antes da publicação."
             },
             {
               "en": "We use reasonable administrative and technical measures to protect information under our control. No method of internet transmission or electronic storage is completely secure.",
