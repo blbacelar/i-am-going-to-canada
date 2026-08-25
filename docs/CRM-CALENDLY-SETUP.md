@@ -35,12 +35,11 @@ curl --request POST \
     "url": "https://YOUR_DOMAIN/api/webhooks/calendly",
     "events": ["invitee.created", "invitee.canceled"],
     "scope": "organization",
-    "organization": "https://api.calendly.com/organizations/YOUR_ORGANIZATION_ID",
-    "signing_key": "YOUR_CALENDLY_WEBHOOK_SIGNING_KEY"
+    "organization": "https://api.calendly.com/organizations/YOUR_ORGANIZATION_ID"
   }'
 ```
 
-The webhook signing key must match `CALENDLY_WEBHOOK_SIGNING_KEY`. Calendly signs the timestamp and raw request body with HMAC-SHA256; the route rejects missing, invalid or stale signatures.
+Save the `signing_key` returned by Calendly as `CALENDLY_WEBHOOK_SIGNING_KEY`. Calendly signs the timestamp and raw request body with HMAC-SHA256; the route rejects missing, invalid or stale signatures.
 
 ## 4. Verify before launch
 
