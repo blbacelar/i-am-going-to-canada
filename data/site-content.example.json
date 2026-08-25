@@ -44,10 +44,17 @@
   "concierge": {
     "title": {"en": "What kind of support are you looking for?", "fr": "Quel type d’accompagnement recherchez-vous?", "pt": "Que tipo de apoio você procura?"},
     "intro": {
-      "en": "Tell us what kind of support you are looking for. We will show professionals who offer that service. This is not an eligibility assessment.",
-      "fr": "Indiquez le type d’accompagnement que vous recherchez. Nous vous présenterons les professionnelles qui offrent ce service. Il ne s’agit pas d’une évaluation d’admissibilité.",
-      "pt": "Conte que tipo de apoio você procura. Mostraremos as profissionais que oferecem esse serviço. Isto não é uma avaliação de elegibilidade."
+      "en": "Choose a consultation language, then answer three short questions about the kind of process involved. We will show public matches; availability is confirmed on Calendly.",
+      "fr": "Choisissez une langue de consultation, puis répondez à trois courtes questions sur le type de dossier concerné. Nous présenterons les correspondances publiques; la disponibilité se confirme sur Calendly.",
+      "pt": "Escolha o idioma da consulta e responda a três perguntas curtas sobre o tipo de processo. Mostraremos as combinações públicas; a disponibilidade é confirmada no Calendly."
     },
+    "qcQuestion": {"en": "Does this involve a Québec (QC) process?", "fr": "Le dossier concerne-t-il un processus du Québec (QC)?", "pt": "Envolve um processo de Québec (QC)?"},
+    "skQuestion": {"en": "Does this involve a Saskatchewan (SK) process?", "fr": "Le dossier concerne-t-il un processus de la Saskatchewan (SK)?", "pt": "Envolve um processo de Saskatchewan (SK)?"},
+    "irbQuestion": {"en": "Does this involve an appeal, deportation or refugee matter?", "fr": "Le dossier concerne-t-il un appel, une déportation ou une demande d’asile?", "pt": "Envolve appeal, deportação ou refúgio?"},
+    "yes": {"en": "Yes", "fr": "Oui", "pt": "Sim"},
+    "no": {"en": "No", "fr": "Non", "pt": "Não"},
+    "availabilityNote": {"en": "After choosing a profile, check the consultant’s Calendly page for current availability.", "fr": "Après avoir choisi un profil, consultez la page Calendly de la consultante pour connaître ses disponibilités actuelles.", "pt": "Depois de escolher um perfil, consulte o Calendly da consultora para ver a disponibilidade atual."},
+    "checkAvailability": {"en": "Check availability", "fr": "Voir les disponibilités", "pt": "Ver disponibilidade"},
     "viewAll": {"en": "View all consultants", "fr": "Voir toutes les consultantes", "pt": "Ver todas as consultoras"},
     "restart": {"en": "Start again", "fr": "Recommencer", "pt": "Recomeçar"},
     "back": {"en": "Back", "fr": "Retour", "pt": "Voltar"},

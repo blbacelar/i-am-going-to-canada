@@ -833,6 +833,12 @@ p {
   font-weight: 700;
 }
 
+.concierge-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
 .team-section,
 .directory-section,
 .related-team,

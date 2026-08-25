@@ -39,8 +39,14 @@ export default async function HomePage({ params }: PageProps) {
   const conciergeCopy: ConciergeCopy = {
     intro: localized(concierge.intro, locale),
     languageQuestion: localized(concierge.languageQuestion, locale),
-    serviceQuestion: localized(concierge.serviceQuestion, locale),
+    qcQuestion: localized(concierge.qcQuestion, locale),
+    skQuestion: localized(concierge.skQuestion, locale),
+    irbQuestion: localized(concierge.irbQuestion, locale),
+    yes: localized(concierge.yes, locale),
+    no: localized(concierge.no, locale),
     resultsTitle: localized(concierge.resultsTitle, locale),
+    availabilityNote: localized(concierge.availabilityNote, locale),
+    checkAvailability: localized(concierge.checkAvailability, locale),
     viewProfile: localized(concierge.viewProfile, locale),
     viewAll: localized(concierge.viewAll, locale),
     restart: localized(concierge.restart, locale),
@@ -99,7 +105,7 @@ export default async function HomePage({ params }: PageProps) {
             <h2>{localized(home.concierge.title, locale)}</h2>
             <p>{localized(home.concierge.body, locale)}</p>
           </div>
-          <Concierge locale={locale} consultants={consultants} services={services} copy={conciergeCopy} />
+          <Concierge locale={locale} consultants={consultants} copy={conciergeCopy} />
         </div>
       </section>
 
