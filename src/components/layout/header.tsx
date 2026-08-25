@@ -27,14 +27,14 @@ export function Header({ locale }: { locale: Locale }) {
         </nav>
         <div className="header-actions">
           <LanguageSwitcher locale={locale} label={localized(nav.language, locale)} articleRoutes={getArticleRouteMap()} />
-          <Link className="button button-small" href={localePath(locale, "/find-a-consultant")}>
+          <Link className="button button-small" href={`${localePath(locale, "/")}#find-your-consultant`}>
             {localized(nav.find, locale)}
           </Link>
         </div>
         <MobileNavigation
           menuLabel={localized(nav.menu, locale)}
           links={links}
-          findHref={localePath(locale, "/find-a-consultant")}
+          findHref={`${localePath(locale, "/")}#find-your-consultant`}
           findLabel={localized(nav.find, locale)}
         />
       </div>

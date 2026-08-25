@@ -23,6 +23,13 @@ test("language switch preserves a consultant profile route", async ({ page }) =>
   await expect(page.locator("html")).toHaveAttribute("lang", "pt");
 });
 
+test("Portuguese header finder goes to the homepage concierge section", async ({ page }) => {
+  await page.goto("/pt");
+  await page.getByRole("banner").getByRole("link", { name: "Encontrar uma consultora" }).click();
+  await expect(page).toHaveURL(/\/pt#find-your-consultant$/);
+  await expect(page.locator("#find-your-consultant")).toBeInViewport();
+});
+
 test("mobile navigation closes after selecting a route", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 800 });
   await page.goto("/pt");
