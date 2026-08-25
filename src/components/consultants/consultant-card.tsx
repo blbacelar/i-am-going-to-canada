@@ -4,7 +4,7 @@ import { CredentialBadge } from "@/components/consultants/credential-badge";
 import { TrackedExternalLink } from "@/components/ui/tracked-link";
 import { RouteArrow } from "@/components/ui/route-arrow";
 import { getServiceById, siteContent } from "@/lib/content/data";
-import { languageNames, localized, localePath, type Locale } from "@/lib/i18n/config";
+import { languageNames, localized, localePath, practiceAreaNames, type Locale } from "@/lib/i18n/config";
 import type { Consultant } from "@/lib/schemas/content";
 
 export function ConsultantCard({ consultant, locale }: { consultant: Consultant; locale: Locale }) {
@@ -48,6 +48,12 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
                 : localized(common.informationComingSoon, locale)}
             </dd>
           </div>
+          {consultant.practiceAreas.length ? (
+            <div>
+              <dt>{locale === "en" ? "Areas" : locale === "fr" ? "Domaines" : "Áreas"}</dt>
+              <dd>{consultant.practiceAreas.map((area) => practiceAreaNames[locale][area]).join(" · ")}</dd>
+            </div>
+          ) : null}
         </dl>
         <div className="consultant-actions">
           <Link className="editorial-link" href={localePath(locale, `/consultants/${consultant.slug}`)}>

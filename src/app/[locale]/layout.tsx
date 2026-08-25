@@ -3,6 +3,7 @@ import { Schibsted_Grotesk, Space_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { siteContent } from "@/lib/content/data";
 import { isLocale, locales, type Locale } from "@/lib/i18n/config";
 import "../globals.css";
 
@@ -23,16 +24,16 @@ const monoFont = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://iamgoingtocanada.ca"),
   title: {
-    default: "I Am Going To Canada",
-    template: "%s | I Am Going To Canada",
+    default: siteContent.brand.name,
+    template: `%s | ${siteContent.brand.name}`,
   },
   description:
     "Meet a multilingual Canadian immigration consultant team and find the professional conversation that fits your needs.",
-  applicationName: "I Am Going To Canada",
+  applicationName: siteContent.brand.name,
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    title: "I Am Going To Canada",
+    title: siteContent.brand.name,
     statusBarStyle: "default",
   },
 };
@@ -40,13 +41,13 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f6f7f9",
+  themeColor: "#b4233a",
   colorScheme: "light",
 };
 
 const directionContract = `<!--
 THESIS: Professional choice becomes clear through calm comparison; it refuses decorative travel imagery and personality-first hierarchy.
-OWN-WORLD: Cool slate grounds, white surfaces, one navy accent, Schibsted Grotesk hierarchy and Space Mono evidence labels.
+OWN-WORLD: Off-white grounds, white surfaces, black structure, maple-red actions, Schibsted Grotesk hierarchy and Space Mono evidence labels.
 STORY: Understand the team, compare public attributes, choose broad support and continue to a direct professional conversation.
 FIRST VIEWPORT: A compact sans-serif promise and primary action balance four equally scaled portraits on a cool neutral field.
 FORM: Owner-pinned design reference, applied as the site-wide visual system; seed f33503b8.
@@ -72,7 +73,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${primaryFont.variable} ${monoFont.variable}`} data-scroll-behavior="smooth">
-      <body>
+      <body suppressHydrationWarning>
         <div aria-hidden="true" className="design-contract" dangerouslySetInnerHTML={{ __html: directionContract }} />
         <div className="site-frame">
           <a className="skip-link" href="#main-content">{skipLinks[locale]}</a>

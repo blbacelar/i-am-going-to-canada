@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Concierge, type ConciergeCopy } from "@/components/concierge/concierge";
 import { PageIntro } from "@/components/marketing/page-intro";
-import { getActiveConsultants, getActiveServices, siteContent } from "@/lib/content/data";
+import { getActiveConsultants, siteContent } from "@/lib/content/data";
 import { isLocale, localized } from "@/lib/i18n/config";
 import { localizedMetadata } from "@/lib/seo/metadata";
 
@@ -25,9 +25,15 @@ export default async function FindConsultantPage({ params }: PageProps) {
   const copy: ConciergeCopy = {
     intro: localized(siteContent.concierge.intro, locale),
     languageQuestion: localized(siteContent.concierge.languageQuestion, locale),
-    serviceQuestion: localized(siteContent.concierge.serviceQuestion, locale),
-    resultsTitle: localized(siteContent.concierge.resultsTitle, locale),
-    viewProfile: localized(siteContent.concierge.viewProfile, locale),
+    qcQuestion: localized(siteContent.concierge.qcQuestion, locale),
+    skQuestion: localized(siteContent.concierge.skQuestion, locale),
+    irbQuestion: localized(siteContent.concierge.irbQuestion, locale),
+    yes: localized(siteContent.concierge.yes, locale),
+    no: localized(siteContent.concierge.no, locale),
+    availabilityNote: localized(siteContent.concierge.availabilityNote, locale),
+    availabilityLoading: localized(siteContent.concierge.availabilityLoading, locale),
+    noAvailability: localized(siteContent.concierge.noAvailability, locale),
+    continueToBooking: localized(siteContent.concierge.continueToBooking, locale),
     viewAll: localized(siteContent.concierge.viewAll, locale),
     restart: localized(siteContent.concierge.restart, locale),
     back: localized(siteContent.concierge.back, locale),
@@ -39,7 +45,7 @@ export default async function FindConsultantPage({ params }: PageProps) {
       <PageIntro title={localized(siteContent.concierge.title, locale)} body={localized(siteContent.concierge.intro, locale)} />
       <section className="standalone-concierge">
         <div className="shell">
-          <Concierge locale={locale} consultants={getActiveConsultants()} services={getActiveServices()} copy={copy} />
+          <Concierge locale={locale} consultants={getActiveConsultants()} copy={copy} />
         </div>
       </section>
     </main>

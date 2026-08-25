@@ -10,7 +10,8 @@ describe("content schemas", () => {
     expect(consultants).toHaveLength(4);
     expect(consultants.find((consultant) => consultant.id === "aline")).toMatchObject({
       name: "Aline Costa",
-      languages: ["en", "fr", "es", "pt"],
+      languages: ["en", "es", "pt"],
+      practiceAreas: [],
       credentials: [{ label: "RCIC", value: "R710053" }],
       calendlyUrl: "https://calendly.com/costalineimmigration",
     });

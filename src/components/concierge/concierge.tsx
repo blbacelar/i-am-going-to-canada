@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { trackJourneyEvent } from "@/lib/analytics/track";
-import { languageNames, localePath, type Locale } from "@/lib/i18n/config";
-import { matchConsultants } from "@/lib/matching/match-consultants";
-import type { Consultant, Service } from "@/lib/schemas/content";
+import { TrackedExternalLink } from "@/components/ui/tracked-link";
+import { languageNames, localePath, type ConsultantLanguage, type Locale } from "@/lib/i18n/config";
+import { matchConsultantsByCriteria, type PracticeArea } from "@/lib/matching/match-consultants";
+import type { Consultant } from "@/lib/schemas/content";
 
 function ChoiceArrow() {
   return (
@@ -16,12 +16,20 @@ function ChoiceArrow() {
   );
 }
 
+const practiceQuestions: PracticeArea[] = ["qc", "sk", "irb"];
+
 export interface ConciergeCopy {
   intro: string;
   languageQuestion: string;
-  serviceQuestion: string;
-  resultsTitle: string;
-  viewProfile: string;
+  qcQuestion: string;
+  skQuestion: string;
+  irbQuestion: string;
+  yes: string;
+  no: string;
+  availabilityNote: string;
+  availabilityLoading: string;
+  noAvailability: string;
+  continueToBooking: string;
   viewAll: string;
   restart: string;
   back: string;
@@ -32,57 +40,103 @@ export interface ConciergeCopy {
 export function Concierge({
   locale,
   consultants,
-  services,
   copy,
 }: {
   locale: Locale;
   consultants: Consultant[];
-  services: Service[];
   copy: ConciergeCopy;
 }) {
-  const [step, setStep] = useState<0 | 1 | 2>(0);
-  const [selectedLanguage, setSelectedLanguage] = useState<Locale | null>(null);
-  const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [step, setStep] = useState<0 | 1 | 2 | 3 | 4>(0);
+  const [selectedLanguage, setSelectedLanguage] = useState<ConsultantLanguage | null>(null);
+  const [answers, setAnswers] = useState<Record<PracticeArea, boolean | null>>({ qc: null, sk: null, irb: null });
+  const [availability, setAvailability] = useState<Record<string, { firstAvailableAt: string | null; slotCount: number }>>({});
+  const [availabilityQuery, setAvailabilityQuery] = useState<string | null>(null);
 
-  const matches = useMemo(() => {
-    if (!selectedLanguage || !selectedService) return [];
-    return matchConsultants(consultants, selectedLanguage, selectedService);
-  }, [consultants, selectedLanguage, selectedService]);
+  const selectedAreas = practiceQuestions.filter((area) => answers[area] === true);
+  const matches = useMemo(
+    () => selectedLanguage ? matchConsultantsByCriteria(consultants, selectedLanguage, selectedAreas) : [],
+    [consultants, selectedAreas, selectedLanguage],
+  );
 
-  const results = matches.length ? matches.map((match) => match.consultant) : consultants;
+  const questionCopy: Record<PracticeArea, string> = {
+    qc: copy.qcQuestion,
+    sk: copy.skQuestion,
+    irb: copy.irbQuestion,
+  };
+  const stepLabel = copy.step.replace("{current}", String(step + 1)).replace("{total}", "5");
 
-  function chooseLanguage(language: Locale) {
+  function chooseLanguage(language: ConsultantLanguage) {
     setSelectedLanguage(language);
-    setSelectedService(null);
+    setAnswers({ qc: null, sk: null, irb: null });
+    setAvailability({});
+    setAvailabilityQuery(null);
     setStep(1);
-    trackJourneyEvent({ event: "language_selected", locale: language });
+    trackJourneyEvent({ event: "language_selected", locale });
     trackJourneyEvent({ event: "concierge_started", locale });
   }
 
-  function chooseService(serviceId: string) {
-    setSelectedService(serviceId);
-    setStep(2);
+  function choosePracticeArea(area: PracticeArea, answer: boolean) {
+    const nextAnswers = { ...answers, [area]: answer };
+    setAnswers(nextAnswers);
+    trackJourneyEvent({ event: "practice_area_selected", locale, practiceArea: area, answer });
+    const nextStep = step + 1;
+    if (nextStep < 4) {
+      setStep(nextStep as 1 | 2 | 3);
+      return;
+    }
+    setStep(4);
+    const selected = practiceQuestions.filter((item) => nextAnswers[item] === true);
     const resultCount = selectedLanguage
-      ? matchConsultants(consultants, selectedLanguage, serviceId).length
+      ? matchConsultantsByCriteria(consultants, selectedLanguage, selected).length
       : 0;
-    trackJourneyEvent({ event: "service_selected", locale, serviceId });
-    trackJourneyEvent({ event: "consultant_matches_viewed", locale, serviceId, resultCount });
+    trackJourneyEvent({ event: "consultant_matches_viewed", locale, resultCount });
   }
 
   function restart() {
     setSelectedLanguage(null);
-    setSelectedService(null);
+    setAnswers({ qc: null, sk: null, irb: null });
+    setAvailability({});
+    setAvailabilityQuery(null);
     setStep(0);
   }
 
-  const stepLabel = copy.step.replace("{current}", String(step + 1)).replace("{total}", "3");
+  const questionArea = practiceQuestions[step - 1];
+  const resultIds = matches.map((consultant) => consultant.id).join(",");
+  const sortedMatches = useMemo(() => [...matches].toSorted((a, b) => {
+    const aAvailability = availability[a.id]?.firstAvailableAt;
+    const bAvailability = availability[b.id]?.firstAvailableAt;
+    if (aAvailability && bAvailability) return aAvailability.localeCompare(bAvailability);
+    if (aAvailability) return -1;
+    if (bAvailability) return 1;
+    return a.order - b.order;
+  }), [availability, matches]);
+
+  useEffect(() => {
+    if (step !== 4 || !resultIds) return;
+    let cancelled = false;
+    fetch(`/api/calendly/availability?consultantIds=${encodeURIComponent(resultIds)}`)
+      .then((response) => response.ok ? response.json() as Promise<{ availability?: typeof availability }> : null)
+      .then((body) => {
+        if (!cancelled) {
+          if (body?.availability) setAvailability(body.availability);
+          setAvailabilityQuery(resultIds);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setAvailabilityQuery(resultIds);
+      });
+    return () => { cancelled = true; };
+  }, [resultIds, step]);
+
+  const availableMatches = sortedMatches.filter((consultant) => availability[consultant.id]?.firstAvailableAt);
+  const assignedConsultant = availableMatches[0];
 
   return (
     <div className="concierge" data-step={step}>
       <div className="concierge-topline">
         <p>{stepLabel}</p>
         <div className="concierge-progress" aria-hidden="true">
-          {[0, 1, 2].map((value) => <span key={value} className={value <= step ? "is-active" : ""} />)}
+          {[0, 1, 2, 3, 4].map((value) => <span key={value} className={value <= step ? "is-active" : ""} />)}
         </div>
       </div>
       <p className="concierge-boundary">{copy.intro}</p>
@@ -92,7 +146,7 @@ export function Concierge({
           <fieldset>
             <legend>{copy.languageQuestion}</legend>
             <div className="choice-list">
-              {(["en", "fr", "pt"] as Locale[]).map((language) => (
+              {(["en", "fr", "es", "pt"] as ConsultantLanguage[]).map((language) => (
                 <button key={language} type="button" onClick={() => chooseLanguage(language)}>
                   <span>{languageNames[locale][language]}</span><ChoiceArrow />
                 </button>
@@ -101,42 +155,46 @@ export function Concierge({
           </fieldset>
         ) : null}
 
-        {step === 1 ? (
+        {step > 0 && step < 4 && questionArea ? (
           <fieldset>
-            <legend>{copy.serviceQuestion}</legend>
-            <div className="choice-list choice-list-services">
-              {services.map((service) => (
-                <button key={service.id} type="button" onClick={() => chooseService(service.id)}>
-                  <span>{service.label[locale]}</span><ChoiceArrow />
-                </button>
-              ))}
+            <legend>{questionCopy[questionArea]}</legend>
+            <div className="choice-list">
+              <button type="button" onClick={() => choosePracticeArea(questionArea, true)}>
+                <span>{copy.yes}</span><ChoiceArrow />
+              </button>
+              <button type="button" onClick={() => choosePracticeArea(questionArea, false)}>
+                <span>{copy.no}</span><ChoiceArrow />
+              </button>
             </div>
           </fieldset>
         ) : null}
 
-        {step === 2 ? (
+        {step === 4 ? (
           <div className="concierge-results">
-            <h3>{copy.resultsTitle}</h3>
             {!matches.length ? <p className="no-match">{copy.noExactMatch}</p> : null}
-            <div className="result-list">
-              {results.map((consultant) => (
-                <article key={consultant.id}>
-                  <Image src={consultant.portrait.src} alt={consultant.portrait.alt[locale]} width={144} height={180} />
-                  <div>
-                    <h4>{consultant.name}</h4>
-                    <p>{consultant.role[locale]}</p>
-                    <Link href={localePath(locale, `/consultants/${consultant.slug}`)}>{copy.viewProfile} →</Link>
-                  </div>
-                </article>
-              ))}
-            </div>
+            {matches.length && availabilityQuery !== resultIds ? <p className="concierge-availability-note">{copy.availabilityLoading}</p> : null}
+            {matches.length && availabilityQuery === resultIds && assignedConsultant ? (
+              <div className="concierge-assignment">
+                <p className="concierge-availability-note">{copy.availabilityNote}</p>
+                {assignedConsultant.calendlyUrl !== "TODO_CONTENT" ? (
+                  <TrackedExternalLink
+                    className="button"
+                    href={assignedConsultant.calendlyUrl}
+                    event={{ event: "booking_clicked", locale, consultantId: assignedConsultant.id }}
+                  >
+                    {copy.continueToBooking}
+                  </TrackedExternalLink>
+                ) : null}
+              </div>
+            ) : null}
+            {matches.length && availabilityQuery === resultIds && !assignedConsultant ? <p className="no-match">{copy.noAvailability}</p> : null}
           </div>
         ) : null}
       </div>
 
       <div className="concierge-controls">
         {step > 0 ? (
-          <button type="button" className="text-button" onClick={() => setStep((step - 1) as 0 | 1)}>{copy.back}</button>
+          <button type="button" className="text-button" onClick={() => setStep((step - 1) as 0 | 1 | 2 | 3)}>{copy.back}</button>
         ) : <span />}
         <Link href={localePath(locale, "/consultants")}>{copy.viewAll}</Link>
         {step > 0 ? <button type="button" className="text-button" onClick={restart}>{copy.restart}</button> : <span />}

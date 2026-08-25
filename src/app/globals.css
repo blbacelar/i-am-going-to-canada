@@ -1,29 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #2f4b7c;
-  --accent-hover: #26406b;
-  --accent-tint: #e9eef6;
-  --accent-border: #cdd8ec;
-  --ink: #171b24;
-  --ink-2: #3a4150;
-  --muted: #5b6472;
-  --muted-2: #6b7280;
-  --background: #f6f7f9;
+  --accent: #b4233a;
+  --accent-hover: #8f1d2f;
+  --accent-tint: #fae8eb;
+  --accent-border: #e5bac2;
+  --ink: #171717;
+  --ink-2: #303030;
+  --muted: #5b5b5b;
+  --muted-2: #777777;
+  --background: #fefefe;
   --surface: #ffffff;
-  --surface-alt: #f3f5f9;
-  --fill: #eef1f6;
-  --border: #e2e6ee;
-  --verified: #dcecdf;
-  --verified-ink: #2f6b3d;
-  --pending: #a2aab8;
-  --placeholder: #e7ebf2;
+  --surface-alt: #f1f1ef;
+  --fill: #e6e6e3;
+  --border: #d9d9d4;
+  --verified: #f3e4e5;
+  --verified-ink: #8f1d2f;
+  --pending: #777777;
+  --footer-muted: #b8b8b8;
+  --placeholder: #e9e9e6;
   --canvas: var(--background);
   --muted-ink: var(--muted);
-  --forest: var(--accent);
-  --forest-deep: var(--accent-hover);
-  --maple: var(--accent);
-  --maple-dark: var(--accent-hover);
+  --forest: #1d1d1f;
+  --forest-deep: #111111;
+  --maple: #b4233a;
+  --maple-dark: #8f1d2f;
   --mist: var(--accent-tint);
   --sky: var(--surface-alt);
   --line: var(--border);
@@ -190,21 +191,55 @@ p {
 }
 
 .brand-logo {
-  position: relative;
-  width: 290px;
-  height: 58px;
-  display: block;
-  overflow: hidden;
+  width: auto;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  overflow: visible;
 }
 
-.brand-logo img {
-  position: absolute;
-  top: 50%;
-  left: 0;
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.brand-mark img {
   width: 100%;
-  height: auto;
-  max-width: none;
-  transform: translateY(-50%);
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 2px;
+  line-height: 1.05;
+}
+
+.brand-name {
+  color: currentColor;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+.brand-signature {
+  color: var(--accent);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .desktop-nav,
@@ -259,7 +294,7 @@ p {
 }
 
 .language-switcher a[aria-current="page"] {
-  background: var(--forest);
+  background: var(--accent);
   color: var(--surface);
 }
 
@@ -314,7 +349,7 @@ p {
   padding: 13px 22px;
   border: 0;
   border-radius: 12px;
-  background: var(--forest);
+  background: var(--accent);
   color: var(--surface);
   text-decoration: none;
   font-size: var(--type-body);
@@ -333,8 +368,14 @@ p {
 .button:hover,
 .booking-link:hover {
   transform: translateY(-2px);
-  background: var(--forest-deep);
+  background: var(--accent-hover);
   box-shadow: var(--action-shadow);
+}
+
+.button:active,
+.booking-link:active,
+.editorial-link:active {
+  transform: translateY(0);
 }
 
 .button-small {
@@ -401,9 +442,9 @@ p {
 
 .home-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(430px, 0.98fr);
+  grid-template-columns: minmax(0, 1.16fr) minmax(400px, 0.84fr);
   align-items: center;
-  gap: clamp(60px, 8vw, 130px);
+  gap: clamp(48px, 5vw, 80px);
 }
 
 .hero-copy {
@@ -412,7 +453,8 @@ p {
 
 .hero-copy h1 {
   margin-bottom: 32px;
-  font-size: var(--type-display);
+  max-width: 30ch;
+  font-size: var(--type-h1);
   line-height: 1.02;
 }
 
@@ -750,6 +792,20 @@ p {
   border-radius: 10px;
 }
 
+.concierge-assignment {
+  display: grid;
+  gap: 18px;
+  max-width: 52ch;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 6%, transparent);
+}
+
+.concierge-assignment .button {
+  width: fit-content;
+}
+
 .result-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -789,6 +845,12 @@ p {
 .result-list a {
   font-size: var(--type-eyebrow);
   font-weight: 700;
+}
+
+.concierge-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
 }
 
 .team-section,
@@ -1207,12 +1269,21 @@ p {
 }
 
 .site-footer .brand-logo {
-  width: 320px;
-  height: 64px;
+  width: auto;
+  height: 58px;
 }
 
-.site-footer .brand-logo img {
-  filter: brightness(0) invert(1);
+.site-footer .brand-mark {
+  background: var(--surface);
+  border: 1px solid var(--surface);
+}
+
+.site-footer .brand-mark img {
+  filter: none;
+}
+
+.site-footer .brand-signature {
+  color: var(--footer-muted);
 }
 
 .footer-main {
@@ -1225,7 +1296,7 @@ p {
 .footer-brand p {
   max-width: 44ch;
   margin: 22px 0 0;
-  color: var(--pending);
+  color: var(--footer-muted);
 }
 
 .footer-links {
@@ -1240,7 +1311,7 @@ p {
   gap: 40px;
   padding: 24px 0 30px;
   border-top: 1px solid color-mix(in srgb, var(--surface) 16%, transparent);
-  color: var(--pending);
+  color: var(--footer-muted);
   font-family: var(--font-mono), monospace;
   font-size: var(--type-eyebrow);
 }
@@ -1607,8 +1678,11 @@ p {
 @media (max-width: 700px) {
   :root { --shell: calc(100% - 28px); }
   .header-inner { min-height: 72px; grid-template-columns: 1fr auto auto; gap: 8px; }
-  .brand-logo { width: 155px; height: 44px; }
-  .site-footer .brand-logo { width: 240px; height: 54px; }
+  .brand-logo { height: 44px; gap: 7px; }
+  .brand-mark { width: 36px; height: 36px; border-radius: 6px; }
+  .brand-name { font-size: 12px; }
+  .brand-signature { font-size: 7px; letter-spacing: 0.06em; }
+  .site-footer .brand-logo { height: 54px; }
   .language-switcher a {
     min-width: 44px;
     min-height: 44px;

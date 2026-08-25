@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "I Am Going To Canada",
+    "name": "I Am Going To Canada by Marina Snyder",
     "legalName": "TODO_CONTENT",
     "url": "https://iamgoingtocanada.ca"
   },
@@ -87,13 +87,21 @@
   "concierge": {
     "title": {"en": "Find a consultant", "fr": "Trouver une consultante", "pt": "Encontrar uma consultora"},
     "intro": {
-      "en": "Answer two quick questions to find consultants who work in the language and service you need. To discuss your situation, book a consultation.",
-      "fr": "Répondez à deux questions rapides pour trouver les consultantes qui travaillent dans la langue et le domaine dont vous avez besoin. Pour parler de votre situation, réservez une consultation.",
-      "pt": "Responda duas perguntas rápidas para encontrar quem atende no idioma e no serviço que você procura. Para conversar sobre a sua situação, agende uma consulta."
+      "en": "Choose a consultation language, then answer three short questions about the kind of process involved. We will show public matches; availability is confirmed on Calendly.",
+      "fr": "Choisissez une langue de consultation, puis répondez à trois courtes questions sur le type de dossier concerné. Nous présenterons les correspondances publiques; la disponibilité se confirme sur Calendly.",
+      "pt": "Escolha o idioma da consulta e responda a três perguntas curtas sobre o tipo de processo. Mostraremos as combinações públicas; a disponibilidade é confirmada no Calendly."
     },
     "languageQuestion": {"en": "Which consultation language do you prefer?", "fr": "Quelle langue préférez-vous pour la consultation?", "pt": "Qual idioma você prefere para a consulta?"},
     "serviceQuestion": {"en": "Which service are you looking for?", "fr": "Quel service recherchez-vous?", "pt": "Qual serviço você procura?"},
-    "resultsTitle": {"en": "These consultants can help", "fr": "Ces consultantes peuvent vous aider", "pt": "Estas consultoras podem ajudar"},
+    "qcQuestion": {"en": "Does this involve a Québec (QC) process?", "fr": "Le dossier concerne-t-il un processus du Québec (QC)?", "pt": "Envolve um processo de Québec (QC)?"},
+    "skQuestion": {"en": "Does this involve a Saskatchewan (SK) process?", "fr": "Le dossier concerne-t-il un processus de la Saskatchewan (SK)?", "pt": "Envolve um processo de Saskatchewan (SK)?"},
+    "irbQuestion": {"en": "Does this involve an appeal, deportation or refugee matter?", "fr": "Le dossier concerne-t-il un appel, une déportation ou une demande d’asile?", "pt": "Envolve appeal, deportação ou refúgio?"},
+    "yes": {"en": "Yes", "fr": "Oui", "pt": "Sim"},
+    "no": {"en": "No", "fr": "Non", "pt": "Não"},
+    "availabilityNote": {"en": "We found a current 30-minute opening. Continue to the booking page to request a consultation; the team will coordinate the professional assigned to your request.", "fr": "Nous avons trouvé une plage disponible de 30 minutes. Continuez vers la réservation pour demander une consultation; l’équipe coordonnera la professionnelle assignée à votre demande.", "pt": "Encontramos um horário atual de 30 minutos. Continue para o agendamento para solicitar uma consulta; a equipe coordenará a consultora designada para sua solicitação."},
+    "availabilityLoading": {"en": "Checking current availability…", "fr": "Vérification des disponibilités actuelles…", "pt": "Verificando a disponibilidade atual…"},
+    "noAvailability": {"en": "There are no available times in the current test window. Please try again later.", "fr": "Aucune plage horaire n’est disponible dans la fenêtre de test actuelle. Réessayez plus tard.", "pt": "Não há horários disponíveis na janela de teste atual. Tente novamente mais tarde."},
+    "continueToBooking": {"en": "Continue to booking", "fr": "Continuer vers la réservation", "pt": "Continuar para o agendamento"},
     "matchReason": {"en": "Service in {language} for {service}", "fr": "Service en {language} pour {service}", "pt": "Atendimento em {language} para {service}"},
     "viewProfile": {"en": "View profile", "fr": "Voir le profil", "pt": "Ver perfil"},
     "viewAll": {"en": "View all consultants", "fr": "Voir toutes les consultantes", "pt": "Ver todas as consultoras"},
