@@ -35,6 +35,7 @@ export const consultantSchema = z.object({
     alt: localizedStringSchema,
   }),
   calendlyUrl: z.union([z.literal("TODO_CONTENT"), z.url()]),
+  calendlyEventTypeUri: z.union([z.literal("TODO_CONTENT"), z.url()]),
   seo: z.object({
     title: localizedStringSchema,
     description: localizedStringSchema,

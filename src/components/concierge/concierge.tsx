@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { trackJourneyEvent } from "@/lib/analytics/track";
 import { TrackedExternalLink } from "@/components/ui/tracked-link";
 import { languageNames, localePath, type ConsultantLanguage, type Locale } from "@/lib/i18n/config";
@@ -50,6 +50,7 @@ export function Concierge({
   const [step, setStep] = useState<0 | 1 | 2 | 3 | 4>(0);
   const [selectedLanguage, setSelectedLanguage] = useState<ConsultantLanguage | null>(null);
   const [answers, setAnswers] = useState<Record<PracticeArea, boolean | null>>({ qc: null, sk: null, irb: null });
+  const [availability, setAvailability] = useState<Record<string, { firstAvailableAt: string | null; slotCount: number }>>({});
 
   const selectedAreas = practiceQuestions.filter((area) => answers[area] === true);
   const matches = useMemo(
@@ -96,6 +97,27 @@ export function Concierge({
   }
 
   const questionArea = practiceQuestions[step - 1];
+  const resultIds = matches.map((consultant) => consultant.id).join(",");
+  const sortedMatches = useMemo(() => [...matches].toSorted((a, b) => {
+    const aAvailability = availability[a.id]?.firstAvailableAt;
+    const bAvailability = availability[b.id]?.firstAvailableAt;
+    if (aAvailability && bAvailability) return aAvailability.localeCompare(bAvailability);
+    if (aAvailability) return -1;
+    if (bAvailability) return 1;
+    return a.order - b.order;
+  }), [availability, matches]);
+
+  useEffect(() => {
+    if (step !== 4 || !resultIds) return;
+    let cancelled = false;
+    fetch(`/api/calendly/availability?consultantIds=${encodeURIComponent(resultIds)}`)
+      .then((response) => response.ok ? response.json() as Promise<{ availability?: typeof availability }> : null)
+      .then((body) => {
+        if (!cancelled && body?.availability) setAvailability(body.availability);
+      })
+      .catch(() => undefined);
+    return () => { cancelled = true; };
+  }, [resultIds, step]);
 
   return (
     <div className="concierge" data-step={step}>
@@ -140,7 +162,7 @@ export function Concierge({
             <h3>{copy.resultsTitle}</h3>
             {!matches.length ? <p className="no-match">{copy.noExactMatch}</p> : <p className="concierge-availability-note">{copy.availabilityNote}</p>}
             <div className="result-list">
-              {matches.map((consultant) => (
+              {sortedMatches.map((consultant) => (
                 <article key={consultant.id}>
                   <Image src={consultant.portrait.src} alt={consultant.portrait.alt[locale]} width={144} height={180} />
                   <div>

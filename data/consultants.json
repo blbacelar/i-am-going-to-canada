@@ -37,6 +37,7 @@
       }
     },
     "calendlyUrl": "https://calendly.com/marinasnyderrcic",
+    "calendlyEventTypeUri": "https://api.calendly.com/event_types/a843ad48-e343-4f39-8c67-ddca81cf9dd4",
     "seo": {
       "title": {"en": "Marina Snyder | I Am Going To Canada", "fr": "Marina Snyder | I Am Going To Canada", "pt": "Marina Snyder | I Am Going To Canada"},
       "description": {
@@ -79,6 +80,7 @@
       "alt": {"en": "Portrait of Aline Costa", "fr": "Portrait d’Aline Costa", "pt": "Retrato de Aline Costa"}
     },
     "calendlyUrl": "https://calendly.com/costalineimmigration",
+    "calendlyEventTypeUri": "TODO_CONTENT",
     "seo": {
       "title": {"en": "Aline Costa | Canadian Immigration Consultant", "fr": "Aline Costa | Consultante en immigration canadienne", "pt": "Aline Costa | Consultora de Imigração Canadense"},
       "description": {
@@ -115,6 +117,7 @@
       "alt": {"en": "Portrait of Virginia Melo", "fr": "Portrait de Virginia Melo", "pt": "Retrato de Virginia Melo"}
     },
     "calendlyUrl": "https://calendly.com/consultant-iamgoingtocanada",
+    "calendlyEventTypeUri": "https://api.calendly.com/event_types/416eaca0-d7a7-46d6-bc30-85e77f2a9307",
     "seo": {
       "title": {"en": "Virginia Melo | I Am Going To Canada", "fr": "Virginia Melo | I Am Going To Canada", "pt": "Virginia Melo | I Am Going To Canada"},
       "description": {"en": "Meet Virginia Melo and learn about her immigration services, languages and professional background.", "fr": "Découvrez Virginia Melo, ses services d’immigration, ses langues et son parcours professionnel.", "pt": "Conheça Virginia Melo, seus serviços de imigração, idiomas e trajetória profissional."}
@@ -147,6 +150,7 @@
       "alt": {"en": "Portrait of Beatriz Dias", "fr": "Portrait de Beatriz Dias", "pt": "Retrato de Beatriz Dias"}
     },
     "calendlyUrl": "https://calendly.com/immigration-iamgoingtocanada",
+    "calendlyEventTypeUri": "https://api.calendly.com/event_types/dba2ce18-3ace-4d92-9a3f-b80ca86c27d0",
     "seo": {
       "title": {"en": "Beatriz Dias | I Am Going To Canada", "fr": "Beatriz Dias | I Am Going To Canada", "pt": "Beatriz Dias | I Am Going To Canada"},
       "description": {"en": "Meet Beatriz Dias and learn about her immigration services, languages and professional background.", "fr": "Découvrez Beatriz Dias, ses services d’immigration, ses langues et son parcours professionnel.", "pt": "Conheça Beatriz Dias, seus serviços de imigração, idiomas e trajetória profissional."}
