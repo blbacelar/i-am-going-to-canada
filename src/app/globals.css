@@ -191,21 +191,54 @@ p {
 }
 
 .brand-logo {
-  position: relative;
-  width: 290px;
-  height: 58px;
-  display: block;
-  overflow: hidden;
+  width: auto;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  overflow: visible;
 }
 
-.brand-logo img {
-  position: absolute;
-  top: 50%;
-  left: 0;
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.brand-mark img {
   width: 100%;
-  height: auto;
-  max-width: none;
-  transform: translateY(-50%);
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 2px;
+  line-height: 1.05;
+}
+
+.brand-name {
+  color: currentColor;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.brand-signature {
+  color: var(--accent);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .desktop-nav,
@@ -1215,12 +1248,20 @@ p {
 }
 
 .site-footer .brand-logo {
-  width: 320px;
-  height: 64px;
+  width: auto;
+  height: 58px;
 }
 
-.site-footer .brand-logo img {
-  filter: brightness(0) invert(1);
+.site-footer .brand-mark {
+  border-color: var(--surface);
+}
+
+.site-footer .brand-mark img {
+  filter: none;
+}
+
+.site-footer .brand-signature {
+  color: var(--footer-muted);
 }
 
 .footer-main {
@@ -1615,8 +1656,11 @@ p {
 @media (max-width: 700px) {
   :root { --shell: calc(100% - 28px); }
   .header-inner { min-height: 72px; grid-template-columns: 1fr auto auto; gap: 8px; }
-  .brand-logo { width: 155px; height: 44px; }
-  .site-footer .brand-logo { width: 240px; height: 54px; }
+  .brand-logo { height: 44px; gap: 7px; }
+  .brand-mark { width: 36px; height: 36px; border-radius: 6px; }
+  .brand-name { font-size: 12px; }
+  .brand-signature { font-size: 7px; letter-spacing: 0.06em; }
+  .site-footer .brand-logo { height: 54px; }
   .language-switcher a {
     min-width: 44px;
     min-height: 44px;

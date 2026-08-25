@@ -30,7 +30,7 @@ export function Footer({ locale }: { locale: Locale }) {
         </nav>
       </div>
       <div className="footer-bottom shell">
-        <p>© 2026 I Am Going To Canada</p>
+        <p>© 2026 {siteContent.brand.name}</p>
         <p>{localized(footer.reviewNotice, locale)}</p>
       </div>
     </footer>
