@@ -206,9 +206,9 @@ p {
   flex: 0 0 auto;
   place-items: center;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 8px;
-  background: var(--surface);
+  background: transparent;
 }
 
 .brand-mark img {
@@ -1253,7 +1253,8 @@ p {
 }
 
 .site-footer .brand-mark {
-  border-color: var(--surface);
+  background: var(--surface);
+  border: 1px solid var(--surface);
 }
 
 .site-footer .brand-mark img {
