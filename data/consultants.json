@@ -36,8 +36,8 @@
         "pt": "Retrato de Marina Snyder"
       }
     },
-    "calendlyUrl": "https://calendly.com/marinasnyderrcic",
-    "calendlyEventTypeUri": "https://api.calendly.com/event_types/a843ad48-e343-4f39-8c67-ddca81cf9dd4",
+    "calendlyUrl": "https://calendly.com/marinasnyderrcic/30min",
+    "calendlyEventTypeUri": "https://api.calendly.com/event_types/b5ed003b-4a7d-48cb-9d64-4daea5921ed7",
     "seo": {
       "title": {"en": "Marina Snyder | I Am Going To Canada", "fr": "Marina Snyder | I Am Going To Canada", "pt": "Marina Snyder | I Am Going To Canada"},
       "description": {
@@ -116,7 +116,7 @@
       "src": "/consultants/virginia-melo.png",
       "alt": {"en": "Portrait of Virginia Melo", "fr": "Portrait de Virginia Melo", "pt": "Retrato de Virginia Melo"}
     },
-    "calendlyUrl": "https://calendly.com/consultant-iamgoingtocanada",
+    "calendlyUrl": "https://calendly.com/consultant-iamgoingtocanada/30min",
     "calendlyEventTypeUri": "https://api.calendly.com/event_types/416eaca0-d7a7-46d6-bc30-85e77f2a9307",
     "seo": {
       "title": {"en": "Virginia Melo | I Am Going To Canada", "fr": "Virginia Melo | I Am Going To Canada", "pt": "Virginia Melo | I Am Going To Canada"},
@@ -149,8 +149,8 @@
       "src": "/consultants/beatriz-dias.png",
       "alt": {"en": "Portrait of Beatriz Dias", "fr": "Portrait de Beatriz Dias", "pt": "Retrato de Beatriz Dias"}
     },
-    "calendlyUrl": "https://calendly.com/immigration-iamgoingtocanada",
-    "calendlyEventTypeUri": "https://api.calendly.com/event_types/dba2ce18-3ace-4d92-9a3f-b80ca86c27d0",
+    "calendlyUrl": "https://calendly.com/immigration-iamgoingtocanada/ms-immigration-beatriz-dias-clone",
+    "calendlyEventTypeUri": "https://api.calendly.com/event_types/2f86c236-1e9e-4658-86fa-eee32048c6cb",
     "seo": {
       "title": {"en": "Beatriz Dias | I Am Going To Canada", "fr": "Beatriz Dias | I Am Going To Canada", "pt": "Beatriz Dias | I Am Going To Canada"},
       "description": {"en": "Meet Beatriz Dias and learn about her immigration services, languages and professional background.", "fr": "Découvrez Beatriz Dias, ses services d’immigration, ses langues et son parcours professionnel.", "pt": "Conheça Beatriz Dias, seus serviços de imigração, idiomas e trajetória profissional."}
