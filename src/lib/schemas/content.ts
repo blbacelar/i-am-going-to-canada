@@ -27,6 +27,7 @@ export const consultantSchema = z.object({
   shortBio: localizedStringSchema,
   fullBio: localizedStringSchema,
   languages: z.array(z.enum(["en", "fr", "es", "pt"])),
+  practiceAreas: z.array(z.enum(["qc", "sk", "irb", "appeals"])),
   serviceIds: z.array(z.string().regex(/^[a-z0-9-]+$/)),
   credentials: z.array(credentialSchema),
   portrait: z.object({

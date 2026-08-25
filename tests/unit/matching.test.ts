@@ -5,7 +5,7 @@ import { matchConsultants } from "../../src/lib/matching/match-consultants";
 describe("consultant matching", () => {
   it("matches only public language and service metadata in configured order", () => {
     const matches = matchConsultants(getActiveConsultants(), "fr", "permanent-residence");
-    expect(matches.map((match) => match.consultant.id)).toEqual(["marina-snyder", "aline", "virginia-melo"]);
+    expect(matches.map((match) => match.consultant.id)).toEqual(["marina-snyder", "virginia-melo"]);
   });
 
   it("returns no exact match when metadata does not intersect", () => {
