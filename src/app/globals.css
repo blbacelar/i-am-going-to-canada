@@ -792,6 +792,20 @@ p {
   border-radius: 10px;
 }
 
+.concierge-assignment {
+  display: grid;
+  gap: 18px;
+  max-width: 52ch;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 6%, transparent);
+}
+
+.concierge-assignment .button {
+  width: fit-content;
+}
+
 .result-list {
   display: grid;
   grid-template-columns: 1fr 1fr;

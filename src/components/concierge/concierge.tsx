@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { trackJourneyEvent } from "@/lib/analytics/track";
@@ -29,8 +28,9 @@ export interface ConciergeCopy {
   no: string;
   resultsTitle: string;
   availabilityNote: string;
-  checkAvailability: string;
-  viewProfile: string;
+  availabilityLoading: string;
+  noAvailability: string;
+  continueToBooking: string;
   viewAll: string;
   restart: string;
   back: string;
@@ -51,6 +51,7 @@ export function Concierge({
   const [selectedLanguage, setSelectedLanguage] = useState<ConsultantLanguage | null>(null);
   const [answers, setAnswers] = useState<Record<PracticeArea, boolean | null>>({ qc: null, sk: null, irb: null });
   const [availability, setAvailability] = useState<Record<string, { firstAvailableAt: string | null; slotCount: number }>>({});
+  const [availabilityQuery, setAvailabilityQuery] = useState<string | null>(null);
 
   const selectedAreas = practiceQuestions.filter((area) => answers[area] === true);
   const matches = useMemo(
@@ -68,6 +69,8 @@ export function Concierge({
   function chooseLanguage(language: ConsultantLanguage) {
     setSelectedLanguage(language);
     setAnswers({ qc: null, sk: null, irb: null });
+    setAvailability({});
+    setAvailabilityQuery(null);
     setStep(1);
     trackJourneyEvent({ event: "language_selected", locale });
     trackJourneyEvent({ event: "concierge_started", locale });
@@ -93,6 +96,8 @@ export function Concierge({
   function restart() {
     setSelectedLanguage(null);
     setAnswers({ qc: null, sk: null, irb: null });
+    setAvailability({});
+    setAvailabilityQuery(null);
     setStep(0);
   }
 
@@ -113,11 +118,19 @@ export function Concierge({
     fetch(`/api/calendly/availability?consultantIds=${encodeURIComponent(resultIds)}`)
       .then((response) => response.ok ? response.json() as Promise<{ availability?: typeof availability }> : null)
       .then((body) => {
-        if (!cancelled && body?.availability) setAvailability(body.availability);
+        if (!cancelled) {
+          if (body?.availability) setAvailability(body.availability);
+          setAvailabilityQuery(resultIds);
+        }
       })
-      .catch(() => undefined);
+      .catch(() => {
+        if (!cancelled) setAvailabilityQuery(resultIds);
+      });
     return () => { cancelled = true; };
   }, [resultIds, step]);
+
+  const availableMatches = sortedMatches.filter((consultant) => availability[consultant.id]?.firstAvailableAt);
+  const assignedConsultant = availableMatches[0];
 
   return (
     <div className="concierge" data-step={step}>
@@ -160,29 +173,23 @@ export function Concierge({
         {step === 4 ? (
           <div className="concierge-results">
             <h3>{copy.resultsTitle}</h3>
-            {!matches.length ? <p className="no-match">{copy.noExactMatch}</p> : <p className="concierge-availability-note">{copy.availabilityNote}</p>}
-            <div className="result-list">
-              {sortedMatches.map((consultant) => (
-                <article key={consultant.id}>
-                  <Image src={consultant.portrait.src} alt={consultant.portrait.alt[locale]} width={144} height={180} />
-                  <div>
-                    <h4>{consultant.name}</h4>
-                    <p>{consultant.role[locale]}</p>
-                    <div className="concierge-result-actions">
-                      <Link href={localePath(locale, `/consultants/${consultant.slug}`)}>{copy.viewProfile} →</Link>
-                      {consultant.calendlyUrl !== "TODO_CONTENT" ? (
-                        <TrackedExternalLink
-                          href={consultant.calendlyUrl}
-                          event={{ event: "booking_clicked", locale, consultantId: consultant.id }}
-                        >
-                          {copy.checkAvailability}
-                        </TrackedExternalLink>
-                      ) : null}
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
+            {!matches.length ? <p className="no-match">{copy.noExactMatch}</p> : null}
+            {matches.length && availabilityQuery !== resultIds ? <p className="concierge-availability-note">{copy.availabilityLoading}</p> : null}
+            {matches.length && availabilityQuery === resultIds && assignedConsultant ? (
+              <div className="concierge-assignment">
+                <p className="concierge-availability-note">{copy.availabilityNote}</p>
+                {assignedConsultant.calendlyUrl !== "TODO_CONTENT" ? (
+                  <TrackedExternalLink
+                    className="button"
+                    href={assignedConsultant.calendlyUrl}
+                    event={{ event: "booking_clicked", locale, consultantId: assignedConsultant.id }}
+                  >
+                    {copy.continueToBooking}
+                  </TrackedExternalLink>
+                ) : null}
+              </div>
+            ) : null}
+            {matches.length && availabilityQuery === resultIds && !assignedConsultant ? <p className="no-match">{copy.noAvailability}</p> : null}
           </div>
         ) : null}
       </div>

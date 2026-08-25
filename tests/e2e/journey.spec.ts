@@ -11,9 +11,9 @@ test("localized home, concierge and booking handoff work", async ({ page }) => {
   await page.getByRole("button", { name: "Non", exact: true }).click();
   await page.getByRole("button", { name: "Non", exact: true }).click();
   const results = page.locator(".concierge-results");
-  await expect(results.getByRole("heading", { name: "Marina Snyder" })).toBeVisible();
-  await expect(results.getByRole("heading", { name: "Virginia Melo" })).toBeVisible();
-  await expect(results.getByRole("link", { name: "Voir les disponibilités" }).first()).toHaveAttribute("href", /calendly\.com/);
+  await expect(results).not.toContainText("Marina Snyder");
+  await expect(results).not.toContainText("Virginia Melo");
+  await expect(results.getByRole("link", { name: "Continuer vers la réservation" })).toHaveAttribute("href", /calendly\.com/);
 });
 
 test("language switch preserves a consultant profile route", async ({ page }) => {
