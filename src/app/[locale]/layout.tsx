@@ -73,7 +73,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${primaryFont.variable} ${monoFont.variable}`} data-scroll-behavior="smooth">
-      <body>
+      <body suppressHydrationWarning>
         <div aria-hidden="true" className="design-contract" dangerouslySetInnerHTML={{ __html: directionContract }} />
         <div className="site-frame">
           <a className="skip-link" href="#main-content">{skipLinks[locale]}</a>
