@@ -806,6 +806,15 @@ p {
   width: fit-content;
 }
 
+.calendly-inline-embed {
+  width: 100%;
+  min-width: 320px;
+  min-height: 760px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--surface);
+}
+
 .result-list {
   display: grid;
   grid-template-columns: 1fr 1fr;

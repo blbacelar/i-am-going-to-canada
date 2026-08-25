@@ -13,7 +13,7 @@ test("localized home, concierge and booking handoff work", async ({ page }) => {
   const results = page.locator(".concierge-results");
   await expect(results).not.toContainText("Marina Snyder");
   await expect(results).not.toContainText("Virginia Melo");
-  await expect(results.getByRole("link", { name: "Continuer vers la réservation" })).toHaveAttribute("href", /calendly\.com/);
+  await expect(results.locator(".calendly-inline-embed")).toBeVisible();
 });
 
 test("language switch preserves a consultant profile route", async ({ page }) => {

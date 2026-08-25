@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { trackJourneyEvent } from "@/lib/analytics/track";
-import { TrackedExternalLink } from "@/components/ui/tracked-link";
 import { languageNames, localePath, type ConsultantLanguage, type Locale } from "@/lib/i18n/config";
 import { matchConsultantsByCriteria, type PracticeArea } from "@/lib/matching/match-consultants";
 import type { Consultant } from "@/lib/schemas/content";
@@ -17,6 +16,52 @@ function ChoiceArrow() {
 }
 
 const practiceQuestions: PracticeArea[] = ["qc", "sk", "irb"];
+const calendlyWidgetScript = "https://assets.calendly.com/assets/external/widget.js";
+
+declare global {
+  interface Window {
+    Calendly?: {
+      initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
+    };
+  }
+}
+
+function CalendlyInlineEmbed({ url, fallbackLabel }: { url: string; fallbackLabel: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scriptFailed, setScriptFailed] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    const initialize = () => {
+      if (cancelled || !containerRef.current || !window.Calendly) return;
+      containerRef.current.replaceChildren();
+      window.Calendly.initInlineWidget({ url, parentElement: containerRef.current });
+    };
+    const script = document.querySelector<HTMLScriptElement>(`script[src="${calendlyWidgetScript}"]`);
+    if (window.Calendly) {
+      initialize();
+    } else if (script) {
+      script.addEventListener("load", initialize);
+      script.addEventListener("error", () => setScriptFailed(true), { once: true });
+    } else {
+      const nextScript = document.createElement("script");
+      nextScript.src = calendlyWidgetScript;
+      nextScript.async = true;
+      nextScript.addEventListener("load", initialize, { once: true });
+      nextScript.addEventListener("error", () => setScriptFailed(true), { once: true });
+      document.body.appendChild(nextScript);
+    }
+    return () => {
+      cancelled = true;
+      script?.removeEventListener("load", initialize);
+    };
+  }, [url]);
+
+  if (scriptFailed) {
+    return <a className="button" href={url} target="_blank" rel="noreferrer">{fallbackLabel}</a>;
+  }
+  return <div className="calendly-inline-embed" ref={containerRef} aria-label={fallbackLabel} />;
+}
 
 export interface ConciergeCopy {
   intro: string;
@@ -177,13 +222,7 @@ export function Concierge({
               <div className="concierge-assignment">
                 <p className="concierge-availability-note">{copy.availabilityNote}</p>
                 {assignedConsultant.calendlyUrl !== "TODO_CONTENT" ? (
-                  <TrackedExternalLink
-                    className="button"
-                    href={assignedConsultant.calendlyUrl}
-                    event={{ event: "booking_clicked", locale, consultantId: assignedConsultant.id }}
-                  >
-                    {copy.continueToBooking}
-                  </TrackedExternalLink>
+                  <CalendlyInlineEmbed url={assignedConsultant.calendlyUrl} fallbackLabel={copy.continueToBooking} />
                 ) : null}
               </div>
             ) : null}
