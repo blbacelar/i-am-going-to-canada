@@ -26,7 +26,6 @@ export interface ConciergeCopy {
   irbQuestion: string;
   yes: string;
   no: string;
-  resultsTitle: string;
   availabilityNote: string;
   availabilityLoading: string;
   noAvailability: string;
@@ -172,7 +171,6 @@ export function Concierge({
 
         {step === 4 ? (
           <div className="concierge-results">
-            <h3>{copy.resultsTitle}</h3>
             {!matches.length ? <p className="no-match">{copy.noExactMatch}</p> : null}
             {matches.length && availabilityQuery !== resultIds ? <p className="concierge-availability-note">{copy.availabilityLoading}</p> : null}
             {matches.length && availabilityQuery === resultIds && assignedConsultant ? (

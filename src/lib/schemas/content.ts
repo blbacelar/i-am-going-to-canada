@@ -141,7 +141,6 @@ export const siteContentSchema = z.object({
     availabilityLoading: localizedStringSchema,
     noAvailability: localizedStringSchema,
     continueToBooking: localizedStringSchema,
-    resultsTitle: localizedStringSchema,
     matchReason: localizedStringSchema,
     viewProfile: localizedStringSchema,
     viewAll: localizedStringSchema,

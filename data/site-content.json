@@ -98,7 +98,6 @@
     "irbQuestion": {"en": "Does this involve an appeal, deportation or refugee matter?", "fr": "Le dossier concerne-t-il un appel, une déportation ou une demande d’asile?", "pt": "Envolve appeal, deportação ou refúgio?"},
     "yes": {"en": "Yes", "fr": "Oui", "pt": "Sim"},
     "no": {"en": "No", "fr": "Non", "pt": "Não"},
-    "resultsTitle": {"en": "These consultants can help", "fr": "Ces consultantes peuvent vous aider", "pt": "Estas consultoras podem ajudar"},
     "availabilityNote": {"en": "We found a current 30-minute opening. Continue to the booking page to request a consultation; the team will coordinate the professional assigned to your request.", "fr": "Nous avons trouvé une plage disponible de 30 minutes. Continuez vers la réservation pour demander une consultation; l’équipe coordonnera la professionnelle assignée à votre demande.", "pt": "Encontramos um horário atual de 30 minutos. Continue para o agendamento para solicitar uma consulta; a equipe coordenará a consultora designada para sua solicitação."},
     "availabilityLoading": {"en": "Checking current availability…", "fr": "Vérification des disponibilités actuelles…", "pt": "Verificando a disponibilidade atual…"},
     "noAvailability": {"en": "There are no available times in the current test window. Please try again later.", "fr": "Aucune plage horaire n’est disponible dans la fenêtre de test actuelle. Réessayez plus tard.", "pt": "Não há horários disponíveis na janela de teste atual. Tente novamente mais tarde."},

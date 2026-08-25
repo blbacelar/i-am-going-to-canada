@@ -44,7 +44,6 @@ export default async function HomePage({ params }: PageProps) {
     irbQuestion: localized(concierge.irbQuestion, locale),
     yes: localized(concierge.yes, locale),
     no: localized(concierge.no, locale),
-    resultsTitle: localized(concierge.resultsTitle, locale),
     availabilityNote: localized(concierge.availabilityNote, locale),
     availabilityLoading: localized(concierge.availabilityLoading, locale),
     noAvailability: localized(concierge.noAvailability, locale),
