@@ -180,9 +180,10 @@ export function Concierge({
 
   const availableMatches = sortedMatches.filter((consultant) => availability[consultant.id]?.firstAvailableAt);
   const isMockMode = mockMode || localMockMode;
-  const testCalendlyUrl = process.env.NODE_ENV !== "production" ? process.env.NEXT_PUBLIC_CALENDLY_TEST_EVENT_URL : undefined;
+  // Keep the shared test calendar active while the client validates the flow.
+  const testCalendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_TEST_EVENT_URL;
   const isTestCalendlyMode = Boolean(testCalendlyUrl);
-  // In development, always exercise the shared test event; production keeps the real matching rules.
+  // The test calendar intentionally bypasses consultant matching during validation.
   const assignedConsultant = isMockMode || isTestCalendlyMode ? (matches[0] ?? consultants[0]) : availableMatches[0];
   const bookingUrl = useMemo(() => {
     const baseUrl = testCalendlyUrl || assignedConsultant?.calendlyUrl;
