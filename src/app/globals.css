@@ -2183,6 +2183,15 @@ p {
   font-size: 12px;
 }
 
+.mock-booking-page { max-width: 760px; }
+.mock-booking-page .lede { max-width: 600px; margin-bottom: 32px; }
+.mock-booking-form { display: grid; gap: 18px; max-width: 620px; }
+.mock-booking-form label { display: grid; gap: 7px; font-weight: 600; }
+.mock-booking-form input:not([type="checkbox"]), .mock-booking-form textarea, .mock-booking-form select { width: 100%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 12px 14px; font: inherit; }
+.mock-booking-form textarea { min-height: 110px; resize: vertical; }
+.mock-consent { display: flex !important; align-items: start; gap: 10px !important; font-weight: 500 !important; }
+.mock-consent input { margin-top: 4px; }
+
 @media (max-width: 900px) {
   .blog-index-heading,
   .article-endmatter { grid-template-columns: 1fr; gap: 38px; }

@@ -13,8 +13,9 @@ function isEventTypeUri(value: string): boolean {
 }
 
 export async function GET(request: Request) {
+  const mockMode = process.env.NODE_ENV !== "production" && process.env.ENABLE_MOCK_BOOKING_FLOW === "true";
   const token = process.env.CALENDLY_PAT_TOKEN;
-  if (!token) {
+  if (!token && !mockMode) {
     return NextResponse.json({ error: "Calendly availability is not configured" }, { status: 503 });
   }
 
@@ -24,8 +25,17 @@ export async function GET(request: Request) {
 
   const start = new Date(Date.now() + 60 * 60 * 1000).toISOString();
   const end = new Date(Date.now() + 14 * DAY_MS).toISOString();
+  if (mockMode) {
+    const mockSlot = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
+    return NextResponse.json({
+      availability: Object.fromEntries(consultants.map((consultant) => [consultant.id, { firstAvailableAt: mockSlot, slotCount: 1 }])),
+      mockMode: true,
+      window: { start, end },
+    }, { headers: { "Cache-Control": "no-store" } });
+  }
   const availability = await Promise.all(consultants.map(async (consultant) => {
-    const eventType = consultant.calendlyEventTypeUri;
+    const configuredTestEvent = process.env.NODE_ENV !== "production" ? process.env.CALENDLY_TEST_EVENT_TYPE_URI : undefined;
+    const eventType = configuredTestEvent || consultant.calendlyEventTypeUri;
     if (eventType === "TODO_CONTENT" || !isEventTypeUri(eventType)) {
       return [consultant.id, { firstAvailableAt: null, slotCount: 0 }] as const;
     }
@@ -34,7 +44,7 @@ export async function GET(request: Request) {
     try {
       const response = await fetch(`${CALENDLY_API}/event_type_available_times?${params}`, {
         headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
-        next: { revalidate: 300 },
+        cache: "no-store",
       });
       if (!response.ok) return [consultant.id, { firstAvailableAt: null, slotCount: 0 }] as const;
       const body = (await response.json()) as AvailabilityResponse;
@@ -46,6 +56,6 @@ export async function GET(request: Request) {
   }));
 
   return NextResponse.json({ availability: Object.fromEntries(availability), window: { start, end } }, {
-    headers: { "Cache-Control": "private, max-age=300" },
+    headers: { "Cache-Control": "no-store" },
   });
 }

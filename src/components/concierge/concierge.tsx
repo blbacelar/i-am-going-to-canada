@@ -96,6 +96,8 @@ export function Concierge({
   const [answers, setAnswers] = useState<Record<PracticeArea, boolean | null>>({ qc: null, sk: null, irb: null });
   const [availability, setAvailability] = useState<Record<string, { firstAvailableAt: string | null; slotCount: number }>>({});
   const [availabilityQuery, setAvailabilityQuery] = useState<string | null>(null);
+  const [mockMode, setMockMode] = useState(false);
+  const localMockMode = process.env.NODE_ENV !== "production" && process.env.NEXT_PUBLIC_ENABLE_MOCK_BOOKING_FLOW === "true";
 
   const selectedAreas = practiceQuestions.filter((area) => answers[area] === true);
   const matches = useMemo(
@@ -115,6 +117,7 @@ export function Concierge({
     setAnswers({ qc: null, sk: null, irb: null });
     setAvailability({});
     setAvailabilityQuery(null);
+    setMockMode(false);
     setStep(1);
     trackJourneyEvent({ event: "language_selected", locale });
     trackJourneyEvent({ event: "concierge_started", locale });
@@ -142,6 +145,7 @@ export function Concierge({
     setAnswers({ qc: null, sk: null, irb: null });
     setAvailability({});
     setAvailabilityQuery(null);
+    setMockMode(false);
     setStep(0);
   }
 
@@ -159,11 +163,12 @@ export function Concierge({
   useEffect(() => {
     if (step !== 4 || !resultIds) return;
     let cancelled = false;
-    fetch(`/api/calendly/availability?consultantIds=${encodeURIComponent(resultIds)}`)
-      .then((response) => response.ok ? response.json() as Promise<{ availability?: typeof availability }> : null)
+    fetch(`/api/calendly/availability?consultantIds=${encodeURIComponent(resultIds)}`, { cache: "no-store" })
+      .then((response) => response.ok ? response.json() as Promise<{ availability?: typeof availability; mockMode?: boolean }> : null)
       .then((body) => {
         if (!cancelled) {
           if (body?.availability) setAvailability(body.availability);
+          setMockMode(body?.mockMode === true);
           setAvailabilityQuery(resultIds);
         }
       })
@@ -174,7 +179,18 @@ export function Concierge({
   }, [resultIds, step]);
 
   const availableMatches = sortedMatches.filter((consultant) => availability[consultant.id]?.firstAvailableAt);
-  const assignedConsultant = availableMatches[0];
+  const isMockMode = mockMode || localMockMode;
+  const testCalendlyUrl = process.env.NODE_ENV !== "production" ? process.env.NEXT_PUBLIC_CALENDLY_TEST_EVENT_URL : undefined;
+  const isTestCalendlyMode = Boolean(testCalendlyUrl);
+  // In development, always exercise the shared test event; production keeps the real matching rules.
+  const assignedConsultant = isMockMode || isTestCalendlyMode ? (matches[0] ?? consultants[0]) : availableMatches[0];
+  const bookingUrl = useMemo(() => {
+    const baseUrl = testCalendlyUrl || assignedConsultant?.calendlyUrl;
+    if (!baseUrl || baseUrl === "TODO_CONTENT" || !selectedLanguage) return baseUrl;
+    const url = new URL(baseUrl);
+    url.searchParams.set("utm_content", selectedLanguage);
+    return url.toString();
+  }, [assignedConsultant, selectedLanguage, testCalendlyUrl]);
 
   return (
     <div className="concierge" data-step={step}>
@@ -216,17 +232,19 @@ export function Concierge({
 
         {step === 4 ? (
           <div className="concierge-results">
-            {!matches.length ? <p className="no-match">{copy.noExactMatch}</p> : null}
-            {matches.length && availabilityQuery !== resultIds ? <p className="concierge-availability-note">{copy.availabilityLoading}</p> : null}
-            {matches.length && availabilityQuery === resultIds && assignedConsultant ? (
+            {!matches.length && !isTestCalendlyMode ? <p className="no-match">{copy.noExactMatch}</p> : null}
+            {matches.length && !isMockMode && !isTestCalendlyMode && availabilityQuery !== resultIds ? <p className="concierge-availability-note">{copy.availabilityLoading}</p> : null}
+            {(matches.length || isTestCalendlyMode) && (isMockMode || isTestCalendlyMode || availabilityQuery === resultIds) && assignedConsultant ? (
               <div className="concierge-assignment">
                 <p className="concierge-availability-note">{copy.availabilityNote}</p>
-                {assignedConsultant.calendlyUrl !== "TODO_CONTENT" ? (
-                  <CalendlyInlineEmbed url={assignedConsultant.calendlyUrl} fallbackLabel={copy.continueToBooking} />
+                {bookingUrl && (isTestCalendlyMode || !mockMode) ? (
+                  <CalendlyInlineEmbed url={bookingUrl} fallbackLabel={copy.continueToBooking} />
+                ) : mockMode ? (
+                  <Link className="button" href={localePath(locale, "/mock-calendly")}>{copy.continueToBooking}</Link>
                 ) : null}
               </div>
             ) : null}
-            {matches.length && availabilityQuery === resultIds && !assignedConsultant ? <p className="no-match">{copy.noAvailability}</p> : null}
+            {matches.length && !isMockMode && !isTestCalendlyMode && availabilityQuery === resultIds && !assignedConsultant ? <p className="no-match">{copy.noAvailability}</p> : null}
           </div>
         ) : null}
       </div>
