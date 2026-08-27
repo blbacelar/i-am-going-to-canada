@@ -24,7 +24,9 @@ export async function GET(request: Request) {
   if (!consultants.length) return NextResponse.json({ availability: {} });
 
   const start = new Date(Date.now() + 60 * 60 * 1000).toISOString();
-  const end = new Date(Date.now() + 14 * DAY_MS).toISOString();
+  // Calendly supports availability queries up to 31 days; the test event may
+  // have its next slot more than two weeks out.
+  const end = new Date(Date.now() + 31 * DAY_MS).toISOString();
   if (mockMode) {
     const mockSlot = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
     return NextResponse.json({
