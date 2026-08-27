@@ -40,12 +40,17 @@ function verifySignature(rawBody: string, header: string | null, secret: string)
   const timestamp = values.get("t");
   const signature = values.get("v1");
   if (!timestamp || !signature || !/^\d+$/.test(timestamp)) return false;
-  if (Math.abs(Date.now() / 1000 - Number(timestamp)) > SIGNATURE_TOLERANCE_SECONDS) return false;
+  const timestampNumber = Number(timestamp);
+  const timestampSeconds = timestampNumber > 10_000_000_000 ? timestampNumber / 1000 : timestampNumber;
+  if (Math.abs(Date.now() / 1000 - timestampSeconds) > SIGNATURE_TOLERANCE_SECONDS) return false;
 
-  const expected = createHmac("sha256", secret).update(`${timestamp}.${rawBody}`).digest("hex");
-  const actualBuffer = Buffer.from(signature, "hex");
-  const expectedBuffer = Buffer.from(expected, "hex");
-  return actualBuffer.length === expectedBuffer.length && timingSafeEqual(actualBuffer, expectedBuffer);
+  const expectedBuffer = createHmac("sha256", secret).update(`${timestamp}.${rawBody}`).digest();
+  const candidates = [
+    Buffer.from(signature, "hex"),
+    Buffer.from(signature, "base64"),
+    Buffer.from(signature.replace(/-/g, "+").replace(/_/g, "/"), "base64"),
+  ];
+  return candidates.some((actualBuffer) => actualBuffer.length === expectedBuffer.length && timingSafeEqual(actualBuffer, expectedBuffer));
 }
 
 function questionAnswer(answers: Array<{ question?: string; answer?: string }>, fragment: string): string | null {
