@@ -43,12 +43,14 @@ export async function GET(request: Request) {
     }
 
     const params = new URLSearchParams({ event_type: eventType, start_time: start, end_time: end });
-    try {
+      try {
       const response = await fetch(`${CALENDLY_API}/event_type_available_times?${params}`, {
         headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
         cache: "no-store",
       });
-      if (!response.ok) return [consultant.id, { firstAvailableAt: null, slotCount: 0 }] as const;
+      if (!response.ok) {
+        return [consultant.id, { firstAvailableAt: null, slotCount: 0 }] as const;
+      }
       const body = (await response.json()) as AvailabilityResponse;
       const slots = (body.collection ?? []).filter((slot) => slot.start_time).map((slot) => slot.start_time as string);
       return [consultant.id, { firstAvailableAt: slots[0] ?? null, slotCount: slots.length }] as const;
