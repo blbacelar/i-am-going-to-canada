@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
-import { escapeHtml, isMockBookingEnabled, mockBookingSchema } from "@/lib/test/mock-booking";
+import { isMockBookingEnabled, mockBookingSchema } from "@/lib/test/mock-booking";
 import { renderContractEmail } from "@/lib/email/contract-email";
 
 const SIGNWELL_API = "https://www.signwell.com/api/v1/documents";
