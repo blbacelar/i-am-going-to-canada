@@ -107,7 +107,7 @@ async function sendContractEmail(record: { name: string; email: string; address_
     recipients: [{ id: "1", name: record.name, email: signerEmail }],
     fields: [[
       { type: "signature", api_id: "client_signature", required: true, recipient_id: "1", page: 1, x: 72, y: 620, width: 220, height: 32 },
-      { type: "date", api_id: "signed_date", required: true, recipient_id: "1", page: 1, x: 330, y: 620, width: 120, height: 32 },
+      { type: "date", api_id: "signed_date", required: true, recipient_id: "1", page: 1, x: 440, y: 620, width: 120, height: 32 },
     ]],
     metadata: { calendly_event_id: record.email },
     language: contractLanguage === "pt-fr" ? "pt" : contractLanguage === "es-fr" ? "es" : contractLanguage,

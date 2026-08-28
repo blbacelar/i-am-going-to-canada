@@ -77,7 +77,7 @@ export async function POST(request: Request) {
     recipients: [{ id: "1", name: input.name, email: process.env.SIGNWELL_TEST_RECIPIENT || input.email }],
     fields: [[
       { type: "signature", api_id: "client_signature", required: true, recipient_id: "1", page: 1, x: 72, y: 620, width: 220, height: 32 },
-      { type: "date", api_id: "signed_date", required: true, recipient_id: "1", page: 1, x: 450, y: 620, width: 120, height: 32 },
+      { type: "date", api_id: "signed_date", required: true, recipient_id: "1", page: 1, x: 440, y: 620, width: 120, height: 32 },
     ]],
     metadata: { mock_booking: "true" },
     language: input.language === "pt-fr" ? "pt" : input.language === "es-fr" ? "es" : input.language,
