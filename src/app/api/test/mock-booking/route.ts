@@ -29,9 +29,9 @@ export async function createContractPdf(input: { name: string; email: string; ad
   page.drawText("[TEST] Consultation agreement", { x: 50, y, size: 18, font: bold, color: navy }); y -= 30;
   const lines = [`Consultant: ${consultantName} | RCIC #${consultantRcic}`, `Contact: ${consultantContact}`, `Client: ${input.name}`, `Contact: ${input.addressAndPhone} | ${input.email}`, `Consultation Fee: ${input.fee}`];
   page.drawRectangle({ x: 50, y: y - 72, width: 512, height: 82, color: rgb(0.97,0.98,0.99) }); page.drawRectangle({ x: 50, y: y - 72, width: 3, height: 82, color: red }); lines.forEach((line,i)=>page.drawText(line,{x:64,y:y-i*15,size:11,font:regular,color:navy})); y -= 112;
-  const bodyFontSize = hasFrenchVersion ? 8.5 : 10.5;
-  const bodyLineHeight = hasFrenchVersion ? 10.5 : 15;
-  const wrap = (text: string, max = hasFrenchVersion ? 114 : 92) => text.match(new RegExp(`.{1,${max}}(?:\\s|$)`, "g"))?.map((line) => line.trim()) ?? [text];
+  const bodyFontSize = hasFrenchVersion ? 9.2 : 10.5;
+  const bodyLineHeight = hasFrenchVersion ? 11.2 : 15;
+  const wrap = (text: string, max = hasFrenchVersion ? 106 : 92) => text.match(new RegExp(`.{1,${max}}(?:\\s|$)`, "g"))?.map((line) => line.trim()) ?? [text];
   const drawParagraph = (text: string) => {
     for (const line of wrap(text)) {
       page.drawText(line, { x: 50, y, size: bodyFontSize, font: regular, color: navy });
@@ -77,7 +77,7 @@ export async function POST(request: Request) {
     recipients: [{ id: "1", name: input.name, email: process.env.SIGNWELL_TEST_RECIPIENT || input.email }],
     fields: [[
       { type: "signature", api_id: "client_signature", required: true, recipient_id: "1", page: 1, x: 72, y: 620, width: 220, height: 32 },
-      { type: "date", api_id: "signed_date", required: true, recipient_id: "1", page: 1, x: 330, y: 620, width: 120, height: 32 },
+      { type: "date", api_id: "signed_date", required: true, recipient_id: "1", page: 1, x: 440, y: 620, width: 120, height: 32 },
     ]],
     metadata: { mock_booking: "true" },
     language: input.language === "pt-fr" ? "pt" : input.language === "es-fr" ? "es" : input.language,
