@@ -619,8 +619,9 @@ p {
 
 .trust-grid p {
   margin-bottom: 0;
-  color: var(--accent-border);
-  font-size: var(--type-eyebrow);
+  color: #f0c8cf;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .concierge-section {
@@ -675,9 +676,10 @@ p {
 .concierge-boundary {
   color: var(--accent-border);
   font-family: var(--font-mono), monospace;
-  font-size: var(--type-eyebrow);
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
 }
 
 .concierge-progress {
@@ -775,7 +777,7 @@ p {
   background: transparent;
   color: var(--accent-border);
   cursor: pointer;
-  font-size: var(--type-eyebrow);
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -959,6 +961,27 @@ p {
 
 .consultant-card:nth-child(even) {
   padding-top: 84px;
+}
+
+@media (min-width: 701px) {
+  .team-section .consultant-card,
+  .directory-section .consultant-card {
+    display: grid;
+    grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+    align-items: start;
+    column-gap: clamp(24px, 3vw, 38px);
+  }
+
+  .team-section .consultant-portrait,
+  .directory-section .consultant-portrait {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .team-section .consultant-card-copy,
+  .directory-section .consultant-card-copy {
+    padding-top: 2px;
+  }
 }
 
 .content-status {
@@ -1414,14 +1437,16 @@ p {
 
 .profile-grid {
   display: grid;
-  grid-template-columns: minmax(360px, 0.78fr) minmax(500px, 1.22fr);
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
   align-items: start;
-  gap: clamp(60px, 9vw, 140px);
+  gap: clamp(48px, 7vw, 104px);
 }
 
 .profile-image {
   position: sticky;
   top: 125px;
+  width: 100%;
+  max-width: 300px;
   overflow: hidden;
   border-radius: var(--radius);
 }
@@ -1512,6 +1537,12 @@ p {
 .consultant-grid-related {
   grid-template-columns: repeat(3, 1fr);
   gap: 44px;
+}
+
+@media (min-width: 701px) {
+  .consultant-grid-related .consultant-portrait {
+    max-width: 220px;
+  }
 }
 
 .consultant-grid-related .consultant-card:nth-child(even) {
