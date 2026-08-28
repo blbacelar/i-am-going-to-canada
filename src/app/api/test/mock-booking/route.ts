@@ -17,7 +17,7 @@ export async function createContractPdf(input: { name: string; email: string; ad
   const english = "The purpose of this consultation is to review the client’s immigration or citizenship situation and provide advice regarding available options, eligibility, risks and/or next steps. The consultation does not include preparation, submission or representation in an application or proceeding. The consultant is licensed and regulated by the College of Immigration and Citizenship Consultants (CICC), the regulatory body responsible for overseeing licensed immigration and citizenship consultants in Canada. By signing, the client agrees to the purpose, scope and fee of this consultation.";
   const spanish = "La consulta tiene como objetivo analizar la situación migratoria o de ciudadanía del cliente y brindar orientación sobre posibles opciones, elegibilidad, riesgos y/o próximos pasos. La consulta no incluye la preparación o presentación de solicitudes ni la representación del cliente. La consultora está autorizada y regulada por el College of Immigration and Citizenship Consultants (CICC), organismo regulador de los consultores autorizados de inmigración y ciudadanía en Canadá. Al firmar, el cliente acepta el propósito, alcance y tarifa de esta consulta.";
   const firstLanguage = language === "en" ? english : language === "fr" ? french : language === "es-fr" ? spanish : portuguese;
-  const text = language === "pt-fr" ? `${portuguese}\n\nVersion française\n${french}` : language === "es-fr" ? `${spanish}\n\nVersion française\n${french}` : firstLanguage;
+  const hasFrenchVersion = language === "pt-fr" || language === "es-fr";
   const pdf = await PDFDocument.create(); const page = pdf.addPage([612, 792]);
   const regular = await pdf.embedFont(StandardFonts.Helvetica); const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
   const navy = rgb(0.09, 0.14, 0.22), red = rgb(0.70, 0.14, 0.23); let y = 748;
@@ -29,7 +29,26 @@ export async function createContractPdf(input: { name: string; email: string; ad
   page.drawText("[TEST] Consultation agreement", { x: 50, y, size: 18, font: bold, color: navy }); y -= 30;
   const lines = [`Consultant: ${consultantName} | RCIC #${consultantRcic}`, `Contact: ${consultantContact}`, `Client: ${input.name}`, `Contact: ${input.addressAndPhone} | ${input.email}`, `Consultation Fee: ${input.fee}`];
   page.drawRectangle({ x: 50, y: y - 72, width: 512, height: 82, color: rgb(0.97,0.98,0.99) }); page.drawRectangle({ x: 50, y: y - 72, width: 3, height: 82, color: red }); lines.forEach((line,i)=>page.drawText(line,{x:64,y:y-i*15,size:11,font:regular,color:navy})); y -= 112;
-  const wrap=(s:string,max=92)=>s.match(new RegExp(`.{1,${max}}(?:\\s|$)`,`g`))?.map(x=>x.trim())||[s]; for(const line of wrap(text)){ if(y<120) break; page.drawText(line,{x:50,y,size:10.5,font:regular,color:navy}); y-=15; }
+  const bodyFontSize = hasFrenchVersion ? 8.5 : 10.5;
+  const bodyLineHeight = hasFrenchVersion ? 10.5 : 15;
+  const wrap = (text: string, max = hasFrenchVersion ? 114 : 92) => text.match(new RegExp(`.{1,${max}}(?:\\s|$)`, "g"))?.map((line) => line.trim()) ?? [text];
+  const drawParagraph = (text: string) => {
+    for (const line of wrap(text)) {
+      page.drawText(line, { x: 50, y, size: bodyFontSize, font: regular, color: navy });
+      y -= bodyLineHeight;
+    }
+  };
+
+  drawParagraph(firstLanguage);
+
+  if (hasFrenchVersion) {
+    y -= 6;
+    page.drawLine({ start: { x: 50, y }, end: { x: 562, y }, thickness: 0.8, color: rgb(0.8, 0.83, 0.88) });
+    y -= 16;
+    page.drawText("Version française", { x: 50, y, size: 10.5, font: bold, color: navy });
+    y -= 13;
+    drawParagraph(french);
+  }
   page.drawText("Client signature", { x: 72, y: 350, size: 11, font: bold, color: navy }); page.drawText("Date", { x: 330, y: 350, size: 11, font: bold, color: navy });
   page.drawLine({ start:{x:64,y:326}, end:{x:274,y:326}, thickness:1, color:navy }); page.drawLine({ start:{x:320,y:326}, end:{x:450,y:326}, thickness:1, color:navy });
   page.drawLine({ start:{x:50,y:42}, end:{x:562,y:42}, thickness:1.5, color:red }); page.drawText("533 St-Pierre, Drummondville, QC J2C 6M1, Bureau 205 · (819) 817-5048",{x:150,y:27,size:8,font:regular,color:rgb(.3,.34,.4)});
