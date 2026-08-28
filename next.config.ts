@@ -2,10 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  serverExternalPackages: ["playwright"],
-  outputFileTracingIncludes: {
-    "/api/webhooks/calendly": ["./node_modules/playwright-core/browsers.json"],
-  },
   allowedDevOrigins: ["127.0.0.1"],
   async redirects() {
     return [
