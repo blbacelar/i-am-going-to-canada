@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
-import { escapeHtml, isMockBookingEnabled, mockBookingSchema } from "@/lib/test/mock-booking";
+import { isMockBookingEnabled, mockBookingSchema } from "@/lib/test/mock-booking";
 import { renderContractEmail } from "@/lib/email/contract-email";
 
 const SIGNWELL_API = "https://www.signwell.com/api/v1/documents";
@@ -30,8 +30,8 @@ export async function createContractPdf(input: { name: string; email: string; ad
   const lines = [`Consultant: ${consultantName} | RCIC #${consultantRcic}`, `Contact: ${consultantContact}`, `Client: ${input.name}`, `Contact: ${input.addressAndPhone} | ${input.email}`, `Consultation Fee: ${input.fee}`];
   page.drawRectangle({ x: 50, y: y - 72, width: 512, height: 82, color: rgb(0.97,0.98,0.99) }); page.drawRectangle({ x: 50, y: y - 72, width: 3, height: 82, color: red }); lines.forEach((line,i)=>page.drawText(line,{x:64,y:y-i*15,size:11,font:regular,color:navy})); y -= 112;
   const wrap=(s:string,max=92)=>s.match(new RegExp(`.{1,${max}}(?:\\s|$)`,`g`))?.map(x=>x.trim())||[s]; for(const line of wrap(text)){ if(y<120) break; page.drawText(line,{x:50,y,size:10.5,font:regular,color:navy}); y-=15; }
-  page.drawText("Client signature", { x: 72, y: 120, size: 11, font: bold, color: navy }); page.drawText("Date", { x: 330, y: 120, size: 11, font: bold, color: navy });
-  page.drawLine({ start:{x:64,y:96}, end:{x:274,y:96}, thickness:1, color:navy }); page.drawLine({ start:{x:320,y:96}, end:{x:450,y:96}, thickness:1, color:navy });
+  page.drawText("Client signature", { x: 72, y: 350, size: 11, font: bold, color: navy }); page.drawText("Date", { x: 330, y: 350, size: 11, font: bold, color: navy });
+  page.drawLine({ start:{x:64,y:326}, end:{x:274,y:326}, thickness:1, color:navy }); page.drawLine({ start:{x:320,y:326}, end:{x:450,y:326}, thickness:1, color:navy });
   page.drawLine({ start:{x:50,y:42}, end:{x:562,y:42}, thickness:1.5, color:red }); page.drawText("533 St-Pierre, Drummondville, QC J2C 6M1, Bureau 205 · (819) 817-5048",{x:150,y:27,size:8,font:regular,color:rgb(.3,.34,.4)});
   return Buffer.from(await pdf.save());
 }
