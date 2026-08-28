@@ -21,11 +21,14 @@ export async function createContractPdf(input: { name: string; email: string; ad
   const pdf = await PDFDocument.create(); const page = pdf.addPage([612, 792]);
   const regular = await pdf.embedFont(StandardFonts.Helvetica); const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
   const navy = rgb(0.09, 0.14, 0.22), red = rgb(0.70, 0.14, 0.23); let y = 748;
-  page.drawText("I Am Going To Canada", { x: 72, y, size: 18, font: bold, color: navy }); page.drawText("by Marina Snyder", { x: 72, y: y - 16, size: 9, font: regular, color: red });
+  const logoBytes = await fs.readFile(new URL("../../../../../public/brand/marina-ms-logo.png", import.meta.url));
+  const logo = await pdf.embedPng(logoBytes);
+  page.drawImage(logo, { x: 64, y: y - 9, width: 42, height: 36 });
+  page.drawText("I Am Going To Canada", { x: 116, y: y + 2, size: 17, font: bold, color: navy }); page.drawText("by Marina Snyder", { x: 116, y: y - 14, size: 8, font: regular, color: red });
   page.drawLine({ start: { x: 50, y: y - 28 }, end: { x: 562, y: y - 28 }, thickness: 1.5, color: red }); y -= 62;
   page.drawText("[TEST] Consultation agreement", { x: 50, y, size: 18, font: bold, color: navy }); y -= 30;
   const lines = [`Consultant: ${consultantName} | RCIC #${consultantRcic}`, `Contact: ${consultantContact}`, `Client: ${input.name}`, `Contact: ${input.addressAndPhone} | ${input.email}`, `Consultation Fee: ${input.fee}`];
-  page.drawRectangle({ x: 50, y: y - 72, width: 512, height: 82, color: rgb(0.97,0.98,0.99), borderColor: red, borderWidth: 2 }); lines.forEach((line,i)=>page.drawText(line,{x:64,y:y-i*15,size:11,font:regular,color:navy})); y -= 112;
+  page.drawRectangle({ x: 50, y: y - 72, width: 512, height: 82, color: rgb(0.97,0.98,0.99) }); page.drawRectangle({ x: 50, y: y - 72, width: 3, height: 82, color: red }); lines.forEach((line,i)=>page.drawText(line,{x:64,y:y-i*15,size:11,font:regular,color:navy})); y -= 112;
   const wrap=(s:string,max=92)=>s.match(new RegExp(`.{1,${max}}(?:\\s|$)`,`g`))?.map(x=>x.trim())||[s]; for(const line of wrap(text)){ if(y<120) break; page.drawText(line,{x:50,y,size:10.5,font:regular,color:navy}); y-=15; }
   page.drawText("Client signature", { x: 72, y: 120, size: 11, font: bold, color: navy }); page.drawText("Date", { x: 330, y: 120, size: 11, font: bold, color: navy });
   page.drawLine({ start:{x:64,y:96}, end:{x:274,y:96}, thickness:1, color:navy }); page.drawLine({ start:{x:320,y:96}, end:{x:450,y:96}, thickness:1, color:navy });
