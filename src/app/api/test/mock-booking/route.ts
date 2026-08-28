@@ -50,7 +50,6 @@ export async function createContractPdf(input: { name: string; email: string; ad
     drawParagraph(french);
   }
   page.drawText("Client signature", { x: 72, y: 350, size: 11, font: bold, color: navy }); page.drawText("Date", { x: 330, y: 350, size: 11, font: bold, color: navy });
-  page.drawLine({ start:{x:64,y:326}, end:{x:274,y:326}, thickness:1, color:navy }); page.drawLine({ start:{x:320,y:326}, end:{x:450,y:326}, thickness:1, color:navy });
   page.drawLine({ start:{x:50,y:42}, end:{x:562,y:42}, thickness:1.5, color:red }); page.drawText("533 St-Pierre, Drummondville, QC J2C 6M1, Bureau 205 · (819) 817-5048",{x:150,y:27,size:8,font:regular,color:rgb(.3,.34,.4)});
   return Buffer.from(await pdf.save());
 }
@@ -76,8 +75,8 @@ export async function POST(request: Request) {
     message: "This is a test signature request. It is not legally binding.",
     recipients: [{ id: "1", name: input.name, email: process.env.SIGNWELL_TEST_RECIPIENT || input.email }],
     fields: [[
-      { type: "signature", api_id: "client_signature", required: true, recipient_id: "1", page: 1, x: 72, y: 620, width: 220, height: 32 },
-      { type: "date", api_id: "signed_date", required: true, recipient_id: "1", page: 1, x: 440, y: 620, width: 120, height: 32 },
+      { type: "signature", api_id: "client_signature", required: true, recipient_id: "1", page: 1, x: 72, y: 600, width: 220, height: 32 },
+      { type: "date", api_id: "signed_date", required: true, recipient_id: "1", page: 1, x: 440, y: 600, width: 120, height: 32 },
     ]],
     metadata: { mock_booking: "true" },
     language: input.language === "pt-fr" ? "pt" : input.language === "es-fr" ? "es" : input.language,
