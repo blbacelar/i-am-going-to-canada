@@ -31,6 +31,12 @@ type CalendlyInvitee = {
   };
 };
 
+type CalendlyScheduledEvent = {
+  resource?: {
+    event_type?: string;
+  };
+};
+
 function verifySignature(rawBody: string, header: string | null, secret: string): boolean {
   if (!header) return false;
   const values = new Map(header.split(",").map((part) => {
@@ -84,6 +90,15 @@ async function fetchInviteeForEvent(eventIdValue: string | null, token: string, 
   if (!response.ok) return undefined;
   const body = await response.json() as { collection?: Array<CalendlyInvitee["resource"]> };
   return body.collection?.find((item) => !email || item?.email === email) ?? body.collection?.[0];
+}
+
+async function fetchScheduledEventType(eventIdValue: string, token: string): Promise<string | null> {
+  const response = await fetch(`${CALENDLY_API}/scheduled_events/${encodeURIComponent(eventIdValue)}`, {
+    headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
+  });
+  if (!response.ok) return null;
+  const body = await response.json() as CalendlyScheduledEvent;
+  return body.resource?.event_type ?? null;
 }
 
 async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, language: string) {
@@ -145,12 +160,14 @@ export async function POST(request: Request) {
   scheduledEventId ??= eventId(invitee?.scheduled_event);
   if (!scheduledEventId) return NextResponse.json({ error: "Missing scheduled event" }, { status: 400 });
 
+  const scheduledEventType = await fetchScheduledEventType(scheduledEventId, calendlyToken);
+
   const supabase = createAdminClient();
   const answers = invitee?.questions_and_answers ?? [];
   const record = {
     calendly_event_id: scheduledEventId,
     calendly_invitee_uri: payload?.invitee ?? invitee?.uri ?? null,
-    event_type_uri: payload?.event ?? null,
+    event_type_uri: scheduledEventType ?? payload?.event ?? null,
     name: invitee?.name ?? payload?.name ?? null,
     email: invitee?.email ?? payload?.email ?? null,
     address_and_phone: contactAnswer(answers),
@@ -166,8 +183,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unable to persist booking" }, { status: 500 });
   }
   if (body.event === "invitee.created") {
-    const requestedLanguage = payload?.tracking?.utm_content === "pt" ? "pt-fr" : payload?.tracking?.utm_content === "es" ? "es-fr" : payload?.tracking?.utm_content;
-    try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "pt-fr"); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
+    const testEventType = process.env.CALENDLY_TEST_EVENT_TYPE_URI;
+    if (testEventType && scheduledEventType === testEventType) {
+      const requestedLanguage = payload?.tracking?.utm_content === "pt" ? "pt-fr" : payload?.tracking?.utm_content === "es" ? "es-fr" : payload?.tracking?.utm_content;
+      try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "pt-fr"); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
+    } else {
+      console.info("Calendly contract dispatch skipped for non-test event", { scheduledEventId, scheduledEventType });
+    }
   }
   return NextResponse.json({ received: true });
 }
