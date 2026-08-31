@@ -28,7 +28,10 @@ export async function createContractPdf(input: { name: string; email: string; ad
   page.drawImage(logo, { x: 64, y: y - 9, width: 42, height: 36 });
   page.drawText("I Am Going To Canada", { x: 116, y: y + 2, size: 17, font: bold, color: navy }); page.drawText("by Marina Snyder", { x: 116, y: y - 14, size: 8, font: regular, color: red });
   page.drawLine({ start: { x: 50, y: y - 28 }, end: { x: 562, y: y - 28 }, thickness: 1.5, color: red }); y -= 62;
-  page.drawText("[TEST] Consultation agreement", { x: 50, y, size: 18, font: bold, color: navy }); y -= 30;
+  page.drawText("[TEST] Consultation agreement", { x: 50, y, size: 18, font: bold, color: navy });
+  page.drawText("Marina Snyder Immigration Consulting Inc.", { x: 334, y: y + 2, size: 6.5, font: regular, color: navy });
+  page.drawText("Marina Snyder Consultation en Immigration Inc.", { x: 334, y: y - 8, size: 6.5, font: regular, color: navy });
+  y -= 30;
   const lines = [`Consultant: ${consultantName} | RCIC #${consultantRcic}`, `Contact: ${consultantContact}`, `Client: ${input.name}`, `Contact: ${input.addressAndPhone} | ${input.email}`, `Consultation Fee: ${input.fee}`];
   page.drawRectangle({ x: 50, y: y - 72, width: 512, height: 82, color: rgb(0.97,0.98,0.99) }); page.drawRectangle({ x: 50, y: y - 72, width: 3, height: 82, color: red }); lines.forEach((line,i)=>page.drawText(line,{x:64,y:y-i*15,size:11,font:regular,color:navy})); y -= 112;
   const bodyFontSize = hasFrenchVersion ? 9.2 : 10.5;
