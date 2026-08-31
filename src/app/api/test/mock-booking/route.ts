@@ -33,7 +33,13 @@ export async function createContractPdf(input: { name: string; email: string; ad
   page.drawText("Marina Snyder Consultation en Immigration Inc.", { x: 334, y: y - 8, size: 6.5, font: regular, color: navy });
   y -= 30;
   const lines = [`Consultant: ${consultantName} | RCIC #${consultantRcic}`, `Contact: ${consultantContact}`, `Client: ${input.name}`, `Contact: ${input.addressAndPhone} | ${input.email}`, `Consultation Fee: ${input.fee}`];
-  page.drawRectangle({ x: 50, y: y - 72, width: 512, height: 82, color: rgb(0.97,0.98,0.99) }); page.drawRectangle({ x: 50, y: y - 72, width: 3, height: 82, color: red }); lines.forEach((line,i)=>page.drawText(line,{x:64,y:y-i*15,size:11,font:regular,color:navy})); y -= 112;
+  const contactBlockX = 50;
+  const contactBlockWidth = 512;
+  const contactStartX = contactBlockX + (contactBlockWidth - Math.max(...lines.map((line) => regular.widthOfTextAtSize(line, 11)))) / 2;
+  page.drawRectangle({ x: contactBlockX, y: y - 80, width: contactBlockWidth, height: 90, color: rgb(0.97,0.98,0.99) });
+  page.drawRectangle({ x: contactBlockX, y: y - 80, width: 3, height: 90, color: red });
+  lines.forEach((line, i) => page.drawText(line, { x: contactStartX, y: y - 6 - i * 15, size: 11, font: regular, color: navy }));
+  y -= 112;
   const bodyFontSize = hasFrenchVersion ? 9.2 : 10.5;
   const bodyLineHeight = hasFrenchVersion ? 11.2 : 15;
   const wrap = (text: string, max = hasFrenchVersion ? 106 : 92) => text.match(new RegExp(`.{1,${max}}(?:\\s|$)`, "g"))?.map((line) => line.trim()) ?? [text];
