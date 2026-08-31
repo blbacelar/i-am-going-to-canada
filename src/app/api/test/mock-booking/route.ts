@@ -23,6 +23,8 @@ export async function createContractPdf(input: { name: string; email: string; ad
   const navy = rgb(0.09, 0.14, 0.22), red = rgb(0.70, 0.14, 0.23); let y = 748;
   const logoBytes = await fs.readFile(new URL("../../../../../public/brand/marina-ms-logo.png", import.meta.url));
   const logo = await pdf.embedPng(logoBytes);
+  const marinaSignatureBytes = await fs.readFile(new URL("../../../../../public/brand/marina-signature.jpeg", import.meta.url));
+  const marinaSignature = await pdf.embedJpg(marinaSignatureBytes);
   page.drawImage(logo, { x: 64, y: y - 9, width: 42, height: 36 });
   page.drawText("I Am Going To Canada", { x: 116, y: y + 2, size: 17, font: bold, color: navy }); page.drawText("by Marina Snyder", { x: 116, y: y - 14, size: 8, font: regular, color: red });
   page.drawLine({ start: { x: 50, y: y - 28 }, end: { x: 562, y: y - 28 }, thickness: 1.5, color: red }); y -= 62;
@@ -49,7 +51,11 @@ export async function createContractPdf(input: { name: string; email: string; ad
     y -= 13;
     drawParagraph(french);
   }
-  page.drawText("Client signature", { x: 72, y: 350, size: 11, font: bold, color: navy }); page.drawText("Date", { x: 330, y: 350, size: 11, font: bold, color: navy });
+  page.drawText("Client signature", { x: 72, y: 350, size: 11, font: bold, color: navy });
+  page.drawImage(marinaSignature, { x: 300, y: 365, width: 118, height: 59 });
+  page.drawText("Marina Snyder", { x: 300, y: 354, size: 8, font: bold, color: navy });
+  page.drawText("RCIC-IRB R519265", { x: 300, y: 343, size: 8, font: regular, color: navy });
+  page.drawText("Date", { x: 440, y: 350, size: 11, font: bold, color: navy });
   page.drawLine({ start:{x:50,y:42}, end:{x:562,y:42}, thickness:1.5, color:red }); page.drawText("533 St-Pierre, Drummondville, QC J2C 6M1, Bureau 205 · (819) 817-5048",{x:150,y:27,size:8,font:regular,color:rgb(.3,.34,.4)});
   return Buffer.from(await pdf.save());
 }
