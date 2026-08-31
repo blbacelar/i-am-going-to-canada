@@ -53,7 +53,7 @@
     "active": true,
     "order": 4,
     "name": "Aline Costa",
-    "verificationStatus": "todo-content",
+    "verificationStatus": "needs-owner-confirmation",
     "role": {
       "en": "Regulated Canadian Immigration Consultant (RCIC)",
       "fr": "Consultante réglementée en immigration canadienne (CRIC)",
