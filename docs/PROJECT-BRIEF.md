@@ -25,7 +25,7 @@ All biographies, credentials, languages, services, licence details, photos and C
 
 - People outside Canada researching lawful immigration pathways.
 - People already in Canada who need professional guidance.
-- Portuguese-, English- and French-speaking individuals, couples and families.
+- Portuguese-, English-, French- and Spanish-speaking individuals, couples and families.
 - Visitors at different stages: exploration, planning, document preparation and case-specific consultation.
 
 ## Audience state
@@ -75,7 +75,7 @@ These lines are provisional marketing copy, not approved factual content.
 4. Let visitors compare expertise, languages and availability.
 5. Reduce friction between arrival and booking.
 6. Build confidence through verified credentials, process clarity and real testimonials.
-7. Support discoverability in English, French and Portuguese.
+7. Support discoverability in English, French, Spanish and Portuguese.
 
 ## Suggested information architecture
 

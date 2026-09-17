@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { trackJourneyEvent } from "@/lib/analytics/track";
+import { resolveBookingBaseUrl } from "@/lib/booking/routing";
 import { languageNames, localePath, type ConsultantLanguage, type Locale } from "@/lib/i18n/config";
 import { matchConsultantsByCriteria, type PracticeArea } from "@/lib/matching/match-consultants";
 import type { Consultant } from "@/lib/schemas/content";
@@ -37,28 +38,25 @@ function CalendlyInlineEmbed({ url, fallbackLabel }: { url: string; fallbackLabe
       containerRef.current.replaceChildren();
       window.Calendly.initInlineWidget({ url, parentElement: containerRef.current });
     };
-    const script = document.querySelector<HTMLScriptElement>(`script[src="${calendlyWidgetScript}"]`);
+    const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${calendlyWidgetScript}"]`);
     if (window.Calendly) {
       initialize();
-    } else if (script) {
-      script.addEventListener("load", initialize);
-      script.addEventListener("error", () => setScriptFailed(true), { once: true });
+    } else if (existingScript) {
+      existingScript.addEventListener("load", initialize, { once: true });
+      existingScript.addEventListener("error", () => setScriptFailed(true), { once: true });
     } else {
-      const nextScript = document.createElement("script");
-      nextScript.src = calendlyWidgetScript;
-      nextScript.async = true;
-      nextScript.addEventListener("load", initialize, { once: true });
-      nextScript.addEventListener("error", () => setScriptFailed(true), { once: true });
-      document.body.appendChild(nextScript);
+      const script = document.createElement("script");
+      script.src = calendlyWidgetScript;
+      script.async = true;
+      script.addEventListener("load", initialize, { once: true });
+      script.addEventListener("error", () => setScriptFailed(true), { once: true });
+      document.body.appendChild(script);
     }
-    return () => {
-      cancelled = true;
-      script?.removeEventListener("load", initialize);
-    };
+    return () => { cancelled = true; };
   }, [url]);
 
   if (scriptFailed) {
-    return <a className="button" href={url} target="_blank" rel="noreferrer">{fallbackLabel}</a>;
+    return <iframe className="calendly-inline-fallback" src={url} title={fallbackLabel} />;
   }
   return <div className="calendly-inline-embed" ref={containerRef} aria-label={fallbackLabel} />;
 }
@@ -179,19 +177,32 @@ export function Concierge({
   }, [resultIds, step]);
 
   const availableMatches = sortedMatches.filter((consultant) => availability[consultant.id]?.firstAvailableAt);
+  const hasIrbMatter = selectedAreas.includes("irb");
   const isMockMode = mockMode || localMockMode;
   // Keep the shared test calendar active while the client validates the flow.
   const testCalendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_TEST_EVENT_URL;
   const isTestCalendlyMode = Boolean(testCalendlyUrl);
   // The test calendar intentionally bypasses consultant matching during validation.
-  const assignedConsultant = isMockMode || isTestCalendlyMode ? (matches[0] ?? consultants[0]) : availableMatches[0];
+  const assignedConsultant = hasIrbMatter
+    ? matches.find((consultant) => consultant.id === "marina-snyder")
+    : isMockMode || isTestCalendlyMode ? (matches[0] ?? consultants[0]) : availableMatches[0];
   const bookingUrl = useMemo(() => {
-    const baseUrl = testCalendlyUrl || assignedConsultant?.calendlyUrl;
+    const baseUrl = resolveBookingBaseUrl({
+      hasIrbMatter,
+      testCalendlyUrl,
+      assignedConsultantUrl: assignedConsultant?.calendlyUrl,
+      irbCalendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_IRB_EVENT_URL,
+    });
     if (!baseUrl || baseUrl === "TODO_CONTENT" || !selectedLanguage) return baseUrl;
     const url = new URL(baseUrl);
+    if (typeof window !== "undefined") {
+      url.searchParams.set("embed_domain", window.location.hostname);
+    }
+    url.searchParams.set("embed_type", "Inline");
+    url.searchParams.set("hide_event_type_details", "1");
     url.searchParams.set("utm_content", selectedLanguage);
     return url.toString();
-  }, [assignedConsultant, selectedLanguage, testCalendlyUrl]);
+  }, [assignedConsultant, hasIrbMatter, selectedLanguage, testCalendlyUrl]);
 
   return (
     <div className="concierge" data-step={step}>
@@ -234,10 +245,10 @@ export function Concierge({
         {step === 4 ? (
           <div className="concierge-results">
             {!matches.length && !isTestCalendlyMode ? <p className="no-match">{copy.noExactMatch}</p> : null}
-            {matches.length && !isMockMode && !isTestCalendlyMode && availabilityQuery !== resultIds ? <p className="concierge-availability-note">{copy.availabilityLoading}</p> : null}
-            {(matches.length || isTestCalendlyMode) && (isMockMode || isTestCalendlyMode || availabilityQuery === resultIds) && assignedConsultant ? (
+            {matches.length && !hasIrbMatter && !isMockMode && !isTestCalendlyMode && availabilityQuery !== resultIds ? <p className="concierge-availability-note">{copy.availabilityLoading}</p> : null}
+            {(matches.length || isTestCalendlyMode) && (hasIrbMatter || isMockMode || isTestCalendlyMode || availabilityQuery === resultIds) && assignedConsultant ? (
               <div className="concierge-assignment">
-                <p className="concierge-availability-note">{copy.availabilityNote}</p>
+                {!hasIrbMatter ? <p className="concierge-availability-note">{copy.availabilityNote}</p> : null}
                 {bookingUrl && (isTestCalendlyMode || !mockMode) ? (
                   <CalendlyInlineEmbed url={bookingUrl} fallbackLabel={copy.continueToBooking} />
                 ) : mockMode ? (
@@ -245,7 +256,7 @@ export function Concierge({
                 ) : null}
               </div>
             ) : null}
-            {matches.length && !isMockMode && !isTestCalendlyMode && availabilityQuery === resultIds && !assignedConsultant ? <p className="no-match">{copy.noAvailability}</p> : null}
+            {matches.length && !hasIrbMatter && !isMockMode && !isTestCalendlyMode && availabilityQuery === resultIds && !assignedConsultant ? <p className="no-match">{copy.noAvailability}</p> : null}
           </div>
         ) : null}
       </div>

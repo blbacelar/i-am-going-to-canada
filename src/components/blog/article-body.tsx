@@ -5,7 +5,7 @@ import { localized, localePath, type Locale } from "@/lib/i18n/config";
 import type { Article } from "@/lib/schemas/content";
 
 export function LocalizedDate({ value, locale }: { value: string; locale: Locale }) {
-  const localeCode = locale === "en" ? "en-CA" : locale === "fr" ? "fr-CA" : "pt-BR";
+  const localeCode = locale === "en" ? "en-CA" : locale === "fr" ? "fr-CA" : locale === "pt" ? "pt-BR" : "es";
   return new Intl.DateTimeFormat(localeCode, {
     day: "numeric",
     month: "long",

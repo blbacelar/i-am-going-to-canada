@@ -7,7 +7,7 @@ import { getArticleRouteMap, siteContent } from "@/lib/content/data";
 
 export function Header({ locale }: { locale: Locale }) {
   const nav = siteContent.navigation;
-  const primaryLabel = { en: "Primary navigation", fr: "Navigation principale", pt: "Navegação principal" }[locale];
+  const primaryLabel = { en: "Primary navigation", fr: "Navigation principale", es: "Navegación principal", pt: "Navegação principal" }[locale];
   const links = [
     { href: localePath(locale, "/consultants"), label: localized(nav.consultants, locale) },
     { href: localePath(locale, "/services"), label: localized(nav.services, locale) },

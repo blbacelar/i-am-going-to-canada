@@ -8,20 +8,27 @@
     "role": {
       "en": "TODO_CONTENT",
       "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
       "pt": "TODO_CONTENT"
     },
     "shortBio": {
       "en": "TODO_CONTENT",
       "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
       "pt": "TODO_CONTENT"
     },
     "fullBio": {
       "en": "TODO_CONTENT",
       "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
       "pt": "TODO_CONTENT"
     },
-    "languages": ["TODO_CONTENT"],
-    "serviceIds": ["TODO_CONTENT"],
+    "languages": [
+      "TODO_CONTENT"
+    ],
+    "serviceIds": [
+      "TODO_CONTENT"
+    ],
     "credentials": [
       {
         "label": "TODO_CONTENT",
@@ -34,14 +41,25 @@
       "alt": {
         "en": "Portrait placeholder for Marina Snyder",
         "fr": "Espace réservé au portrait de Marina Snyder",
+        "es": "Espacio reservado para el retrato de Marina Snyder",
         "pt": "Espaço reservado para o retrato de Marina Snyder"
       }
     },
     "calendlyUrl": "TODO_CONTENT",
     "calendlyEventTypeUri": "TODO_CONTENT",
     "seo": {
-      "title": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-      "description": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"}
+      "title": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      },
+      "description": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      }
     }
   },
   {
@@ -50,21 +68,55 @@
     "active": true,
     "order": 2,
     "name": "Aline — TODO_CONTENT",
-    "role": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-    "shortBio": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-    "fullBio": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-    "languages": ["TODO_CONTENT"],
-    "serviceIds": ["TODO_CONTENT"],
+    "role": {
+      "en": "TODO_CONTENT",
+      "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
+      "pt": "TODO_CONTENT"
+    },
+    "shortBio": {
+      "en": "TODO_CONTENT",
+      "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
+      "pt": "TODO_CONTENT"
+    },
+    "fullBio": {
+      "en": "TODO_CONTENT",
+      "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
+      "pt": "TODO_CONTENT"
+    },
+    "languages": [
+      "TODO_CONTENT"
+    ],
+    "serviceIds": [
+      "TODO_CONTENT"
+    ],
     "credentials": [],
     "portrait": {
       "src": "/consultants/placeholder-aline.webp",
-      "alt": {"en": "Portrait placeholder for Aline", "fr": "Espace réservé au portrait d’Aline", "pt": "Espaço reservado para o retrato de Aline"}
+      "alt": {
+        "en": "Portrait placeholder for Aline",
+        "fr": "Espace réservé au portrait d’Aline",
+        "es": "Espacio reservado para el retrato de Aline",
+        "pt": "Espaço reservado para o retrato de Aline"
+      }
     },
     "calendlyUrl": "TODO_CONTENT",
     "calendlyEventTypeUri": "TODO_CONTENT",
     "seo": {
-      "title": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-      "description": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"}
+      "title": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      },
+      "description": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      }
     }
   },
   {
@@ -73,21 +125,55 @@
     "active": true,
     "order": 3,
     "name": "Virginia Melo",
-    "role": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-    "shortBio": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-    "fullBio": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-    "languages": ["TODO_CONTENT"],
-    "serviceIds": ["TODO_CONTENT"],
+    "role": {
+      "en": "TODO_CONTENT",
+      "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
+      "pt": "TODO_CONTENT"
+    },
+    "shortBio": {
+      "en": "TODO_CONTENT",
+      "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
+      "pt": "TODO_CONTENT"
+    },
+    "fullBio": {
+      "en": "TODO_CONTENT",
+      "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
+      "pt": "TODO_CONTENT"
+    },
+    "languages": [
+      "TODO_CONTENT"
+    ],
+    "serviceIds": [
+      "TODO_CONTENT"
+    ],
     "credentials": [],
     "portrait": {
       "src": "/consultants/placeholder-virginia.webp",
-      "alt": {"en": "Portrait placeholder for Virginia Melo", "fr": "Espace réservé au portrait de Virginia Melo", "pt": "Espaço reservado para o retrato de Virginia Melo"}
+      "alt": {
+        "en": "Portrait placeholder for Virginia Melo",
+        "fr": "Espace réservé au portrait de Virginia Melo",
+        "es": "Espacio reservado para el retrato de Virginia Melo",
+        "pt": "Espaço reservado para o retrato de Virginia Melo"
+      }
     },
     "calendlyUrl": "TODO_CONTENT",
     "calendlyEventTypeUri": "TODO_CONTENT",
     "seo": {
-      "title": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-      "description": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"}
+      "title": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      },
+      "description": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      }
     }
   },
   {
@@ -96,21 +182,55 @@
     "active": true,
     "order": 4,
     "name": "Beatriz Dias",
-    "role": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-    "shortBio": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-    "fullBio": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-    "languages": ["TODO_CONTENT"],
-    "serviceIds": ["TODO_CONTENT"],
+    "role": {
+      "en": "TODO_CONTENT",
+      "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
+      "pt": "TODO_CONTENT"
+    },
+    "shortBio": {
+      "en": "TODO_CONTENT",
+      "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
+      "pt": "TODO_CONTENT"
+    },
+    "fullBio": {
+      "en": "TODO_CONTENT",
+      "fr": "TODO_CONTENT",
+      "es": "TODO_CONTENT",
+      "pt": "TODO_CONTENT"
+    },
+    "languages": [
+      "TODO_CONTENT"
+    ],
+    "serviceIds": [
+      "TODO_CONTENT"
+    ],
     "credentials": [],
     "portrait": {
       "src": "/consultants/placeholder-beatriz.webp",
-      "alt": {"en": "Portrait placeholder for Beatriz Dias", "fr": "Espace réservé au portrait de Beatriz Dias", "pt": "Espaço reservado para o retrato de Beatriz Dias"}
+      "alt": {
+        "en": "Portrait placeholder for Beatriz Dias",
+        "fr": "Espace réservé au portrait de Beatriz Dias",
+        "es": "Espacio reservado para el retrato de Beatriz Dias",
+        "pt": "Espaço reservado para o retrato de Beatriz Dias"
+      }
     },
     "calendlyUrl": "TODO_CONTENT",
     "calendlyEventTypeUri": "TODO_CONTENT",
     "seo": {
-      "title": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-      "description": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"}
+      "title": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      },
+      "description": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      }
     }
   }
 ]

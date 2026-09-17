@@ -4,7 +4,7 @@ import { siteContent } from "@/lib/content/data";
 import type { Locale } from "@/lib/i18n/config";
 
 export function Brand({ locale }: { locale: Locale }) {
-  const homeLabel = { en: "home", fr: "accueil", pt: "início" }[locale];
+  const homeLabel = { en: "home", fr: "accueil", es: "inicio", pt: "início" }[locale];
   return (
     <Link className="brand" href={`/${locale}`} aria-label={`${siteContent.brand.name}, ${homeLabel}`}>
       <span className="brand-logo">

@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { escapeHtml } from "@/lib/test/mock-booking";
 
-type ContractEmailLanguage = "en" | "fr" | "pt" | "pt-fr" | "es-fr";
+type ContractEmailLanguage = "en" | "fr" | "es" | "pt";
 
 const copy = {
   en: {
@@ -25,6 +25,16 @@ const copy = {
     automated: "Ce message a été envoyé automatiquement par I Am Going To Canada.",
     test: "Il s’agit d’un message de test; aucun paiement n’a été traité et le document n’est pas juridiquement contraignant.",
   },
+  es: {
+    subject: "Su contrato de consulta",
+    greeting: "Hola",
+    intro: "Su consulta está programada. Revise y firme el contrato:",
+    cta: "Revisar y firmar el contrato",
+    questionnaire: "Completar el cuestionario inicial",
+    questionnaireIntro: "Antes de su consulta, puede completar el cuestionario inicial:",
+    automated: "Este mensaje fue enviado automáticamente por I Am Going To Canada.",
+    test: "Este es un mensaje de prueba; no se procesó ningún pago y el documento no es jurídicamente vinculante.",
+  },
   pt: {
     subject: "Seu contrato de consulta",
     greeting: "Olá",
@@ -35,26 +45,6 @@ const copy = {
     automated: "Esta mensagem foi enviada automaticamente pela I Am Going To Canada.",
     test: "Esta é uma mensagem de teste; nenhum pagamento foi processado e o documento não tem validade jurídica.",
   },
-  "pt-fr": {
-    subject: "Seu contrato de consulta / Votre entente de consultation",
-    greeting: "Olá / Bonjour",
-    intro: "Sua consulta foi agendada. Revise e assine o contrato. / Votre consultation est planifiée. Veuillez examiner et signer l’entente.",
-    cta: "Revisar e assinar / Examiner et signer",
-    questionnaire: "Preencher o questionário / Remplir le questionnaire",
-    questionnaireIntro: "Antes da consulta, você pode preencher o questionário inicial. / Avant votre consultation, vous pouvez remplir le questionnaire initial.",
-    automated: "Mensagem automática da I Am Going To Canada. / Message automatique de I Am Going To Canada.",
-    test: "Teste: nenhum pagamento foi processado e o documento não tem validade jurídica. / Test : aucun paiement n’a été traité et le document n’est pas juridiquement contraignant.",
-  },
-  "es-fr": {
-    subject: "Su contrato de consulta / Votre entente de consultation",
-    greeting: "Hola / Bonjour",
-    intro: "Su consulta está programada. Revise y firme el contrato. / Votre consultation est planifiée. Veuillez examiner et signer l’entente.",
-    cta: "Revisar y firmar / Examiner et signer",
-    questionnaire: "Completar el cuestionario / Remplir le questionnaire",
-    questionnaireIntro: "Antes de la consulta, puede completar el cuestionario inicial. / Avant votre consultation, vous pouvez remplir le questionnaire initial.",
-    automated: "Mensaje automático de I Am Going To Canada. / Message automatique de I Am Going To Canada.",
-    test: "Prueba: no se procesó ningún pago y el documento no es jurídicamente vinculante. / Test : aucun paiement n’a été traité et le document n’est pas juridiquement contraignant.",
-  },
 } satisfies Record<ContractEmailLanguage, Record<string, string>>;
 
 export async function renderContractEmail(input: {
@@ -64,7 +54,7 @@ export async function renderContractEmail(input: {
   language: string;
   testMode?: boolean;
 }) {
-  const language = (input.language in copy ? input.language : "pt-fr") as ContractEmailLanguage;
+  const language = (input.language in copy ? input.language : "en") as ContractEmailLanguage;
   const text = copy[language];
   const logoPath = join(process.cwd(), "public", "brand", "marina-ms-logo.png");
   const logo = (await readFile(logoPath)).toString("base64");

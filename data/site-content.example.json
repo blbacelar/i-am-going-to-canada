@@ -5,72 +5,198 @@
     "url": "https://iamgoingtocanada.ca/"
   },
   "navigation": {
-    "home": {"en": "Home", "fr": "Accueil", "pt": "Início"},
-    "consultants": {"en": "Consultants", "fr": "Consultantes", "pt": "Consultoras"},
-    "services": {"en": "Services", "fr": "Services", "pt": "Serviços"},
-    "about": {"en": "About", "fr": "À propos", "pt": "Sobre"},
-    "faq": {"en": "FAQ", "fr": "FAQ", "pt": "Dúvidas"},
-    "book": {"en": "Find a consultant", "fr": "Trouver une consultante", "pt": "Encontrar uma consultora"}
+    "home": {
+      "en": "Home",
+      "fr": "Accueil",
+      "es": "Inicio",
+      "pt": "Início"
+    },
+    "consultants": {
+      "en": "Consultants",
+      "fr": "Consultantes",
+      "es": "Consultoras",
+      "pt": "Consultoras"
+    },
+    "services": {
+      "en": "Services",
+      "fr": "Services",
+      "es": "Servicios",
+      "pt": "Serviços"
+    },
+    "about": {
+      "en": "About",
+      "fr": "À propos",
+      "es": "Acerca de",
+      "pt": "Sobre"
+    },
+    "faq": {
+      "en": "FAQ",
+      "fr": "FAQ",
+      "es": "Dudas",
+      "pt": "Dúvidas"
+    },
+    "book": {
+      "en": "Find a consultant",
+      "fr": "Trouver une consultante",
+      "es": "Encontrar una consultora",
+      "pt": "Encontrar uma consultora"
+    }
   },
   "home": {
     "hero": {
       "eyebrow": {
         "en": "Canadian immigration guidance, in your language",
         "fr": "Accompagnement en immigration canadienne, dans votre langue",
+        "es": "Orientación en inmigración canadiense en su idioma",
         "pt": "Orientação em imigração canadense, no seu idioma"
       },
       "title": {
         "en": "Your Canadian journey starts with the right conversation.",
         "fr": "Votre projet canadien commence par la bonne conversation.",
+        "es": "Su proyecto en Canadá comienza con la conversación correcta.",
         "pt": "Seu projeto no Canadá começa com a conversa certa."
       },
       "body": {
         "en": "Meet a multilingual team of immigration professionals and find the consultant whose services align with what you need today.",
         "fr": "Découvrez une équipe multilingue de professionnelles en immigration et trouvez la consultante dont les services correspondent à vos besoins actuels.",
+        "es": "Conoce a un equipo multilingüe de profesionales de inmigración y encuentra la consultora cuyos servicios combinan con lo que necesita ahora.",
         "pt": "Conheça uma equipe multilíngue de profissionais de imigração e encontre a consultora cujos serviços combinam com o que você precisa agora."
       },
-      "primaryCta": {"en": "Find your consultant", "fr": "Trouver ma consultante", "pt": "Encontrar minha consultora"},
-      "secondaryCta": {"en": "Meet the team", "fr": "Découvrir l’équipe", "pt": "Conhecer a equipe"}
+      "primaryCta": {
+        "en": "Find your consultant",
+        "fr": "Trouver ma consultante",
+        "es": "Encontrar mi consultora",
+        "pt": "Encontrar minha consultora"
+      },
+      "secondaryCta": {
+        "en": "Meet the team",
+        "fr": "Découvrir l’équipe",
+        "es": "Conocer al equipo",
+        "pt": "Conhecer a equipe"
+      }
     },
     "team": {
       "title": {
         "en": "Four professionals. One commitment to clear guidance.",
         "fr": "Quatre professionnelles. Un même engagement envers un accompagnement clair.",
+        "es": "Cuatro profesionales. Un solo compromiso con una orientación clara.",
         "pt": "Quatro profissionais. Um só compromisso com uma orientação clara."
       },
-      "body": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"}
+      "body": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      }
     }
   },
   "concierge": {
-    "title": {"en": "What kind of support are you looking for?", "fr": "Quel type d’accompagnement recherchez-vous?", "pt": "Que tipo de apoio você procura?"},
+    "title": {
+      "en": "What kind of support are you looking for?",
+      "fr": "Quel type d’accompagnement recherchez-vous?",
+      "es": "¿Qué tipo de apoyo buscas?",
+      "pt": "Que tipo de apoio você procura?"
+    },
     "intro": {
       "en": "Choose a consultation language, then answer three short questions about the kind of process involved. We will show public matches; availability is confirmed on Calendly.",
       "fr": "Choisissez une langue de consultation, puis répondez à trois courtes questions sur le type de dossier concerné. Nous présenterons les correspondances publiques; la disponibilité se confirme sur Calendly.",
+      "es": "Elija el idioma de la consulta y responda a tres preguntas cortas sobre el tipo de proceso. Mostraremos las combinaciones públicas; la disponibilidad se confirma en Calendly.",
       "pt": "Escolha o idioma da consulta e responda a três perguntas curtas sobre o tipo de processo. Mostraremos as combinações públicas; a disponibilidade é confirmada no Calendly."
     },
-    "qcQuestion": {"en": "Does this involve a Québec (QC) process?", "fr": "Le dossier concerne-t-il un processus du Québec (QC)?", "pt": "Envolve um processo de Québec (QC)?"},
-    "skQuestion": {"en": "Does this involve a Saskatchewan (SK) process?", "fr": "Le dossier concerne-t-il un processus de la Saskatchewan (SK)?", "pt": "Envolve um processo de Saskatchewan (SK)?"},
-    "irbQuestion": {"en": "Does this involve an appeal, deportation or refugee matter?", "fr": "Le dossier concerne-t-il un appel, une déportation ou une demande d’asile?", "pt": "Envolve appeal, deportação ou refúgio?"},
-    "yes": {"en": "Yes", "fr": "Oui", "pt": "Sim"},
-    "no": {"en": "No", "fr": "Non", "pt": "Não"},
-    "availabilityNote": {"en": "We found a current 30-minute opening. Continue to the booking page to request a consultation; the team will coordinate the professional assigned to your request.", "fr": "Nous avons trouvé une plage disponible de 30 minutes. Continuez vers la réservation pour demander une consultation; l’équipe coordonnera la professionnelle assignée à votre demande.", "pt": "Encontramos um horário atual de 30 minutos. Continue para o agendamento para solicitar uma consulta; a equipe coordenará a consultora designada para sua solicitação."},
-    "availabilityLoading": {"en": "Checking current availability…", "fr": "Vérification des disponibilités actuelles…", "pt": "Verificando a disponibilidade atual…"},
-    "noAvailability": {"en": "There are no available times in the current test window. Please try again later.", "fr": "Aucune plage horaire n’est disponible dans la fenêtre de test actuelle. Réessayez plus tard.", "pt": "Não há horários disponíveis na janela de teste atual. Tente novamente mais tarde."},
-    "continueToBooking": {"en": "Continue to booking", "fr": "Continuer vers la réservation", "pt": "Continuar para o agendamento"},
-    "viewAll": {"en": "View all consultants", "fr": "Voir toutes les consultantes", "pt": "Ver todas as consultoras"},
-    "restart": {"en": "Start again", "fr": "Recommencer", "pt": "Recomeçar"},
-    "back": {"en": "Back", "fr": "Retour", "pt": "Voltar"},
+    "qcQuestion": {
+      "en": "Does this involve a Québec (QC) process?",
+      "fr": "Le dossier concerne-t-il un processus du Québec (QC)?",
+      "es": "¿Se trata de un proceso de Quebec (QC)?",
+      "pt": "Envolve um processo de Québec (QC)?"
+    },
+    "skQuestion": {
+      "en": "Does this involve a Saskatchewan (SK) process?",
+      "fr": "Le dossier concerne-t-il un processus de la Saskatchewan (SK)?",
+      "es": "¿Se trata de un proceso de Saskatchewan (SK)?",
+      "pt": "Envolve um processo de Saskatchewan (SK)?"
+    },
+    "irbQuestion": {
+      "en": "Does this involve an appeal, deportation or refugee matter?",
+      "fr": "Le dossier concerne-t-il un appel, une déportation ou une demande d’asile?",
+      "es": "¿Envolve appeal, deportación o refugio?",
+      "pt": "Envolve appeal, deportação ou refúgio?"
+    },
+    "yes": {
+      "en": "Yes",
+      "fr": "Oui",
+      "es": "Sí",
+      "pt": "Sim"
+    },
+    "no": {
+      "en": "No",
+      "fr": "Non",
+      "es": "No",
+      "pt": "Não"
+    },
+    "availabilityNote": {
+      "en": "We found a current 30-minute opening. Continue to the booking page to request a consultation; the team will coordinate the professional assigned to your request.",
+      "fr": "Nous avons trouvé une plage disponible de 30 minutes. Continuez vers la réservation pour demander une consultation; l’équipe coordonnera la professionnelle assignée à votre demande.",
+      "es": "Encontramos un horario actual de 30 minutos. Continúe para solicitar una consulta; el equipo coordinará la consultora designada para su solicitud.",
+      "pt": "Encontramos um horário atual de 30 minutos. Continue para o agendamento para solicitar uma consulta; a equipe coordenará a consultora designada para sua solicitação."
+    },
+    "availabilityLoading": {
+      "en": "Checking current availability…",
+      "fr": "Vérification des disponibilités actuelles…",
+      "es": "Verificando la disponibilidad actual...",
+      "pt": "Verificando a disponibilidade atual…"
+    },
+    "noAvailability": {
+      "en": "There are no available times in the current test window. Please try again later.",
+      "fr": "Aucune plage horaire n’est disponible dans la fenêtre de test actuelle. Réessayez plus tard.",
+      "es": "No hay horarios disponibles en la ventana de prueba actual. Intente otra vez más tarde.",
+      "pt": "Não há horários disponíveis na janela de teste atual. Tente novamente mais tarde."
+    },
+    "continueToBooking": {
+      "en": "Continue to booking",
+      "fr": "Continuer vers la réservation",
+      "es": "Continuar para el programa",
+      "pt": "Continuar para o agendamento"
+    },
+    "viewAll": {
+      "en": "View all consultants",
+      "fr": "Voir toutes les consultantes",
+      "es": "Ver todas las consultoras",
+      "pt": "Ver todas as consultoras"
+    },
+    "restart": {
+      "en": "Start again",
+      "fr": "Recommencer",
+      "es": "Recomenzar",
+      "pt": "Recomeçar"
+    },
+    "back": {
+      "en": "Back",
+      "fr": "Retour",
+      "es": "Volver",
+      "pt": "Voltar"
+    },
     "noExactMatch": {
       "en": "We did not find an exact match for those selections. You can review the full team or contact us for help choosing a service.",
       "fr": "Nous n’avons pas trouvé de correspondance exacte. Vous pouvez consulter toute l’équipe ou nous contacter pour choisir un service.",
+      "es": "No encontramos una correspondencia exacta. Puede conocer a todo el equipo o ponerse en contacto para elegir un servicio.",
       "pt": "Não encontramos uma correspondência exata. Você pode conhecer toda a equipe ou entrar em contato para escolher um serviço."
     }
   },
   "services": [
     {
       "id": "TODO_SERVICE_ID",
-      "label": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
-      "shortDescription": {"en": "TODO_CONTENT", "fr": "TODO_CONTENT", "pt": "TODO_CONTENT"},
+      "label": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      },
+      "shortDescription": {
+        "en": "TODO_CONTENT",
+        "fr": "TODO_CONTENT",
+        "es": "TODO_CONTENT",
+        "pt": "TODO_CONTENT"
+      },
       "active": false,
       "order": 1
     }
@@ -79,11 +205,13 @@
     "generalDisclaimer": {
       "en": "TODO_LEGAL_REVIEW",
       "fr": "TODO_LEGAL_REVIEW",
+      "es": "TODO LEGAL REVIEW",
       "pt": "TODO_LEGAL_REVIEW"
     },
     "conciergeDisclaimer": {
       "en": "This tool helps you navigate public service information. It does not assess eligibility or provide immigration advice.",
       "fr": "Cet outil vous aide à consulter les renseignements publics sur nos services. Il n’évalue pas l’admissibilité et ne fournit pas de conseils en immigration.",
+      "es": "Esta herramienta te ayuda a navegar por la información pública de los servicios. Ella no evalúa la elegibilidad ni proporciona asesoramiento migratorio.",
       "pt": "Esta ferramenta ajuda você a navegar pelas informações públicas dos serviços. Ela não avalia elegibilidade nem fornece aconselhamento migratório."
     }
   }

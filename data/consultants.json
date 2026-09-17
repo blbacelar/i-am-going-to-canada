@@ -9,40 +9,74 @@
     "role": {
       "en": "Regulated Canadian Immigration Consultant (RCIC-IRB)",
       "fr": "Consultante réglementée en immigration canadienne (CRIC-CISR)",
+      "es": "Consultora de inmigración canadiense regulada (RCIC-IRB)",
       "pt": "Consultora de imigração canadense regulamentada (RCIC-IRB)"
     },
     "shortBio": {
       "en": "Marina works with temporary and permanent residence, family sponsorship, citizenship, employer matters and representation before the IRB.",
       "fr": "Marina travaille en résidence temporaire et permanente, en parrainage familial, en citoyenneté, dans les dossiers d’employeurs et en représentation devant la CISR.",
+      "es": "Marina actúa con residencia temporal y permanente, patrocinio familiar, ciudadanía, cuestiones de empleadores y representación ante el IRB.",
       "pt": "Marina atua com residência temporária e permanente, patrocínio familiar, cidadania, questões de empregadores e representação perante o IRB."
     },
     "fullBio": {
       "en": "Marina Snyder is the owner of I Am Going To Canada and a regulated immigration consultant. She has a background in Business Administration and International Commerce and completed the Canadian Immigration Law, Policies and Procedures program at the University of British Columbia. Marina also went through the experience of immigrating to Canada herself.",
       "fr": "Marina Snyder est propriétaire de I Am Going To Canada et consultante réglementée en immigration. Elle possède une formation en administration des affaires et en commerce international et a terminé le programme Canadian Immigration Law, Policies and Procedures de l’Université de la Colombie-Britannique. Marina a elle-même vécu l’expérience d’immigrer au Canada.",
+      "es": "Marina Snyder es propietaria de I Am Going To Canada y consultora de inmigración regulada. Tiene formación en Administración de Empresas y Comercio Internacional y concluyó el programa Canadian Immigration Law, Policies and Procedures de la Universidad de British Columbia. Marina también vivió personalmente la experiencia de emigrar a Canadá.",
       "pt": "Marina Snyder é proprietária da I Am Going To Canada e consultora de imigração regulamentada. Tem formação em Administração de Empresas e Comércio Internacional e concluiu o programa Canadian Immigration Law, Policies and Procedures da University of British Columbia. Marina também viveu pessoalmente a experiência de imigrar para o Canadá."
     },
-    "languages": ["en", "fr", "pt"],
-    "practiceAreas": ["qc", "sk", "irb", "appeals"],
-    "serviceIds": ["temporary-residence", "permanent-residence", "family-sponsorship", "citizenship", "employer-services", "complex-matters"],
+    "languages": [
+      "en",
+      "fr",
+      "pt"
+    ],
+    "practiceAreas": [
+      "qc",
+      "sk",
+      "irb",
+      "appeals"
+    ],
+    "serviceIds": [
+      "temporary-residence",
+      "permanent-residence",
+      "family-sponsorship",
+      "citizenship",
+      "employer-services",
+      "complex-matters"
+    ],
     "credentials": [
-      {"label": "RCIC-IRB", "value": "R519265", "verificationUrl": null},
-      {"label": "Québec MIFI", "value": "11741", "verificationUrl": null}
+      {
+        "label": "RCIC-IRB",
+        "value": "R519265",
+        "verificationUrl": null
+      },
+      {
+        "label": "Québec MIFI",
+        "value": "11741",
+        "verificationUrl": null
+      }
     ],
     "portrait": {
       "src": "/consultants/marina-snyder.jpeg",
       "alt": {
         "en": "Portrait of Marina Snyder",
         "fr": "Portrait de Marina Snyder",
+        "es": "Retrato de Marina Snyder",
         "pt": "Retrato de Marina Snyder"
       }
     },
     "calendlyUrl": "https://calendly.com/marinasnyderrcic/30min",
     "calendlyEventTypeUri": "https://api.calendly.com/event_types/b5ed003b-4a7d-48cb-9d64-4daea5921ed7",
     "seo": {
-      "title": {"en": "Marina Snyder | I Am Going To Canada", "fr": "Marina Snyder | I Am Going To Canada", "pt": "Marina Snyder | I Am Going To Canada"},
+      "title": {
+        "en": "Marina Snyder | I Am Going To Canada",
+        "fr": "Marina Snyder | I Am Going To Canada",
+        "es": "Marina Snyder | I Am Going To Canada",
+        "pt": "Marina Snyder | I Am Going To Canada"
+      },
       "description": {
         "en": "Meet Marina Snyder and learn about her immigration services, languages and professional background.",
         "fr": "Découvrez Marina Snyder, ses services d’immigration, ses langues et son parcours professionnel.",
+        "es": "Conozca Marina Snyder, sus servicios de inmigración, idiomas y trayectoria profesional.",
         "pt": "Conheça Marina Snyder, seus serviços de imigração, idiomas e trajetória profissional."
       }
     }
@@ -57,35 +91,63 @@
     "role": {
       "en": "Regulated Canadian Immigration Consultant (RCIC)",
       "fr": "Consultante réglementée en immigration canadienne (CRIC)",
+      "es": "Consultora de inmigración canadiense regulada (RCIC)",
       "pt": "Consultora de imigração canadense regulamentada (RCIC)"
     },
     "shortBio": {
       "en": "Aline Costa is a regulated Canadian immigration consultant and graduate of Bow Valley College’s Immigration Consulting program. A former lawyer in Brazil with an MBA in Insurance Law, she has lived in Canada with her family for more than 15 years.",
       "fr": "Aline Costa est consultante réglementée en immigration canadienne et diplômée du programme Immigration Consulting du Bow Valley College. Ancienne avocate au Brésil, titulaire d’un MBA en droit des assurances, elle vit au Canada avec sa famille depuis plus de 15 ans.",
+      "es": "Aline Costa es consultora de inmigración canadiense regulada y graduada del programa Immigration Consulting del Bow Valley College. Fue abogada en Brasil, tiene un MBA en Derecho de Seguros y vive en Canadá con su familia desde hace más de 15 años.",
       "pt": "Aline Costa é consultora de imigração canadense regulamentada, formada em Immigration Consulting pelo Bow Valley College. Advogada no Brasil, possui MBA em Direito Securitário e vive no Canadá há mais de 15 anos com sua família."
     },
     "fullBio": {
       "en": "Aline Costa is a regulated Canadian immigration consultant and a graduate of Bow Valley College’s Immigration Consulting program. Before immigrating, she practiced law in Brazil and earned an MBA in Insurance Law from Universidade Candido Mendes in Rio de Janeiro. She has lived in Canada with her family for more than 15 years, bringing together her legal education, professional experience and personal experience as an immigrant.",
       "fr": "Aline Costa est consultante réglementée en immigration canadienne et diplômée du programme Immigration Consulting du Bow Valley College. Avant d’immigrer, elle a exercé comme avocate au Brésil et a obtenu un MBA en droit des assurances à l’Universidade Candido Mendes, à Rio de Janeiro. Elle vit au Canada avec sa famille depuis plus de 15 ans, alliant formation juridique, expérience professionnelle et vécu personnel de l’immigration.",
+      "es": "Aline Costa es consultora de inmigración canadiense regulada y graduada del programa Immigration Consulting del Bow Valley College. Antes de emigrar, ejerció como abogada en Brasil y obtuvo un MBA en Derecho de Seguros de la Universidade Candido Mendes, en Río de Janeiro. Vive en Canadá con su familia desde hace más de 15 años y combina su formación jurídica, experiencia profesional y vivencia personal como inmigrante.",
       "pt": "Aline Costa é consultora de imigração canadense regulamentada, formada em Immigration Consulting pelo Bow Valley College. Antes de imigrar, atuou como advogada no Brasil e possui MBA em Direito Securitário pela Universidade Candido Mendes, no Rio de Janeiro. Vive no Canadá há mais de 15 anos com sua família, unindo formação jurídica, experiência profissional e vivência como imigrante."
     },
-    "languages": ["en", "es", "pt"],
+    "languages": [
+      "en",
+      "es",
+      "pt"
+    ],
     "practiceAreas": [],
-    "serviceIds": ["temporary-residence", "permanent-residence", "family-sponsorship", "citizenship", "employer-services"],
+    "serviceIds": [
+      "temporary-residence",
+      "permanent-residence",
+      "family-sponsorship",
+      "citizenship",
+      "employer-services"
+    ],
     "credentials": [
-      {"label": "RCIC", "value": "R710053", "verificationUrl": null}
+      {
+        "label": "RCIC",
+        "value": "R710053",
+        "verificationUrl": null
+      }
     ],
     "portrait": {
       "src": "/consultants/aline-costa.jpg",
-      "alt": {"en": "Portrait of Aline Costa", "fr": "Portrait d’Aline Costa", "pt": "Retrato de Aline Costa"}
+      "alt": {
+        "en": "Portrait of Aline Costa",
+        "fr": "Portrait d’Aline Costa",
+        "es": "Retrato de Aline Costa",
+        "pt": "Retrato de Aline Costa"
+      }
     },
     "calendlyUrl": "https://calendly.com/costalineimmigration",
     "calendlyEventTypeUri": "TODO_CONTENT",
     "seo": {
-      "title": {"en": "Aline Costa | Canadian Immigration Consultant", "fr": "Aline Costa | Consultante en immigration canadienne", "pt": "Aline Costa | Consultora de Imigração Canadense"},
+      "title": {
+        "en": "Aline Costa | Canadian Immigration Consultant",
+        "fr": "Aline Costa | Consultante en immigration canadienne",
+        "es": "Aline Costa | Consultora de Inmigración Canadiense",
+        "pt": "Aline Costa | Consultora de Imigração Canadense"
+      },
       "description": {
         "en": "Meet Aline Costa, a regulated Canadian immigration consultant, former lawyer in Brazil and Canadian resident for more than 15 years.",
         "fr": "Découvrez Aline Costa, consultante réglementée en immigration canadienne, ancienne avocate au Brésil et résidente du Canada depuis plus de 15 ans.",
+        "es": "Conoce a Aline Costa, consultora de inmigración canadiense regulada, abogada en Brasil y residente en Canadá hace más de 15 años.",
         "pt": "Conheça Aline Costa, consultora de imigração canadense regulamentada, advogada no Brasil e residente no Canadá há mais de 15 anos."
       }
     }
@@ -97,30 +159,64 @@
     "order": 2,
     "name": "Virginia Melo",
     "verificationStatus": "needs-owner-confirmation",
-    "role": {"en": "Regulated Canadian Immigration Consultant (RCIC)", "fr": "Consultante réglementée en immigration canadienne (CRIC)", "pt": "Consultora de imigração canadense regulamentada (RCIC)"},
+    "role": {
+      "en": "Regulated Canadian Immigration Consultant (RCIC)",
+      "fr": "Consultante réglementée en immigration canadienne (CRIC)",
+      "es": "Consultora de inmigración canadiense regulada (RCIC)",
+      "pt": "Consultora de imigração canadense regulamentada (RCIC)"
+    },
     "shortBio": {
       "en": "Virginia works with temporary and permanent residence, family sponsorship, citizenship and employer matters.",
       "fr": "Virginia travaille en résidence temporaire et permanente, en parrainage familial, en citoyenneté et dans les dossiers d’employeurs.",
+      "es": "Virginia actúa con residencia temporal y permanente, patrocinio familiar, ciudadanía y asuntos de empleadores.",
       "pt": "Virginia atua com residência temporária e permanente, patrocínio familiar, cidadania e questões de empregadores."
     },
     "fullBio": {
       "en": "Virginia Melo is an RCIC licensed federally and in Québec and has supported individuals and families since 2017. She has lived in Canada since 2009 and holds a bachelor’s degree in Tourism and an MBA in Human Resources from PUC-Rio.",
       "fr": "Virginia Melo est CRIC autorisée au fédéral et au Québec et accompagne des personnes et des familles depuis 2017. Elle vit au Canada depuis 2009 et détient un baccalauréat en tourisme ainsi qu’un MBA en ressources humaines de la PUC-Rio.",
+      "es": "Virginia Melo es RCIC con licencia federal y en Quebec, y atiende a personas y familias desde 2017. Vive en Canadá desde 2009 y posee una licenciatura en Turismo y un MBA en Recursos Humanos de la PUC-Rio.",
       "pt": "Virginia Melo é RCIC licenciada em âmbito federal e no Québec e atende pessoas e famílias desde 2017. Vive no Canadá desde 2009 e possui bacharelado em Turismo e MBA em Recursos Humanos pela PUC-Rio."
     },
-    "languages": ["en", "fr", "pt"],
-    "practiceAreas": ["qc"],
-    "serviceIds": ["temporary-residence", "permanent-residence", "family-sponsorship", "citizenship", "employer-services"],
+    "languages": [
+      "en",
+      "fr",
+      "pt"
+    ],
+    "practiceAreas": [
+      "qc"
+    ],
+    "serviceIds": [
+      "temporary-residence",
+      "permanent-residence",
+      "family-sponsorship",
+      "citizenship",
+      "employer-services"
+    ],
     "credentials": [],
     "portrait": {
       "src": "/consultants/virginia-melo.png",
-      "alt": {"en": "Portrait of Virginia Melo", "fr": "Portrait de Virginia Melo", "pt": "Retrato de Virginia Melo"}
+      "alt": {
+        "en": "Portrait of Virginia Melo",
+        "fr": "Portrait de Virginia Melo",
+        "es": "Retrato de Virginia Melo",
+        "pt": "Retrato de Virginia Melo"
+      }
     },
     "calendlyUrl": "https://calendly.com/consultant-iamgoingtocanada/30min",
     "calendlyEventTypeUri": "https://api.calendly.com/event_types/416eaca0-d7a7-46d6-bc30-85e77f2a9307",
     "seo": {
-      "title": {"en": "Virginia Melo | I Am Going To Canada", "fr": "Virginia Melo | I Am Going To Canada", "pt": "Virginia Melo | I Am Going To Canada"},
-      "description": {"en": "Meet Virginia Melo and learn about her immigration services, languages and professional background.", "fr": "Découvrez Virginia Melo, ses services d’immigration, ses langues et son parcours professionnel.", "pt": "Conheça Virginia Melo, seus serviços de imigração, idiomas e trajetória profissional."}
+      "title": {
+        "en": "Virginia Melo | I Am Going To Canada",
+        "fr": "Virginia Melo | I Am Going To Canada",
+        "es": "Virginia Melo | I Am Going To Canada",
+        "pt": "Virginia Melo | I Am Going To Canada"
+      },
+      "description": {
+        "en": "Meet Virginia Melo and learn about her immigration services, languages and professional background.",
+        "fr": "Découvrez Virginia Melo, ses services d’immigration, ses langues et son parcours professionnel.",
+        "es": "Conoce a Virginia Melo, sus servicios de inmigración, idiomas y trayectoria profesional.",
+        "pt": "Conheça Virginia Melo, seus serviços de imigração, idiomas e trajetória profissional."
+      }
     }
   },
   {
@@ -130,30 +226,67 @@
     "order": 3,
     "name": "Beatriz Dias",
     "verificationStatus": "needs-owner-confirmation",
-    "role": {"en": "Regulated Canadian Immigration Consultant (RCIC)", "fr": "Consultante réglementée en immigration canadienne (CRIC)", "pt": "Consultora de imigração canadense regulamentada (RCIC)"},
+    "role": {
+      "en": "Regulated Canadian Immigration Consultant (RCIC)",
+      "fr": "Consultante réglementée en immigration canadienne (CRIC)",
+      "es": "Consultora de inmigración canadiense regulada (RCIC)",
+      "pt": "Consultora de imigração canadense regulamentada (RCIC)"
+    },
     "shortBio": {
       "en": "Beatriz works with temporary and permanent residence, family sponsorship, citizenship and employer matters.",
       "fr": "Beatriz travaille en résidence temporaire et permanente, en parrainage familial, en citoyenneté et dans les dossiers d’employeurs.",
+      "es": "Beatriz actúa con residencia temporal y permanente, patrocinio familiar, ciudadanía y asuntos de empleadores.",
       "pt": "Beatriz atua com residência temporária e permanente, patrocínio familiar, cidadania e questões de empregadores."
     },
     "fullBio": {
       "en": "Beatriz Dias is an RCIC with a background in translation, interpretation and education. She arrived in Canada in 2019 and completed her immigration consultant program in 2020.",
       "fr": "Beatriz Dias est CRIC et possède une formation en traduction, en interprétation et en éducation. Elle est arrivée au Canada en 2019 et a terminé son programme de consultante en immigration en 2020.",
+      "es": "Beatriz Dias es RCIC y tiene formación en traducción, interpretación y educación. Llegó a Canadá en 2019 y concluyó el programa de consultoría de inmigración en 2020.",
       "pt": "Beatriz Dias é RCIC e tem formação em tradução, interpretação e educação. Chegou ao Canadá em 2019 e concluiu o programa de consultoria de imigração em 2020."
     },
-    "languages": ["en", "pt"],
+    "languages": [
+      "en",
+      "pt"
+    ],
     "practiceAreas": [],
-    "serviceIds": ["temporary-residence", "permanent-residence", "family-sponsorship", "citizenship", "employer-services"],
-    "credentials": [{"label": "RCIC", "value": "R707041", "verificationUrl": null}],
+    "serviceIds": [
+      "temporary-residence",
+      "permanent-residence",
+      "family-sponsorship",
+      "citizenship",
+      "employer-services"
+    ],
+    "credentials": [
+      {
+        "label": "RCIC",
+        "value": "R707041",
+        "verificationUrl": null
+      }
+    ],
     "portrait": {
       "src": "/consultants/beatriz-dias.png",
-      "alt": {"en": "Portrait of Beatriz Dias", "fr": "Portrait de Beatriz Dias", "pt": "Retrato de Beatriz Dias"}
+      "alt": {
+        "en": "Portrait of Beatriz Dias",
+        "fr": "Portrait de Beatriz Dias",
+        "es": "Retrato de Beatriz Dias",
+        "pt": "Retrato de Beatriz Dias"
+      }
     },
     "calendlyUrl": "https://calendly.com/immigration-iamgoingtocanada/ms-immigration-beatriz-dias-clone",
     "calendlyEventTypeUri": "https://api.calendly.com/event_types/2f86c236-1e9e-4658-86fa-eee32048c6cb",
     "seo": {
-      "title": {"en": "Beatriz Dias | I Am Going To Canada", "fr": "Beatriz Dias | I Am Going To Canada", "pt": "Beatriz Dias | I Am Going To Canada"},
-      "description": {"en": "Meet Beatriz Dias and learn about her immigration services, languages and professional background.", "fr": "Découvrez Beatriz Dias, ses services d’immigration, ses langues et son parcours professionnel.", "pt": "Conheça Beatriz Dias, seus serviços de imigração, idiomas e trajetória profissional."}
+      "title": {
+        "en": "Beatriz Dias | I Am Going To Canada",
+        "fr": "Beatriz Dias | I Am Going To Canada",
+        "es": "Beatriz Dias | I Am Going To Canada",
+        "pt": "Beatriz Dias | I Am Going To Canada"
+      },
+      "description": {
+        "en": "Meet Beatriz Dias and learn about her immigration services, languages and professional background.",
+        "fr": "Découvrez Beatriz Dias, ses services d’immigration, ses langues et son parcours professionnel.",
+        "es": "Conozca Beatriz Dias, sus servicios de inmigración, idiomas y trayectoria profesional.",
+        "pt": "Conheça Beatriz Dias, seus serviços de imigração, idiomas e trajetória profissional."
+      }
     }
   }
 ]

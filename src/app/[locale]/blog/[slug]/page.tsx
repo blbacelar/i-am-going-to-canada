@@ -46,7 +46,7 @@ function articleJsonLd(article: ReturnType<typeof getArticles>[number], locale: 
     dateCreated: article.draftedAt,
     datePublished: article.publishedAt ?? undefined,
     dateModified: article.modifiedAt ?? undefined,
-    inLanguage: locale === "en" ? "en-CA" : locale === "fr" ? "fr-CA" : "pt-BR",
+    inLanguage: locale === "en" ? "en-CA" : locale === "fr" ? "fr-CA" : locale === "pt" ? "pt-BR" : "es",
     author: { "@type": "Organization", name: article.author },
     reviewedBy: {
       "@type": "Person",

@@ -111,21 +111,18 @@ async function sendContractEmail(record: { name: string; email: string; address_
   const consultantContact = process.env.MOCK_CONSULTANT_CONTACT || "TODO_CONTENT";
   const testMode = process.env.SIGNWELL_TEST_MODE !== "false";
   const signerEmail = testMode ? (process.env.SIGNWELL_TEST_RECIPIENT || record.email) : record.email;
-  const contractLanguage = language === "en" || language === "fr" || language === "es-fr" || language === "pt-fr" ? language : "pt-fr";
-  const pdf = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee: process.env.MOCK_CONSULTATION_FEE || "TODO_CONTENT" }, consultantName, consultantRcic, consultantContact, contractLanguage);
+  const contractLanguage = language === "en" || language === "fr" || language === "es" || language === "pt" ? language : "en";
+  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee: process.env.MOCK_CONSULTATION_FEE || "TODO_CONTENT" }, consultantName, consultantRcic, consultantContact, contractLanguage);
   const signwellResponse = await fetch(SIGNWELL_API, { method: "POST", headers: { "X-Api-Key": signwellKey, "Content-Type": "application/json" }, body: JSON.stringify({
     test_mode: testMode,
-    files: [{ name: "consultation-agreement.pdf", file_base64: Buffer.from(pdf).toString("base64") }],
+    files: [{ name: "consultation-agreement.pdf", file_base64: contract.pdf.toString("base64") }],
     name: `Consultation agreement — ${record.name}`,
     subject: "Please review and sign your consultation agreement",
     message: "Please review and sign this consultation agreement.",
     recipients: [{ id: "1", name: record.name, email: signerEmail }],
-    fields: [[
-      { type: "signature", api_id: "client_signature", required: true, recipient_id: "1", page: 1, x: 96, y: 600, width: 220, height: 32 },
-      { type: "date", api_id: "signed_date", required: true, recipient_id: "1", page: 1, x: 590, y: 600, width: 120, height: 32 },
-    ]],
+    fields: [contract.signatureFields],
     metadata: { calendly_event_id: record.email },
-    language: contractLanguage === "pt-fr" ? "pt" : contractLanguage === "es-fr" ? "es" : contractLanguage,
+    language: contractLanguage,
   }) });
   const body = await signwellResponse.json().catch(() => null) as { id?: string; recipients?: Array<{ signing_url?: string; embedded_signing_url?: string }>; error?: string } | null;
   const signingUrl = body?.recipients?.[0]?.signing_url || body?.recipients?.[0]?.embedded_signing_url;
@@ -185,8 +182,8 @@ export async function POST(request: Request) {
   if (body.event === "invitee.created") {
     const testEventType = process.env.CALENDLY_TEST_EVENT_TYPE_URI;
     if (testEventType && scheduledEventType === testEventType) {
-      const requestedLanguage = payload?.tracking?.utm_content === "pt" ? "pt-fr" : payload?.tracking?.utm_content === "es" ? "es-fr" : payload?.tracking?.utm_content;
-      try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "pt-fr"); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
+      const requestedLanguage = payload?.tracking?.utm_content;
+      try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "en"); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
     } else {
       console.info("Calendly contract dispatch skipped for non-test event", { scheduledEventId, scheduledEventType });
     }

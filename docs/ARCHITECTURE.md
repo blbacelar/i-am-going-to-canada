@@ -65,7 +65,7 @@ The exact arrangement may be adjusted to match an existing repository, but conce
 
 ## Locales
 
-- Canonical locale codes: `en`, `fr`, `pt`.
+- Canonical locale codes: `en`, `fr`, `es`, `pt`.
 - Public routes must be locale-prefixed.
 - Generate correct `lang`, canonical URLs and `hreflang` alternates.
 - Preserve the corresponding localized route when switching language where possible.

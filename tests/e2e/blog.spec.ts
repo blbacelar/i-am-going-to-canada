@@ -11,8 +11,14 @@ const articles = {
   fr: {
     slug: "ptet-limite-postes-bas-salaire-petits-lieux-travail",
     title: "PTET : comment fonctionne le calcul de la limite des postes à bas salaire dans les lieux de travail comptant moins de 10 employés",
-    targetLocale: "pt",
-    targetSlug: "tfwp-limite-vagas-baixa-remuneracao-locais-pequenos",
+    targetLocale: "es",
+    targetSlug: "tfwp-limite-vagas-baja-remuneracao-locais-pequenos",
+  },
+  es: {
+    slug: "isla-principe-eduardo-consulta-trabalhadores-estrangeiros-temporarios",
+    title: "Isla del Príncipe Eduardo propone registro de empleadores y sanciones para proteger trabajadores extranjeros temporales",
+    targetLocale: "en",
+    targetSlug: "pei-temporary-foreign-worker-regulations-consultation",
   },
   pt: {
     slug: "ilha-principe-eduardo-consulta-trabalhadores-estrangeiros-temporarios",
@@ -22,7 +28,7 @@ const articles = {
   },
 } as const;
 
-for (const locale of ["en", "fr", "pt"] as const) {
+for (const locale of ["en", "fr", "es", "pt"] as const) {
   test(`${locale} blog renders localized articles and structured data`, async ({ page }) => {
     const article = articles[locale];
     await page.goto(`/${locale}/blog`);
@@ -38,7 +44,7 @@ for (const locale of ["en", "fr", "pt"] as const) {
     await expect(page.locator("script[type='application/ld+json']")).toHaveCount(1);
 
     const jsonLd = await page.locator("script[type='application/ld+json']").textContent();
-    expect(jsonLd).toContain(locale === "en" ? "en-CA" : locale === "fr" ? "fr-CA" : "pt-BR");
+    expect(jsonLd).toContain(locale === "en" ? "en-CA" : locale === "fr" ? "fr-CA" : locale === "pt" ? "pt-BR" : "es");
     expect(jsonLd).toContain("datePublished");
 
     await expect(page.locator(`.language-switcher a[lang='${article.targetLocale}']`)).toHaveAttribute(
@@ -49,7 +55,7 @@ for (const locale of ["en", "fr", "pt"] as const) {
 }
 
 test("blog article has no detectable accessibility violations", async ({ page }) => {
-  await page.goto("/pt/blog/express-entry-tres-rodadas-cortes-crs-explicados");
+  await page.goto("/es/blog/express-entry-tres-rodadas-cortes-crs-explicados");
   const results = await new AxeBuilder({ page }).analyze();
   expect(results.violations).toEqual([]);
 });

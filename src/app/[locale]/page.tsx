@@ -33,6 +33,7 @@ export default async function HomePage({ params }: PageProps) {
   const trustLabel = {
     en: "Why clients choose our team",
     fr: "Pourquoi choisir notre équipe",
+    es: "Por qué elegir a nuestro equipo",
     pt: "Por que escolher nossa equipe",
   }[locale];
 

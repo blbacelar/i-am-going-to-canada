@@ -3,6 +3,7 @@ import { z } from "zod";
 export const localizedStringSchema = z.object({
   en: z.string().min(1),
   fr: z.string().min(1),
+  es: z.string().min(1),
   pt: z.string().min(1),
 });
 
@@ -199,7 +200,7 @@ const articleSourceSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   owner: z.string().min(1),
   label: localizedStringSchema,
-  url: z.object({ en: z.url(), fr: z.url(), pt: z.url() }),
+  url: z.object({ en: z.url(), fr: z.url(), es: z.url(), pt: z.url() }),
 });
 
 const articleParagraphBlockSchema = z.object({
@@ -289,7 +290,7 @@ export const blogContentSchema = z.object({
   articles: z.array(articleSchema).min(1),
 }).superRefine((content, ctx) => {
   const ids = new Set<string>();
-  const slugs = { en: new Set<string>(), fr: new Set<string>(), pt: new Set<string>() };
+  const slugs = { en: new Set<string>(), fr: new Set<string>(), es: new Set<string>(), pt: new Set<string>() };
 
   content.articles.forEach((article, articleIndex) => {
     if (ids.has(article.id)) {

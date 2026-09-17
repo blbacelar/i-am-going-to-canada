@@ -14,6 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return urls.map((item) => ({
     url: item.url,
     changeFrequency: "monthly",
-    priority: item.url.endsWith("/en") || item.url.endsWith("/fr") || item.url.endsWith("/pt") ? 1 : 0.7,
+    priority: item.url.endsWith("/en") || item.url.endsWith("/fr") || item.url.endsWith("/es") || item.url.endsWith("/pt") ? 1 : 0.7,
   }));
 }

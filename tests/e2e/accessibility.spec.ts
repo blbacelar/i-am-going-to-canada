@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-for (const locale of ["en", "fr", "pt"] as const) {
+for (const locale of ["en", "fr", "es", "pt"] as const) {
   test(`${locale} home has no detectable accessibility violations`, async ({ page }) => {
     await page.goto(`/${locale}`);
     const results = await new AxeBuilder({ page }).analyze();

@@ -57,6 +57,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 const skipLinks: Record<Locale, string> = {
   en: "Skip to content",
   fr: "Passer au contenu",
+  es: "Ir al contenido principal",
   pt: "Pular para o conteúdo",
 };
 

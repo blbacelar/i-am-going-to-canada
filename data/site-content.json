@@ -5,113 +5,398 @@
     "url": "https://iamgoingtocanada.ca"
   },
   "navigation": {
-    "home": {"en": "Home", "fr": "Accueil", "pt": "Início"},
-    "blog": {"en": "Articles", "fr": "Articles", "pt": "Artigos"},
-    "consultants": {"en": "Consultants", "fr": "Consultantes", "pt": "Consultoras"},
-    "services": {"en": "Services", "fr": "Services", "pt": "Serviços"},
-    "about": {"en": "About", "fr": "À propos", "pt": "Sobre"},
-    "faq": {"en": "FAQ", "fr": "FAQ", "pt": "Dúvidas"},
-    "find": {"en": "Find a consultant", "fr": "Trouver une consultante", "pt": "Encontrar uma consultora"},
-    "menu": {"en": "Menu", "fr": "Menu", "pt": "Menu"},
-    "language": {"en": "Language", "fr": "Langue", "pt": "Idioma"}
+    "home": {
+      "en": "Home",
+      "fr": "Accueil",
+      "es": "Inicio",
+      "pt": "Início"
+    },
+    "blog": {
+      "en": "Articles",
+      "fr": "Articles",
+      "es": "Artículos",
+      "pt": "Artigos"
+    },
+    "consultants": {
+      "en": "Consultants",
+      "fr": "Consultantes",
+      "es": "Consultoras",
+      "pt": "Consultoras"
+    },
+    "services": {
+      "en": "Services",
+      "fr": "Services",
+      "es": "Servicios",
+      "pt": "Serviços"
+    },
+    "about": {
+      "en": "About",
+      "fr": "À propos",
+      "es": "Acerca de",
+      "pt": "Sobre"
+    },
+    "faq": {
+      "en": "FAQ",
+      "fr": "FAQ",
+      "es": "Dudas",
+      "pt": "Dúvidas"
+    },
+    "find": {
+      "en": "Find a consultant",
+      "fr": "Trouver une consultante",
+      "es": "Encontrar una consultora",
+      "pt": "Encontrar uma consultora"
+    },
+    "menu": {
+      "en": "Menu",
+      "fr": "Menu",
+      "es": "Menú",
+      "pt": "Menu"
+    },
+    "language": {
+      "en": "Language",
+      "fr": "Langue",
+      "es": "Idioma",
+      "pt": "Idioma"
+    }
   },
   "home": {
     "hero": {
       "title": {
         "en": "Your Canadian journey starts with the right conversation.",
         "fr": "Votre projet canadien commence par la bonne conversation.",
+        "es": "Su proyecto en Canadá comienza con la conversación correcta.",
         "pt": "Seu projeto no Canadá começa com a conversa certa."
       },
       "body": {
         "en": "We are a multilingual team of immigration consultants. Get to know our work and choose who you would like to speak with about your plans for Canada.",
         "fr": "Nous sommes une équipe multilingue de consultantes en immigration. Découvrez notre travail et choisissez avec qui vous souhaitez parler de votre projet au Canada.",
+        "es": "Somos un equipo multilingüe de consultoras de inmigración. Conozca nuestro trabajo y elija con quién quieres conversar sobre tus planes para Canadá.",
         "pt": "Somos uma equipe multilíngue de consultoras de imigração. Conheça nosso trabalho e escolha com quem você quer conversar sobre seus planos para o Canadá."
       },
-      "primaryCta": {"en": "Find your consultant", "fr": "Trouver ma consultante", "pt": "Encontrar minha consultora"},
-      "secondaryCta": {"en": "Meet the team", "fr": "Découvrir l’équipe", "pt": "Conhecer a equipe"},
-      "teamLabel": {"en": "Meet the four professionals on our team", "fr": "Découvrez les quatre professionnelles de notre équipe", "pt": "Conheça as quatro profissionais da nossa equipe"}
+      "primaryCta": {
+        "en": "Find your consultant",
+        "fr": "Trouver ma consultante",
+        "es": "Encontrar mi consultora",
+        "pt": "Encontrar minha consultora"
+      },
+      "secondaryCta": {
+        "en": "Meet the team",
+        "fr": "Découvrir l’équipe",
+        "es": "Conocer al equipo",
+        "pt": "Conhecer a equipe"
+      },
+      "teamLabel": {
+        "en": "Meet the four professionals on our team",
+        "fr": "Découvrez les quatre professionnelles de notre équipe",
+        "es": "Conozca las cuatro profesionales de nuestro equipo",
+        "pt": "Conheça as quatro profissionais da nossa equipe"
+      }
     },
     "trust": [
       {
-        "title": {"en": "Service in your language", "fr": "Un service dans votre langue", "pt": "Atendimento no seu idioma"},
-        "body": {"en": "Our team serves clients in English, French, Spanish and Portuguese.", "fr": "Notre équipe accompagne ses clients en anglais, français, espagnol et portugais.", "pt": "Nossa equipe atende em inglês, francês, espanhol e português."}
+        "title": {
+          "en": "Service in your language",
+          "fr": "Un service dans votre langue",
+          "es": "Atención en tu idioma",
+          "pt": "Atendimento no seu idioma"
+        },
+        "body": {
+          "en": "Our team serves clients in English, French, Spanish and Portuguese.",
+          "fr": "Notre équipe accompagne ses clients en anglais, français, espagnol et portugais.",
+          "es": "Nuestro equipo atiende en inglés, francés, español y portugués.",
+          "pt": "Nossa equipe atende em inglês, francês, espanhol e português."
+        }
       },
       {
-        "title": {"en": "Get to know our team", "fr": "Faites connaissance avec notre équipe", "pt": "Conheça nossa equipe"},
-        "body": {"en": "See each consultant’s experience, languages and areas of work before you book.", "fr": "Consultez l’expérience, les langues et les domaines de pratique de chaque consultante avant de réserver.", "pt": "Veja a experiência, os idiomas e as áreas de atuação de cada consultora antes de agendar."}
+        "title": {
+          "en": "Get to know our team",
+          "fr": "Faites connaissance avec notre équipe",
+          "es": "Conozca nuestro equipo",
+          "pt": "Conheça nossa equipe"
+        },
+        "body": {
+          "en": "See each consultant’s experience, languages and areas of work before you book.",
+          "fr": "Consultez l’expérience, les langues et les domaines de pratique de chaque consultante avant de réserver.",
+          "es": "Vea la experiencia, los idiomas y las áreas de actuación de cada consultora antes de programar.",
+          "pt": "Veja a experiência, os idiomas e as áreas de atuação de cada consultora antes de agendar."
+        }
       },
       {
-        "title": {"en": "A good place to start", "fr": "Un bon point de départ", "pt": "Um bom lugar para começar"},
-        "body": {"en": "Choose a service, meet the team and book a consultation when you are ready.", "fr": "Choisissez un service, découvrez l’équipe et réservez une consultation quand vous êtes prête ou prêt.", "pt": "Escolha um serviço, conheça a equipe e agende uma consulta quando estiver pronto."}
+        "title": {
+          "en": "A good place to start",
+          "fr": "Un bon point de départ",
+          "es": "Un buen lugar para empezar",
+          "pt": "Um bom lugar para começar"
+        },
+        "body": {
+          "en": "Choose a service, meet the team and book a consultation when you are ready.",
+          "fr": "Choisissez un service, découvrez l’équipe et réservez une consultation quand vous êtes prête ou prêt.",
+          "es": "Elija un servicio, conozca al equipo y agende una consulta cuando esté listo.",
+          "pt": "Escolha um serviço, conheça a equipe e agende uma consulta quando estiver pronto."
+        }
       }
     ],
     "concierge": {
-      "title": {"en": "Where would you like to start?", "fr": "Par où souhaitez-vous commencer?", "pt": "Por onde você quer começar?"},
+      "title": {
+        "en": "Where would you like to start?",
+        "fr": "Par où souhaitez-vous commencer?",
+        "es": "¿Por dónde quieres empezar?",
+        "pt": "Por onde você quer começar?"
+      },
       "body": {
         "en": "Choose your preferred language and the service you are looking for. We will show you which consultants work in that area. You do not need to share personal details here.",
         "fr": "Choisissez votre langue et le service que vous recherchez. Nous vous montrerons quelles consultantes travaillent dans ce domaine. Vous n’avez aucun renseignement personnel à fournir ici.",
+        "es": "Elija el idioma y el servicio que buscas. Vamos a mostrar qué consultoras actúan en esa área. Usted no necesita informar a ningún dato personal aquí.",
         "pt": "Escolha o idioma e o serviço que você procura. Vamos mostrar quais consultoras atuam nessa área. Você não precisa informar nenhum dado pessoal aqui."
       }
     },
     "team": {
-      "title": {"en": "Four professionals. One team.", "fr": "Quatre professionnelles. Une seule équipe.", "pt": "Quatro profissionais. Uma só equipe."},
+      "title": {
+        "en": "Four professionals. One team.",
+        "fr": "Quatre professionnelles. Une seule équipe.",
+        "es": "Cuatro profesionales. Un solo equipo.",
+        "pt": "Quatro profissionais. Uma só equipe."
+      },
       "body": {
         "en": "Get to know each consultant’s background, languages and areas of work. Then choose who you would feel most comfortable speaking with.",
         "fr": "Découvrez le parcours, les langues et les domaines de pratique de chaque consultante. Choisissez ensuite avec qui vous vous sentiriez le plus à l’aise de parler.",
+        "es": "Conozca la trayectoria, los idiomas y las áreas de práctica de cada consultora. Después, elija con quién se siente más cómodo al conversar.",
         "pt": "Conheça a trajetória, os idiomas e as áreas de atuação de cada consultora. Depois, escolha com quem você se sente mais à vontade para conversar."
       }
     },
     "services": {
-      "title": {"en": "How can we help?", "fr": "Comment pouvons-nous vous aider?", "pt": "Como podemos ajudar?"},
-      "body": {"en": "Learn about our main services and see who on our team can help with each one.", "fr": "Découvrez nos principaux services et voyez qui, dans notre équipe, peut vous aider avec chacun d’eux.", "pt": "Conheça nossos principais serviços e veja quem da equipe pode ajudar em cada um deles."},
-      "viewAll": {"en": "Explore all services", "fr": "Explorer tous les services", "pt": "Explorar todos os serviços"}
+      "title": {
+        "en": "How can we help?",
+        "fr": "Comment pouvons-nous vous aider?",
+        "es": "¿Cómo podemos ayudar?",
+        "pt": "Como podemos ajudar?"
+      },
+      "body": {
+        "en": "Learn about our main services and see who on our team can help with each one.",
+        "fr": "Découvrez nos principaux services et voyez qui, dans notre équipe, peut vous aider avec chacun d’eux.",
+        "es": "Conozca nuestros principales servicios y vea quién del equipo puede ayudar en cada uno de ellos.",
+        "pt": "Conheça nossos principais serviços e veja quem da equipe pode ajudar em cada um deles."
+      },
+      "viewAll": {
+        "en": "Explore all services",
+        "fr": "Explorer tous les services",
+        "es": "Explorar todos los servicios",
+        "pt": "Explorar todos os serviços"
+      }
     },
     "process": {
-      "title": {"en": "From your first question to the consultation.", "fr": "De votre première question à la consultation.", "pt": "Da primeira dúvida até a consulta."},
+      "title": {
+        "en": "From your first question to the consultation.",
+        "fr": "De votre première question à la consultation.",
+        "es": "Desde la primera duda hasta la consulta.",
+        "pt": "Da primeira dúvida até a consulta."
+      },
       "steps": [
-        {"title": {"en": "Choose", "fr": "Choisir", "pt": "Escolher"}, "body": {"en": "Tell us your preferred language and the service you are looking for.", "fr": "Indiquez votre langue et le service que vous recherchez.", "pt": "Conte qual idioma prefere e que serviço está procurando."}},
-        {"title": {"en": "Meet", "fr": "Découvrir", "pt": "Conhecer"}, "body": {"en": "See who on our team works in that area and get to know each profile.", "fr": "Voyez qui, dans notre équipe, travaille dans ce domaine et découvrez chaque profil.", "pt": "Veja quem da nossa equipe atua nessa área e conheça cada perfil."}},
-        {"title": {"en": "Book", "fr": "Réserver", "pt": "Agendar"}, "body": {"en": "Choose a consultant and continue to her booking page.", "fr": "Choisissez une consultante et accédez à sa page de réservation.", "pt": "Escolha uma consultora e siga para a página de agendamento."}}
+        {
+          "title": {
+            "en": "Choose",
+            "fr": "Choisir",
+            "es": "Elegir",
+            "pt": "Escolher"
+          },
+          "body": {
+            "en": "Tell us your preferred language and the service you are looking for.",
+            "fr": "Indiquez votre langue et le service que vous recherchez.",
+            "es": "Conte cuál idioma prefiere y que servicio está buscando.",
+            "pt": "Conte qual idioma prefere e que serviço está procurando."
+          }
+        },
+        {
+          "title": {
+            "en": "Meet",
+            "fr": "Découvrir",
+            "es": "Conocer",
+            "pt": "Conhecer"
+          },
+          "body": {
+            "en": "See who on our team works in that area and get to know each profile.",
+            "fr": "Voyez qui, dans notre équipe, travaille dans ce domaine et découvrez chaque profil.",
+            "es": "Vea quién de nuestro equipo actúa en esa área y conozca cada perfil.",
+            "pt": "Veja quem da nossa equipe atua nessa área e conheça cada perfil."
+          }
+        },
+        {
+          "title": {
+            "en": "Book",
+            "fr": "Réserver",
+            "es": "Planificar",
+            "pt": "Agendar"
+          },
+          "body": {
+            "en": "Choose a consultant and continue to her booking page.",
+            "fr": "Choisissez une consultante et accédez à sa page de réservation.",
+            "es": "Elija una consultora y siga la página de planificación.",
+            "pt": "Escolha uma consultora e siga para a página de agendamento."
+          }
+        }
       ]
     },
     "stories": {
-      "title": {"en": "Real stories, shared with permission.", "fr": "Des histoires vraies, partagées avec autorisation.", "pt": "Histórias reais, compartilhadas com autorização."},
-      "body": {"en": "We will add client stories here once each person has authorized publication and reviewed the final text.", "fr": "Nous ajouterons ici des témoignages de clients lorsque chaque personne aura autorisé la publication et révisé le texte final.", "pt": "Vamos publicar histórias de clientes aqui quando cada pessoa autorizar a publicação e revisar o texto final."}
+      "title": {
+        "en": "Real stories, shared with permission.",
+        "fr": "Des histoires vraies, partagées avec autorisation.",
+        "es": "Historias reales, compartidas con autorización.",
+        "pt": "Histórias reais, compartilhadas com autorização."
+      },
+      "body": {
+        "en": "We will add client stories here once each person has authorized publication and reviewed the final text.",
+        "fr": "Nous ajouterons ici des témoignages de clients lorsque chaque personne aura autorisé la publication et révisé le texte final.",
+        "es": "Vamos a publicar historias de clientes aquí cuando cada persona autorice la publicación y revise el texto final.",
+        "pt": "Vamos publicar histórias de clientes aqui quando cada pessoa autorizar a publicação e revisar o texto final."
+      }
     },
-    "faqTitle": {"en": "Questions before the first conversation", "fr": "Questions avant la première conversation", "pt": "Perguntas antes da primeira conversa"},
+    "faqTitle": {
+      "en": "Questions before the first conversation",
+      "fr": "Questions avant la première conversation",
+      "es": "Preguntas antes de la primera conversación",
+      "pt": "Perguntas antes da primeira conversa"
+    },
     "final": {
-      "title": {"en": "Ready to talk about your plans for Canada?", "fr": "Prête ou prêt à parler de votre projet au Canada?", "pt": "Vamos conversar sobre seus planos para o Canadá?"},
-      "body": {"en": "Find a consultant by language and service, or take your time getting to know the whole team.", "fr": "Trouvez une consultante par langue et par service, ou prenez le temps de découvrir toute l’équipe.", "pt": "Encontre uma consultora pelo idioma e pelo serviço, ou conheça toda a equipe com calma."}
+      "title": {
+        "en": "Ready to talk about your plans for Canada?",
+        "fr": "Prête ou prêt à parler de votre projet au Canada?",
+        "es": "¿Hablamos sobre sus planes para Canadá?",
+        "pt": "Vamos conversar sobre seus planos para o Canadá?"
+      },
+      "body": {
+        "en": "Find a consultant by language and service, or take your time getting to know the whole team.",
+        "fr": "Trouvez une consultante par langue et par service, ou prenez le temps de découvrir toute l’équipe.",
+        "es": "Encuentra una consultora por el idioma y el servicio, o conoce a todo el equipo con calma.",
+        "pt": "Encontre uma consultora pelo idioma e pelo serviço, ou conheça toda a equipe com calma."
+      }
     }
   },
   "concierge": {
-    "title": {"en": "Find a consultant", "fr": "Trouver une consultante", "pt": "Encontrar uma consultora"},
+    "title": {
+      "en": "Find a consultant",
+      "fr": "Trouver une consultante",
+      "es": "Encontrar una consultora",
+      "pt": "Encontrar uma consultora"
+    },
     "intro": {
       "en": "Choose a consultation language, then answer three short questions about the kind of process involved. We will show public matches; availability is confirmed on Calendly.",
       "fr": "Choisissez une langue de consultation, puis répondez à trois courtes questions sur le type de dossier concerné. Nous présenterons les correspondances publiques; la disponibilité se confirme sur Calendly.",
+      "es": "Elija el idioma de la consulta y responda a tres preguntas cortas sobre el tipo de proceso. Mostraremos las combinaciones públicas; la disponibilidad se confirma en Calendly.",
       "pt": "Escolha o idioma da consulta e responda a três perguntas curtas sobre o tipo de processo. Mostraremos as combinações públicas; a disponibilidade é confirmada no Calendly."
     },
-    "languageQuestion": {"en": "Which consultation language do you prefer?", "fr": "Quelle langue préférez-vous pour la consultation?", "pt": "Qual idioma você prefere para a consulta?"},
-    "serviceQuestion": {"en": "Which service are you looking for?", "fr": "Quel service recherchez-vous?", "pt": "Qual serviço você procura?"},
-    "qcQuestion": {"en": "Does this involve a Québec (QC) process?", "fr": "Le dossier concerne-t-il un processus du Québec (QC)?", "pt": "Envolve um processo de Québec (QC)?"},
-    "skQuestion": {"en": "Does this involve a Saskatchewan (SK) process?", "fr": "Le dossier concerne-t-il un processus de la Saskatchewan (SK)?", "pt": "Envolve um processo de Saskatchewan (SK)?"},
-    "irbQuestion": {"en": "Does this involve an appeal, deportation or refugee matter?", "fr": "Le dossier concerne-t-il un appel, une déportation ou une demande d’asile?", "pt": "Envolve appeal, deportação ou refúgio?"},
-    "yes": {"en": "Yes", "fr": "Oui", "pt": "Sim"},
-    "no": {"en": "No", "fr": "Non", "pt": "Não"},
-    "availabilityNote": {"en": "We found a current 30-minute opening. Continue to the booking page to request a consultation; the team will coordinate the professional assigned to your request.", "fr": "Nous avons trouvé une plage disponible de 30 minutes. Continuez vers la réservation pour demander une consultation; l’équipe coordonnera la professionnelle assignée à votre demande.", "pt": "Encontramos um horário atual de 30 minutos. Continue para o agendamento para solicitar uma consulta; a equipe coordenará a consultora designada para sua solicitação."},
-    "availabilityLoading": {"en": "Checking current availability…", "fr": "Vérification des disponibilités actuelles…", "pt": "Verificando a disponibilidade atual…"},
-    "noAvailability": {"en": "There are no available times in the current test window. Please try again later.", "fr": "Aucune plage horaire n’est disponible dans la fenêtre de test actuelle. Réessayez plus tard.", "pt": "Não há horários disponíveis na janela de teste atual. Tente novamente mais tarde."},
-    "continueToBooking": {"en": "Continue to booking", "fr": "Continuer vers la réservation", "pt": "Continuar para o agendamento"},
-    "matchReason": {"en": "Service in {language} for {service}", "fr": "Service en {language} pour {service}", "pt": "Atendimento em {language} para {service}"},
-    "viewProfile": {"en": "View profile", "fr": "Voir le profil", "pt": "Ver perfil"},
-    "viewAll": {"en": "View all consultants", "fr": "Voir toutes les consultantes", "pt": "Ver todas as consultoras"},
-    "restart": {"en": "Start again", "fr": "Recommencer", "pt": "Recomeçar"},
-    "back": {"en": "Back", "fr": "Retour", "pt": "Voltar"},
-    "continue": {"en": "Continue", "fr": "Continuer", "pt": "Continuar"},
-    "step": {"en": "Step {current} of {total}", "fr": "Étape {current} sur {total}", "pt": "Etapa {current} de {total}"},
+    "languageQuestion": {
+      "en": "Which consultation language do you prefer?",
+      "fr": "Quelle langue préférez-vous pour la consultation?",
+      "es": "¿Qué idioma prefieres para la consulta?",
+      "pt": "Qual idioma você prefere para a consulta?"
+    },
+    "serviceQuestion": {
+      "en": "Which service are you looking for?",
+      "fr": "Quel service recherchez-vous?",
+      "es": "¿Qué servicio buscas?",
+      "pt": "Qual serviço você procura?"
+    },
+    "qcQuestion": {
+      "en": "Does this involve a Québec (QC) process?",
+      "fr": "Le dossier concerne-t-il un processus du Québec (QC)?",
+      "es": "¿Se trata de un proceso de Quebec (QC)?",
+      "pt": "Envolve um processo de Québec (QC)?"
+    },
+    "skQuestion": {
+      "en": "Does this involve a Saskatchewan (SK) process?",
+      "fr": "Le dossier concerne-t-il un processus de la Saskatchewan (SK)?",
+      "es": "¿Se trata de un proceso de Saskatchewan (SK)?",
+      "pt": "Envolve um processo de Saskatchewan (SK)?"
+    },
+    "irbQuestion": {
+      "en": "Does this involve an appeal, deportation or refugee matter?",
+      "fr": "Le dossier concerne-t-il un appel, une déportation ou une demande d’asile?",
+      "es": "¿Envolve appeal, deportación o refugio?",
+      "pt": "Envolve appeal, deportação ou refúgio?"
+    },
+    "yes": {
+      "en": "Yes",
+      "fr": "Oui",
+      "es": "Sí",
+      "pt": "Sim"
+    },
+    "no": {
+      "en": "No",
+      "fr": "Non",
+      "es": "No",
+      "pt": "Não"
+    },
+    "availabilityNote": {
+      "en": "We found a current 30-minute opening. Continue to the booking page to request a consultation; the team will coordinate the professional assigned to your request.",
+      "fr": "Nous avons trouvé une plage disponible de 30 minutes. Continuez vers la réservation pour demander une consultation; l’équipe coordonnera la professionnelle assignée à votre demande.",
+      "es": "Encontramos un horario actual de 30 minutos. Continúe para solicitar una consulta; el equipo coordinará la consultora designada para su solicitud.",
+      "pt": "Encontramos um horário atual de 30 minutos. Continue para o agendamento para solicitar uma consulta; a equipe coordenará a consultora designada para sua solicitação."
+    },
+    "availabilityLoading": {
+      "en": "Checking current availability…",
+      "fr": "Vérification des disponibilités actuelles…",
+      "es": "Verificando la disponibilidad actual...",
+      "pt": "Verificando a disponibilidade atual…"
+    },
+    "noAvailability": {
+      "en": "There are no available times in the current test window. Please try again later.",
+      "fr": "Aucune plage horaire n’est disponible dans la fenêtre de test actuelle. Réessayez plus tard.",
+      "es": "No hay horarios disponibles en la ventana de prueba actual. Intente otra vez más tarde.",
+      "pt": "Não há horários disponíveis na janela de teste atual. Tente novamente mais tarde."
+    },
+    "continueToBooking": {
+      "en": "Continue to booking",
+      "fr": "Continuer vers la réservation",
+      "es": "Continuar para el programa",
+      "pt": "Continuar para o agendamento"
+    },
+    "matchReason": {
+      "en": "Service in {language} for {service}",
+      "fr": "Service en {language} pour {service}",
+      "es": "Atención en {language} para {servicio}",
+      "pt": "Atendimento em {language} para {service}"
+    },
+    "viewProfile": {
+      "en": "View profile",
+      "fr": "Voir le profil",
+      "es": "Ver perfil",
+      "pt": "Ver perfil"
+    },
+    "viewAll": {
+      "en": "View all consultants",
+      "fr": "Voir toutes les consultantes",
+      "es": "Ver todas las consultoras",
+      "pt": "Ver todas as consultoras"
+    },
+    "restart": {
+      "en": "Start again",
+      "fr": "Recommencer",
+      "es": "Recomenzar",
+      "pt": "Recomeçar"
+    },
+    "back": {
+      "en": "Back",
+      "fr": "Retour",
+      "es": "Volver",
+      "pt": "Voltar"
+    },
+    "continue": {
+      "en": "Continue",
+      "fr": "Continuer",
+      "es": "Continuar",
+      "pt": "Continuar"
+    },
+    "step": {
+      "en": "Step {current} of {total}",
+      "fr": "Étape {current} sur {total}",
+      "es": "Paso {current} de {total}",
+      "pt": "Etapa {current} de {total}"
+    },
     "noExactMatch": {
       "en": "We did not find an exact match. View every profile or contact us and we will help you choose where to start.",
       "fr": "Nous n’avons pas trouvé de correspondance exacte. Consultez tous les profils ou écrivez-nous et nous vous aiderons à choisir par où commencer.",
+      "es": "No encontramos una combinación exacta. Vea todos los perfiles o hable con nosotros para elegir por dónde empezar.",
       "pt": "Não encontramos uma combinação exata. Veja todos os perfis ou fale conosco para escolher por onde começar."
     }
   },
@@ -121,349 +406,737 @@
       "slug": "temporary-residence",
       "active": true,
       "order": 1,
-      "label": {"en": "Temporary residence", "fr": "Résidence temporaire", "pt": "Residência temporária"},
-      "shortDescription": {"en": "Guidance and application preparation for visitor visas, study permits and work permits.", "fr": "Conseils et préparation de demandes de visa de visiteur, de permis d’études et de permis de travail.", "pt": "Orientação e preparação de solicitações de visto de visitante, permissão de estudos e permissão de trabalho."},
-      "detail": {"en": "We help with visitor visas, study permits and work permits. Depending on the service you choose, we can guide the application, forms and supporting documents remotely.", "fr": "Nous vous aidons avec les visas de visiteur, les permis d’études et les permis de travail. Selon le service choisi, nous pouvons vous guider à distance pour la demande, les formulaires et les pièces justificatives.", "pt": "Ajudamos com vistos de visitante, permissões de estudo e permissões de trabalho. Dependendo do serviço escolhido, podemos orientar à distância a preparação do requerimento, dos formulários e dos documentos necessários."}
+      "label": {
+        "en": "Temporary residence",
+        "fr": "Résidence temporaire",
+        "es": "Residencia temporal",
+        "pt": "Residência temporária"
+      },
+      "shortDescription": {
+        "en": "Guidance and application preparation for visitor visas, study permits and work permits.",
+        "fr": "Conseils et préparation de demandes de visa de visiteur, de permis d’études et de permis de travail.",
+        "es": "Orientación y preparación de solicitudes de visado de visitante, permiso de estudios y permiso de trabajo.",
+        "pt": "Orientação e preparação de solicitações de visto de visitante, permissão de estudos e permissão de trabalho."
+      },
+      "detail": {
+        "en": "We help with visitor visas, study permits and work permits. Depending on the service you choose, we can guide the application, forms and supporting documents remotely.",
+        "fr": "Nous vous aidons avec les visas de visiteur, les permis d’études et les permis de travail. Selon le service choisi, nous pouvons vous guider à distance pour la demande, les formulaires et les pièces justificatives.",
+        "es": "Ayudamos con visados de visitante, permisos de estudio y permisos de trabajo. Dependiendo del servicio elegido, podemos orientar a distancia la preparación de la solicitud, los formularios y los documentos necesarios.",
+        "pt": "Ajudamos com vistos de visitante, permissões de estudo e permissões de trabalho. Dependendo do serviço escolhido, podemos orientar à distância a preparação do requerimento, dos formulários e dos documentos necessários."
+      }
     },
     {
       "id": "permanent-residence",
       "slug": "permanent-residence",
       "active": true,
       "order": 2,
-      "label": {"en": "Permanent residence", "fr": "Résidence permanente", "pt": "Residência permanente"},
-      "shortDescription": {"en": "Support for federal and provincial permanent-residence applications.", "fr": "Accompagnement pour les demandes de résidence permanente fédérales et provinciales.", "pt": "Acompanhamento de processos federais e provinciais de residência permanente."},
-      "detail": {"en": "If you want to live permanently in Canada, we can assist with federal and provincial programs. During the consultation, we review your situation, discuss the options that may apply and explain how we can help with the application.", "fr": "Si vous souhaitez vivre au Canada de façon permanente, nous pouvons vous accompagner dans les programmes fédéraux et provinciaux. Pendant la consultation, nous examinons votre situation, discutons des options possibles et expliquons comment nous pouvons vous aider avec la demande.", "pt": "Se você quer morar permanentemente no Canadá, podemos ajudar com programas federais e provinciais. Durante a consulta, analisamos sua situação, conversamos sobre as opções que podem se aplicar e explicamos como podemos ajudar com o processo."}
+      "label": {
+        "en": "Permanent residence",
+        "fr": "Résidence permanente",
+        "es": "Residencia permanente",
+        "pt": "Residência permanente"
+      },
+      "shortDescription": {
+        "en": "Support for federal and provincial permanent-residence applications.",
+        "fr": "Accompagnement pour les demandes de résidence permanente fédérales et provinciales.",
+        "es": "Seguimiento de procesos federales y provinciales de residencia permanente.",
+        "pt": "Acompanhamento de processos federais e provinciais de residência permanente."
+      },
+      "detail": {
+        "en": "If you want to live permanently in Canada, we can assist with federal and provincial programs. During the consultation, we review your situation, discuss the options that may apply and explain how we can help with the application.",
+        "fr": "Si vous souhaitez vivre au Canada de façon permanente, nous pouvons vous accompagner dans les programmes fédéraux et provinciaux. Pendant la consultation, nous examinons votre situation, discutons des options possibles et expliquons comment nous pouvons vous aider avec la demande.",
+        "es": "Si quieres vivir permanentemente en Canadá, podemos ayudar con programas federales y provinciales. Durante la consulta, analizamos su situación, conversamos sobre las opciones que pueden aplicarse y explicamos cómo podemos ayudar con el proceso.",
+        "pt": "Se você quer morar permanentemente no Canadá, podemos ajudar com programas federais e provinciais. Durante a consulta, analisamos sua situação, conversamos sobre as opções que podem se aplicar e explicamos como podemos ajudar com o processo."
+      }
     },
     {
       "id": "family-sponsorship",
       "slug": "family-sponsorship",
       "active": true,
       "order": 3,
-      "label": {"en": "Family sponsorship", "fr": "Parrainage familial", "pt": "Patrocínio familiar"},
-      "shortDescription": {"en": "Support for family reunification applications submitted from inside or outside Canada.", "fr": "Accompagnement pour les demandes de réunification familiale présentées depuis le Canada ou l’étranger.", "pt": "Apoio em processos de reunificação familiar feitos dentro ou fora do Canadá."},
-      "detail": {"en": "We assist with family reunification applications submitted from inside or outside Canada. We explain the steps and help prepare the forms and documents required for the type of sponsorship involved.", "fr": "Nous vous accompagnons dans les demandes de réunification familiale présentées depuis le Canada ou l’étranger. Nous expliquons les étapes et aidons à préparer les formulaires et les documents requis pour le type de parrainage concerné.", "pt": "Ajudamos com pedidos de reunificação familiar feitos dentro ou fora do Canadá. Explicamos as etapas e auxiliamos na preparação dos formulários e documentos exigidos para cada tipo de patrocínio."}
+      "label": {
+        "en": "Family sponsorship",
+        "fr": "Parrainage familial",
+        "es": "Patrocinio familiar",
+        "pt": "Patrocínio familiar"
+      },
+      "shortDescription": {
+        "en": "Support for family reunification applications submitted from inside or outside Canada.",
+        "fr": "Accompagnement pour les demandes de réunification familiale présentées depuis le Canada ou l’étranger.",
+        "es": "Apoyo en procesos de reunificación familiar hechos dentro o fuera de Canadá.",
+        "pt": "Apoio em processos de reunificação familiar feitos dentro ou fora do Canadá."
+      },
+      "detail": {
+        "en": "We assist with family reunification applications submitted from inside or outside Canada. We explain the steps and help prepare the forms and documents required for the type of sponsorship involved.",
+        "fr": "Nous vous accompagnons dans les demandes de réunification familiale présentées depuis le Canada ou l’étranger. Nous expliquons les étapes et aidons à préparer les formulaires et les documents requis pour le type de parrainage concerné.",
+        "es": "Ayudamos con solicitudes de reunificación familiar hechas dentro o fuera de Canadá. Explicamos las etapas y auxiliamos en la preparación de los formularios y documentos exigidos para cada tipo de patrocinio.",
+        "pt": "Ajudamos com pedidos de reunificação familiar feitos dentro ou fora do Canadá. Explicamos as etapas e auxiliamos na preparação dos formulários e documentos exigidos para cada tipo de patrocínio."
+      }
     },
     {
       "id": "citizenship",
       "slug": "citizenship",
       "active": true,
       "order": 4,
-      "label": {"en": "Citizenship and status", "fr": "Citoyenneté et statut", "pt": "Cidadania e status"},
-      "shortDescription": {"en": "Guidance on Canadian citizenship and other immigration-status matters.", "fr": "Conseils en matière de citoyenneté canadienne et d’autres questions de statut migratoire.", "pt": "Orientação sobre cidadania canadense e outras questões de status migratório."},
-      "detail": {"en": "We assist with Canadian citizenship applications and other immigration-status matters. Some members of our team also work with refugee and humanitarian processes. Check each profile to find the right consultant for the service you need.", "fr": "Nous vous aidons avec les demandes de citoyenneté canadienne et d’autres questions de statut migratoire. Certaines membres de notre équipe travaillent aussi sur des dossiers de réfugiés et d’ordre humanitaire. Consultez chaque profil pour trouver la consultante qui offre le service recherché.", "pt": "Ajudamos com solicitações de cidadania canadense e outras questões de status migratório. Algumas profissionais da equipe também atuam com processos de refúgio e de natureza humanitária. Consulte os perfis para encontrar quem oferece o serviço que você procura."}
+      "label": {
+        "en": "Citizenship and status",
+        "fr": "Citoyenneté et statut",
+        "es": "Ciudadanía y status",
+        "pt": "Cidadania e status"
+      },
+      "shortDescription": {
+        "en": "Guidance on Canadian citizenship and other immigration-status matters.",
+        "fr": "Conseils en matière de citoyenneté canadienne et d’autres questions de statut migratoire.",
+        "es": "Orientación sobre ciudadanía canadiense y otras cuestiones de estatus migratorio.",
+        "pt": "Orientação sobre cidadania canadense e outras questões de status migratório."
+      },
+      "detail": {
+        "en": "We assist with Canadian citizenship applications and other immigration-status matters. Some members of our team also work with refugee and humanitarian processes. Check each profile to find the right consultant for the service you need.",
+        "fr": "Nous vous aidons avec les demandes de citoyenneté canadienne et d’autres questions de statut migratoire. Certaines membres de notre équipe travaillent aussi sur des dossiers de réfugiés et d’ordre humanitaire. Consultez chaque profil pour trouver la consultante qui offre le service recherché.",
+        "es": "Ayudamos con solicitudes de ciudadanía canadiense y otras cuestiones de estatus migratorio. Algunos profesionales del equipo también actúan con procesos de refugio y de naturaleza humanitaria. Consulta los perfiles para encontrar quién ofrece el servicio que buscas.",
+        "pt": "Ajudamos com solicitações de cidadania canadense e outras questões de status migratório. Algumas profissionais da equipe também atuam com processos de refúgio e de natureza humanitária. Consulte os perfis para encontrar quem oferece o serviço que você procura."
+      }
     },
     {
       "id": "employer-services",
       "slug": "employer-services",
       "active": true,
       "order": 5,
-      "label": {"en": "Employer services", "fr": "Services aux employeurs", "pt": "Serviços para empregadores"},
-      "shortDescription": {"en": "Support for employers and workers in applications related to working in Canada.", "fr": "Accompagnement des employeurs et des travailleurs pour les demandes liées au travail au Canada.", "pt": "Apoio a empregadores e trabalhadores em solicitações relacionadas ao trabalho no Canadá."},
-      "detail": {"en": "We help employers and workers with work permits and immigration processes related to hiring foreign workers. During the consultation, we explain the employer’s responsibilities, the required documents and the next steps.", "fr": "Nous aidons les employeurs et les travailleurs avec les permis de travail et les démarches d’immigration liées à l’embauche de travailleurs étrangers. Pendant la consultation, nous expliquons les responsabilités de l’employeur, les documents requis et les prochaines étapes.", "pt": "Ajudamos empregadores e trabalhadores com permissões de trabalho e processos de imigração ligados à contratação de profissionais estrangeiros. Durante a consulta, explicamos as responsabilidades do empregador, os documentos necessários e os próximos passos."}
+      "label": {
+        "en": "Employer services",
+        "fr": "Services aux employeurs",
+        "es": "Servicios para empleadores",
+        "pt": "Serviços para empregadores"
+      },
+      "shortDescription": {
+        "en": "Support for employers and workers in applications related to working in Canada.",
+        "fr": "Accompagnement des employeurs et des travailleurs pour les demandes liées au travail au Canada.",
+        "es": "Apoyo a empleadores y trabajadores en solicitudes relacionadas con el trabajo en Canadá.",
+        "pt": "Apoio a empregadores e trabalhadores em solicitações relacionadas ao trabalho no Canadá."
+      },
+      "detail": {
+        "en": "We help employers and workers with work permits and immigration processes related to hiring foreign workers. During the consultation, we explain the employer’s responsibilities, the required documents and the next steps.",
+        "fr": "Nous aidons les employeurs et les travailleurs avec les permis de travail et les démarches d’immigration liées à l’embauche de travailleurs étrangers. Pendant la consultation, nous expliquons les responsabilités de l’employeur, les documents requis et les prochaines étapes.",
+        "es": "Ayudamos a empleadores y trabajadores con permisos de trabajo y procesos de inmigración vinculados a la contratación de profesionales extranjeros. Durante la consulta, explicamos las responsabilidades del empleador, los documentos necesarios y los próximos pasos.",
+        "pt": "Ajudamos empregadores e trabalhadores com permissões de trabalho e processos de imigração ligados à contratação de profissionais estrangeiros. Durante a consulta, explicamos as responsabilidades do empregador, os documentos necessários e os próximos passos."
+      }
     },
     {
       "id": "complex-matters",
       "slug": "complex-matters",
       "active": true,
       "order": 6,
-      "label": {"en": "Reviews and complex matters", "fr": "Révisions et dossiers complexes", "pt": "Revisões e questões complexas"},
-      "shortDescription": {"en": "Professional review of an application and its supporting documents before submission.", "fr": "Révision professionnelle d’une demande et de ses pièces justificatives avant le dépôt.", "pt": "Revisão profissional do requerimento e da documentação antes do envio."},
-      "detail": {"en": "If you prepared your own application and want a professional review before submitting it, we can examine the forms and supporting documents with you. We look for inconsistencies, missing information and points that need attention so you can submit a more complete and organized application.", "fr": "Si vous avez préparé votre propre demande et souhaitez une révision professionnelle avant de la déposer, nous pouvons examiner avec vous les formulaires et les pièces justificatives. Nous repérons les incohérences, les renseignements manquants et les points à corriger afin que vous puissiez présenter une demande plus complète et mieux organisée.", "pt": "Se você preparou o próprio requerimento e quer uma revisão profissional antes do envio, podemos analisar com você os formulários e a documentação. Verificamos inconsistências, informações que estejam faltando e pontos que precisam de atenção para que a solicitação seja apresentada de forma mais completa e organizada."}
+      "label": {
+        "en": "Reviews and complex matters",
+        "fr": "Révisions et dossiers complexes",
+        "es": "Revisiones y cuestiones complejas",
+        "pt": "Revisões e questões complexas"
+      },
+      "shortDescription": {
+        "en": "Professional review of an application and its supporting documents before submission.",
+        "fr": "Révision professionnelle d’une demande et de ses pièces justificatives avant le dépôt.",
+        "es": "Revisión profesional de la solicitud y de la documentación antes del envío.",
+        "pt": "Revisão profissional do requerimento e da documentação antes do envio."
+      },
+      "detail": {
+        "en": "If you prepared your own application and want a professional review before submitting it, we can examine the forms and supporting documents with you. We look for inconsistencies, missing information and points that need attention so you can submit a more complete and organized application.",
+        "fr": "Si vous avez préparé votre propre demande et souhaitez une révision professionnelle avant de la déposer, nous pouvons examiner avec vous les formulaires et les pièces justificatives. Nous repérons les incohérences, les renseignements manquants et les points à corriger afin que vous puissiez présenter une demande plus complète et mieux organisée.",
+        "es": "Si usted ha preparado el propio pedido y quiere una revisión profesional antes del envío, podemos analizar con usted los formularios y la documentación. Verificamos inconsistencias, informaciones que están faltando y puntos que necesitan atención para que la solicitud sea presentada de forma más completa y organizada.",
+        "pt": "Se você preparou o próprio requerimento e quer uma revisão profissional antes do envio, podemos analisar com você os formulários e a documentação. Verificamos inconsistências, informações que estejam faltando e pontos que precisam de atenção para que a solicitação seja apresentada de forma mais completa e organizada."
+      }
     }
   ],
   "faq": [
     {
-      "question": {"en": "Does the consultant finder assess my eligibility?", "fr": "L’outil évalue-t-il mon admissibilité?", "pt": "O localizador avalia minha elegibilidade?"},
-      "answer": {"en": "No. We only use your preferred language and the service you select to show consultants who work in that area. To discuss eligibility, book a consultation.", "fr": "Non. Nous utilisons seulement votre langue et le service choisi pour vous montrer les consultantes qui travaillent dans ce domaine. Pour parler d’admissibilité, réservez une consultation.", "pt": "Não. Usamos apenas o idioma e o serviço escolhidos para mostrar quem atua nessa área. Para conversar sobre elegibilidade, agende uma consulta."}
+      "question": {
+        "en": "Does the consultant finder assess my eligibility?",
+        "fr": "L’outil évalue-t-il mon admissibilité?",
+        "es": "¿El localizador evalúa mi elegibilidad?",
+        "pt": "O localizador avalia minha elegibilidade?"
+      },
+      "answer": {
+        "en": "No. We only use your preferred language and the service you select to show consultants who work in that area. To discuss eligibility, book a consultation.",
+        "fr": "Non. Nous utilisons seulement votre langue et le service choisi pour vous montrer les consultantes qui travaillent dans ce domaine. Pour parler d’admissibilité, réservez une consultation.",
+        "es": "No. Usamos solo el idioma y el servicio escogido para mostrar quién actúa en esa área. Para conversar sobre elegibilidad, agende una consulta.",
+        "pt": "Não. Usamos apenas o idioma e o serviço escolhidos para mostrar quem atua nessa área. Para conversar sobre elegibilidade, agende uma consulta."
+      }
     },
     {
-      "question": {"en": "What information does the finder store?", "fr": "Quels renseignements l’outil conserve-t-il?", "pt": "Quais informações o localizador armazena?"},
-      "answer": {"en": "The finder does not save its answers. If you book through Calendly, the name, email, booking details and answers to Calendly’s required questions are copied to a restricted CRM database after confirmation so the team can coordinate the consultation.", "fr": "L’outil ne sauvegarde pas ses réponses. Si vous réservez par Calendly, le nom, le courriel, les détails de la réservation et les réponses aux questions obligatoires de Calendly sont copiés dans une base CRM à accès restreint après confirmation afin que l’équipe puisse coordonner la consultation.", "pt": "O localizador não salva suas respostas. Se você agendar pelo Calendly, o nome, o e-mail, os detalhes da reserva e as respostas às perguntas obrigatórias do Calendly serão copiados para um banco de dados CRM com acesso restrito após a confirmação, para que a equipe possa coordenar a consulta."}
+      "question": {
+        "en": "What information does the finder store?",
+        "fr": "Quels renseignements l’outil conserve-t-il?",
+        "es": "¿Qué información almacena el localizador?",
+        "pt": "Quais informações o localizador armazena?"
+      },
+      "answer": {
+        "en": "The finder does not save its answers. If you book through Calendly, the name, email, booking details and answers to Calendly’s required questions are copied to a restricted CRM database after confirmation so the team can coordinate the consultation.",
+        "fr": "L’outil ne sauvegarde pas ses réponses. Si vous réservez par Calendly, le nom, le courriel, les détails de la réservation et les réponses aux questions obligatoires de Calendly sont copiés dans une base CRM à accès restreint après confirmation afin que l’équipe puisse coordonner la consultation.",
+        "es": "El localizador no salva sus respuestas. Si planificas por Calendly, el nombre, el e-mail, los detalles de la reserva y las respuestas a las preguntas obligatorias de Calendly se copiarán a un banco de datos CRM con acceso restringido después de la confirmación, para que el equipo pueda coordinar la consulta.",
+        "pt": "O localizador não salva suas respostas. Se você agendar pelo Calendly, o nome, o e-mail, os detalhes da reserva e as respostas às perguntas obrigatórias do Calendly serão copiados para um banco de dados CRM com acesso restrito após a confirmação, para que a equipe possa coordenar a consulta."
+      }
     },
     {
-      "question": {"en": "Can I review every consultant?", "fr": "Puis-je consulter toutes les consultantes?", "pt": "Posso conhecer todas as consultoras?"},
-      "answer": {"en": "Yes. You can view every profile at any time and choose the consultant you would like to speak with.", "fr": "Oui. Vous pouvez consulter tous les profils à tout moment et choisir la consultante avec qui vous souhaitez parler.", "pt": "Sim. Você pode conhecer todos os perfis a qualquer momento e escolher com quem quer conversar."}
+      "question": {
+        "en": "Can I review every consultant?",
+        "fr": "Puis-je consulter toutes les consultantes?",
+        "es": "¿Puedo conocer todas las consultoras?",
+        "pt": "Posso conhecer todas as consultoras?"
+      },
+      "answer": {
+        "en": "Yes. You can view every profile at any time and choose the consultant you would like to speak with.",
+        "fr": "Oui. Vous pouvez consulter tous les profils à tout moment et choisir la consultante avec qui vous souhaitez parler.",
+        "es": "Sí. Puedes conocer todos los perfiles en cualquier momento y elegir con quién quiere conversar.",
+        "pt": "Sim. Você pode conhecer todos os perfis a qualquer momento e escolher com quem quer conversar."
+      }
     },
     {
-      "question": {"en": "Where does booking happen?", "fr": "Où se fait la réservation?", "pt": "Onde acontece o agendamento?"},
-      "answer": {"en": "When you click the booking button, we will take you to the consultant’s Calendly page, where you can choose an available time.", "fr": "Lorsque vous cliquez sur le bouton de réservation, vous accédez à la page Calendly de la consultante pour choisir une plage horaire disponible.", "pt": "Ao clicar no botão de agendamento, você será direcionado ao Calendly da consultora para escolher um horário disponível."}
+      "question": {
+        "en": "Where does booking happen?",
+        "fr": "Où se fait la réservation?",
+        "es": "¿Dónde ocurre el programamiento?",
+        "pt": "Onde acontece o agendamento?"
+      },
+      "answer": {
+        "en": "When you click the booking button, we will take you to the consultant’s Calendly page, where you can choose an available time.",
+        "fr": "Lorsque vous cliquez sur le bouton de réservation, vous accédez à la page Calendly de la consultante pour choisir une plage horaire disponible.",
+        "es": "Al hacer clic en el botón de planificación, se le dirigirá a Calendly de la consultora para elegir un horario disponible.",
+        "pt": "Ao clicar no botão de agendamento, você será direcionado ao Calendly da consultora para escolher um horário disponível."
+      }
     },
     {
-      "question": {"en": "Why are some profile details still being updated?", "fr": "Pourquoi certains renseignements de profil sont-ils encore en mise à jour?", "pt": "Por que algumas informações dos perfis ainda estão em atualização?"},
-      "answer": {"en": "We only publish professional information after confirming it with each consultant. Any missing detail will be added as soon as it is approved.", "fr": "Nous publions les renseignements professionnels seulement après les avoir confirmés avec chaque consultante. Les détails manquants seront ajoutés dès leur approbation.", "pt": "Só publicamos informações profissionais depois de confirmar tudo com cada consultora. O que estiver faltando será incluído assim que for aprovado."}
+      "question": {
+        "en": "Why are some profile details still being updated?",
+        "fr": "Pourquoi certains renseignements de profil sont-ils encore en mise à jour?",
+        "es": "¿Por qué algunas informaciones de los perfiles todavía están en actualización?",
+        "pt": "Por que algumas informações dos perfis ainda estão em atualização?"
+      },
+      "answer": {
+        "en": "We only publish professional information after confirming it with each consultant. Any missing detail will be added as soon as it is approved.",
+        "fr": "Nous publions les renseignements professionnels seulement après les avoir confirmés avec chaque consultante. Les détails manquants seront ajoutés dès leur approbation.",
+        "es": "Solo publicamos información profesional después de confirmar todo con cada consultora. Lo que falta será incluido tan pronto como sea aprobado.",
+        "pt": "Só publicamos informações profissionais depois de confirmar tudo com cada consultora. O que estiver faltando será incluído assim que for aprovado."
+      }
     },
     {
-      "question": {"en": "Is website information immigration advice?", "fr": "L’information du site constitue-t-elle un conseil en immigration?", "pt": "As informações do site são aconselhamento migratório?"},
-      "answer": {"en": "No. The information here is general. Immigration advice depends on your circumstances and is provided during a professional consultation.", "fr": "Non. Les renseignements présentés ici sont généraux. Les conseils en immigration dépendent de votre situation et sont fournis pendant une consultation professionnelle.", "pt": "Não. As informações aqui são gerais. A orientação migratória depende da sua situação e é oferecida durante uma consulta profissional."}
+      "question": {
+        "en": "Is website information immigration advice?",
+        "fr": "L’information du site constitue-t-elle un conseil en immigration?",
+        "es": "¿La información del sitio web es asesoramiento migratorio?",
+        "pt": "As informações do site são aconselhamento migratório?"
+      },
+      "answer": {
+        "en": "No. The information here is general. Immigration advice depends on your circumstances and is provided during a professional consultation.",
+        "fr": "Non. Les renseignements présentés ici sont généraux. Les conseils en immigration dépendent de votre situation et sont fournis pendant une consultation professionnelle.",
+        "es": "No. La información aquí es general. La orientación migratoria depende de su situación y se ofrece durante una consulta profesional.",
+        "pt": "Não. As informações aqui são gerais. A orientação migratória depende da sua situação e é oferecida durante uma consulta profissional."
+      }
     }
   ],
   "pages": {
     "consultants": {
-      "title": {"en": "Meet our team", "fr": "Découvrez notre équipe", "pt": "Conheça nossa equipe"},
-      "body": {"en": "Learn about each consultant’s experience, languages and services, then choose who you would like to speak with.", "fr": "Découvrez l’expérience, les langues et les services de chaque consultante, puis choisissez avec qui vous souhaitez parler.", "pt": "Conheça a experiência, os idiomas e os serviços de cada consultora. Depois, escolha com quem você quer conversar."}
+      "title": {
+        "en": "Meet our team",
+        "fr": "Découvrez notre équipe",
+        "es": "Conozca nuestro equipo",
+        "pt": "Conheça nossa equipe"
+      },
+      "body": {
+        "en": "Learn about each consultant’s experience, languages and services, then choose who you would like to speak with.",
+        "fr": "Découvrez l’expérience, les langues et les services de chaque consultante, puis choisissez avec qui vous souhaitez parler.",
+        "es": "Conozca la experiencia, los idiomas y los servicios de cada consultora. Después, elija con quién quieres hablar.",
+        "pt": "Conheça a experiência, os idiomas e os serviços de cada consultora. Depois, escolha com quem você quer conversar."
+      }
     },
     "services": {
-      "title": {"en": "How can we help?", "fr": "Comment pouvons-nous vous aider?", "pt": "Como podemos ajudar?"},
-      "body": {"en": "Explore our services and choose the subject you would like to discuss in your consultation.", "fr": "Découvrez nos services et choisissez le sujet que vous souhaitez aborder pendant votre consultation.", "pt": "Conheça nossos serviços e escolha o assunto que quer abordar durante a consulta."}
+      "title": {
+        "en": "How can we help?",
+        "fr": "Comment pouvons-nous vous aider?",
+        "es": "¿Cómo podemos ayudar?",
+        "pt": "Como podemos ajudar?"
+      },
+      "body": {
+        "en": "Explore our services and choose the subject you would like to discuss in your consultation.",
+        "fr": "Découvrez nos services et choisissez le sujet que vous souhaitez aborder pendant votre consultation.",
+        "es": "Conozca nuestros servicios y elija el asunto que quiere abordar durante la consulta.",
+        "pt": "Conheça nossos serviços e escolha o assunto que quer abordar durante a consulta."
+      }
     },
     "about": {
-      "title": {"en": "Immigration is personal. Our service is too.", "fr": "L’immigration est personnelle. Notre accompagnement l’est aussi.", "pt": "Imigração é pessoal. Nosso atendimento também."},
-      "body": {"en": "We are a multilingual team of immigration consultants led by Marina Snyder. Each consultant brings her own experience, languages and areas of work. Get to know our profiles and choose who you would like by your side.", "fr": "Nous sommes une équipe multilingue de consultantes en immigration dirigée par Marina Snyder. Chacune apporte son expérience, ses langues et ses domaines de pratique. Découvrez nos profils et choisissez qui vous souhaitez avoir à vos côtés.", "pt": "Somos uma equipe multilíngue de consultoras de imigração liderada por Marina Snyder. Cada profissional traz sua experiência, seus idiomas e suas áreas de atuação. Conheça nossos perfis e escolha quem você quer ter ao seu lado."}
+      "title": {
+        "en": "Immigration is personal. Our service is too.",
+        "fr": "L’immigration est personnelle. Notre accompagnement l’est aussi.",
+        "es": "Inmigración es personal. Nuestra atención también.",
+        "pt": "Imigração é pessoal. Nosso atendimento também."
+      },
+      "body": {
+        "en": "We are a multilingual team of immigration consultants led by Marina Snyder. Each consultant brings her own experience, languages and areas of work. Get to know our profiles and choose who you would like by your side.",
+        "fr": "Nous sommes une équipe multilingue de consultantes en immigration dirigée par Marina Snyder. Chacune apporte son expérience, ses langues et ses domaines de pratique. Découvrez nos profils et choisissez qui vous souhaitez avoir à vos côtés.",
+        "es": "Somos un equipo multilingüe de consultoras de inmigración dirigido por Marina Snyder. Cada profesional aporta su experiencia, sus idiomas y sus áreas de práctica. Conozca nuestros perfiles y elija a quién desea tener a su lado.",
+        "pt": "Somos uma equipe multilíngue de consultoras de imigração liderada por Marina Snyder. Cada profissional traz sua experiência, seus idiomas e suas áreas de atuação. Conheça nossos perfis e escolha quem você quer ter ao seu lado."
+      }
     },
     "privacy": {
-      "title": {"en": "Privacy policy", "fr": "Politique de confidentialité", "pt": "Política de privacidade"},
+      "title": {
+        "en": "Privacy policy",
+        "fr": "Politique de confidentialité",
+        "es": "Política de privacidad",
+        "pt": "Política de privacidade"
+      },
       "intro": {
         "en": "We keep this website simple and limit the information it collects. This policy explains what happens when you browse the site, use the consultant finder or continue to an external booking page.",
         "fr": "Nous gardons ce site simple et limitons les renseignements qu’il recueille. Cette politique explique ce qui se passe lorsque vous consultez le site, utilisez l’outil de recherche ou accédez à une page de réservation externe.",
+        "es": "Mantenemos este sitio sencillo y limitamos la información recolectada. Esta política explica lo que sucede cuando navega por el sitio, utiliza el localizador de consultoras o sigue a una página externa de programación.",
         "pt": "Mantemos este site simples e limitamos as informações coletadas. Esta política explica o que acontece quando você navega pelo site, usa o localizador de consultoras ou segue para uma página externa de agendamento."
       },
-      "updatedAt": {"en": "Last updated August 20, 2026", "fr": "Dernière mise à jour : 20 août 2026", "pt": "Última atualização: 20 de agosto de 2026"},
+      "updatedAt": {
+        "en": "Last updated August 20, 2026",
+        "fr": "Dernière mise à jour : 20 août 2026",
+        "es": "Última actualización: 20 de agosto de 2026",
+        "pt": "Última atualização: 20 de agosto de 2026"
+      },
       "reviewNotice": {
         "en": "This version describes how the website currently works and requires legal review before publication.",
         "fr": "Cette version décrit le fonctionnement actuel du site et doit faire l’objet d’une révision juridique avant sa publication.",
+        "es": "Esta versión describe el funcionamiento actual del sitio web y debe pasar por revisión legal antes de la publicación.",
         "pt": "Esta versão descreve o funcionamento atual do site e deve passar por revisão jurídica antes da publicação."
       },
       "sections": [
         {
-          "title": {"en": "Information used on this website", "fr": "Renseignements utilisés sur ce site", "pt": "Informações usadas neste site"},
+          "title": {
+            "en": "Information used on this website",
+            "fr": "Renseignements utilisés sur ce site",
+            "es": "Información utilizada en este sitio",
+            "pt": "Informações usadas neste site"
+          },
           "paragraphs": [
             {
               "en": "You can browse this website without creating an account or completing a contact form. The consultant finder asks only for your preferred language and broad process categories. If you book through Calendly, the booking form separately asks for your name, email, full address and phone number, and information that may help prepare for the meeting.",
               "fr": "Vous pouvez consulter ce site sans créer de compte ni remplir un formulaire de contact. L’outil de recherche demande seulement votre langue préférée et de grandes catégories de processus. Si vous réservez par Calendly, le formulaire de réservation demande séparément votre nom, votre courriel, votre adresse complète et votre numéro de téléphone, ainsi que des renseignements pouvant aider à préparer la rencontre.",
+              "es": "Puede navegar por este sitio web sin crear una cuenta o rellenar un formulario de contacto. El localizador pregunta sólo el idioma de su preferencia y categorías amplias de proceso. Si planificas por Calendly, el formulario de programación solicitará por separado su nombre, correo electrónico, dirección completa y teléfono, además de información que puedan ayudar en la preparación de la reunión.",
               "pt": "Você pode navegar por este site sem criar uma conta ou preencher um formulário de contato. O localizador pergunta apenas o idioma de sua preferência e categorias amplas de processo. Se você agendar pelo Calendly, o formulário de agendamento solicitará separadamente seu nome, e-mail, endereço completo e telefone, além de informações que possam ajudar na preparação da reunião."
             },
             {
               "en": "The finder choices remain in your browser while you use the tool and are not saved by this website. Calendly booking details are sent to Calendly and, after a confirmed booking, copied to our restricted CRM database so the team can coordinate the consultation.",
               "fr": "Les choix effectués dans l’outil restent dans votre navigateur pendant son utilisation et ne sont pas enregistrés par ce site. Les renseignements de réservation sont transmis à Calendly et, après une réservation confirmée, copiés dans notre base CRM à accès restreint afin que l’équipe puisse coordonner la consultation.",
+              "es": "Las opciones hechas en el localizador se encuentran en el navegador durante el uso y no se salvan por este sitio web. Los datos del programamiento son enviados a Calendly y, después de una reserva confirmada, copiados a nuestro banco de datos CRM con acceso restringido para que el equipo pueda coordinar la consulta.",
               "pt": "As escolhas feitas no localizador ficam no navegador durante o uso e não são salvas por este site. Os dados do agendamento são enviados ao Calendly e, após uma reserva confirmada, copiados para nosso banco de dados CRM com acesso restrito para que a equipe possa coordenar a consulta."
             },
             {
               "en": "Our hosting infrastructure may process technical information, such as an IP address, browser or device type, requested page, and date and time, in logs needed to deliver and protect the website.",
               "fr": "Notre infrastructure d’hébergement peut traiter des renseignements techniques, comme l’adresse IP, le type de navigateur ou d’appareil, la page demandée ainsi que la date et l’heure, dans les journaux nécessaires au fonctionnement et à la protection du site.",
+              "es": "La infraestructura de alojamiento puede procesar información técnica, como dirección IP, tipo de navegador o dispositivo, página visitada, fecha y horario, en registros necesarios para entregar y proteger el sitio web.",
               "pt": "A infraestrutura de hospedagem pode processar informações técnicas, como endereço IP, tipo de navegador ou dispositivo, página acessada, data e horário, em registros necessários para entregar e proteger o site."
             }
           ]
         },
         {
-          "title": {"en": "Analytics and cookies", "fr": "Mesure d’audience et témoins", "pt": "Analytics e cookies"},
+          "title": {
+            "en": "Analytics and cookies",
+            "fr": "Mesure d’audience et témoins",
+            "es": "Analytics y cookies",
+            "pt": "Analytics e cookies"
+          },
           "paragraphs": [
             {
               "en": "We do not currently send your browsing activity or finder choices to an analytics or advertising provider. This website does not set analytics or advertising cookies.",
               "fr": "Nous ne transmettons actuellement ni votre navigation ni vos choix dans l’outil à un fournisseur de mesure d’audience ou de publicité. Ce site ne dépose aucun témoin de mesure d’audience ou de publicité.",
+              "es": "Actualmente no enviamos su navegación ni las opciones hechas en el localizador para herramientas de analítica o publicidad. El sitio web no instala cookies de analítica o publicidad.",
               "pt": "Atualmente, não enviamos sua navegação nem as escolhas feitas no localizador para ferramentas de analytics ou publicidade. O site não instala cookies de analytics ou publicidade."
             },
             {
               "en": "If we add a service that changes this practice, we will update this policy and add any consent controls required before the service is activated.",
               "fr": "Si nous ajoutons un service qui modifie cette pratique, nous mettrons cette politique à jour et ajouterons les mécanismes de consentement requis avant de l’activer.",
+              "es": "Si agregamos un servicio que cambie esa práctica, actualizaremos esta política e incluiremos los controles de consentimiento necesarios antes de la activación.",
               "pt": "Se adicionarmos um serviço que mude essa prática, atualizaremos esta política e incluiremos os controles de consentimento necessários antes da ativação."
             }
           ]
         },
         {
-          "title": {"en": "Booking through Calendly", "fr": "Réservation avec Calendly", "pt": "Agendamento pelo Calendly"},
+          "title": {
+            "en": "Booking through Calendly",
+            "fr": "Réservation avec Calendly",
+            "es": "Planificación por Calendly",
+            "pt": "Agendamento pelo Calendly"
+          },
           "paragraphs": [
             {
               "en": "When you choose to book a consultation, the embedded Calendly page receives the information you provide there, such as your name, email address, full address and phone number, appointment details and any preparation message. After a confirmed booking, we receive the booking details through a signed Calendly webhook and store them in a restricted CRM database.",
               "fr": "Lorsque vous choisissez de réserver une consultation, la page Calendly intégrée reçoit les renseignements que vous y fournissez, comme votre nom, votre adresse courriel, votre adresse complète et votre numéro de téléphone, les détails du rendez-vous et tout message de préparation. Après une réservation confirmée, nous recevons les détails au moyen d’un webhook Calendly signé et les enregistrons dans une base CRM à accès restreint.",
+              "es": "Cuando elige programar una consulta, la página integrada de Calendly recibe la información proporcionada allí, como nombre, correo electrónico, dirección completa y teléfono, detalles del horario y cualquier mensaje de preparación. Después de una reserva confirmada, recibimos los datos por medio de un webhook firmado de Calendly y los almacenamos en un banco de datos CRM con acceso restringido.",
               "pt": "Quando você escolhe agendar uma consulta, a página integrada do Calendly recebe as informações fornecidas ali, como nome, e-mail, endereço completo e telefone, detalhes do horário e qualquer mensagem de preparação. Após uma reserva confirmada, recebemos os dados por meio de um webhook assinado do Calendly e os armazenamos em um banco de dados CRM com acesso restrito."
             },
             {
               "en": "Calendly processes that information under its own privacy notice. Avoid adding sensitive case details to a booking field unless the consultant has asked you to use that channel for this purpose.",
               "fr": "Calendly traite ces renseignements selon son propre avis de confidentialité. Évitez d’ajouter des renseignements sensibles sur votre dossier dans un champ de réservation, sauf si la consultante vous a demandé d’utiliser ce canal à cette fin.",
+              "es": "Calendly trata esta información de acuerdo con la propia política de privacidad. Evite incluir detalles sensibles de su caso en el campo de programación, a menos que la consultora haya orientado a usar ese canal para esa finalidad.",
               "pt": "O Calendly trata essas informações de acordo com a própria política de privacidade. Evite incluir detalhes sensíveis do seu caso no campo de agendamento, a menos que a consultora tenha orientado você a usar esse canal para essa finalidade."
             }
           ]
         },
         {
-          "title": {"en": "How information is used and shared", "fr": "Utilisation et communication des renseignements", "pt": "Como as informações são usadas e compartilhadas"},
+          "title": {
+            "en": "How information is used and shared",
+            "fr": "Utilisation et communication des renseignements",
+            "es": "Cómo se usa la información y se comparte",
+            "pt": "Como as informações são usadas e compartilhadas"
+          },
           "paragraphs": [
             {
               "en": "Technical information connected with the website is used to operate, secure and troubleshoot it. We do not sell personal information collected through this website.",
               "fr": "Les renseignements techniques liés au site servent à le faire fonctionner, à le protéger et à résoudre les problèmes. Nous ne vendons pas les renseignements personnels recueillis au moyen de ce site.",
+              "es": "La información técnica relacionada con el sitio se utiliza para su funcionamiento, seguridad y corrección de problemas. No vendemos información personal recopilada por medio de este sitio.",
               "pt": "As informações técnicas relacionadas ao site são usadas para seu funcionamento, segurança e correção de problemas. Não vendemos informações pessoais coletadas por meio deste site."
             },
             {
               "en": "Service providers may process limited information on our behalf when needed to host the website or provide booking services. Information may also be disclosed when required by law or reasonably necessary to protect the website, our rights or another person’s safety.",
               "fr": "Des fournisseurs peuvent traiter des renseignements limités pour notre compte lorsque cela est nécessaire à l’hébergement du site ou au service de réservation. Des renseignements peuvent aussi être communiqués lorsque la loi l’exige ou lorsque cela est raisonnablement nécessaire pour protéger le site, nos droits ou la sécurité d’une personne.",
+              "es": "Los proveedores de servicio pueden procesar información limitada en nuestro nombre cuando sea necesario para alojar el sitio web o ofrecer el programa. También podemos divulgar información cuando la ley exija o cuando sea razonablemente necesario para proteger el sitio, nuestros derechos o la seguridad de alguien.",
               "pt": "Prestadores de serviço podem processar informações limitadas em nosso nome quando isso for necessário para hospedar o site ou oferecer o agendamento. Também podemos divulgar informações quando a lei exigir ou quando isso for razoavelmente necessário para proteger o site, nossos direitos ou a segurança de alguém."
             }
           ]
         },
         {
-          "title": {"en": "Retention and security", "fr": "Conservation et sécurité", "pt": "Retenção e segurança"},
+          "title": {
+            "en": "Retention and security",
+            "fr": "Conservation et sécurité",
+            "es": "Retención y seguridad",
+            "pt": "Retenção e segurança"
+          },
           "paragraphs": [
             {
               "en": "We do not retain the choices made in the consultant finder. Confirmed Calendly bookings are retained in the restricted CRM only for as long as needed to coordinate the consultation, comply with legal obligations and manage privacy requests; the owner should approve the exact retention period before publication.",
               "fr": "Nous ne conservons pas les choix effectués dans l’outil de recherche. Les réservations Calendly confirmées sont conservées dans le CRM à accès restreint seulement pendant la période nécessaire pour coordonner la consultation, respecter les obligations légales et traiter les demandes de confidentialité; la propriétaire doit approuver la durée exacte avant la publication.",
+              "es": "No guardamos las opciones hechas en el localizador de consultoras. Las reservas confirmadas de Calendly se mantienen en el CRM con acceso restringido solamente por el período necesario para coordinar la consulta, cumplir obligaciones legales y atender solicitudes de privacidad; la propietaria debe aprobar el plazo exacto antes de la publicación.",
               "pt": "Não guardamos as escolhas feitas no localizador de consultoras. As reservas confirmadas do Calendly são mantidas no CRM com acesso restrito somente pelo período necessário para coordenar a consulta, cumprir obrigações legais e atender solicitações de privacidade; a proprietária deve aprovar o prazo exato antes da publicação."
             },
             {
               "en": "We use reasonable administrative and technical measures to protect information under our control. No method of internet transmission or electronic storage is completely secure.",
               "fr": "Nous utilisons des mesures administratives et techniques raisonnables pour protéger les renseignements sous notre contrôle. Aucune transmission par Internet ni aucun stockage électronique n’est entièrement sécurisé.",
+              "es": "Adoptamos medidas administrativas y técnicas razonables para proteger la información bajo nuestro control. Ninguna transmisión por Internet o forma de almacenamiento electrónico es totalmente segura.",
               "pt": "Adotamos medidas administrativas e técnicas razoáveis para proteger as informações sob nosso controle. Nenhuma transmissão pela internet ou forma de armazenamento eletrônico é totalmente segura."
             }
           ]
         },
         {
-          "title": {"en": "Your privacy choices", "fr": "Vos choix en matière de confidentialité", "pt": "Suas escolhas de privacidade"},
+          "title": {
+            "en": "Your privacy choices",
+            "fr": "Vos choix en matière de confidentialité",
+            "es": "Sus opciones de privacidad",
+            "pt": "Suas escolhas de privacidade"
+          },
           "paragraphs": [
             {
               "en": "Depending on the law that applies, you may ask about personal information under our control and request access, correction or deletion. Some information may need to be retained when the law permits or requires it.",
               "fr": "Selon la loi applicable, vous pouvez vous renseigner sur les renseignements personnels sous notre contrôle et demander l’accès, la correction ou la suppression. Certains renseignements peuvent devoir être conservés lorsque la loi le permet ou l’exige.",
+              "es": "Dependiendo de la ley aplicable, usted puede preguntar sobre la información personal bajo nuestro control y solicitar acceso, corrección o exclusión. Algunas informaciones pueden necesitar mantenerse cuando la ley permita o exija.",
               "pt": "Dependendo da lei aplicável, você pode perguntar sobre as informações pessoais sob nosso controle e solicitar acesso, correção ou exclusão. Algumas informações podem precisar ser mantidas quando a lei permitir ou exigir."
             },
             {
               "en": "For a privacy question or request, email info@iamgoingtocanada.ca. If your question concerns information entered in Calendly, identify the consultant whose booking page you used so we can direct the request correctly.",
               "fr": "Pour toute question ou demande concernant la confidentialité, écrivez à info@iamgoingtocanada.ca. Si votre demande concerne des renseignements saisis dans Calendly, indiquez la consultante dont vous avez utilisé la page afin que nous puissions l’acheminer correctement.",
+              "es": "Para dudas o peticiones sobre privacidad, escriba a info@iamgoingtocanada.ca. Si la pregunta involucra información insertada en Calendly, informe qué página de consultora ha utilizado para que podamos dirigir la solicitud correctamente.",
               "pt": "Para dúvidas ou solicitações sobre privacidade, escreva para info@iamgoingtocanada.ca. Se a questão envolver informações inseridas no Calendly, informe qual página de consultora você usou para que possamos direcionar o pedido corretamente."
             }
           ]
         }
       ],
-      "resourcesTitle": {"en": "Privacy resources", "fr": "Ressources sur la confidentialité", "pt": "Recursos sobre privacidade"},
+      "resourcesTitle": {
+        "en": "Privacy resources",
+        "fr": "Ressources sur la confidentialité",
+        "es": "Recursos sobre privacidad",
+        "pt": "Recursos sobre privacidade"
+      },
       "resources": [
         {
-          "label": {"en": "Contact us about privacy", "fr": "Nous écrire au sujet de la confidentialité", "pt": "Falar conosco sobre privacidade"},
+          "label": {
+            "en": "Contact us about privacy",
+            "fr": "Nous écrire au sujet de la confidentialité",
+            "es": "Hablar con nosotros sobre privacidad",
+            "pt": "Falar conosco sobre privacidade"
+          },
           "url": "mailto:info@iamgoingtocanada.ca"
         },
         {
-          "label": {"en": "Read Calendly’s privacy notice", "fr": "Consulter l’avis de confidentialité de Calendly", "pt": "Ler a política de privacidade do Calendly"},
+          "label": {
+            "en": "Read Calendly’s privacy notice",
+            "fr": "Consulter l’avis de confidentialité de Calendly",
+            "es": "Leer la política de privacidad de Calendly",
+            "pt": "Ler a política de privacidade do Calendly"
+          },
           "url": "https://calendly.com/legal/privacy-notice"
         },
         {
-          "label": {"en": "Office of the Privacy Commissioner of Canada", "fr": "Commissariat à la protection de la vie privée du Canada", "pt": "Comissariado de Proteção da Privacidade do Canadá"},
+          "label": {
+            "en": "Office of the Privacy Commissioner of Canada",
+            "fr": "Commissariat à la protection de la vie privée du Canada",
+            "es": "Oficina de Protección de la Privacidad de Canadá",
+            "pt": "Comissariado de Proteção da Privacidade do Canadá"
+          },
           "url": "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/"
         }
       ]
     },
     "disclaimer": {
-      "title": {"en": "Website disclaimer", "fr": "Avis concernant le site", "pt": "Aviso legal"},
+      "title": {
+        "en": "Website disclaimer",
+        "fr": "Avis concernant le site",
+        "es": "Aviso legal",
+        "pt": "Aviso legal"
+      },
       "intro": {
         "en": "This website helps you learn about our team and services before a professional conversation. It does not assess your case or replace advice based on your circumstances.",
         "fr": "Ce site vous aide à découvrir notre équipe et nos services avant une conversation professionnelle. Il n’évalue pas votre dossier et ne remplace pas des conseils adaptés à votre situation.",
+        "es": "Este sitio te ayuda a conocer nuestro equipo y nuestros servicios antes de una conversación profesional. Él no evalúa su caso ni sustituye una orientación basada en su situación.",
         "pt": "Este site ajuda você a conhecer nossa equipe e nossos serviços antes de uma conversa profissional. Ele não avalia seu caso nem substitui uma orientação baseada na sua situação."
       },
-      "updatedAt": {"en": "Last updated August 20, 2026", "fr": "Dernière mise à jour : 20 août 2026", "pt": "Última atualização: 20 de agosto de 2026"},
+      "updatedAt": {
+        "en": "Last updated August 20, 2026",
+        "fr": "Dernière mise à jour : 20 août 2026",
+        "es": "Última actualización: 20 de agosto de 2026",
+        "pt": "Última atualização: 20 de agosto de 2026"
+      },
       "reviewNotice": {
         "en": "This version describes the website’s current boundaries and requires legal review before publication.",
         "fr": "Cette version décrit les limites actuelles du site et doit faire l’objet d’une révision juridique avant sa publication.",
+        "es": "Esta versión describe los límites actuales del sitio y debe pasar por revisión legal antes de la publicación.",
         "pt": "Esta versão descreve os limites atuais do site e deve passar por revisão jurídica antes da publicação."
       },
       "sections": [
         {
-          "title": {"en": "General information", "fr": "Renseignements généraux", "pt": "Informações gerais"},
+          "title": {
+            "en": "General information",
+            "fr": "Renseignements généraux",
+            "es": "Información general",
+            "pt": "Informações gerais"
+          },
           "paragraphs": [
             {
               "en": "The content on this website is provided for general information about Canadian immigration consulting services. Immigration rules, forms, fees, programs and processing practices can change. Always check the current instructions published by the responsible government authority.",
               "fr": "Le contenu de ce site fournit des renseignements généraux sur les services de consultation en immigration canadienne. Les règles, formulaires, frais, programmes et pratiques de traitement peuvent changer. Consultez toujours les instructions à jour publiées par l’autorité gouvernementale responsable.",
+              "es": "El contenido de este sitio web presenta información general sobre servicios de consultoría en inmigración canadiense. Las normas, formularios, tasas, programas y prácticas de procesamiento pueden cambiar. Consulte siempre las instrucciones actuales publicadas por el órgano gubernamental responsable.",
               "pt": "O conteúdo deste site apresenta informações gerais sobre serviços de consultoria em imigração canadense. Regras, formulários, taxas, programas e práticas de processamento podem mudar. Consulte sempre as instruções atuais publicadas pelo órgão governamental responsável."
             },
             {
               "en": "We work to keep the website clear and accurate, but we cannot promise that every page is complete, current or suitable for a particular situation.",
               "fr": "Nous veillons à ce que le site soit clair et exact, mais nous ne pouvons pas garantir que chaque page est complète, à jour ou adaptée à une situation particulière.",
+              "es": "Trabajamos para mantener el sitio claro y correcto, pero no podemos garantizar que todas las páginas estén completas, actualizadas o adecuadas a una situación específica.",
               "pt": "Trabalhamos para manter o site claro e correto, mas não podemos garantir que todas as páginas estejam completas, atualizadas ou adequadas a uma situação específica."
             }
           ]
         },
         {
-          "title": {"en": "No individual advice or eligibility assessment", "fr": "Aucun conseil individuel ni évaluation de l’admissibilité", "pt": "Sem orientação individual ou avaliação de elegibilidade"},
+          "title": {
+            "en": "No individual advice or eligibility assessment",
+            "fr": "Aucun conseil individuel ni évaluation de l’admissibilité",
+            "es": "Sin orientación individual o evaluación de elegibilidad",
+            "pt": "Sem orientação individual ou avaliação de elegibilidade"
+          },
           "paragraphs": [
             {
               "en": "Reading this website or using the consultant finder is not legal or immigration advice. The finder uses only the language and service category you select. It does not review documents, calculate points, assess eligibility, recommend a program or predict an outcome.",
               "fr": "La consultation de ce site ou l’utilisation de l’outil de recherche ne constitue pas un conseil juridique ou en immigration. L’outil utilise seulement la langue et la catégorie de service choisies. Il n’examine aucun document, ne calcule aucun point, n’évalue pas l’admissibilité, ne recommande aucun programme et ne prédit aucun résultat.",
+              "es": "Leer este sitio web o usar el localizador de consultoras no es una orientación jurídica o migratoria. El localizador utiliza solo el idioma y la categoría de servicio escogidos. No analiza documentos, calcula puntos, evalúa elegibilidad, recomienda un programa o prevé resultados.",
               "pt": "Ler este site ou usar o localizador de consultoras não constitui orientação jurídica ou migratória. O localizador usa apenas o idioma e a categoria de serviço escolhidos. Ele não analisa documentos, calcula pontos, avalia elegibilidade, recomenda um programa ou prevê resultados."
             },
             {
               "en": "Advice requires a professional review of the relevant facts and documents. Book a consultation if you want to discuss your circumstances with a consultant.",
               "fr": "Un conseil exige l’examen professionnel des faits et des documents pertinents. Réservez une consultation si vous souhaitez discuter de votre situation avec une consultante.",
+              "es": "Una orientación exige análisis profesional de los hechos y documentos relevantes. Agende una consulta si quiere conversar sobre su situación con una consultora.",
               "pt": "Uma orientação exige análise profissional dos fatos e documentos relevantes. Agende uma consulta se quiser conversar sobre sua situação com uma consultora."
             }
           ]
         },
         {
-          "title": {"en": "Professional relationship", "fr": "Relation professionnelle", "pt": "Relação profissional"},
+          "title": {
+            "en": "Professional relationship",
+            "fr": "Relation professionnelle",
+            "es": "Relación profesional",
+            "pt": "Relação profissional"
+          },
           "paragraphs": [
             {
               "en": "Browsing the website, using the finder, sending an email or opening a booking page does not by itself create a consultant-client, lawyer-client or other professional relationship.",
               "fr": "La consultation du site, l’utilisation de l’outil, l’envoi d’un courriel ou l’ouverture d’une page de réservation ne crée pas, à lui seul, une relation entre une consultante et un client, entre une avocate et un client, ni aucune autre relation professionnelle.",
+              "es": "Navegar por el sitio web, usar el localizador, enviar un correo electrónico o abrir una página de programación no crea, por sí sola, una relación entre consultora y cliente, abogada y cliente o cualquier otra relación profesional.",
               "pt": "Navegar pelo site, usar o localizador, enviar um e-mail ou abrir uma página de agendamento não cria, por si só, uma relação entre consultora e cliente, advogada e cliente ou qualquer outra relação profissional."
             },
             {
               "en": "The scope of a consultation or professional service is established through the written agreement required for that service and accepted by the consultant and client.",
               "fr": "La portée d’une consultation ou d’un service professionnel est établie dans l’entente écrite requise pour ce service et acceptée par la consultante et le client.",
+              "es": "El alcance de una consulta o servicio profesional es definido por el acuerdo escrito exigido para aquel servicio y aceptado por la consultora y el cliente.",
               "pt": "O escopo de uma consulta ou serviço profissional é definido pelo acordo escrito exigido para aquele serviço e aceito pela consultora e pelo cliente."
             }
           ]
         },
         {
-          "title": {"en": "Decisions, timelines and outcomes", "fr": "Décisions, délais et résultats", "pt": "Decisões, prazos e resultados"},
+          "title": {
+            "en": "Decisions, timelines and outcomes",
+            "fr": "Décisions, délais et résultats",
+            "es": "Decisiones, plazos y resultados",
+            "pt": "Decisões, prazos e resultados"
+          },
           "paragraphs": [
             {
               "en": "No consultant can guarantee approval, a processing time or any other result. Immigration, refugee and citizenship decisions are made by the responsible Canadian authorities under the rules and evidence that apply to each case.",
               "fr": "Aucune consultante ne peut garantir une approbation, un délai de traitement ou un autre résultat. Les décisions en matière d’immigration, de réfugiés et de citoyenneté sont prises par les autorités canadiennes responsables selon les règles et les preuves propres à chaque dossier.",
+              "es": "Ninguna consultora puede garantizar la aprobación, el plazo de procesamiento o cualquier otro resultado. Las decisiones de inmigración, refugio y ciudadanía son tomadas por las autoridades canadienses responsables, de acuerdo con las normas y pruebas aplicables a cada caso.",
               "pt": "Nenhuma consultora pode garantir aprovação, prazo de processamento ou qualquer outro resultado. Decisões de imigração, refúgio e cidadania são tomadas pelas autoridades canadenses responsáveis, de acordo com as regras e provas aplicáveis a cada caso."
             },
             {
               "en": "Hiring a representative does not give an application special treatment and does not remove the applicant’s responsibility to provide complete and truthful information.",
               "fr": "Le recours à une représentante ne donne aucun traitement préférentiel à une demande et ne retire pas à la personne qui présente la demande la responsabilité de fournir des renseignements complets et véridiques.",
+              "es": "Contratar a un representante no da tratamiento especial a una solicitud ni retirar de la persona solicitante la responsabilidad de proporcionar información completa y verdadera.",
               "pt": "Contratar uma representante não dá tratamento especial a uma solicitação nem retira da pessoa requerente a responsabilidade de fornecer informações completas e verdadeiras."
             }
           ]
         },
         {
-          "title": {"en": "Private website and official sources", "fr": "Site privé et sources officielles", "pt": "Site privado e fontes oficiais"},
+          "title": {
+            "en": "Private website and official sources",
+            "fr": "Site privé et sources officielles",
+            "es": "Sitio privado y fuentes oficiales",
+            "pt": "Site privado e fontes oficiais"
+          },
           "paragraphs": [
             {
               "en": "I Am Going To Canada is a private immigration consulting website. It is not a Government of Canada website and is not affiliated with Immigration, Refugees and Citizenship Canada.",
               "fr": "I Am Going To Canada est un site privé de consultation en immigration. Il ne s’agit pas d’un site du gouvernement du Canada et il n’est pas affilié à Immigration, Réfugiés et Citoyenneté Canada.",
+              "es": "I Am Going To Canada es un sitio web privado de consultoría en inmigración. No es un sitio web del Gobierno de Canadá y no tiene vínculo con Immigration, Refugees and Citizenship Canada.",
               "pt": "I Am Going To Canada é um site privado de consultoria em imigração. Não é um site do Governo do Canadá e não possui vínculo com a Immigration, Refugees and Citizenship Canada."
             },
             {
               "en": "Government forms and guides are available from official Canada.ca sources. Professional titles and licence numbers are shown where they have been supplied, and current licence status can be checked with the relevant regulator.",
               "fr": "Les formulaires et guides gouvernementaux sont accessibles dans les sources officielles de Canada.ca. Les titres professionnels et numéros de permis sont affichés lorsqu’ils ont été fournis, et le statut actuel d’un permis peut être vérifié auprès de l’organisme de réglementation concerné.",
+              "es": "Los formularios y guías gubernamentales están disponibles en las fuentes oficiales de Canadá. Ca. Los títulos profesionales y los números de licencia se muestran cuando se suministran, y la situación actual de cada licencia puede consultarse junto al órgano regulador responsable.",
               "pt": "Formulários e guias governamentais estão disponíveis nas fontes oficiais do Canada.ca. Títulos profissionais e números de licença são exibidos quando fornecidos, e a situação atual de cada licença pode ser consultada junto ao órgão regulador responsável."
             }
           ]
         },
         {
-          "title": {"en": "External websites", "fr": "Sites externes", "pt": "Sites externos"},
+          "title": {
+            "en": "External websites",
+            "fr": "Sites externes",
+            "es": "Sitios externos",
+            "pt": "Sites externos"
+          },
           "paragraphs": [
             {
               "en": "Links to Calendly, government pages, regulators and other websites are provided for convenience. We do not control their content, availability, privacy practices or terms. Review the policies of the website you visit before providing personal information.",
               "fr": "Les liens vers Calendly, les pages gouvernementales, les organismes de réglementation et d’autres sites sont fournis pour faciliter vos démarches. Nous ne contrôlons ni leur contenu, ni leur disponibilité, ni leurs pratiques de confidentialité, ni leurs conditions. Consultez les politiques du site visité avant de fournir des renseignements personnels.",
+              "es": "Enlaces a Calendly, páginas gubernamentales, órganos reguladores y otros sitios web se ofrecen para facilitar el acceso. No controlamos el contenido, la disponibilidad, las prácticas de privacidad o los términos de estos sitios. Lea las políticas del sitio web accesados antes de proporcionar información personal.",
               "pt": "Links para o Calendly, páginas governamentais, órgãos reguladores e outros sites são oferecidos para facilitar o acesso. Não controlamos o conteúdo, a disponibilidade, as práticas de privacidade ou os termos desses sites. Leia as políticas do site acessado antes de fornecer informações pessoais."
             }
           ]
         }
       ],
-      "resourcesTitle": {"en": "Official resources", "fr": "Ressources officielles", "pt": "Recursos oficiais"},
+      "resourcesTitle": {
+        "en": "Official resources",
+        "fr": "Ressources officielles",
+        "es": "Recursos oficiales",
+        "pt": "Recursos oficiais"
+      },
       "resources": [
         {
-          "label": {"en": "IRCC application forms and guides", "fr": "Formulaires et guides de demande d’IRCC", "pt": "Formulários e guias de solicitação do IRCC"},
+          "label": {
+            "en": "IRCC application forms and guides",
+            "fr": "Formulaires et guides de demande d’IRCC",
+            "es": "Formularios y guías de solicitud del IRCC",
+            "pt": "Formulários e guias de solicitação do IRCC"
+          },
           "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides.html"
         },
         {
-          "label": {"en": "College of Immigration and Citizenship Consultants public register", "fr": "Registre public du Collège des consultants en immigration et en citoyenneté", "pt": "Registro público do College of Immigration and Citizenship Consultants"},
+          "label": {
+            "en": "College of Immigration and Citizenship Consultants public register",
+            "fr": "Registre public du Collège des consultants en immigration et en citoyenneté",
+            "es": "Registro público del College of Immigration and Citizenship Consultants",
+            "pt": "Registro público do College of Immigration and Citizenship Consultants"
+          },
           "url": "https://college-ic.ca/protecting-the-public/find-an-immigration-consultant"
         }
       ]
     }
   },
   "common": {
-    "viewProfile": {"en": "View profile", "fr": "Voir le profil", "pt": "Ver perfil"},
-    "book": {"en": "Book with {name}", "fr": "Réserver avec {name}", "pt": "Agendar com {name}"},
-    "bookingUnavailable": {"en": "Booking link awaiting confirmation", "fr": "Lien de réservation en attente de confirmation", "pt": "Link de agendamento aguardando confirmação"},
-    "publishedLanguages": {"en": "Consultation languages", "fr": "Langues de consultation", "pt": "Idiomas de atendimento"},
-    "publishedServices": {"en": "Services", "fr": "Services", "pt": "Áreas de serviço"},
-    "contentReview": {"en": "Profile being updated", "fr": "Profil en cours de mise à jour", "pt": "Perfil em atualização"},
-    "informationComingSoon": {"en": "Coming soon", "fr": "À venir", "pt": "Em breve"},
-    "backToTeam": {"en": "Back to the team", "fr": "Retour à l’équipe", "pt": "Voltar para a equipe"},
-    "consultantsForService": {"en": "Who can help with this service", "fr": "Qui peut vous aider avec ce service", "pt": "Quem pode ajudar com este serviço"}
+    "viewProfile": {
+      "en": "View profile",
+      "fr": "Voir le profil",
+      "es": "Ver perfil",
+      "pt": "Ver perfil"
+    },
+    "book": {
+      "en": "Book with {name}",
+      "fr": "Réserver avec {name}",
+      "es": "Planificar con {name}",
+      "pt": "Agendar com {name}"
+    },
+    "bookingUnavailable": {
+      "en": "Booking link awaiting confirmation",
+      "fr": "Lien de réservation en attente de confirmation",
+      "es": "Enlace de programación esperando confirmación",
+      "pt": "Link de agendamento aguardando confirmação"
+    },
+    "publishedLanguages": {
+      "en": "Consultation languages",
+      "fr": "Langues de consultation",
+      "es": "Idiomas de atención",
+      "pt": "Idiomas de atendimento"
+    },
+    "publishedServices": {
+      "en": "Services",
+      "fr": "Services",
+      "es": "Áreas de servicio",
+      "pt": "Áreas de serviço"
+    },
+    "contentReview": {
+      "en": "Profile being updated",
+      "fr": "Profil en cours de mise à jour",
+      "es": "Perfil en actualización",
+      "pt": "Perfil em atualização"
+    },
+    "informationComingSoon": {
+      "en": "Coming soon",
+      "fr": "À venir",
+      "es": "En breve",
+      "pt": "Em breve"
+    },
+    "backToTeam": {
+      "en": "Back to the team",
+      "fr": "Retour à l’équipe",
+      "es": "Volver al equipo",
+      "pt": "Voltar para a equipe"
+    },
+    "consultantsForService": {
+      "en": "Who can help with this service",
+      "fr": "Qui peut vous aider avec ce service",
+      "es": "Quien puede ayudar con este servicio",
+      "pt": "Quem pode ajudar com este serviço"
+    }
   },
   "footer": {
-    "statement": {"en": "Clear information and human service, from your first question to the consultation.", "fr": "Des renseignements clairs et un service humain, de votre première question à la consultation.", "pt": "Informação clara e atendimento humano, da primeira dúvida até a consulta."},
-    "privacy": {"en": "Privacy", "fr": "Confidentialité", "pt": "Privacidade"},
-    "disclaimer": {"en": "Disclaimer", "fr": "Avis", "pt": "Aviso"},
-    "reviewNotice": {"en": "Site under review before publication", "fr": "Site en révision avant publication", "pt": "Site em revisão antes da publicação"}
+    "statement": {
+      "en": "Clear information and human service, from your first question to the consultation.",
+      "fr": "Des renseignements clairs et un service humain, de votre première question à la consultation.",
+      "es": "Información clara y atención humana, de la primera duda hasta la consulta.",
+      "pt": "Informação clara e atendimento humano, da primeira dúvida até a consulta."
+    },
+    "privacy": {
+      "en": "Privacy",
+      "fr": "Confidentialité",
+      "es": "Privacidad",
+      "pt": "Privacidade"
+    },
+    "disclaimer": {
+      "en": "Disclaimer",
+      "fr": "Avis",
+      "es": "Advertencia",
+      "pt": "Aviso"
+    },
+    "reviewNotice": {
+      "en": "Site under review before publication",
+      "fr": "Site en révision avant publication",
+      "es": "Sitio en revisión antes de la publicación",
+      "pt": "Site em revisão antes da publicação"
+    }
   }
 }

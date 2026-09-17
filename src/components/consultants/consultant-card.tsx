@@ -50,7 +50,7 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
           </div>
           {consultant.practiceAreas.length ? (
             <div>
-              <dt>{locale === "en" ? "Areas" : locale === "fr" ? "Domaines" : "Áreas"}</dt>
+              <dt>{locale === "en" ? "Areas" : locale === "fr" ? "Domaines" : locale === "pt" ? "Áreas" : "Áreas"}</dt>
               <dd>{consultant.practiceAreas.map((area) => practiceAreaNames[locale][area]).join(" · ")}</dd>
             </div>
           ) : null}
