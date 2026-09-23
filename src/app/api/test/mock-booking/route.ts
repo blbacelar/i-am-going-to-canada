@@ -38,9 +38,12 @@ export async function createContractPdf(input: { name: string; email: string; ad
   const pdf = await PDFDocument.create(); const page = pdf.addPage([612, 792]);
   const regular = await pdf.embedFont(StandardFonts.Helvetica); const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
   const navy = rgb(0.09, 0.14, 0.22), red = rgb(0.70, 0.14, 0.23); let y = 748;
-  const logoBytes = await fs.readFile(new URL("../../../../../public/brand/marina-ms-logo.png", import.meta.url));
+  // Webpack's server bundle wraps `import.meta.url` in a web URL object. Pass
+  // its pathname to Node's filesystem API so the contract generator works in
+  // the Vercel Node runtime as well as during local development.
+  const logoBytes = await fs.readFile(new URL("../../../../../public/brand/marina-ms-logo.png", import.meta.url).pathname);
   const logo = await pdf.embedPng(logoBytes);
-  const marinaSignatureBytes = await fs.readFile(new URL("../../../../../public/brand/marina-signature.jpeg", import.meta.url));
+  const marinaSignatureBytes = await fs.readFile(new URL("../../../../../public/brand/marina-signature.jpeg", import.meta.url).pathname);
   const marinaSignature = await pdf.embedJpg(marinaSignatureBytes);
   page.drawImage(logo, { x: 64, y: y - 9, width: 42, height: 36 });
   page.drawText("I Am Going To Canada", { x: 116, y: y + 2, size: 17, font: bold, color: navy }); page.drawText("by Marina Snyder", { x: 116, y: y - 14, size: 8, font: regular, color: red });
