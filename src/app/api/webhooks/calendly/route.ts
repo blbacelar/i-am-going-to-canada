@@ -101,7 +101,7 @@ async function fetchScheduledEventType(eventIdValue: string, token: string): Pro
   return body.resource?.event_type ?? null;
 }
 
-async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, language: string) {
+async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, language: string, assetOrigin: string) {
   const signwellKey = process.env.SIGNWELL_API_KEY;
   const resendKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
@@ -112,7 +112,7 @@ async function sendContractEmail(record: { name: string; email: string; address_
   const testMode = process.env.SIGNWELL_TEST_MODE !== "false";
   const signerEmail = testMode ? (process.env.SIGNWELL_TEST_RECIPIENT || record.email) : record.email;
   const contractLanguage = language === "en" || language === "fr" || language === "es" || language === "pt" ? language : "en";
-  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee: process.env.MOCK_CONSULTATION_FEE || "TODO_CONTENT" }, consultantName, consultantRcic, consultantContact, contractLanguage);
+  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee: process.env.MOCK_CONSULTATION_FEE || "TODO_CONTENT" }, consultantName, consultantRcic, consultantContact, contractLanguage, assetOrigin);
   const signwellResponse = await fetch(SIGNWELL_API, { method: "POST", headers: { "X-Api-Key": signwellKey, "Content-Type": "application/json" }, body: JSON.stringify({
     test_mode: testMode,
     files: [{ name: "consultation-agreement.pdf", file_base64: contract.pdf.toString("base64") }],
@@ -183,7 +183,7 @@ export async function POST(request: Request) {
     const testEventType = process.env.CALENDLY_TEST_EVENT_TYPE_URI;
     if (testEventType && scheduledEventType === testEventType) {
       const requestedLanguage = payload?.tracking?.utm_content;
-      try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "en"); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
+      try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "en", new URL(request.url).origin); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
     } else {
       console.info("Calendly contract dispatch skipped for non-test event", { scheduledEventId, scheduledEventType });
     }

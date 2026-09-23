@@ -23,12 +23,17 @@ export type ContractPdf = {
   signatureFields: ContractSignatureField[];
 };
 
+async function loadBrandAsset(assetOrigin: string, assetPath: string): Promise<Buffer> {
+  const response = await fetch(new URL(assetPath, assetOrigin));
+  if (!response.ok) throw new Error(`Unable to load contract asset: ${assetPath}`);
+  return Buffer.from(await response.arrayBuffer());
+}
+
 function missingConfiguration() {
   return !process.env.SIGNWELL_API_KEY || !process.env.RESEND_API_KEY || !process.env.RESEND_FROM_EMAIL;
 }
 
-export async function createContractPdf(input: { name: string; email: string; addressAndPhone: string; preparationNotes: string; fee: string }, consultantName: string, consultantRcic: string, consultantContact: string, language: string): Promise<ContractPdf> {
-  const fs = await import("node:fs/promises");
+export async function createContractPdf(input: { name: string; email: string; addressAndPhone: string; preparationNotes: string; fee: string }, consultantName: string, consultantRcic: string, consultantContact: string, language: string, assetOrigin: string): Promise<ContractPdf> {
   const french = "La consultation a pour objet d’examiner la situation du client en matière d’immigration ou de citoyenneté et de fournir des conseils sur les options disponibles, l’admissibilité, les risques et/ou les prochaines étapes. Elle ne comprend pas la préparation, le dépôt ou la représentation dans le cadre d’une demande ou d’une procédure. La consultante est autorisée et réglementée par le College of Immigration and Citizenship Consultants (CICC), l’organisme chargé de surveiller les consultants autorisés en immigration et citoyenneté au Canada. En signant, le client accepte l’objet, la portée et les honoraires de cette consultation.";
   const english = "The purpose of this consultation is to review the client’s immigration or citizenship situation and provide advice regarding available options, eligibility, risks and/or next steps. The consultation does not include preparation, submission or representation in an application or proceeding. The consultant is licensed and regulated by the College of Immigration and Citizenship Consultants (CICC), the regulatory body responsible for overseeing licensed immigration and citizenship consultants in Canada. By signing, the client agrees to the purpose, scope and fee of this consultation.";
   const spanish = "La consulta tiene como objetivo analizar la situación migratoria o de ciudadanía del cliente y brindar orientación sobre posibles opciones, elegibilidad, riesgos y/o próximos pasos. La consulta no incluye la preparación o presentación de solicitudes ni la representación del cliente. La consultora está autorizada y regulada por el College of Immigration and Citizenship Consultants (CICC), organismo regulador de los consultores autorizados de inmigración y ciudadanía en Canadá. Al firmar, el cliente acepta el propósito, alcance y tarifa de esta consulta.";
@@ -38,12 +43,11 @@ export async function createContractPdf(input: { name: string; email: string; ad
   const pdf = await PDFDocument.create(); const page = pdf.addPage([612, 792]);
   const regular = await pdf.embedFont(StandardFonts.Helvetica); const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
   const navy = rgb(0.09, 0.14, 0.22), red = rgb(0.70, 0.14, 0.23); let y = 748;
-  // Webpack's server bundle wraps `import.meta.url` in a web URL object. Pass
-  // its pathname to Node's filesystem API so the contract generator works in
-  // the Vercel Node runtime as well as during local development.
-  const logoBytes = await fs.readFile(new URL("../../../../../public/brand/marina-ms-logo.png", import.meta.url).pathname);
+  const [logoBytes, marinaSignatureBytes] = await Promise.all([
+    loadBrandAsset(assetOrigin, "/brand/marina-ms-logo.png"),
+    loadBrandAsset(assetOrigin, "/brand/marina-signature.jpeg"),
+  ]);
   const logo = await pdf.embedPng(logoBytes);
-  const marinaSignatureBytes = await fs.readFile(new URL("../../../../../public/brand/marina-signature.jpeg", import.meta.url).pathname);
   const marinaSignature = await pdf.embedJpg(marinaSignatureBytes);
   page.drawImage(logo, { x: 64, y: y - 9, width: 42, height: 36 });
   page.drawText("I Am Going To Canada", { x: 116, y: y + 2, size: 17, font: bold, color: navy }); page.drawText("by Marina Snyder", { x: 116, y: y - 14, size: 8, font: regular, color: red });
@@ -112,7 +116,7 @@ export async function POST(request: Request) {
   const consultantName = process.env.MOCK_CONSULTANT_NAME || "TODO_CONTENT — assigned consultant";
   const consultantRcic = process.env.MOCK_CONSULTANT_RCIC || "TODO_CONTENT";
   const consultantContact = process.env.MOCK_CONSULTANT_CONTACT || "TODO_CONTENT";
-  const contract = await createContractPdf(input, consultantName, consultantRcic, consultantContact, input.language);
+  const contract = await createContractPdf(input, consultantName, consultantRcic, consultantContact, input.language, new URL(request.url).origin);
   const signwellBody = {
     test_mode: process.env.SIGNWELL_TEST_MODE !== "false",
     files: [{ name: "consultation-agreement-test.pdf", file_base64: contract.pdf.toString("base64") }],
