@@ -42,7 +42,7 @@
       "pt": "Dúvidas"
     },
     "find": {
-      "en": "Find a consultant",
+      "en": "Find an appointment",
       "fr": "Trouver une consultante",
       "es": "Encontrar una consultora",
       "pt": "Encontrar uma consultora"
@@ -75,7 +75,7 @@
         "pt": "Somos uma equipe multilíngue de consultoras de imigração. Conheça nosso trabalho e escolha com quem você quer conversar sobre seus planos para o Canadá."
       },
       "primaryCta": {
-        "en": "Find your consultant",
+        "en": "Find an appointment",
         "fr": "Trouver ma consultante",
         "es": "Encontrar mi consultora",
         "pt": "Encontrar minha consultora"
@@ -274,7 +274,7 @@
   },
   "concierge": {
     "title": {
-      "en": "Find a consultant",
+      "en": "Find an appointment",
       "fr": "Trouver une consultante",
       "es": "Encontrar una consultora",
       "pt": "Encontrar uma consultora"
@@ -290,6 +290,12 @@
       "fr": "Quelle langue préférez-vous pour la consultation?",
       "es": "¿Qué idioma prefieres para la consulta?",
       "pt": "Qual idioma você prefere para a consulta?"
+    },
+    "durationQuestion": {
+      "en": "How long would you like your appointment to be?",
+      "fr": "Quelle durée souhaitez-vous pour votre rendez-vous?",
+      "es": "¿Qué duración desea para su cita?",
+      "pt": "Qual duração você prefere para a sua consulta?"
     },
     "serviceQuestion": {
       "en": "Which service are you looking for?",
@@ -328,10 +334,10 @@
       "pt": "Não"
     },
     "availabilityNote": {
-      "en": "We found a current 30-minute opening. Continue to the booking page to request a consultation; the team will coordinate the professional assigned to your request.",
-      "fr": "Nous avons trouvé une plage disponible de 30 minutes. Continuez vers la réservation pour demander une consultation; l’équipe coordonnera la professionnelle assignée à votre demande.",
-      "es": "Encontramos un horario actual de 30 minutos. Continúe para solicitar una consulta; el equipo coordinará la consultora designada para su solicitud.",
-      "pt": "Encontramos um horário atual de 30 minutos. Continue para o agendamento para solicitar uma consulta; a equipe coordenará a consultora designada para sua solicitação."
+      "en": "We found a current opening. Continue to the booking page to request a consultation; the team will coordinate the professional assigned to your request.",
+      "fr": "Nous avons trouvé une plage disponible. Continuez vers la réservation pour demander une consultation; l’équipe coordonnera la professionnelle assignée à votre demande.",
+      "es": "Encontramos un horario disponible. Continúe para solicitar una consulta; el equipo coordinará la consultora designada para su solicitud.",
+      "pt": "Encontramos um horário disponível. Continue para o agendamento para solicitar uma consulta; a equipe coordenará a consultora designada para sua solicitação."
     },
     "availabilityLoading": {
       "en": "Checking current availability…",

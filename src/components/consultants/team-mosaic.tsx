@@ -51,7 +51,11 @@ export function TeamMosaic({
       </div>
       <div className="team-mosaic-grid">
         {consultants.map((consultant) => (
-          <Link href={localePath(locale, `/consultants/${consultant.slug}`)} key={consultant.id}>
+          <Link
+            className={`team-mosaic-portrait--${consultant.slug}`}
+            href={localePath(locale, `/consultants/${consultant.slug}`)}
+            key={consultant.id}
+          >
             <Image
               src={consultant.portrait.src}
               alt={localized(consultant.portrait.alt, locale)}

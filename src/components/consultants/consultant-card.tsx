@@ -15,12 +15,13 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
 
   return (
     <article className="consultant-card">
-      <Link className="consultant-portrait" href={localePath(locale, `/consultants/${consultant.slug}`)}>
+      <Link className={`consultant-portrait consultant-portrait--${consultant.slug}`} href={localePath(locale, `/consultants/${consultant.slug}`)}>
         <Image
           src={consultant.portrait.src}
           alt={localized(consultant.portrait.alt, locale)}
           width={800}
           height={1000}
+          loading={consultant.id === "aline" ? "eager" : "lazy"}
           sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 300px"
         />
         {primaryCredential ? <CredentialBadge label={primaryCredential.label} value={primaryCredential.value} /> : null}
@@ -59,12 +60,12 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
           <Link className="editorial-link" href={localePath(locale, `/consultants/${consultant.slug}`)}>
             {localized(common.viewProfile, locale)} <RouteArrow />
           </Link>
-          {consultant.calendlyUrl === "TODO_CONTENT" ? (
+          {consultant.calendlyProfileUrl === "TODO_CONTENT" ? (
             <span className="booking-unavailable" aria-disabled="true">{localized(common.bookingUnavailable, locale)}</span>
           ) : (
             <TrackedExternalLink
               className="booking-link"
-              href={consultant.calendlyUrl}
+              href={consultant.calendlyProfileUrl}
               event={{ event: "booking_clicked", locale, consultantId: consultant.id }}
             >
               {bookLabel}

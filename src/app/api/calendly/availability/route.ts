@@ -19,7 +19,9 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Calendly availability is not configured" }, { status: 503 });
   }
 
-  const ids = new Set(new URL(request.url).searchParams.get("consultantIds")?.split(",").filter(Boolean));
+  const searchParams = new URL(request.url).searchParams;
+  const ids = new Set(searchParams.get("consultantIds")?.split(",").filter(Boolean));
+  const duration = searchParams.get("duration") === "60" ? "60" : "30";
   const consultants = getActiveConsultants().filter((consultant) => ids.has(consultant.id));
   if (!consultants.length) return NextResponse.json({ availability: {} });
 
@@ -39,8 +41,8 @@ export async function GET(request: Request) {
     // During the client-validation phase, use the shared Calendly test event
     // whenever it is configured, including on the Vercel deployment.
     const configuredTestEvent = process.env.CALENDLY_TEST_EVENT_TYPE_URI;
-    const eventType = configuredTestEvent || consultant.calendlyEventTypeUri;
-    if (eventType === "TODO_CONTENT" || !isEventTypeUri(eventType)) {
+    const eventType = configuredTestEvent || consultant.calendlyAppointments[duration]?.eventTypeUri;
+    if (!eventType || eventType === "TODO_CONTENT" || !isEventTypeUri(eventType)) {
       return [consultant.id, { firstAvailableAt: null, slotCount: 0 }] as const;
     }
 

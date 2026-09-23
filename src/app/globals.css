@@ -522,11 +522,50 @@ p {
 
 .team-mosaic-grid img {
   object-fit: cover;
+  transform: scale(var(--portrait-scale, 1));
   transition: transform 450ms var(--ease-out);
 }
 
 .team-mosaic-grid a:hover img {
-  transform: scale(1.025);
+  transform: scale(calc(var(--portrait-scale, 1) * 1.025));
+}
+
+/* Normalize portrait framing without modifying the supplied source photos. */
+.team-mosaic-portrait--marina-snyder,
+.consultant-portrait--marina-snyder,
+.profile-image--marina-snyder {
+  --portrait-scale: 1.3;
+}
+
+.team-mosaic-portrait--marina-snyder img,
+.consultant-portrait--marina-snyder img,
+.profile-image--marina-snyder img {
+  object-position: 58% 24%;
+}
+
+.team-mosaic-portrait--virginia-melo,
+.consultant-portrait--virginia-melo,
+.profile-image--virginia-melo {
+  --portrait-scale: 0.88;
+}
+
+.team-mosaic-portrait--virginia-melo::before,
+.consultant-portrait--virginia-melo::before,
+.profile-image--virginia-melo::before {
+  position: absolute;
+  z-index: 0;
+  inset: -18px;
+  content: "";
+  background: url("/consultants/virginia-melo.png") center / cover no-repeat;
+  filter: blur(15px);
+  transform: scale(1.08);
+}
+
+.team-mosaic-portrait--virginia-melo img,
+.consultant-portrait--virginia-melo img,
+.profile-image--virginia-melo img {
+  position: relative;
+  z-index: 1;
 }
 
 .team-mosaic-grid span {
@@ -919,11 +958,12 @@ p {
   display: block;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  transform: scale(var(--portrait-scale, 1));
   transition: transform 450ms var(--ease-out);
 }
 
 .consultant-portrait:hover img {
-  transform: scale(1.02);
+  transform: scale(calc(var(--portrait-scale, 1) * 1.02));
 }
 
 .credential-badge {
@@ -1455,6 +1495,8 @@ p {
   width: 100%;
   height: auto;
   display: block;
+  transform: scale(var(--portrait-scale, 1));
+  transition: transform 450ms var(--ease-out);
 }
 
 .back-link {

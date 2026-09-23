@@ -10,6 +10,7 @@ test("localized home, concierge and booking handoff work", async ({ page }) => {
   await page.getByRole("button", { name: "Non", exact: true }).click();
   await page.getByRole("button", { name: "Non", exact: true }).click();
   await page.getByRole("button", { name: "Non", exact: true }).click();
+  await page.getByRole("button", { name: "30 minutes", exact: true }).click();
   const results = page.locator(".concierge-results");
   await expect(results).not.toContainText("Marina Snyder");
   await expect(results).not.toContainText("Virginia Melo");

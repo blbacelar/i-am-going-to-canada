@@ -40,6 +40,7 @@ export default async function HomePage({ params }: PageProps) {
   const conciergeCopy: ConciergeCopy = {
     intro: localized(concierge.intro, locale),
     languageQuestion: localized(concierge.languageQuestion, locale),
+    durationQuestion: localized(concierge.durationQuestion, locale),
     qcQuestion: localized(concierge.qcQuestion, locale),
     skQuestion: localized(concierge.skQuestion, locale),
     irbQuestion: localized(concierge.irbQuestion, locale),

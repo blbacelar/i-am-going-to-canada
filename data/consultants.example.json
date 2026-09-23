@@ -46,7 +46,9 @@
       }
     },
     "calendlyUrl": "TODO_CONTENT",
+    "calendlyProfileUrl": "TODO_CONTENT",
     "calendlyEventTypeUri": "TODO_CONTENT",
+    "calendlyAppointments": { "30": { "url": "TODO_CONTENT", "eventTypeUri": "TODO_CONTENT" } },
     "seo": {
       "title": {
         "en": "TODO_CONTENT",
@@ -103,7 +105,9 @@
       }
     },
     "calendlyUrl": "TODO_CONTENT",
+    "calendlyProfileUrl": "TODO_CONTENT",
     "calendlyEventTypeUri": "TODO_CONTENT",
+    "calendlyAppointments": { "30": { "url": "TODO_CONTENT", "eventTypeUri": "TODO_CONTENT" } },
     "seo": {
       "title": {
         "en": "TODO_CONTENT",
@@ -160,7 +164,9 @@
       }
     },
     "calendlyUrl": "TODO_CONTENT",
+    "calendlyProfileUrl": "TODO_CONTENT",
     "calendlyEventTypeUri": "TODO_CONTENT",
+    "calendlyAppointments": { "30": { "url": "TODO_CONTENT", "eventTypeUri": "TODO_CONTENT" } },
     "seo": {
       "title": {
         "en": "TODO_CONTENT",
@@ -217,7 +223,9 @@
       }
     },
     "calendlyUrl": "TODO_CONTENT",
+    "calendlyProfileUrl": "TODO_CONTENT",
     "calendlyEventTypeUri": "TODO_CONTENT",
+    "calendlyAppointments": { "30": { "url": "TODO_CONTENT", "eventTypeUri": "TODO_CONTENT" } },
     "seo": {
       "title": {
         "en": "TODO_CONTENT",

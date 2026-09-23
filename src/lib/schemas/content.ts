@@ -13,6 +13,11 @@ const credentialSchema = z.object({
   verificationUrl: z.url().nullable(),
 });
 
+const calendlyAppointmentSchema = z.object({
+  url: z.union([z.literal("TODO_CONTENT"), z.url()]),
+  eventTypeUri: z.union([z.literal("TODO_CONTENT"), z.url()]),
+});
+
 export const consultantSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   slug: z.string().regex(/^[a-z0-9-]+$/),
@@ -36,7 +41,12 @@ export const consultantSchema = z.object({
     alt: localizedStringSchema,
   }),
   calendlyUrl: z.union([z.literal("TODO_CONTENT"), z.url()]),
+  calendlyProfileUrl: z.union([z.literal("TODO_CONTENT"), z.url()]),
   calendlyEventTypeUri: z.union([z.literal("TODO_CONTENT"), z.url()]),
+  calendlyAppointments: z.object({
+    "30": calendlyAppointmentSchema,
+    "60": calendlyAppointmentSchema.optional(),
+  }),
   seo: z.object({
     title: localizedStringSchema,
     description: localizedStringSchema,
@@ -132,6 +142,7 @@ export const siteContentSchema = z.object({
     title: localizedStringSchema,
     intro: localizedStringSchema,
     languageQuestion: localizedStringSchema,
+    durationQuestion: localizedStringSchema,
     serviceQuestion: localizedStringSchema,
     qcQuestion: localizedStringSchema,
     skQuestion: localizedStringSchema,

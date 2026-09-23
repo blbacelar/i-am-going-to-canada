@@ -59,7 +59,7 @@ export default async function ConsultantProfilePage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replaceAll("<", "\\u003c") }} />
       <section className="profile-hero">
         <div className="shell profile-grid">
-          <div className="profile-image">
+          <div className={`profile-image profile-image--${consultant.slug}`}>
             <Image src={consultant.portrait.src} alt={localized(consultant.portrait.alt, locale)} width={800} height={1000} priority />
             {primaryCredential ? <CredentialBadge label={primaryCredential.label} value={primaryCredential.value} /> : null}
           </div>
@@ -88,10 +88,10 @@ export default async function ConsultantProfilePage({ params }: PageProps) {
                 ))}
               </div>
             ) : null}
-            {consultant.calendlyUrl === "TODO_CONTENT" ? (
+            {consultant.calendlyProfileUrl === "TODO_CONTENT" ? (
               <p className="booking-unavailable">{localized(common.bookingUnavailable, locale)}</p>
             ) : (
-              <TrackedExternalLink className="button profile-booking" href={consultant.calendlyUrl} event={{ event: "booking_clicked", locale, consultantId: consultant.id }}>
+              <TrackedExternalLink className="button profile-booking" href={consultant.calendlyProfileUrl} event={{ event: "booking_clicked", locale, consultantId: consultant.id }}>
                 {bookLabel} <RouteArrow />
               </TrackedExternalLink>
             )}

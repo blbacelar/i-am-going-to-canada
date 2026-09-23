@@ -36,7 +36,7 @@
       "pt": "Dúvidas"
     },
     "book": {
-      "en": "Find a consultant",
+      "en": "Find an appointment",
       "fr": "Trouver une consultante",
       "es": "Encontrar una consultora",
       "pt": "Encontrar uma consultora"
@@ -63,7 +63,7 @@
         "pt": "Conheça uma equipe multilíngue de profissionais de imigração e encontre a consultora cujos serviços combinam com o que você precisa agora."
       },
       "primaryCta": {
-        "en": "Find your consultant",
+        "en": "Find an appointment",
         "fr": "Trouver ma consultante",
         "es": "Encontrar mi consultora",
         "pt": "Encontrar minha consultora"
@@ -102,6 +102,12 @@
       "fr": "Choisissez une langue de consultation, puis répondez à trois courtes questions sur le type de dossier concerné. Nous présenterons les correspondances publiques; la disponibilité se confirme sur Calendly.",
       "es": "Elija el idioma de la consulta y responda a tres preguntas cortas sobre el tipo de proceso. Mostraremos las combinaciones públicas; la disponibilidad se confirma en Calendly.",
       "pt": "Escolha o idioma da consulta e responda a três perguntas curtas sobre o tipo de processo. Mostraremos as combinações públicas; a disponibilidade é confirmada no Calendly."
+    },
+    "durationQuestion": {
+      "en": "How long would you like your appointment to be?",
+      "fr": "Quelle durée souhaitez-vous pour votre rendez-vous?",
+      "es": "¿Qué duración desea para su cita?",
+      "pt": "Qual duração você prefere para a sua consulta?"
     },
     "qcQuestion": {
       "en": "Does this involve a Québec (QC) process?",

@@ -13,7 +13,12 @@ describe("content schemas", () => {
       languages: ["en", "es", "pt"],
       practiceAreas: [],
       credentials: [{ label: "RCIC", value: "R710053" }],
-      calendlyUrl: "https://calendly.com/costalineimmigration",
+      calendlyUrl: "https://calendly.com/visas-iamgoingtocanada/30min",
+      calendlyAppointments: {
+        "30": {
+          url: "https://calendly.com/visas-iamgoingtocanada/30min",
+        },
+      },
     });
     expect(siteContentSchema.parse(rawContent).services).toHaveLength(6);
     const blog = blogContentSchema.parse(rawArticles);

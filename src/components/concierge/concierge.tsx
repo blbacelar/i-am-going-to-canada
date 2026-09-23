@@ -64,6 +64,7 @@ function CalendlyInlineEmbed({ url, fallbackLabel }: { url: string; fallbackLabe
 export interface ConciergeCopy {
   intro: string;
   languageQuestion: string;
+  durationQuestion: string;
   qcQuestion: string;
   skQuestion: string;
   irbQuestion: string;
@@ -89,8 +90,9 @@ export function Concierge({
   consultants: Consultant[];
   copy: ConciergeCopy;
 }) {
-  const [step, setStep] = useState<0 | 1 | 2 | 3 | 4>(0);
+  const [step, setStep] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
   const [selectedLanguage, setSelectedLanguage] = useState<ConsultantLanguage | null>(null);
+  const [selectedDuration, setSelectedDuration] = useState<"30" | "60" | null>(null);
   const [answers, setAnswers] = useState<Record<PracticeArea, boolean | null>>({ qc: null, sk: null, irb: null });
   const [availability, setAvailability] = useState<Record<string, { firstAvailableAt: string | null; slotCount: number }>>({});
   const [availabilityQuery, setAvailabilityQuery] = useState<string | null>(null);
@@ -108,10 +110,14 @@ export function Concierge({
     sk: copy.skQuestion,
     irb: copy.irbQuestion,
   };
-  const stepLabel = copy.step.replace("{current}", String(step + 1)).replace("{total}", "5");
+  const hasIrbMatter = selectedAreas.includes("irb");
+  const totalSteps = hasIrbMatter ? 5 : 6;
+  const currentStep = hasIrbMatter && step === 5 ? 5 : step + 1;
+  const stepLabel = copy.step.replace("{current}", String(currentStep)).replace("{total}", String(totalSteps));
 
   function chooseLanguage(language: ConsultantLanguage) {
     setSelectedLanguage(language);
+    setSelectedDuration(null);
     setAnswers({ qc: null, sk: null, irb: null });
     setAvailability({});
     setAvailabilityQuery(null);
@@ -130,16 +136,25 @@ export function Concierge({
       setStep(nextStep as 1 | 2 | 3);
       return;
     }
-    setStep(4);
     const selected = practiceQuestions.filter((item) => nextAnswers[item] === true);
     const resultCount = selectedLanguage
       ? matchConsultantsByCriteria(consultants, selectedLanguage, selected).length
       : 0;
     trackJourneyEvent({ event: "consultant_matches_viewed", locale, resultCount });
+    setStep(selected.includes("irb") ? 5 : 4);
+  }
+
+  function chooseDuration(duration: "30" | "60") {
+    setSelectedDuration(duration);
+    setAvailability({});
+    setAvailabilityQuery(null);
+    setMockMode(false);
+    setStep(5);
   }
 
   function restart() {
     setSelectedLanguage(null);
+    setSelectedDuration(null);
     setAnswers({ qc: null, sk: null, irb: null });
     setAvailability({});
     setAvailabilityQuery(null);
@@ -148,20 +163,28 @@ export function Concierge({
   }
 
   const questionArea = practiceQuestions[step - 1];
-  const resultIds = matches.map((consultant) => consultant.id).join(",");
-  const sortedMatches = useMemo(() => [...matches].toSorted((a, b) => {
+  const durationMatches = useMemo(
+    () => selectedDuration ? matches.filter((consultant) => consultant.calendlyAppointments[selectedDuration]?.url !== "TODO_CONTENT") : [],
+    [matches, selectedDuration],
+  );
+  const availableDurations = useMemo(
+    () => (["30", "60"] as const).filter((duration) => matches.some((consultant) => consultant.calendlyAppointments[duration]?.url !== "TODO_CONTENT")),
+    [matches],
+  );
+  const resultIds = durationMatches.map((consultant) => consultant.id).join(",");
+  const sortedMatches = useMemo(() => [...durationMatches].toSorted((a, b) => {
     const aAvailability = availability[a.id]?.firstAvailableAt;
     const bAvailability = availability[b.id]?.firstAvailableAt;
     if (aAvailability && bAvailability) return aAvailability.localeCompare(bAvailability);
     if (aAvailability) return -1;
     if (bAvailability) return 1;
     return a.order - b.order;
-  }), [availability, matches]);
+  }), [availability, durationMatches]);
 
   useEffect(() => {
-    if (step !== 4 || !resultIds) return;
+    if (step !== 5 || !resultIds || !selectedDuration) return;
     let cancelled = false;
-    fetch(`/api/calendly/availability?consultantIds=${encodeURIComponent(resultIds)}`, { cache: "no-store" })
+    fetch(`/api/calendly/availability?consultantIds=${encodeURIComponent(resultIds)}&duration=${selectedDuration}`, { cache: "no-store" })
       .then((response) => response.ok ? response.json() as Promise<{ availability?: typeof availability; mockMode?: boolean }> : null)
       .then((body) => {
         if (!cancelled) {
@@ -174,10 +197,9 @@ export function Concierge({
         if (!cancelled) setAvailabilityQuery(resultIds);
       });
     return () => { cancelled = true; };
-  }, [resultIds, step]);
+  }, [resultIds, selectedDuration, step]);
 
   const availableMatches = sortedMatches.filter((consultant) => availability[consultant.id]?.firstAvailableAt);
-  const hasIrbMatter = selectedAreas.includes("irb");
   const isMockMode = mockMode || localMockMode;
   // Keep the shared test calendar active while the client validates the flow.
   const testCalendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_TEST_EVENT_URL;
@@ -190,7 +212,7 @@ export function Concierge({
     const baseUrl = resolveBookingBaseUrl({
       hasIrbMatter,
       testCalendlyUrl,
-      assignedConsultantUrl: assignedConsultant?.calendlyUrl,
+      assignedConsultantUrl: selectedDuration ? assignedConsultant?.calendlyAppointments[selectedDuration]?.url : undefined,
       irbCalendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_IRB_EVENT_URL,
     });
     if (!baseUrl || baseUrl === "TODO_CONTENT" || !selectedLanguage) return baseUrl;
@@ -202,14 +224,14 @@ export function Concierge({
     url.searchParams.set("hide_event_type_details", "1");
     url.searchParams.set("utm_content", selectedLanguage);
     return url.toString();
-  }, [assignedConsultant, hasIrbMatter, selectedLanguage, testCalendlyUrl]);
+  }, [assignedConsultant, hasIrbMatter, selectedDuration, selectedLanguage, testCalendlyUrl]);
 
   return (
     <div className="concierge" data-step={step}>
       <div className="concierge-topline">
         <p>{stepLabel}</p>
         <div className="concierge-progress" aria-hidden="true">
-          {[0, 1, 2, 3, 4].map((value) => <span key={value} className={value <= step ? "is-active" : ""} />)}
+          {Array.from({ length: totalSteps }, (_, value) => <span key={value} className={value < currentStep ? "is-active" : ""} />)}
         </div>
       </div>
       <p className="concierge-boundary">{copy.intro}</p>
@@ -243,6 +265,19 @@ export function Concierge({
         ) : null}
 
         {step === 4 ? (
+          <fieldset>
+            <legend>{copy.durationQuestion}</legend>
+            <div className="choice-list">
+              {availableDurations.map((duration) => (
+                <button key={duration} type="button" onClick={() => chooseDuration(duration)}>
+                  <span>{duration} minutes</span><ChoiceArrow />
+                </button>
+              ))}
+            </div>
+          </fieldset>
+        ) : null}
+
+        {step === 5 ? (
           <div className="concierge-results">
             {!matches.length && !isTestCalendlyMode ? <p className="no-match">{copy.noExactMatch}</p> : null}
             {matches.length && !hasIrbMatter && !isMockMode && !isTestCalendlyMode && availabilityQuery !== resultIds ? <p className="concierge-availability-note">{copy.availabilityLoading}</p> : null}
@@ -263,7 +298,13 @@ export function Concierge({
 
       <div className="concierge-controls">
         {step > 0 ? (
-          <button type="button" className="text-button" onClick={() => setStep((step - 1) as 0 | 1 | 2 | 3)}>{copy.back}</button>
+          <button
+            type="button"
+            className="text-button"
+            onClick={() => setStep(step === 5 && hasIrbMatter ? 3 : (step - 1) as 0 | 1 | 2 | 3 | 4)}
+          >
+            {copy.back}
+          </button>
         ) : <span />}
         <Link href={localePath(locale, "/consultants")}>{copy.viewAll}</Link>
         {step > 0 ? <button type="button" className="text-button" onClick={restart}>{copy.restart}</button> : <span />}
