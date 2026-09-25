@@ -534,19 +534,19 @@ p {
 .team-mosaic-portrait--marina-snyder,
 .consultant-portrait--marina-snyder,
 .profile-image--marina-snyder {
-  --portrait-scale: 1.42;
+  --portrait-scale: 1.5;
 }
 
 .team-mosaic-portrait--marina-snyder img,
 .consultant-portrait--marina-snyder img,
 .profile-image--marina-snyder img {
-  object-position: 68% 24%;
+  object-position: 64% 35%;
 }
 
 .team-mosaic-portrait--virginia-melo,
 .consultant-portrait--virginia-melo,
 .profile-image--virginia-melo {
-  --portrait-scale: 0.88;
+  --portrait-scale: 1;
 }
 
 .team-mosaic-portrait--virginia-melo::before,
@@ -556,7 +556,7 @@ p {
   z-index: 0;
   inset: -18px;
   content: "";
-  background: url("/consultants/virginia-melo.png") center / cover no-repeat;
+  background: url("/consultants/virginia-melo.jpeg") center / cover no-repeat;
   filter: blur(15px);
   transform: scale(1.08);
 }
