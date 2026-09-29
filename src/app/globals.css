@@ -1335,6 +1335,96 @@ p {
   justify-content: center;
 }
 
+.emergency-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 30px 42px;
+  align-items: start;
+  max-width: 920px;
+  margin: 56px auto 0;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid color-mix(in srgb, var(--surface) 32%, transparent);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 7%, transparent);
+  text-align: left;
+}
+
+.emergency-contact .eyebrow {
+  margin-bottom: 10px;
+  color: var(--accent-border);
+}
+
+.emergency-contact-copy > p:last-child {
+  margin-bottom: 0;
+  color: var(--surface);
+  font-size: var(--type-body);
+  line-height: 1.55;
+}
+
+.emergency-contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.emergency-contact-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--surface);
+  font-size: var(--type-eyebrow);
+  font-weight: 700;
+}
+
+.emergency-contact-form input,
+.emergency-contact-form textarea {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--surface) 48%, transparent);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 11px 12px;
+}
+
+.emergency-contact-form textarea {
+  resize: vertical;
+}
+
+.emergency-contact-message {
+  grid-column: 1 / -1;
+}
+
+.emergency-contact-message span {
+  color: var(--accent-border);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.emergency-contact-form .button {
+  justify-self: start;
+}
+
+.emergency-contact-submit {
+  min-width: 174px;
+  justify-content: center;
+}
+
+.emergency-contact-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.emergency-contact-status {
+  align-self: center;
+  margin: 0;
+  color: var(--accent-border);
+  font-size: var(--type-small);
+}
+
 .editorial-link-light {
   color: var(--surface);
 }
@@ -2275,6 +2365,10 @@ p {
 }
 
 @media (max-width: 700px) {
+  .emergency-contact { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
+  .emergency-contact-form { grid-template-columns: 1fr; }
+  .emergency-contact-message { grid-column: auto; }
+
   .blog-index-heading h1 { font-size: var(--type-h1); }
   .blog-feed-item { grid-template-columns: 1fr; gap: 14px; }
   .blog-feed-copy h2 { font-size: var(--type-h3); }

@@ -136,7 +136,22 @@ export const siteContentSchema = z.object({
     process: z.object({ title: localizedStringSchema, steps: z.array(processStepSchema).min(3) }),
     stories: z.object({ title: localizedStringSchema, body: localizedStringSchema }),
     faqTitle: localizedStringSchema,
-    final: z.object({ title: localizedStringSchema, body: localizedStringSchema }),
+    final: z.object({
+      title: localizedStringSchema,
+      body: localizedStringSchema,
+      emergency: z.object({
+        title: localizedStringSchema,
+        body: localizedStringSchema,
+        nameLabel: localizedStringSchema,
+        emailLabel: localizedStringSchema,
+        messageLabel: localizedStringSchema,
+        messageHint: localizedStringSchema,
+        submit: localizedStringSchema,
+        sending: localizedStringSchema,
+        success: localizedStringSchema,
+        error: localizedStringSchema,
+      }),
+    }),
   }),
   concierge: z.object({
     title: localizedStringSchema,

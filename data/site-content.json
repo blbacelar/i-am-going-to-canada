@@ -269,6 +269,68 @@
         "fr": "Trouvez une consultante par langue et par service, ou prenez le temps de découvrir toute l’équipe.",
         "es": "Encuentra una consultora por el idioma y el servicio, o conoce a todo el equipo con calma.",
         "pt": "Encontre uma consultora pelo idioma e pelo serviço, ou conheça toda a equipe com calma."
+      },
+      "emergency": {
+        "title": {
+          "en": "Need an emergency consultation? Contact us.",
+          "fr": "Besoin d’une consultation urgente? Contactez-nous.",
+          "es": "¿Necesita una consulta urgente? Contáctenos.",
+          "pt": "Precisa de uma consulta urgente? Entre em contato."
+        },
+        "body": {
+          "en": "Send us a short message and our team will help direct your request.",
+          "fr": "Envoyez-nous un court message; notre équipe vous aidera à orienter votre demande.",
+          "es": "Envíenos un mensaje breve y nuestro equipo le ayudará a dirigir su solicitud.",
+          "pt": "Envie-nos uma mensagem curta e nossa equipe ajudará a direcionar sua solicitação."
+        },
+        "nameLabel": {
+          "en": "Name",
+          "fr": "Nom",
+          "es": "Nombre",
+          "pt": "Nome"
+        },
+        "emailLabel": {
+          "en": "Email",
+          "fr": "Courriel",
+          "es": "Correo electrónico",
+          "pt": "E-mail"
+        },
+        "messageLabel": {
+          "en": "How can we help?",
+          "fr": "Comment pouvons-nous vous aider?",
+          "es": "¿Cómo podemos ayudarle?",
+          "pt": "Como podemos ajudar?"
+        },
+        "messageHint": {
+          "en": "Please do not include sensitive immigration or personal details in this message.",
+          "fr": "Veuillez ne pas inclure de renseignements personnels ou d’immigration sensibles dans ce message.",
+          "es": "No incluya información personal o migratoria sensible en este mensaje.",
+          "pt": "Não inclua informações pessoais ou de imigração sensíveis nesta mensagem."
+        },
+        "submit": {
+          "en": "Email us",
+          "fr": "Nous écrire",
+          "es": "Escríbanos",
+          "pt": "Enviar e-mail"
+        },
+        "sending": {
+          "en": "Sending…",
+          "fr": "Envoi en cours…",
+          "es": "Enviando…",
+          "pt": "Enviando…"
+        },
+        "success": {
+          "en": "Your message has been sent.",
+          "fr": "Votre message a été envoyé.",
+          "es": "Su mensaje ha sido enviado.",
+          "pt": "Sua mensagem foi enviada."
+        },
+        "error": {
+          "en": "We could not send your message. Please try again later.",
+          "fr": "Nous n’avons pas pu envoyer votre message. Veuillez réessayer plus tard.",
+          "es": "No pudimos enviar su mensaje. Inténtelo de nuevo más tarde.",
+          "pt": "Não foi possível enviar sua mensagem. Tente novamente mais tarde."
+        }
       }
     }
   },
