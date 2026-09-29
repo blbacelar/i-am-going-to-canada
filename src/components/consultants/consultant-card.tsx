@@ -12,6 +12,12 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
   const primaryCredential = consultant.credentials[0];
   const common = siteContent.common;
   const bookLabel = localized(common.book, locale).replace("{name}", consultant.name.replace(" — TODO_CONTENT", ""));
+  const usesOriginalPortrait = consultant.slug === "marina-snyder" || consultant.slug === "virginia-melo";
+  const portraitSize = consultant.slug === "marina-snyder"
+    ? { width: 1366, height: 768 }
+    : consultant.slug === "virginia-melo"
+      ? { width: 2100, height: 1500 }
+      : { width: 800, height: 1000 };
 
   return (
     <article className="consultant-card">
@@ -19,9 +25,9 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
         <Image
           src={consultant.portrait.src}
           alt={localized(consultant.portrait.alt, locale)}
-          width={800}
-          height={1000}
-          quality={90}
+          width={portraitSize.width}
+          height={portraitSize.height}
+          {...(usesOriginalPortrait ? { unoptimized: true } : { quality: 90 })}
           loading={consultant.id === "aline" ? "eager" : "lazy"}
           sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 300px"
         />
