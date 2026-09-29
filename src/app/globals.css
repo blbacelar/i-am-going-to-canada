@@ -1916,7 +1916,7 @@ p {
   .footer-main { grid-template-columns: 1fr; gap: 40px; padding-top: 64px; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .page-intro { padding: 80px 0; }
-  .profile-hero { padding-top: 36px; }
+  .profile-hero { padding-top: 16px; }
   .page-intro h1,
   .profile-copy h1,
   .service-hero h1 { font-size: var(--type-h1); }

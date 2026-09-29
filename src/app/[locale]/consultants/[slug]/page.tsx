@@ -60,7 +60,15 @@ export default async function ConsultantProfilePage({ params }: PageProps) {
       <section className="profile-hero">
         <div className="shell profile-grid">
           <div className={`profile-image profile-image--${consultant.slug}`}>
-            <Image src={consultant.portrait.src} alt={localized(consultant.portrait.alt, locale)} width={800} height={1000} priority />
+            <Image
+              src={consultant.portrait.src}
+              alt={localized(consultant.portrait.alt, locale)}
+              width={800}
+              height={1000}
+              quality={90}
+              sizes="(max-width: 700px) calc(100vw - 28px), (max-width: 900px) min(100vw - 36px, 620px), 300px"
+              priority
+            />
             {primaryCredential ? <CredentialBadge label={primaryCredential.label} value={primaryCredential.value} /> : null}
           </div>
           <div className="profile-copy">

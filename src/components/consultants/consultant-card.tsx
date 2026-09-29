@@ -21,6 +21,7 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
           alt={localized(consultant.portrait.alt, locale)}
           width={800}
           height={1000}
+          quality={90}
           loading={consultant.id === "aline" ? "eager" : "lazy"}
           sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 300px"
         />
