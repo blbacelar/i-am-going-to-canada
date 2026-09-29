@@ -21,7 +21,8 @@ export function EmergencyContact({ copy }: { copy: EmergencyContactCopy }) {
   async function sendEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (status === "sending") return;
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     setStatus("sending");
     try {
       const response = await fetch("/api/contact/emergency", {
@@ -35,7 +36,7 @@ export function EmergencyContact({ copy }: { copy: EmergencyContactCopy }) {
         }),
       });
       if (!response.ok) throw new Error("Unable to send emergency contact email");
-      event.currentTarget.reset();
+      formElement.reset();
       setStatus("success");
     } catch {
       setStatus("error");
