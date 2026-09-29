@@ -1834,7 +1834,7 @@ p {
   .concierge-section-grid { gap: 46px; }
   .concierge-heading { padding-top: 0; max-width: 700px; }
   .sticky-heading { position: static; }
-  .profile-image { position: relative; }
+  .profile-image { position: relative; top: auto; }
   .split-heading,
   .story-placeholder-inner { grid-template-columns: 1fr; gap: 30px; }
   .split-heading { align-items: start; }
