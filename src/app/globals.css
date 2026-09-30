@@ -1409,10 +1409,13 @@ p {
   justify-content: center;
 }
 
-.emergency-contact-honeypot {
+.emergency-contact-form .emergency-contact-honeypot {
   position: absolute;
   width: 1px;
   height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
