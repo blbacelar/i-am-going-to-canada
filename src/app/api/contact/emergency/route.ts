@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { emergencyContactSchema, renderEmergencyContactEmail } from "@/lib/contact/emergency";
 
 const RESEND_API = "https://api.resend.com/emails";
-const DESTINATION = "info@iamgoingtocanada.ca";
+const DESTINATION = process.env.EMERGENCY_CONTACT_RECIPIENT
+  || (process.env.NODE_ENV === "development" ? "blbacelar@gmail.com" : "info@iamgoingtocanada.ca");
 const WINDOW_MS = 15 * 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 4;
 const attempts = new Map<string, number[]>();
