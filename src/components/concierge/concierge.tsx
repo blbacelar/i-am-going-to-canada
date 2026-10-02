@@ -201,8 +201,11 @@ export function Concierge({
 
   const availableMatches = sortedMatches.filter((consultant) => availability[consultant.id]?.firstAvailableAt);
   const isMockMode = mockMode || localMockMode;
-  // Keep the shared test calendar active while the client validates the flow.
-  const testCalendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_TEST_EVENT_URL;
+  // A shared test calendar can be useful during local validation, but must
+  // never replace the consultant calendar in a production build.
+  const testCalendlyUrl = process.env.NODE_ENV === "production"
+    ? undefined
+    : process.env.NEXT_PUBLIC_CALENDLY_TEST_EVENT_URL;
   const isTestCalendlyMode = Boolean(testCalendlyUrl);
   // The test calendar intentionally bypasses consultant matching during validation.
   const assignedConsultant = hasIrbMatter

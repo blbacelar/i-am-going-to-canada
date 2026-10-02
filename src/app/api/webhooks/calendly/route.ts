@@ -181,11 +181,13 @@ export async function POST(request: Request) {
   }
   if (body.event === "invitee.created") {
     const testEventType = process.env.CALENDLY_TEST_EVENT_TYPE_URI;
-    if (testEventType && scheduledEventType === testEventType) {
+    const shouldSendContract = process.env.NODE_ENV === "production"
+      || Boolean(testEventType && scheduledEventType === testEventType);
+    if (shouldSendContract) {
       const requestedLanguage = payload?.tracking?.utm_content;
       try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "en", new URL(request.url).origin); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
     } else {
-      console.info("Calendly contract dispatch skipped for non-test event", { scheduledEventId, scheduledEventType });
+      console.info("Calendly contract dispatch skipped outside the configured test event", { scheduledEventId, scheduledEventType });
     }
   }
   return NextResponse.json({ received: true });

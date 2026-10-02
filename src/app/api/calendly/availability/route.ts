@@ -38,9 +38,11 @@ export async function GET(request: Request) {
     }, { headers: { "Cache-Control": "no-store" } });
   }
   const availability = await Promise.all(consultants.map(async (consultant) => {
-    // During the client-validation phase, use the shared Calendly test event
-    // whenever it is configured, including on the Vercel deployment.
-    const configuredTestEvent = process.env.CALENDLY_TEST_EVENT_TYPE_URI;
+    // Test events are deliberately restricted to non-production environments
+    // so a stale environment variable cannot route public visitors to them.
+    const configuredTestEvent = process.env.NODE_ENV === "production"
+      ? undefined
+      : process.env.CALENDLY_TEST_EVENT_TYPE_URI;
     const eventType = configuredTestEvent || consultant.calendlyAppointments[duration]?.eventTypeUri;
     if (!eventType || eventType === "TODO_CONTENT" || !isEventTypeUri(eventType)) {
       return [consultant.id, { firstAvailableAt: null, slotCount: 0 }] as const;
