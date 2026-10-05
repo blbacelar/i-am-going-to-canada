@@ -33,7 +33,7 @@ function missingConfiguration() {
   return !process.env.SIGNWELL_API_KEY || !process.env.RESEND_API_KEY || !process.env.RESEND_FROM_EMAIL;
 }
 
-export async function createContractPdf(input: { name: string; email: string; addressAndPhone: string; preparationNotes: string; fee: string }, consultantName: string, consultantRcic: string, consultantContact: string, language: string, assetOrigin: string): Promise<ContractPdf> {
+export async function createContractPdf(input: { name: string; email: string; addressAndPhone: string; preparationNotes: string; fee?: string }, consultantName: string, consultantRcic: string, consultantContact: string, language: string, assetOrigin: string, options: { testMode?: boolean } = {}): Promise<ContractPdf> {
   const french = "La consultation a pour objet d’examiner la situation du client en matière d’immigration ou de citoyenneté et de fournir des conseils sur les options disponibles, l’admissibilité, les risques et/ou les prochaines étapes. Elle ne comprend pas la préparation, le dépôt ou la représentation dans le cadre d’une demande ou d’une procédure. La consultante est autorisée et réglementée par le College of Immigration and Citizenship Consultants (CICC), l’organisme chargé de surveiller les consultants autorisés en immigration et citoyenneté au Canada. En signant, le client accepte l’objet, la portée et les honoraires de cette consultation.";
   const english = "The purpose of this consultation is to review the client’s immigration or citizenship situation and provide advice regarding available options, eligibility, risks and/or next steps. The consultation does not include preparation, submission or representation in an application or proceeding. The consultant is licensed and regulated by the College of Immigration and Citizenship Consultants (CICC), the regulatory body responsible for overseeing licensed immigration and citizenship consultants in Canada. By signing, the client agrees to the purpose, scope and fee of this consultation.";
   const spanish = "La consulta tiene como objetivo analizar la situación migratoria o de ciudadanía del cliente y brindar orientación sobre posibles opciones, elegibilidad, riesgos y/o próximos pasos. La consulta no incluye la preparación o presentación de solicitudes ni la representación del cliente. La consultora está autorizada y regulada por el College of Immigration and Citizenship Consultants (CICC), organismo regulador de los consultores autorizados de inmigración y ciudadanía en Canadá. Al firmar, el cliente acepta el propósito, alcance y tarifa de esta consulta.";
@@ -52,11 +52,12 @@ export async function createContractPdf(input: { name: string; email: string; ad
   page.drawImage(logo, { x: 64, y: y - 9, width: 42, height: 36 });
   page.drawText("I Am Going To Canada", { x: 116, y: y + 2, size: 17, font: bold, color: navy }); page.drawText("by Marina Snyder", { x: 116, y: y - 14, size: 8, font: regular, color: red });
   page.drawLine({ start: { x: 50, y: y - 28 }, end: { x: 562, y: y - 28 }, thickness: 1.5, color: red }); y -= 62;
-  page.drawText("[TEST] Consultation agreement", { x: 50, y, size: 18, font: bold, color: navy });
+  page.drawText(`${options.testMode ? "[TEST] " : ""}Consultation agreement`, { x: 50, y, size: 18, font: bold, color: navy });
   page.drawText("Marina Snyder Immigration Consulting Inc.", { x: 334, y: y + 2, size: 6.5, font: regular, color: navy });
   page.drawText("Marina Snyder Consultation en Immigration Inc.", { x: 334, y: y - 8, size: 6.5, font: regular, color: navy });
   y -= 30;
-  const lines = [`Consultant: ${consultantName} | RCIC #${consultantRcic}`, `Contact: ${consultantContact}`, `Client: ${input.name}`, `Contact: ${input.addressAndPhone} | ${input.email}`, `Consultation Fee: ${input.fee}`];
+  const lines = [`Consultant: ${consultantName} | RCIC #${consultantRcic}`, `Contact: ${consultantContact}`, `Client: ${input.name}`, `Contact: ${input.addressAndPhone} | ${input.email}`];
+  if (input.fee?.trim()) lines.push(`Consultation Fee: ${input.fee.trim()}`);
   const contactBlockX = 50;
   const contactBlockWidth = 512;
   const contactStartX = contactBlockX + (contactBlockWidth - Math.max(...lines.map((line) => regular.widthOfTextAtSize(line, 11)))) / 2;
@@ -116,7 +117,7 @@ export async function POST(request: Request) {
   const consultantName = process.env.MOCK_CONSULTANT_NAME || "TODO_CONTENT — assigned consultant";
   const consultantRcic = process.env.MOCK_CONSULTANT_RCIC || "TODO_CONTENT";
   const consultantContact = process.env.MOCK_CONSULTANT_CONTACT || "TODO_CONTENT";
-  const contract = await createContractPdf(input, consultantName, consultantRcic, consultantContact, input.language, new URL(request.url).origin);
+  const contract = await createContractPdf(input, consultantName, consultantRcic, consultantContact, input.language, new URL(request.url).origin, { testMode: true });
   const signwellBody = {
     test_mode: process.env.SIGNWELL_TEST_MODE !== "false",
     files: [{ name: "consultation-agreement-test.pdf", file_base64: contract.pdf.toString("base64") }],

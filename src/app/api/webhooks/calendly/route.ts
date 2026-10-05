@@ -106,13 +106,15 @@ async function sendContractEmail(record: { name: string; email: string; address_
   const resendKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
   if (!signwellKey || !resendKey || !from) return;
-  const consultantName = process.env.MOCK_CONSULTANT_NAME || "TODO_CONTENT";
-  const consultantRcic = process.env.MOCK_CONSULTANT_RCIC || "TODO_CONTENT";
-  const consultantContact = process.env.MOCK_CONSULTANT_CONTACT || "TODO_CONTENT";
-  const testMode = process.env.SIGNWELL_TEST_MODE !== "false";
+  const consultantName = process.env.CONTRACT_CONSULTANT_NAME || "Marina Snyder";
+  const consultantRcic = process.env.CONTRACT_CONSULTANT_RCIC || "R519265";
+  const consultantContact = process.env.CONTRACT_CONSULTANT_CONTACT || "533 St-Pierre, Drummondville, QC J2C 6M1, Bureau 205 | (819) 817-5048";
+  // Production must always create real signing requests, irrespective of any
+  // left-over test environment configuration.
+  const testMode = process.env.NODE_ENV !== "production" && process.env.SIGNWELL_TEST_MODE !== "false";
   const signerEmail = testMode ? (process.env.SIGNWELL_TEST_RECIPIENT || record.email) : record.email;
   const contractLanguage = language === "en" || language === "fr" || language === "es" || language === "pt" ? language : "en";
-  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee: process.env.MOCK_CONSULTATION_FEE || "TODO_CONTENT" }, consultantName, consultantRcic, consultantContact, contractLanguage, assetOrigin);
+  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee: process.env.CONTRACT_CONSULTATION_FEE }, consultantName, consultantRcic, consultantContact, contractLanguage, assetOrigin, { testMode: false });
   const signwellResponse = await fetch(SIGNWELL_API, { method: "POST", headers: { "X-Api-Key": signwellKey, "Content-Type": "application/json" }, body: JSON.stringify({
     test_mode: testMode,
     files: [{ name: "consultation-agreement.pdf", file_base64: contract.pdf.toString("base64") }],
