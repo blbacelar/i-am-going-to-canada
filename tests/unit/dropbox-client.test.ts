@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { getDropboxAccessToken, getDropboxPathRootHeader } from "../../src/lib/dropbox/client";
+import { getDropboxAccessToken } from "../../src/lib/dropbox/client";
 
 const environment = {
   DROPBOX_APP_KEY: "app-key",
@@ -22,14 +22,6 @@ describe("Dropbox OAuth client", () => {
   it("does not fall back to an expiring static access token", async () => {
     await expect(getDropboxAccessToken({}, vi.fn())).rejects.toMatchObject({
       message: "Missing DROPBOX_APP_KEY",
-    });
-  });
-
-  it("uses the team root namespace for Dropbox Business paths", async () => {
-    const fetcher = vi.fn().mockResolvedValue(new Response(JSON.stringify({ root_info: { root_namespace_id: "team-root" } }), { status: 200 })) as typeof fetch;
-
-    await expect(getDropboxPathRootHeader("short-lived-token", fetcher)).resolves.toEqual({
-      "Dropbox-API-Path-Root": JSON.stringify({ ".tag": "root", root: "team-root" }),
     });
   });
 });

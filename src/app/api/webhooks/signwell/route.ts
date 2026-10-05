@@ -1,6 +1,6 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { NextResponse } from "next/server";
-import { DropboxRequestError, getDropboxAccessToken, getDropboxPathRootHeader } from "@/lib/dropbox/client";
+import { DropboxRequestError, getDropboxAccessToken } from "@/lib/dropbox/client";
 
 const SIGNWELL_API = "https://www.signwell.com/api/v1/documents";
 const DROPBOX_UPLOAD = "https://content.dropboxapi.com/2/files/upload";
@@ -64,12 +64,10 @@ export async function POST(request: Request) {
     const basePath = process.env.DROPBOX_CONTRACTS_PATH || "/Signed Contracts";
     const path = `${basePath.replace(/\/$/, "")}/${safeFileName(clientName)}-${fileTimestamp(payload.event?.time)}.pdf`;
     const accessToken = await getDropboxAccessToken();
-    const pathRootHeader = await getDropboxPathRootHeader(accessToken);
-    const uploadHeaders: Record<string, string> = {
+    const uploadHeaders = {
       Authorization: `Bearer ${accessToken}`,
       "Content-Type": "application/octet-stream",
       "Dropbox-API-Arg": JSON.stringify({ path, mode: "add", autorename: true, mute: true }),
-      ...pathRootHeader,
     };
     const upload = await fetch(DROPBOX_UPLOAD, {
       method: "POST",
