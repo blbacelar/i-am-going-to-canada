@@ -31,7 +31,7 @@ Em produção, defina `SIGNWELL_TEST_MODE=false`. Nesse modo, o assinante e o de
 
 ## Arquivamento no Dropbox
 
-Configure no SignWell o webhook para `https://SEU_HOST/api/webhooks/signwell`, ouvindo `document_completed`. O endpoint baixa o PDF final e faz upload para `DROPBOX_CONTRACTS_PATH`. Adicione `DROPBOX_ACCESS_TOKEN` com escopo de escrita em arquivos; essa é uma credencial do Dropbox Storage, não do provedor de assinatura.
+Configure no SignWell o webhook para `https://SEU_HOST/api/webhooks/signwell`, ouvindo `document_completed`. O endpoint baixa o PDF final e faz upload para `DROPBOX_CONTRACTS_PATH`. Configure `DROPBOX_APP_KEY`, `DROPBOX_APP_SECRET` e `DROPBOX_REFRESH_TOKEN` para que o endpoint renove o access token automaticamente antes do upload. Não use um token manual de curta duração.
 
 ## Teste
 
