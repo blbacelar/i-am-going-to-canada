@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FindAppointmentLink } from "@/components/concierge/find-appointment-link";
 import { Brand } from "@/components/ui/brand";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { MobileNavigation } from "@/components/layout/mobile-navigation";
@@ -27,9 +28,9 @@ export function Header({ locale }: { locale: Locale }) {
         </nav>
         <div className="header-actions">
           <LanguageSwitcher locale={locale} label={localized(nav.language, locale)} articleRoutes={getArticleRouteMap()} />
-          <Link className="button button-small" href={`${localePath(locale, "/")}#find-your-consultant`}>
+          <FindAppointmentLink className="button button-small" href={`${localePath(locale, "/")}#find-your-consultant`}>
             {localized(nav.find, locale)}
-          </Link>
+          </FindAppointmentLink>
         </div>
         <MobileNavigation
           menuLabel={localized(nav.menu, locale)}

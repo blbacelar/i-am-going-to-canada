@@ -353,12 +353,18 @@
       "es": "¿Qué idioma prefieres para la consulta?",
       "pt": "Qual idioma você prefere para a consulta?"
     },
-    "durationQuestion": {
-      "en": "How long would you like your appointment to be?",
-      "fr": "Quelle durée souhaitez-vous pour votre rendez-vous?",
-      "es": "¿Qué duración desea para su cita?",
-      "pt": "Qual duração você prefere para a sua consulta?"
-    },
+  "durationQuestion": {
+    "en": "How long would you like your appointment to be?",
+    "fr": "Quelle durée souhaitez-vous pour votre rendez-vous?",
+    "es": "¿Qué duración desea para su cita?",
+    "pt": "Qual duração você prefere para a sua consulta?"
+  },
+  "durationUnit": {
+    "en": "minutes",
+    "fr": "minutes",
+    "es": "minutos",
+    "pt": "minutos"
+  },
     "serviceQuestion": {
       "en": "Which service are you looking for?",
       "fr": "Quel service recherchez-vous?",
@@ -380,8 +386,8 @@
     "irbQuestion": {
       "en": "Does this involve an appeal, deportation or refugee matter?",
       "fr": "Le dossier concerne-t-il un appel, une déportation ou une demande d’asile?",
-      "es": "¿Envolve appeal, deportación o refugio?",
-      "pt": "Envolve appeal, deportação ou refúgio?"
+      "es": "¿Se trata de una apelación, deportación o solicitud de refugio?",
+      "pt": "Envolve recurso, deportação ou refúgio?"
     },
     "yes": {
       "en": "Yes",

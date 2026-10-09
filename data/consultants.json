@@ -144,7 +144,8 @@
     "calendlyProfileUrl": "https://calendly.com/visas-iamgoingtocanada",
     "calendlyEventTypeUri": "https://api.calendly.com/event_types/481e6e86-5478-45ae-a504-f92199a8ada5",
     "calendlyAppointments": {
-      "30": { "url": "https://calendly.com/visas-iamgoingtocanada/30min", "eventTypeUri": "https://api.calendly.com/event_types/481e6e86-5478-45ae-a504-f92199a8ada5" }
+      "30": { "url": "https://calendly.com/visas-iamgoingtocanada/30min", "eventTypeUri": "https://api.calendly.com/event_types/481e6e86-5478-45ae-a504-f92199a8ada5" },
+      "60": { "url": "https://calendly.com/visas-iamgoingtocanada/consultation-60-min", "eventTypeUri": "https://api.calendly.com/event_types/ac9bd363-1f9c-4934-80ca-55ad5e64dcef" }
     },
     "seo": {
       "title": {

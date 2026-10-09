@@ -41,6 +41,12 @@ curl --request POST \
 
 Save the `signing_key` returned by Calendly as `CALENDLY_WEBHOOK_SIGNING_KEY`. Calendly signs the timestamp and raw request body with HMAC-SHA256; the route rejects missing, invalid or stale signatures.
 
+## Contract dispatch guard
+
+Only event types explicitly configured in `data/consultants.json` may send a client contract. Unknown, legacy and test Calendly event types fail closed: the booking can be recorded in the CRM, but no contract is created or emailed.
+
+The fixed contract fee is derived from the booked duration after Calendly confirms the scheduled event: 30 minutes is **CA$150.00** and 60 minutes is **CA$200.00**. Do not set an environment-variable fee for production contracts.
+
 ## 4. Verify before launch
 
 Create a test booking in the 30-minute event, confirm a row appears in `crm_leads`, then cancel it and confirm the same row changes to `canceled`. Review the privacy copy and approve the exact retention period before production publication.

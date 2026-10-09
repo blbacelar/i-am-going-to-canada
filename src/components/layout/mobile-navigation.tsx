@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRef } from "react";
+import { requestConciergeRestart } from "@/components/concierge/find-appointment-link";
 
 type MobileNavigationLink = {
   href: string;
@@ -34,7 +35,7 @@ export function MobileNavigation({
         {links.map((link) => (
           <Link href={link.href} key={link.href} onClick={closeMenu}>{link.label}</Link>
         ))}
-        <Link href={findHref} onClick={closeMenu}>{findLabel}</Link>
+        <Link href={findHref} onClick={() => { requestConciergeRestart(); closeMenu(); }}>{findLabel}</Link>
       </div>
     </details>
   );

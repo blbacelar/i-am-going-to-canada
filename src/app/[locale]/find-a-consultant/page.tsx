@@ -26,6 +26,7 @@ export default async function FindConsultantPage({ params }: PageProps) {
     intro: localized(siteContent.concierge.intro, locale),
     languageQuestion: localized(siteContent.concierge.languageQuestion, locale),
     durationQuestion: localized(siteContent.concierge.durationQuestion, locale),
+    durationUnit: localized(siteContent.concierge.durationUnit, locale),
     qcQuestion: localized(siteContent.concierge.qcQuestion, locale),
     skQuestion: localized(siteContent.concierge.skQuestion, locale),
     irbQuestion: localized(siteContent.concierge.irbQuestion, locale),

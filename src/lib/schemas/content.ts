@@ -158,6 +158,7 @@ export const siteContentSchema = z.object({
     intro: localizedStringSchema,
     languageQuestion: localizedStringSchema,
     durationQuestion: localizedStringSchema,
+    durationUnit: localizedStringSchema,
     serviceQuestion: localizedStringSchema,
     qcQuestion: localizedStringSchema,
     skQuestion: localizedStringSchema,

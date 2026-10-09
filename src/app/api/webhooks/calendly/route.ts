@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createContractPdf } from "@/app/api/test/mock-booking/route";
 import { renderContractEmail } from "@/lib/email/contract-email";
+import { getContractFee } from "@/lib/contracts/consultation-fees";
 
 const CALENDLY_API = "https://api.calendly.com";
 const SIGNATURE_TOLERANCE_SECONDS = 5 * 60;
@@ -34,6 +35,8 @@ type CalendlyInvitee = {
 type CalendlyScheduledEvent = {
   resource?: {
     event_type?: string;
+    start_time?: string;
+    end_time?: string;
   };
 };
 
@@ -92,16 +95,16 @@ async function fetchInviteeForEvent(eventIdValue: string | null, token: string, 
   return body.collection?.find((item) => !email || item?.email === email) ?? body.collection?.[0];
 }
 
-async function fetchScheduledEventType(eventIdValue: string, token: string): Promise<string | null> {
+async function fetchScheduledEvent(eventIdValue: string, token: string): Promise<CalendlyScheduledEvent["resource"]> {
   const response = await fetch(`${CALENDLY_API}/scheduled_events/${encodeURIComponent(eventIdValue)}`, {
     headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
   });
-  if (!response.ok) return null;
+  if (!response.ok) return undefined;
   const body = await response.json() as CalendlyScheduledEvent;
-  return body.resource?.event_type ?? null;
+  return body.resource;
 }
 
-async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, language: string, assetOrigin: string) {
+async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, language: string, assetOrigin: string, fee: string, calendlyEventId: string) {
   const signwellKey = process.env.SIGNWELL_API_KEY;
   const resendKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
@@ -114,7 +117,7 @@ async function sendContractEmail(record: { name: string; email: string; address_
   const testMode = process.env.NODE_ENV !== "production" && process.env.SIGNWELL_TEST_MODE !== "false";
   const signerEmail = testMode ? (process.env.SIGNWELL_TEST_RECIPIENT || record.email) : record.email;
   const contractLanguage = language === "en" || language === "fr" || language === "es" || language === "pt" ? language : "en";
-  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee: process.env.CONTRACT_CONSULTATION_FEE }, consultantName, consultantRcic, consultantContact, contractLanguage, assetOrigin, { testMode: false });
+  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee }, consultantName, consultantRcic, consultantContact, contractLanguage, assetOrigin, { testMode: false });
   const signwellResponse = await fetch(SIGNWELL_API, { method: "POST", headers: { "X-Api-Key": signwellKey, "Content-Type": "application/json" }, body: JSON.stringify({
     test_mode: testMode,
     files: [{ name: "consultation-agreement.pdf", file_base64: contract.pdf.toString("base64") }],
@@ -123,7 +126,7 @@ async function sendContractEmail(record: { name: string; email: string; address_
     message: "Please review and sign this consultation agreement.",
     recipients: [{ id: "1", name: record.name, email: signerEmail }],
     fields: [contract.signatureFields],
-    metadata: { calendly_event_id: record.email },
+    metadata: { calendly_event_id: calendlyEventId },
     language: contractLanguage,
   }) });
   const body = await signwellResponse.json().catch(() => null) as { id?: string; recipients?: Array<{ signing_url?: string; embedded_signing_url?: string }>; error?: string } | null;
@@ -159,7 +162,8 @@ export async function POST(request: Request) {
   scheduledEventId ??= eventId(invitee?.scheduled_event);
   if (!scheduledEventId) return NextResponse.json({ error: "Missing scheduled event" }, { status: 400 });
 
-  const scheduledEventType = await fetchScheduledEventType(scheduledEventId, calendlyToken);
+  const scheduledEvent = await fetchScheduledEvent(scheduledEventId, calendlyToken);
+  const scheduledEventType = scheduledEvent?.event_type ?? null;
 
   const supabase = createAdminClient();
   const answers = invitee?.questions_and_answers ?? [];
@@ -182,14 +186,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unable to persist booking" }, { status: 500 });
   }
   if (body.event === "invitee.created") {
-    const testEventType = process.env.CALENDLY_TEST_EVENT_TYPE_URI;
-    const shouldSendContract = process.env.NODE_ENV === "production"
-      || Boolean(testEventType && scheduledEventType === testEventType);
-    if (shouldSendContract) {
+    const fee = getContractFee(scheduledEventType, scheduledEvent?.start_time, scheduledEvent?.end_time);
+    if (fee) {
       const requestedLanguage = payload?.tracking?.utm_content;
-      try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "en", new URL(request.url).origin); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
+      try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "en", new URL(request.url).origin, fee.display, scheduledEventId); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
     } else {
-      console.info("Calendly contract dispatch skipped outside the configured test event", { scheduledEventId, scheduledEventType });
+      console.info("Calendly contract dispatch skipped for an unapproved event or duration", { scheduledEventId, scheduledEventType });
     }
   }
   return NextResponse.json({ received: true });

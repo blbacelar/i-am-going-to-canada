@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { trackJourneyEvent } from "@/lib/analytics/track";
 import { resolveBookingBaseUrl } from "@/lib/booking/routing";
+import { conciergeRestartEvent, consumeConciergeRestartRequest } from "@/components/concierge/find-appointment-link";
 import { languageNames, localePath, type ConsultantLanguage, type Locale } from "@/lib/i18n/config";
 import { matchConsultantsByCriteria, type PracticeArea } from "@/lib/matching/match-consultants";
 import type { Consultant } from "@/lib/schemas/content";
@@ -65,6 +66,7 @@ export interface ConciergeCopy {
   intro: string;
   languageQuestion: string;
   durationQuestion: string;
+  durationUnit: string;
   qcQuestion: string;
   skQuestion: string;
   irbQuestion: string;
@@ -152,7 +154,7 @@ export function Concierge({
     setStep(5);
   }
 
-  function restart() {
+  const restart = useCallback(() => {
     setSelectedLanguage(null);
     setSelectedDuration(null);
     setAnswers({ qc: null, sk: null, irb: null });
@@ -160,7 +162,19 @@ export function Concierge({
     setAvailabilityQuery(null);
     setMockMode(false);
     setStep(0);
-  }
+  }, []);
+
+  useEffect(() => {
+    const handleRestart = () => restart();
+    window.addEventListener(conciergeRestartEvent, handleRestart);
+    const frameId = consumeConciergeRestartRequest()
+      ? window.requestAnimationFrame(handleRestart)
+      : null;
+    return () => {
+      window.removeEventListener(conciergeRestartEvent, handleRestart);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+    };
+  }, [restart]);
 
   const questionArea = practiceQuestions[step - 1];
   const durationMatches = useMemo(
@@ -273,7 +287,7 @@ export function Concierge({
             <div className="choice-list">
               {availableDurations.map((duration) => (
                 <button key={duration} type="button" onClick={() => chooseDuration(duration)}>
-                  <span>{duration} minutes</span><ChoiceArrow />
+                  <span>{duration} {copy.durationUnit}</span><ChoiceArrow />
                 </button>
               ))}
             </div>
