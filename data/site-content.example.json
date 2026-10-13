@@ -37,9 +37,9 @@
     },
     "book": {
       "en": "Find an appointment",
-      "fr": "Trouver une consultante",
-      "es": "Encontrar una consultora",
-      "pt": "Encontrar uma consultora"
+      "fr": "Prendre rendez-vous",
+      "es": "Agendar una cita",
+      "pt": "Agende um horário"
     }
   },
   "home": {
@@ -64,9 +64,9 @@
       },
       "primaryCta": {
         "en": "Find an appointment",
-        "fr": "Trouver ma consultante",
-        "es": "Encontrar mi consultora",
-        "pt": "Encontrar minha consultora"
+        "fr": "Prendre rendez-vous",
+        "es": "Agendar una cita",
+        "pt": "Agende um horário"
       },
       "secondaryCta": {
         "en": "Meet the team",

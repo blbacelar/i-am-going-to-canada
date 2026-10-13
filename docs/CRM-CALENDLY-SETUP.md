@@ -45,7 +45,13 @@ Save the `signing_key` returned by Calendly as `CALENDLY_WEBHOOK_SIGNING_KEY`. C
 
 Only event types explicitly configured in `data/consultants.json` may send a client contract. Unknown, legacy and test Calendly event types fail closed: the booking can be recorded in the CRM, but no contract is created or emailed.
 
-The fixed contract fee is derived from the booked duration after Calendly confirms the scheduled event: 30 minutes is **CA$150.00** and 60 minutes is **CA$200.00**. Do not set an environment-variable fee for production contracts.
+The contract fee is derived from the exact Calendly event type and confirmed duration. The regular 30-minute and 60-minute consultations are **CA$150.00** and **CA$200.00**. Marina's direct Calendly events are also approved for automatic contracts: Xpress Call 15 min (**CA$85.00**), IRB Consultation (**CA$300.00**), Temporary residence review (**CA$300.00**) and Mentoring/Consulting for representatives ONLY - 1h (**CA$150.00**). Virginia's direct Calendly events are also approved: Emergency (**CA$250.00**), Review of Arrima or Express Entry Profile (**CA$300.00**), Temporary residence review (**CA$300.00**), 60-minute consultation (**CA$200.00**) and 30-minute consultation (**CA$150.00**). Do not set an environment-variable fee for production contracts.
+
+## Signed-contract confirmation
+
+When SignWell posts `document_completed`, the app archives the completed PDF in Dropbox and sends an internal confirmation to `info@iamgoingtocanada.ca`. The confirmation contains the client's name, email, supplied contact details and the Calendly appointment date in Vancouver time.
+
+The contract request stores those booking details as private SignWell metadata. Apply `supabase/migrations/20261008183000_track_signed_contract_notifications.sql` before deploying this change. The migration records the SignWell document ID and notification timestamp so a retried webhook does not send a duplicate confirmation.
 
 ## 4. Verify before launch
 

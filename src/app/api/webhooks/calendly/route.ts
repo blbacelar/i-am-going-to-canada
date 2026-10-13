@@ -104,7 +104,7 @@ async function fetchScheduledEvent(eventIdValue: string, token: string): Promise
   return body.resource;
 }
 
-async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, language: string, assetOrigin: string, fee: string, calendlyEventId: string) {
+async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, language: string, assetOrigin: string, fee: string, calendlyEventId: string, calendlyScheduledAt: string) {
   const signwellKey = process.env.SIGNWELL_API_KEY;
   const resendKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
@@ -126,7 +126,12 @@ async function sendContractEmail(record: { name: string; email: string; address_
     message: "Please review and sign this consultation agreement.",
     recipients: [{ id: "1", name: record.name, email: signerEmail }],
     fields: [contract.signatureFields],
-    metadata: { calendly_event_id: calendlyEventId },
+    metadata: {
+      calendly_event_id: calendlyEventId,
+      calendly_scheduled_at: calendlyScheduledAt,
+      client_name: record.name,
+      client_email: record.email,
+    },
     language: contractLanguage,
   }) });
   const body = await signwellResponse.json().catch(() => null) as { id?: string; recipients?: Array<{ signing_url?: string; embedded_signing_url?: string }>; error?: string } | null;
@@ -136,6 +141,7 @@ async function sendContractEmail(record: { name: string; email: string; address_
   const emailRecipient = testMode ? (process.env.RESEND_TEST_RECIPIENT || record.email) : record.email;
   const email = await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" }, body: JSON.stringify({ from, to: [emailRecipient], subject: emailCopy.subject, html: emailCopy.html, attachments: emailCopy.attachments }) });
   if (!email.ok) throw new Error("Resend contract email failed");
+  return body.id;
 }
 
 export async function POST(request: Request) {
@@ -175,6 +181,7 @@ export async function POST(request: Request) {
     email: invitee?.email ?? payload?.email ?? null,
     address_and_phone: contactAnswer(answers),
     preparation_notes: questionAnswer(answers, "prepare for our meeting"),
+    calendly_scheduled_at: scheduledEvent?.start_time ?? null,
     status: body.event === "invitee.canceled" ? "canceled" : "booked",
     calendly_created_at: body.created_at ?? null,
   };
@@ -189,7 +196,15 @@ export async function POST(request: Request) {
     const fee = getContractFee(scheduledEventType, scheduledEvent?.start_time, scheduledEvent?.end_time);
     if (fee) {
       const requestedLanguage = payload?.tracking?.utm_content;
-      try { await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "en", new URL(request.url).origin, fee.display, scheduledEventId); } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
+      if (!scheduledEvent?.start_time) {
+        console.error("Calendly contract dispatch skipped because the appointment date is unavailable", { scheduledEventId });
+      } else {
+        try {
+          const signwellDocumentId = await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, requestedLanguage || "en", new URL(request.url).origin, fee.display, scheduledEventId, scheduledEvent.start_time);
+          const { error: trackingError } = await supabase.from("crm_leads").update({ signwell_document_id: signwellDocumentId }).eq("calendly_event_id", scheduledEventId);
+          if (trackingError) console.error("Calendly contract tracking failed", { code: trackingError.code, scheduledEventId });
+        } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
+      }
     } else {
       console.info("Calendly contract dispatch skipped for an unapproved event or duration", { scheduledEventId, scheduledEventType });
     }

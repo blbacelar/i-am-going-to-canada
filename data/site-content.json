@@ -43,9 +43,9 @@
     },
     "find": {
       "en": "Find an appointment",
-      "fr": "Trouver une consultante",
-      "es": "Encontrar una consultora",
-      "pt": "Encontrar uma consultora"
+      "fr": "Prendre rendez-vous",
+      "es": "Agendar una cita",
+      "pt": "Agende um horário"
     },
     "menu": {
       "en": "Menu",
@@ -76,9 +76,9 @@
       },
       "primaryCta": {
         "en": "Find an appointment",
-        "fr": "Trouver ma consultante",
-        "es": "Encontrar mi consultora",
-        "pt": "Encontrar minha consultora"
+        "fr": "Prendre rendez-vous",
+        "es": "Agendar una cita",
+        "pt": "Agende um horário"
       },
       "secondaryCta": {
         "en": "Meet the team",
@@ -337,9 +337,9 @@
   "concierge": {
     "title": {
       "en": "Find an appointment",
-      "fr": "Trouver une consultante",
-      "es": "Encontrar una consultora",
-      "pt": "Encontrar uma consultora"
+      "fr": "Prendre rendez-vous",
+      "es": "Agendar una cita",
+      "pt": "Agende um horário"
     },
     "intro": {
       "en": "Choose a consultation language, then answer three short questions about the kind of process involved. We will show public matches; availability is confirmed on Calendly.",
