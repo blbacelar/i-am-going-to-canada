@@ -11,7 +11,7 @@ describe("contract PDF generation", () => {
   it("loads branded assets over the deployment origin instead of the server filesystem", async () => {
     const assets = new Map([
       ["https://contract-test.example/brand/marina-ms-logo.png", await readFile(path.join(brandDirectory, "marina-ms-logo.png"))],
-      ["https://contract-test.example/brand/marina-signature.jpeg", await readFile(path.join(brandDirectory, "marina-signature.jpeg"))],
+      ["https://contract-test.example/brand/marina-signature-transparent.png", await readFile(path.join(brandDirectory, "marina-signature-transparent.png"))],
     ]);
     const fetchMock = vi.fn(async (input: URL | RequestInfo) => {
       const asset = assets.get(String(input));
@@ -21,9 +21,7 @@ describe("contract PDF generation", () => {
 
     const contract = await createContractPdf(
       { name: "Test Client", email: "client@example.com", addressAndPhone: "123 Test Street", preparationNotes: "", fee: "TEST" },
-      "Marina Snyder",
-      "R519265",
-      "Test contact",
+      { id: "marina-snyder", name: "Marina Snyder", credentialLabel: "RCIC-IRB", credentialValue: "R519265", contact: "Test contact", signatureAssetPath: "/brand/marina-signature-transparent.png" },
       "en",
       "https://contract-test.example",
     );
@@ -32,7 +30,7 @@ describe("contract PDF generation", () => {
     expect(contract.signatureFields).toHaveLength(2);
     expect(fetchMock.mock.calls.map(([input]) => String(input))).toEqual([
       "https://contract-test.example/brand/marina-ms-logo.png",
-      "https://contract-test.example/brand/marina-signature.jpeg",
+      "https://contract-test.example/brand/marina-signature-transparent.png",
     ]);
   });
 });

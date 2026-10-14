@@ -47,6 +47,10 @@ Only event types explicitly configured in `data/consultants.json` may send a cli
 
 The contract fee is derived from the exact Calendly event type and confirmed duration. The regular 30-minute and 60-minute consultations are **CA$150.00** and **CA$200.00**. Marina's direct Calendly events are also approved for automatic contracts: Xpress Call 15 min (**CA$85.00**), IRB Consultation (**CA$300.00**), Temporary residence review (**CA$300.00**) and Mentoring/Consulting for representatives ONLY - 1h (**CA$150.00**). Virginia's direct Calendly events are also approved: Emergency (**CA$250.00**), Review of Arrima or Express Entry Profile (**CA$300.00**), Temporary residence review (**CA$300.00**), 60-minute consultation (**CA$200.00**) and 30-minute consultation (**CA$150.00**). Do not set an environment-variable fee for production contracts.
 
+## Consultant signature assignment
+
+The contract resolves the consultant from the exact Calendly event type and shows that consultant's name, RCIC credential and approved signature. Marina, Aline, Virginia and Beatriz have approved signature assets. A booking for a consultant without an approved signature fails closed: it is recorded in the CRM but no SignWell contract is sent. Add the signature under `public/brand/`, then add its mapping in `src/lib/contracts/consultant-assignment.ts` before enabling that consultant's contracts.
+
 ## Signed-contract confirmation
 
 When SignWell posts `document_completed`, the app archives the completed PDF in Dropbox and sends an internal confirmation to `info@iamgoingtocanada.ca`. The confirmation contains the client's name, email, supplied contact details and the Calendly appointment date in Vancouver time.
