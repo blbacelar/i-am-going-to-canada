@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Concierge, type ConciergeCopy } from "@/components/concierge/concierge";
+import { FindAppointmentLink } from "@/components/concierge/find-appointment-link";
 import { ConsultantCard } from "@/components/consultants/consultant-card";
 import { TeamMosaic } from "@/components/consultants/team-mosaic";
 import { FaqList } from "@/components/marketing/faq-list";
@@ -33,12 +34,15 @@ export default async function HomePage({ params }: PageProps) {
   const trustLabel = {
     en: "Why clients choose our team",
     fr: "Pourquoi choisir notre équipe",
+    es: "Por qué elegir a nuestro equipo",
     pt: "Por que escolher nossa equipe",
   }[locale];
 
   const conciergeCopy: ConciergeCopy = {
     intro: localized(concierge.intro, locale),
     languageQuestion: localized(concierge.languageQuestion, locale),
+    durationQuestion: localized(concierge.durationQuestion, locale),
+    durationUnit: localized(concierge.durationUnit, locale),
     qcQuestion: localized(concierge.qcQuestion, locale),
     skQuestion: localized(concierge.skQuestion, locale),
     irbQuestion: localized(concierge.irbQuestion, locale),
@@ -76,9 +80,9 @@ export default async function HomePage({ params }: PageProps) {
             <h1>{localized(home.hero.title, locale)}</h1>
             <p>{localized(home.hero.body, locale)}</p>
             <div className="button-row">
-              <Link className="button" href="#find-your-consultant">
+              <FindAppointmentLink className="button" href="#find-your-consultant">
                 {localized(home.hero.primaryCta, locale)} <RouteArrow />
-              </Link>
+              </FindAppointmentLink>
               <Link className="editorial-link" href="#team">
                 {localized(home.hero.secondaryCta, locale)} <RouteArrow />
               </Link>

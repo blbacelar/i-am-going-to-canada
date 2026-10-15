@@ -30,3 +30,4 @@ next-env.d.ts
 
 # generated local working files
 /tmp/
+.vercel

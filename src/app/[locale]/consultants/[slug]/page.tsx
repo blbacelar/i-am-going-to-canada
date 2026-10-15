@@ -44,6 +44,12 @@ export default async function ConsultantProfilePage({ params }: PageProps) {
   const related = getActiveConsultants().filter((item) => item.id !== consultant.id).slice(0, 3);
   const [primaryCredential, ...additionalCredentials] = consultant.credentials;
   const bookLabel = localized(common.book, locale).replace("{name}", consultant.name.replace(" — TODO_CONTENT", ""));
+  const usesOriginalPortrait = consultant.slug === "marina-snyder" || consultant.slug === "virginia-melo";
+  const portraitSize = consultant.slug === "marina-snyder"
+    ? { width: 1366, height: 768 }
+    : consultant.slug === "virginia-melo"
+      ? { width: 2100, height: 1500 }
+      : { width: 800, height: 1000 };
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -59,8 +65,16 @@ export default async function ConsultantProfilePage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replaceAll("<", "\\u003c") }} />
       <section className="profile-hero">
         <div className="shell profile-grid">
-          <div className="profile-image">
-            <Image src={consultant.portrait.src} alt={localized(consultant.portrait.alt, locale)} width={800} height={1000} priority />
+          <div className={`profile-image profile-image--${consultant.slug}`}>
+            <Image
+              src={consultant.portrait.src}
+              alt={localized(consultant.portrait.alt, locale)}
+              width={portraitSize.width}
+              height={portraitSize.height}
+              {...(usesOriginalPortrait ? { unoptimized: true } : { quality: 90 })}
+              sizes="(max-width: 700px) calc(100vw - 28px), (max-width: 900px) min(100vw - 36px, 620px), 300px"
+              priority
+            />
             {primaryCredential ? <CredentialBadge label={primaryCredential.label} value={primaryCredential.value} /> : null}
           </div>
           <div className="profile-copy">
@@ -88,10 +102,10 @@ export default async function ConsultantProfilePage({ params }: PageProps) {
                 ))}
               </div>
             ) : null}
-            {consultant.calendlyUrl === "TODO_CONTENT" ? (
+            {consultant.calendlyProfileUrl === "TODO_CONTENT" ? (
               <p className="booking-unavailable">{localized(common.bookingUnavailable, locale)}</p>
             ) : (
-              <TrackedExternalLink className="button profile-booking" href={consultant.calendlyUrl} event={{ event: "booking_clicked", locale, consultantId: consultant.id }}>
+              <TrackedExternalLink className="button profile-booking" href={consultant.calendlyProfileUrl} event={{ event: "booking_clicked", locale, consultantId: consultant.id }}>
                 {bookLabel} <RouteArrow />
               </TrackedExternalLink>
             )}

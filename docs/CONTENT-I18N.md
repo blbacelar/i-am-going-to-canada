@@ -6,6 +6,7 @@ Every public interface and page must be complete in:
 
 - English (`en`)
 - French (`fr`)
+- Spanish (`es`)
 - Portuguese (`pt`)
 
 This includes navigation, buttons, errors, form labels, alt text, metadata, structured data, legal notices and booking handoff copy.
@@ -99,6 +100,7 @@ The following is a creative starting point, not a substitute for professional tr
 ## Translation rules
 
 - Use Canadian English and Canadian French.
+- Spanish should be natural, neutral Latin American Spanish unless the business specifies otherwise.
 - Portuguese should be natural Brazilian Portuguese unless the business specifies otherwise.
 - Do not translate professional designations or regulated titles literally without review.
 - Preserve official names and licence terminology.

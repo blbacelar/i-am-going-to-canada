@@ -41,7 +41,7 @@ export function TeamMosaic({
   }, []);
 
   return (
-    <figure className="team-mosaic" data-motion="paused" ref={mosaicRef}>
+    <figure className="team-mosaic" data-motion="active" ref={mosaicRef}>
       <div className="team-route" aria-hidden="true">
         <svg viewBox="0 0 520 510" preserveAspectRatio="none">
           <path d="M34 376C108 225 164 297 235 205S371 62 486 142" />
@@ -51,7 +51,11 @@ export function TeamMosaic({
       </div>
       <div className="team-mosaic-grid">
         {consultants.map((consultant) => (
-          <Link href={localePath(locale, `/consultants/${consultant.slug}`)} key={consultant.id}>
+          <Link
+            className={`team-mosaic-portrait--${consultant.slug}`}
+            href={localePath(locale, `/consultants/${consultant.slug}`)}
+            key={consultant.id}
+          >
             <Image
               src={consultant.portrait.src}
               alt={localized(consultant.portrait.alt, locale)}

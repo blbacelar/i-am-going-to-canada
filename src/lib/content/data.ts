@@ -52,11 +52,11 @@ export function getArticles(): Article[] {
   return blogContent.articles.toSorted((a, b) => a.order - b.order);
 }
 
-export function getArticleBySlug(slug: string, locale: "en" | "fr" | "pt"): Article | undefined {
+export function getArticleBySlug(slug: string, locale: "en" | "fr" | "es" | "pt"): Article | undefined {
   return getArticles().find((article) => article.slugs[locale] === slug);
 }
 
-export function getArticlePath(article: Article, locale: "en" | "fr" | "pt"): string {
+export function getArticlePath(article: Article, locale: "en" | "fr" | "es" | "pt"): string {
   return `/${locale}/blog/${article.slugs[locale]}`;
 }
 

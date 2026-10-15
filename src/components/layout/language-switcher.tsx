@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { trackJourneyEvent } from "@/lib/analytics/track";
 
-const shortLabels: Record<Locale, string> = { en: "EN", fr: "FR", pt: "PT" };
+const shortLabels: Record<Locale, string> = { en: "EN", fr: "FR", es: "ES", pt: "PT" };
 
 type ArticleRoute = { id: string; slugs: Record<Locale, string> };
 

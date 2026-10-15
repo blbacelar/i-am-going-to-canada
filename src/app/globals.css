@@ -522,11 +522,50 @@ p {
 
 .team-mosaic-grid img {
   object-fit: cover;
+  transform: scale(var(--portrait-scale, 1));
   transition: transform 450ms var(--ease-out);
 }
 
 .team-mosaic-grid a:hover img {
-  transform: scale(1.025);
+  transform: scale(calc(var(--portrait-scale, 1) * 1.025));
+}
+
+/* Normalize portrait framing without modifying the supplied source photos. */
+.team-mosaic-portrait--marina-snyder,
+.consultant-portrait--marina-snyder,
+.profile-image--marina-snyder {
+  --portrait-scale: 1.5;
+}
+
+.team-mosaic-portrait--marina-snyder img,
+.consultant-portrait--marina-snyder img,
+.profile-image--marina-snyder img {
+  object-position: 58% 35%;
+}
+
+.team-mosaic-portrait--virginia-melo,
+.consultant-portrait--virginia-melo,
+.profile-image--virginia-melo {
+  --portrait-scale: 1;
+}
+
+.team-mosaic-portrait--virginia-melo::before,
+.consultant-portrait--virginia-melo::before,
+.profile-image--virginia-melo::before {
+  position: absolute;
+  z-index: 0;
+  inset: -18px;
+  content: "";
+  background: url("/consultants/virginia-melo.jpeg") center / cover no-repeat;
+  filter: blur(15px);
+  transform: scale(1.08);
+}
+
+.team-mosaic-portrait--virginia-melo img,
+.consultant-portrait--virginia-melo img,
+.profile-image--virginia-melo img {
+  position: relative;
+  z-index: 1;
 }
 
 .team-mosaic-grid span {
@@ -619,8 +658,9 @@ p {
 
 .trust-grid p {
   margin-bottom: 0;
-  color: var(--accent-border);
-  font-size: var(--type-eyebrow);
+  color: #f0c8cf;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .concierge-section {
@@ -675,9 +715,10 @@ p {
 .concierge-boundary {
   color: var(--accent-border);
   font-family: var(--font-mono), monospace;
-  font-size: var(--type-eyebrow);
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
 }
 
 .concierge-progress {
@@ -775,7 +816,7 @@ p {
   background: transparent;
   color: var(--accent-border);
   cursor: pointer;
-  font-size: var(--type-eyebrow);
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -795,8 +836,8 @@ p {
 .concierge-assignment {
   display: grid;
   gap: 18px;
-  max-width: 52ch;
-  padding: 22px;
+  max-width: none;
+  padding: 18px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: color-mix(in srgb, var(--surface) 6%, transparent);
@@ -804,6 +845,23 @@ p {
 
 .concierge-assignment .button {
   width: fit-content;
+}
+
+.calendly-inline-embed {
+  width: 100%;
+  min-width: 0;
+  min-height: 1120px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.calendly-inline-embed iframe {
+  display: block;
+  width: 100% !important;
+  height: 1120px !important;
+  min-height: 1120px !important;
+  border: 0;
 }
 
 .result-list {
@@ -900,11 +958,12 @@ p {
   display: block;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  transform: scale(var(--portrait-scale, 1));
   transition: transform 450ms var(--ease-out);
 }
 
 .consultant-portrait:hover img {
-  transform: scale(1.02);
+  transform: scale(calc(var(--portrait-scale, 1) * 1.02));
 }
 
 .credential-badge {
@@ -942,6 +1001,27 @@ p {
 
 .consultant-card:nth-child(even) {
   padding-top: 84px;
+}
+
+@media (min-width: 701px) {
+  .team-section .consultant-card,
+  .directory-section .consultant-card {
+    display: grid;
+    grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+    align-items: start;
+    column-gap: clamp(24px, 3vw, 38px);
+  }
+
+  .team-section .consultant-portrait,
+  .directory-section .consultant-portrait {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .team-section .consultant-card-copy,
+  .directory-section .consultant-card-copy {
+    padding-top: 2px;
+  }
 }
 
 .content-status {
@@ -1255,6 +1335,99 @@ p {
   justify-content: center;
 }
 
+.emergency-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 30px 42px;
+  align-items: start;
+  max-width: 920px;
+  margin: 56px auto 0;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid color-mix(in srgb, var(--surface) 32%, transparent);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 7%, transparent);
+  text-align: left;
+}
+
+.emergency-contact .eyebrow {
+  margin-bottom: 10px;
+  color: var(--accent-border);
+}
+
+.emergency-contact-copy > p:last-child {
+  margin-bottom: 0;
+  color: var(--surface);
+  font-size: var(--type-body);
+  line-height: 1.55;
+}
+
+.emergency-contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.emergency-contact-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--surface);
+  font-size: var(--type-eyebrow);
+  font-weight: 700;
+}
+
+.emergency-contact-form input,
+.emergency-contact-form textarea {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--surface) 48%, transparent);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 11px 12px;
+}
+
+.emergency-contact-form textarea {
+  resize: vertical;
+}
+
+.emergency-contact-message {
+  grid-column: 1 / -1;
+}
+
+.emergency-contact-message span {
+  color: var(--accent-border);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.emergency-contact-form .button {
+  justify-self: start;
+}
+
+.emergency-contact-submit {
+  min-width: 174px;
+  justify-content: center;
+}
+
+.emergency-contact-form .emergency-contact-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.emergency-contact-status {
+  align-self: center;
+  margin: 0;
+  color: var(--accent-border);
+  font-size: var(--type-small);
+}
+
 .editorial-link-light {
   color: var(--surface);
 }
@@ -1397,14 +1570,16 @@ p {
 
 .profile-grid {
   display: grid;
-  grid-template-columns: minmax(360px, 0.78fr) minmax(500px, 1.22fr);
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
   align-items: start;
-  gap: clamp(60px, 9vw, 140px);
+  gap: clamp(48px, 7vw, 104px);
 }
 
 .profile-image {
   position: sticky;
   top: 125px;
+  width: 100%;
+  max-width: 300px;
   overflow: hidden;
   border-radius: var(--radius);
 }
@@ -1413,6 +1588,8 @@ p {
   width: 100%;
   height: auto;
   display: block;
+  transform: scale(var(--portrait-scale, 1));
+  transition: transform 450ms var(--ease-out);
 }
 
 .back-link {
@@ -1495,6 +1672,12 @@ p {
 .consultant-grid-related {
   grid-template-columns: repeat(3, 1fr);
   gap: 44px;
+}
+
+@media (min-width: 701px) {
+  .consultant-grid-related .consultant-portrait {
+    max-width: 220px;
+  }
 }
 
 .consultant-grid-related .consultant-card:nth-child(even) {
@@ -1654,7 +1837,7 @@ p {
   .concierge-section-grid { gap: 46px; }
   .concierge-heading { padding-top: 0; max-width: 700px; }
   .sticky-heading { position: static; }
-  .profile-image { position: relative; }
+  .profile-image { position: relative; top: auto; }
   .split-heading,
   .story-placeholder-inner { grid-template-columns: 1fr; gap: 30px; }
   .split-heading { align-items: start; }
@@ -1708,6 +1891,9 @@ p {
   .trust-grid > div:first-child { padding: 20px 0; border-right: 0; border-bottom: 1px solid color-mix(in srgb, var(--surface) 20%, transparent); }
   .trust-grid > div:last-child { border-bottom: 0; }
   .concierge { min-height: 580px; padding: 24px 20px; }
+  .concierge-assignment { padding: 12px; }
+  .calendly-inline-embed { min-height: 1080px; }
+  .calendly-inline-embed iframe { height: 1080px !important; min-height: 1080px !important; }
   .concierge-progress { width: 100px; }
   .concierge legend,
   .concierge-results > h3 { font-size: var(--type-h2); }
@@ -1733,10 +1919,28 @@ p {
   .footer-main { grid-template-columns: 1fr; gap: 40px; padding-top: 64px; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .page-intro { padding: 80px 0; }
+  .profile-hero { padding-top: 16px; }
   .page-intro h1,
   .profile-copy h1,
   .service-hero h1 { font-size: var(--type-h1); }
   .profile-meta-grid { grid-template-columns: 1fr; gap: 22px; }
+}
+
+/* Keep every header control reachable on narrow phone viewports. */
+@media (max-width: 480px) {
+  :root { --shell: calc(100% - 24px); }
+  .header-inner { min-height: 64px; gap: 4px; }
+  .brand-logo { height: 40px; gap: 4px; }
+  .brand-mark { width: 32px; height: 32px; }
+  .brand-name { font-size: 10px; }
+  .brand-signature { font-size: 6px; letter-spacing: 0.04em; }
+  .language-switcher a { min-width: 36px; min-height: 40px; font-size: 11px; }
+  .mobile-navigation summary { min-height: 40px; font-size: 11px; }
+}
+
+@media (max-width: 370px) {
+  .brand-copy { display: none; }
+  .language-switcher a { min-width: 34px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2163,6 +2367,15 @@ p {
   font-size: 12px;
 }
 
+.mock-booking-page { max-width: 760px; }
+.mock-booking-page .lede { max-width: 600px; margin-bottom: 32px; }
+.mock-booking-form { display: grid; gap: 18px; max-width: 620px; }
+.mock-booking-form label { display: grid; gap: 7px; font-weight: 600; }
+.mock-booking-form input:not([type="checkbox"]), .mock-booking-form textarea, .mock-booking-form select { width: 100%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 12px 14px; font: inherit; }
+.mock-booking-form textarea { min-height: 110px; resize: vertical; }
+.mock-consent { display: flex !important; align-items: start; gap: 10px !important; font-weight: 500 !important; }
+.mock-consent input { margin-top: 4px; }
+
 @media (max-width: 900px) {
   .blog-index-heading,
   .article-endmatter { grid-template-columns: 1fr; gap: 38px; }
@@ -2173,6 +2386,10 @@ p {
 }
 
 @media (max-width: 700px) {
+  .emergency-contact { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
+  .emergency-contact-form { grid-template-columns: 1fr; }
+  .emergency-contact-message { grid-column: auto; }
+
   .blog-index-heading h1 { font-size: var(--type-h1); }
   .blog-feed-item { grid-template-columns: 1fr; gap: 14px; }
   .blog-feed-copy h2 { font-size: var(--type-h3); }

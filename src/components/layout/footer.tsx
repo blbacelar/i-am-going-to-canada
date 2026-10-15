@@ -8,6 +8,7 @@ export function Footer({ locale }: { locale: Locale }) {
   const labels = {
     en: { navigation: "Footer navigation", legal: "Legal navigation" },
     fr: { navigation: "Navigation du pied de page", legal: "Navigation juridique" },
+    es: { navigation: "Navegación del pie de página", legal: "Navegación legal" },
     pt: { navigation: "Navegação do rodapé", legal: "Navegação jurídica" },
   }[locale];
   return (

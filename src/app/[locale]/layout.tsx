@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     "Meet a multilingual Canadian immigration consultant team and find the professional conversation that fits your needs.",
   applicationName: siteContent.brand.name,
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any", type: "image/x-icon" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   appleWebApp: {
     capable: true,
     title: siteContent.brand.name,
@@ -57,6 +61,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 const skipLinks: Record<Locale, string> = {
   en: "Skip to content",
   fr: "Passer au contenu",
+  es: "Ir al contenido principal",
   pt: "Pular para o conteúdo",
 };
 

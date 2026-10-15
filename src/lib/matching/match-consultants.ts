@@ -28,7 +28,7 @@ export function matchConsultants(
 export function matchConsultantsByCriteria(
   consultants: Consultant[],
   language: ConsultantLanguage,
-  practiceAreas: PracticeArea[],
+  practiceAreas: readonly PracticeArea[],
 ): Consultant[] {
   return consultants
     .filter(

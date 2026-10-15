@@ -8,8 +8,8 @@
 - [ ] Missing facts are marked `TODO_CONTENT`.
 - [ ] Final disclaimer is marked `TODO_LEGAL_REVIEW` until approved.
 - [ ] The homepage focuses on the company and team, not only Marina.
-- [ ] Every public string is available in EN, FR and PT.
-- [ ] Canadian English, Canadian French and Brazilian Portuguese were reviewed.
+- [ ] Every public string is available in EN, FR, ES and PT.
+- [ ] Canadian English, Canadian French, neutral Latin American Spanish and Brazilian Portuguese were reviewed.
 
 ## Journey
 

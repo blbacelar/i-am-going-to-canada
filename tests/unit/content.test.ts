@@ -13,7 +13,12 @@ describe("content schemas", () => {
       languages: ["en", "es", "pt"],
       practiceAreas: [],
       credentials: [{ label: "RCIC", value: "R710053" }],
-      calendlyUrl: "https://calendly.com/costalineimmigration",
+      calendlyUrl: "https://calendly.com/visas-iamgoingtocanada/30min",
+      calendlyAppointments: {
+        "30": {
+          url: "https://calendly.com/visas-iamgoingtocanada/30min",
+        },
+      },
     });
     expect(siteContentSchema.parse(rawContent).services).toHaveLength(6);
     const blog = blogContentSchema.parse(rawArticles);
@@ -29,7 +34,7 @@ describe("content schemas", () => {
 
   it("keeps article slugs unique in every locale", () => {
     const blog = blogContentSchema.parse(rawArticles);
-    for (const locale of ["en", "fr", "pt"] as const) {
+    for (const locale of ["en", "fr", "es", "pt"] as const) {
       const slugs = blog.articles.map((article) => article.slugs[locale]);
       expect(new Set(slugs).size).toBe(slugs.length);
     }

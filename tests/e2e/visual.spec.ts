@@ -9,6 +9,8 @@ const captures = [
   { locale: "en", width: 1440, height: 1000, name: "desktop.png" },
   { locale: "fr", width: 375, height: 812, name: "fr-mobile.png" },
   { locale: "fr", width: 1440, height: 1000, name: "fr-desktop.png" },
+  { locale: "es", width: 375, height: 812, name: "es-mobile.png" },
+  { locale: "es", width: 1440, height: 1000, name: "es-desktop.png" },
   { locale: "pt", width: 375, height: 812, name: "pt-mobile.png" },
   { locale: "pt", width: 1440, height: 1000, name: "pt-desktop.png" },
 ] as const;

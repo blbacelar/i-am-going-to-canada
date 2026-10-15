@@ -13,30 +13,50 @@ function isEventTypeUri(value: string): boolean {
 }
 
 export async function GET(request: Request) {
+  const mockMode = process.env.NODE_ENV !== "production" && process.env.ENABLE_MOCK_BOOKING_FLOW === "true";
   const token = process.env.CALENDLY_PAT_TOKEN;
-  if (!token) {
+  if (!token && !mockMode) {
     return NextResponse.json({ error: "Calendly availability is not configured" }, { status: 503 });
   }
 
-  const ids = new Set(new URL(request.url).searchParams.get("consultantIds")?.split(",").filter(Boolean));
+  const searchParams = new URL(request.url).searchParams;
+  const ids = new Set(searchParams.get("consultantIds")?.split(",").filter(Boolean));
+  const duration = searchParams.get("duration") === "60" ? "60" : "30";
   const consultants = getActiveConsultants().filter((consultant) => ids.has(consultant.id));
   if (!consultants.length) return NextResponse.json({ availability: {} });
 
   const start = new Date(Date.now() + 60 * 60 * 1000).toISOString();
-  const end = new Date(Date.now() + 14 * DAY_MS).toISOString();
+  // Calendly supports availability queries up to 31 days; the test event may
+  // have its next slot more than two weeks out.
+  const end = new Date(Date.now() + 31 * DAY_MS).toISOString();
+  if (mockMode) {
+    const mockSlot = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
+    return NextResponse.json({
+      availability: Object.fromEntries(consultants.map((consultant) => [consultant.id, { firstAvailableAt: mockSlot, slotCount: 1 }])),
+      mockMode: true,
+      window: { start, end },
+    }, { headers: { "Cache-Control": "no-store" } });
+  }
   const availability = await Promise.all(consultants.map(async (consultant) => {
-    const eventType = consultant.calendlyEventTypeUri;
-    if (eventType === "TODO_CONTENT" || !isEventTypeUri(eventType)) {
+    // Test events are deliberately restricted to non-production environments
+    // so a stale environment variable cannot route public visitors to them.
+    const configuredTestEvent = process.env.NODE_ENV === "production"
+      ? undefined
+      : process.env.CALENDLY_TEST_EVENT_TYPE_URI;
+    const eventType = configuredTestEvent || consultant.calendlyAppointments[duration]?.eventTypeUri;
+    if (!eventType || eventType === "TODO_CONTENT" || !isEventTypeUri(eventType)) {
       return [consultant.id, { firstAvailableAt: null, slotCount: 0 }] as const;
     }
 
     const params = new URLSearchParams({ event_type: eventType, start_time: start, end_time: end });
-    try {
+      try {
       const response = await fetch(`${CALENDLY_API}/event_type_available_times?${params}`, {
         headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
-        next: { revalidate: 300 },
+        cache: "no-store",
       });
-      if (!response.ok) return [consultant.id, { firstAvailableAt: null, slotCount: 0 }] as const;
+      if (!response.ok) {
+        return [consultant.id, { firstAvailableAt: null, slotCount: 0 }] as const;
+      }
       const body = (await response.json()) as AvailabilityResponse;
       const slots = (body.collection ?? []).filter((slot) => slot.start_time).map((slot) => slot.start_time as string);
       return [consultant.id, { firstAvailableAt: slots[0] ?? null, slotCount: slots.length }] as const;
@@ -46,6 +66,6 @@ export async function GET(request: Request) {
   }));
 
   return NextResponse.json({ availability: Object.fromEntries(availability), window: { start, end } }, {
-    headers: { "Cache-Control": "private, max-age=300" },
+    headers: { "Cache-Control": "no-store" },
   });
 }

@@ -10,7 +10,7 @@ export type JourneyEventName =
 
 export interface JourneyEventDetail {
   event: JourneyEventName;
-  locale?: "en" | "fr" | "pt";
+  locale?: "en" | "fr" | "es" | "pt";
   serviceId?: string;
   practiceArea?: "qc" | "sk" | "irb";
   answer?: boolean;

@@ -1,0 +1,218 @@
+import { createHmac, timingSafeEqual } from "node:crypto";
+import { NextResponse } from "next/server";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { createContractPdf } from "@/app/api/test/mock-booking/route";
+import { renderContractEmail } from "@/lib/email/contract-email";
+import { getContractFee } from "@/lib/contracts/consultation-fees";
+import { getContractConsultant, type ContractConsultant } from "@/lib/contracts/consultant-assignment";
+
+const CALENDLY_API = "https://api.calendly.com";
+const SIGNATURE_TOLERANCE_SECONDS = 5 * 60;
+const SIGNWELL_API = "https://www.signwell.com/api/v1/documents";
+
+type CalendlyWebhook = {
+  event?: "invitee.created" | "invitee.canceled" | string;
+  created_at?: string;
+  payload?: {
+    event?: string;
+    invitee?: string;
+    scheduled_event?: string;
+    name?: string;
+    email?: string;
+    tracking?: { utm_content?: string };
+  };
+};
+
+type CalendlyInvitee = {
+  resource?: {
+    name?: string;
+    email?: string;
+    questions_and_answers?: Array<{ question?: string; answer?: string }>;
+    uri?: string;
+    scheduled_event?: string;
+  };
+};
+
+type CalendlyScheduledEvent = {
+  resource?: {
+    event_type?: string;
+    start_time?: string;
+    end_time?: string;
+  };
+};
+
+function verifySignature(rawBody: string, header: string | null, secret: string): boolean {
+  if (!header) return false;
+  const values = new Map(header.split(",").map((part) => {
+    const [key, value] = part.trim().split("=", 2);
+    return [key, value] as const;
+  }));
+  const timestamp = values.get("t");
+  const signature = values.get("v1");
+  if (!timestamp || !signature || !/^\d+$/.test(timestamp)) return false;
+  const timestampNumber = Number(timestamp);
+  const timestampSeconds = timestampNumber > 10_000_000_000 ? timestampNumber / 1000 : timestampNumber;
+  if (Math.abs(Date.now() / 1000 - timestampSeconds) > SIGNATURE_TOLERANCE_SECONDS) return false;
+
+  const expectedBuffer = createHmac("sha256", secret).update(`${timestamp}.${rawBody}`).digest();
+  const candidates = [
+    Buffer.from(signature, "hex"),
+    Buffer.from(signature, "base64"),
+    Buffer.from(signature.replace(/-/g, "+").replace(/_/g, "/"), "base64"),
+  ];
+  return candidates.some((actualBuffer) => actualBuffer.length === expectedBuffer.length && timingSafeEqual(actualBuffer, expectedBuffer));
+}
+
+function questionAnswer(answers: Array<{ question?: string; answer?: string }>, fragment: string): string | null {
+  const match = answers.find(({ question }) => question?.toLowerCase().includes(fragment));
+  return match?.answer?.trim() || null;
+}
+
+function contactAnswer(answers: Array<{ question?: string; answer?: string }>): string | null {
+  return answers.find(({ question, answer }) => {
+    const text = question?.toLowerCase() || "";
+    return Boolean(answer?.trim()) && ((text.includes("address") || text.includes("endereço") || text.includes("direccion")) && (text.includes("phone") || text.includes("telefone") || text.includes("teléfono")));
+  })?.answer?.trim() || questionAnswer(answers, "full address and phone") || answers.find(({ question, answer }) => Boolean(answer?.trim()) && ((question?.toLowerCase().includes("address")) || question?.toLowerCase().includes("endereço") || question?.toLowerCase().includes("direccion")))?.answer?.trim() || answers.find(({ answer }) => Boolean(answer?.trim()))?.answer?.trim() || null;
+}
+
+function eventId(uri: string | { uri?: string } | undefined): string | null {
+  const normalizedUri = typeof uri === "string" ? uri : uri?.uri;
+  const value = normalizedUri?.split("/").pop();
+  return value && /^[a-z0-9-]+$/i.test(value) ? value : null;
+}
+
+async function fetchInvitee(uri: string | undefined, token: string): Promise<CalendlyInvitee["resource"]> {
+  if (!uri || !uri.startsWith(`${CALENDLY_API}/invitees/`)) return undefined;
+  const response = await fetch(uri, { headers: { Authorization: `Bearer ${token}`, Accept: "application/json" } });
+  if (!response.ok) throw new Error("Calendly invitee lookup failed");
+  return (await response.json() as CalendlyInvitee).resource;
+}
+
+async function fetchInviteeForEvent(eventIdValue: string | null, token: string, email?: string) {
+  if (!eventIdValue) return undefined;
+  const response = await fetch(`${CALENDLY_API}/scheduled_events/${eventIdValue}/invitees`, { headers: { Authorization: `Bearer ${token}`, Accept: "application/json" } });
+  if (!response.ok) return undefined;
+  const body = await response.json() as { collection?: Array<CalendlyInvitee["resource"]> };
+  return body.collection?.find((item) => !email || item?.email === email) ?? body.collection?.[0];
+}
+
+async function fetchScheduledEvent(eventIdValue: string, token: string): Promise<CalendlyScheduledEvent["resource"]> {
+  const response = await fetch(`${CALENDLY_API}/scheduled_events/${encodeURIComponent(eventIdValue)}`, {
+    headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
+  });
+  if (!response.ok) return undefined;
+  const body = await response.json() as CalendlyScheduledEvent;
+  return body.resource;
+}
+
+async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, consultant: ContractConsultant, language: string, assetOrigin: string, fee: string, calendlyEventId: string, calendlyScheduledAt: string) {
+  const signwellKey = process.env.SIGNWELL_API_KEY;
+  const resendKey = process.env.RESEND_API_KEY;
+  const from = process.env.RESEND_FROM_EMAIL;
+  if (!signwellKey || !resendKey || !from) return;
+  // Production must always create real signing requests, irrespective of any
+  // left-over test environment configuration.
+  const testMode = process.env.NODE_ENV !== "production" && process.env.SIGNWELL_TEST_MODE !== "false";
+  const signerEmail = testMode ? (process.env.SIGNWELL_TEST_RECIPIENT || record.email) : record.email;
+  const contractLanguage = language === "en" || language === "fr" || language === "es" || language === "pt" ? language : "en";
+  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee }, consultant, contractLanguage, assetOrigin, { testMode: false });
+  const signwellResponse = await fetch(SIGNWELL_API, { method: "POST", headers: { "X-Api-Key": signwellKey, "Content-Type": "application/json" }, body: JSON.stringify({
+    test_mode: testMode,
+    files: [{ name: "consultation-agreement.pdf", file_base64: contract.pdf.toString("base64") }],
+    name: `Consultation agreement — ${record.name}`,
+    subject: "Please review and sign your consultation agreement",
+    message: "Please review and sign this consultation agreement.",
+    recipients: [{ id: "1", name: record.name, email: signerEmail }],
+    fields: [contract.signatureFields],
+    metadata: {
+      calendly_event_id: calendlyEventId,
+      calendly_scheduled_at: calendlyScheduledAt,
+      client_name: record.name,
+      client_email: record.email,
+      consultant_id: consultant.id,
+      consultant_name: consultant.name,
+    },
+    language: contractLanguage,
+  }) });
+  const body = await signwellResponse.json().catch(() => null) as { id?: string; recipients?: Array<{ signing_url?: string; embedded_signing_url?: string }>; error?: string } | null;
+  const signingUrl = body?.recipients?.[0]?.signing_url || body?.recipients?.[0]?.embedded_signing_url;
+  if (!signwellResponse.ok || !body?.id || !signingUrl) throw new Error(`SignWell contract creation failed: ${body?.error || `HTTP ${signwellResponse.status}`}`);
+  const emailCopy = await renderContractEmail({ name: record.name, signingUrl, language: contractLanguage, testMode });
+  const emailRecipient = testMode ? (process.env.RESEND_TEST_RECIPIENT || record.email) : record.email;
+  const email = await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" }, body: JSON.stringify({ from, to: [emailRecipient], subject: emailCopy.subject, html: emailCopy.html, attachments: emailCopy.attachments }) });
+  if (!email.ok) throw new Error("Resend contract email failed");
+  return body.id;
+}
+
+export async function POST(request: Request) {
+  const signingKey = process.env.CALENDLY_WEBHOOK_SIGNING_KEY;
+  const calendlyToken = process.env.CALENDLY_PAT_TOKEN;
+  if (!signingKey || !calendlyToken) return NextResponse.json({ error: "Webhook is not configured" }, { status: 503 });
+
+  const rawBody = await request.text();
+  if (!verifySignature(rawBody, request.headers.get("calendly-webhook-signature"), signingKey)) {
+    return NextResponse.json({ error: "Invalid webhook signature" }, { status: 401 });
+  }
+
+  let body: CalendlyWebhook;
+  try {
+    body = JSON.parse(rawBody) as CalendlyWebhook;
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+  if (body.event !== "invitee.created" && body.event !== "invitee.canceled") return NextResponse.json({ received: true });
+
+  const payload = body.payload;
+  let scheduledEventId = eventId(payload?.scheduled_event ?? payload?.event);
+  const invitee = (payload?.invitee ? await fetchInvitee(payload.invitee, calendlyToken) : undefined) ?? await fetchInviteeForEvent(scheduledEventId, calendlyToken, payload?.email);
+  scheduledEventId ??= eventId(invitee?.scheduled_event);
+  if (!scheduledEventId) return NextResponse.json({ error: "Missing scheduled event" }, { status: 400 });
+
+  const scheduledEvent = await fetchScheduledEvent(scheduledEventId, calendlyToken);
+  const scheduledEventType = scheduledEvent?.event_type ?? null;
+
+  const supabase = createAdminClient();
+  const answers = invitee?.questions_and_answers ?? [];
+  const record = {
+    calendly_event_id: scheduledEventId,
+    calendly_invitee_uri: payload?.invitee ?? invitee?.uri ?? null,
+    event_type_uri: scheduledEventType ?? payload?.event ?? null,
+    name: invitee?.name ?? payload?.name ?? null,
+    email: invitee?.email ?? payload?.email ?? null,
+    address_and_phone: contactAnswer(answers),
+    preparation_notes: questionAnswer(answers, "prepare for our meeting"),
+    calendly_scheduled_at: scheduledEvent?.start_time ?? null,
+    status: body.event === "invitee.canceled" ? "canceled" : "booked",
+    calendly_created_at: body.created_at ?? null,
+  };
+  if (!record.name || !record.email) return NextResponse.json({ error: "Missing invitee details" }, { status: 400 });
+
+  const { error } = await supabase.from("crm_leads").upsert(record, { onConflict: "calendly_event_id" });
+  if (error) {
+    console.error("Calendly CRM persistence failed", { code: error.code });
+    return NextResponse.json({ error: "Unable to persist booking" }, { status: 500 });
+  }
+  if (body.event === "invitee.created") {
+    const fee = getContractFee(scheduledEventType, scheduledEvent?.start_time, scheduledEvent?.end_time);
+    if (fee) {
+      const consultant = getContractConsultant(scheduledEventType);
+      if (!consultant) {
+        console.error("Calendly contract dispatch skipped because the consultant signature is not approved", { scheduledEventId, scheduledEventType });
+        return NextResponse.json({ received: true });
+      }
+      const requestedLanguage = payload?.tracking?.utm_content;
+      if (!scheduledEvent?.start_time) {
+        console.error("Calendly contract dispatch skipped because the appointment date is unavailable", { scheduledEventId });
+      } else {
+        try {
+          const signwellDocumentId = await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, consultant, requestedLanguage || "en", new URL(request.url).origin, fee.display, scheduledEventId, scheduledEvent.start_time);
+          const { error: trackingError } = await supabase.from("crm_leads").update({ signwell_document_id: signwellDocumentId }).eq("calendly_event_id", scheduledEventId);
+          if (trackingError) console.error("Calendly contract tracking failed", { code: trackingError.code, scheduledEventId });
+        } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }
+      }
+    } else {
+      console.info("Calendly contract dispatch skipped for an unapproved event or duration", { scheduledEventId, scheduledEventType });
+    }
+  }
+  return NextResponse.json({ received: true });
+}

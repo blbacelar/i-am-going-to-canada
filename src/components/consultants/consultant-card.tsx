@@ -12,15 +12,23 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
   const primaryCredential = consultant.credentials[0];
   const common = siteContent.common;
   const bookLabel = localized(common.book, locale).replace("{name}", consultant.name.replace(" — TODO_CONTENT", ""));
+  const usesOriginalPortrait = consultant.slug === "marina-snyder" || consultant.slug === "virginia-melo";
+  const portraitSize = consultant.slug === "marina-snyder"
+    ? { width: 1366, height: 768 }
+    : consultant.slug === "virginia-melo"
+      ? { width: 2100, height: 1500 }
+      : { width: 800, height: 1000 };
 
   return (
     <article className="consultant-card">
-      <Link className="consultant-portrait" href={localePath(locale, `/consultants/${consultant.slug}`)}>
+      <Link className={`consultant-portrait consultant-portrait--${consultant.slug}`} href={localePath(locale, `/consultants/${consultant.slug}`)}>
         <Image
           src={consultant.portrait.src}
           alt={localized(consultant.portrait.alt, locale)}
-          width={800}
-          height={1000}
+          width={portraitSize.width}
+          height={portraitSize.height}
+          {...(usesOriginalPortrait ? { unoptimized: true } : { quality: 90 })}
+          loading={consultant.id === "aline" ? "eager" : "lazy"}
           sizes="(max-width: 700px) 92vw, (max-width: 1100px) 45vw, 300px"
         />
         {primaryCredential ? <CredentialBadge label={primaryCredential.label} value={primaryCredential.value} /> : null}
@@ -50,7 +58,7 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
           </div>
           {consultant.practiceAreas.length ? (
             <div>
-              <dt>{locale === "en" ? "Areas" : locale === "fr" ? "Domaines" : "Áreas"}</dt>
+              <dt>{locale === "en" ? "Areas" : locale === "fr" ? "Domaines" : locale === "pt" ? "Áreas" : "Áreas"}</dt>
               <dd>{consultant.practiceAreas.map((area) => practiceAreaNames[locale][area]).join(" · ")}</dd>
             </div>
           ) : null}
@@ -59,12 +67,12 @@ export function ConsultantCard({ consultant, locale }: { consultant: Consultant;
           <Link className="editorial-link" href={localePath(locale, `/consultants/${consultant.slug}`)}>
             {localized(common.viewProfile, locale)} <RouteArrow />
           </Link>
-          {consultant.calendlyUrl === "TODO_CONTENT" ? (
+          {consultant.calendlyProfileUrl === "TODO_CONTENT" ? (
             <span className="booking-unavailable" aria-disabled="true">{localized(common.bookingUnavailable, locale)}</span>
           ) : (
             <TrackedExternalLink
               className="booking-link"
-              href={consultant.calendlyUrl}
+              href={consultant.calendlyProfileUrl}
               event={{ event: "booking_clicked", locale, consultantId: consultant.id }}
             >
               {bookLabel}

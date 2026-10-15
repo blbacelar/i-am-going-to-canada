@@ -3,6 +3,7 @@ import { z } from "zod";
 export const localizedStringSchema = z.object({
   en: z.string().min(1),
   fr: z.string().min(1),
+  es: z.string().min(1),
   pt: z.string().min(1),
 });
 
@@ -10,6 +11,11 @@ const credentialSchema = z.object({
   label: z.string().min(1),
   value: z.string().min(1),
   verificationUrl: z.url().nullable(),
+});
+
+const calendlyAppointmentSchema = z.object({
+  url: z.union([z.literal("TODO_CONTENT"), z.url()]),
+  eventTypeUri: z.union([z.literal("TODO_CONTENT"), z.url()]),
 });
 
 export const consultantSchema = z.object({
@@ -35,7 +41,12 @@ export const consultantSchema = z.object({
     alt: localizedStringSchema,
   }),
   calendlyUrl: z.union([z.literal("TODO_CONTENT"), z.url()]),
+  calendlyProfileUrl: z.union([z.literal("TODO_CONTENT"), z.url()]),
   calendlyEventTypeUri: z.union([z.literal("TODO_CONTENT"), z.url()]),
+  calendlyAppointments: z.object({
+    "30": calendlyAppointmentSchema,
+    "60": calendlyAppointmentSchema.optional(),
+  }),
   seo: z.object({
     title: localizedStringSchema,
     description: localizedStringSchema,
@@ -125,12 +136,29 @@ export const siteContentSchema = z.object({
     process: z.object({ title: localizedStringSchema, steps: z.array(processStepSchema).min(3) }),
     stories: z.object({ title: localizedStringSchema, body: localizedStringSchema }),
     faqTitle: localizedStringSchema,
-    final: z.object({ title: localizedStringSchema, body: localizedStringSchema }),
+    final: z.object({
+      title: localizedStringSchema,
+      body: localizedStringSchema,
+      emergency: z.object({
+        title: localizedStringSchema,
+        body: localizedStringSchema,
+        nameLabel: localizedStringSchema,
+        emailLabel: localizedStringSchema,
+        messageLabel: localizedStringSchema,
+        messageHint: localizedStringSchema,
+        submit: localizedStringSchema,
+        sending: localizedStringSchema,
+        success: localizedStringSchema,
+        error: localizedStringSchema,
+      }),
+    }),
   }),
   concierge: z.object({
     title: localizedStringSchema,
     intro: localizedStringSchema,
     languageQuestion: localizedStringSchema,
+    durationQuestion: localizedStringSchema,
+    durationUnit: localizedStringSchema,
     serviceQuestion: localizedStringSchema,
     qcQuestion: localizedStringSchema,
     skQuestion: localizedStringSchema,
@@ -199,7 +227,7 @@ const articleSourceSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   owner: z.string().min(1),
   label: localizedStringSchema,
-  url: z.object({ en: z.url(), fr: z.url(), pt: z.url() }),
+  url: z.object({ en: z.url(), fr: z.url(), es: z.url(), pt: z.url() }),
 });
 
 const articleParagraphBlockSchema = z.object({
@@ -289,7 +317,7 @@ export const blogContentSchema = z.object({
   articles: z.array(articleSchema).min(1),
 }).superRefine((content, ctx) => {
   const ids = new Set<string>();
-  const slugs = { en: new Set<string>(), fr: new Set<string>(), pt: new Set<string>() };
+  const slugs = { en: new Set<string>(), fr: new Set<string>(), es: new Set<string>(), pt: new Set<string>() };
 
   content.articles.forEach((article, articleIndex) => {
     if (ids.has(article.id)) {
