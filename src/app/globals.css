@@ -1926,6 +1926,23 @@ p {
   .profile-meta-grid { grid-template-columns: 1fr; gap: 22px; }
 }
 
+/* Keep every header control reachable on narrow phone viewports. */
+@media (max-width: 480px) {
+  :root { --shell: calc(100% - 24px); }
+  .header-inner { min-height: 64px; gap: 4px; }
+  .brand-logo { height: 40px; gap: 4px; }
+  .brand-mark { width: 32px; height: 32px; }
+  .brand-name { font-size: 10px; }
+  .brand-signature { font-size: 6px; letter-spacing: 0.04em; }
+  .language-switcher a { min-width: 36px; min-height: 40px; font-size: 11px; }
+  .mobile-navigation summary { min-height: 40px; font-size: 11px; }
+}
+
+@media (max-width: 370px) {
+  .brand-copy { display: none; }
+  .language-switcher a { min-width: 34px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
