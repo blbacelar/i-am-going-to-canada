@@ -1,7 +1,7 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { createContractPdf } from "@/app/api/test/mock-booking/route";
+import { createContractPdf, getContractLanguages, type ContractJurisdiction } from "@/app/api/test/mock-booking/route";
 import { renderContractEmail } from "@/lib/email/contract-email";
 import { getContractFee } from "@/lib/contracts/consultation-fees";
 import { getContractConsultant, type ContractConsultant } from "@/lib/contracts/consultant-assignment";
@@ -19,7 +19,7 @@ type CalendlyWebhook = {
     scheduled_event?: string;
     name?: string;
     email?: string;
-    tracking?: { utm_content?: string };
+    tracking?: { utm_content?: string; utm_term?: string };
   };
 };
 
@@ -105,7 +105,7 @@ async function fetchScheduledEvent(eventIdValue: string, token: string): Promise
   return body.resource;
 }
 
-async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, consultant: ContractConsultant, language: string, assetOrigin: string, fee: string, calendlyEventId: string, calendlyScheduledAt: string) {
+async function sendContractEmail(record: { name: string; email: string; address_and_phone: string | null; preparation_notes: string | null }, consultant: ContractConsultant, language: string, jurisdiction: ContractJurisdiction, assetOrigin: string, fee: string, calendlyEventId: string, calendlyScheduledAt: string) {
   const signwellKey = process.env.SIGNWELL_API_KEY;
   const resendKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
@@ -115,7 +115,8 @@ async function sendContractEmail(record: { name: string; email: string; address_
   const testMode = process.env.NODE_ENV !== "production" && process.env.SIGNWELL_TEST_MODE !== "false";
   const signerEmail = testMode ? (process.env.SIGNWELL_TEST_RECIPIENT || record.email) : record.email;
   const contractLanguage = language === "en" || language === "fr" || language === "es" || language === "pt" ? language : "en";
-  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee }, consultant, contractLanguage, assetOrigin, { testMode: false });
+  const contractLanguages = getContractLanguages(contractLanguage, jurisdiction);
+  const contract = await createContractPdf({ name: record.name, email: record.email, addressAndPhone: record.address_and_phone || "TODO_CONTENT", preparationNotes: record.preparation_notes || "", fee }, consultant, contractLanguage, assetOrigin, { testMode: false, jurisdiction });
   const signwellResponse = await fetch(SIGNWELL_API, { method: "POST", headers: { "X-Api-Key": signwellKey, "Content-Type": "application/json" }, body: JSON.stringify({
     test_mode: testMode,
     files: [{ name: "consultation-agreement.pdf", file_base64: contract.pdf.toString("base64") }],
@@ -131,6 +132,8 @@ async function sendContractEmail(record: { name: string; email: string; address_
       client_email: record.email,
       consultant_id: consultant.id,
       consultant_name: consultant.name,
+      contract_jurisdiction: jurisdiction,
+      contract_languages: contractLanguages.join(","),
     },
     language: contractLanguage,
   }) });
@@ -201,11 +204,12 @@ export async function POST(request: Request) {
         return NextResponse.json({ received: true });
       }
       const requestedLanguage = payload?.tracking?.utm_content;
+      const contractJurisdiction: ContractJurisdiction = payload?.tracking?.utm_term === "qc" ? "qc" : "other";
       if (!scheduledEvent?.start_time) {
         console.error("Calendly contract dispatch skipped because the appointment date is unavailable", { scheduledEventId });
       } else {
         try {
-          const signwellDocumentId = await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, consultant, requestedLanguage || "en", new URL(request.url).origin, fee.display, scheduledEventId, scheduledEvent.start_time);
+          const signwellDocumentId = await sendContractEmail({ name: record.name, email: record.email, address_and_phone: record.address_and_phone, preparation_notes: record.preparation_notes }, consultant, requestedLanguage || "en", contractJurisdiction, new URL(request.url).origin, fee.display, scheduledEventId, scheduledEvent.start_time);
           const { error: trackingError } = await supabase.from("crm_leads").update({ signwell_document_id: signwellDocumentId }).eq("calendly_event_id", scheduledEventId);
           if (trackingError) console.error("Calendly contract tracking failed", { code: trackingError.code, scheduledEventId });
         } catch (contractError) { console.error("Calendly contract dispatch failed", { error: contractError instanceof Error ? contractError.message : "unknown" }); }

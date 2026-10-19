@@ -240,8 +240,11 @@ export function Concierge({
     url.searchParams.set("embed_type", "Inline");
     url.searchParams.set("hide_event_type_details", "1");
     url.searchParams.set("utm_content", selectedLanguage);
+    // Calendly returns UTM values in the booking webhook. This records the
+    // jurisdiction selected in the navigation flow without collecting case details.
+    url.searchParams.set("utm_term", selectedAreas.includes("qc") ? "qc" : "other");
     return url.toString();
-  }, [assignedConsultant, hasIrbMatter, selectedDuration, selectedLanguage, testCalendlyUrl]);
+  }, [assignedConsultant, hasIrbMatter, selectedAreas, selectedDuration, selectedLanguage, testCalendlyUrl]);
 
   return (
     <div className="concierge" data-step={step}>

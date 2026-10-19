@@ -1,13 +1,24 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { createContractPdf, wrapContractText } from "@/app/api/test/mock-booking/route";
+import { createContractPdf, getContractLanguages, wrapContractText } from "@/app/api/test/mock-booking/route";
 
 const brandDirectory = path.resolve(import.meta.dirname, "../../public/brand");
 
 afterEach(() => vi.unstubAllGlobals());
 
 describe("contract PDF generation", () => {
+  it.each([
+    ["English", "en", "qc", ["en"]],
+    ["French", "fr", "other", ["fr"]],
+    ["Portuguese outside Quebec", "pt", "other", ["pt", "en"]],
+    ["Portuguese for Quebec", "pt", "qc", ["pt", "fr"]],
+    ["Spanish outside Quebec", "es", "other", ["es", "en"]],
+    ["Spanish for Quebec", "es", "qc", ["es", "fr"]],
+  ] as const)("uses the required language set for %s", (_scenario, requestedLanguage, jurisdiction, expected) => {
+    expect(getContractLanguages(requestedLanguage, jurisdiction)).toEqual(expected);
+  });
+
   it("wraps contact details at whitespace and keeps an email address whole", () => {
     const email = "lagoramosnutricionista@gmail.com";
     const lines = wrapContractText(`Email: ${email}`, 15, (value) => value.length);

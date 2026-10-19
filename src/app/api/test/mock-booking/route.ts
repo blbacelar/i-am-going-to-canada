@@ -24,6 +24,25 @@ export type ContractPdf = {
   signatureFields: ContractSignatureField[];
 };
 
+export type ContractLanguage = "en" | "fr" | "es" | "pt";
+export type ContractJurisdiction = "qc" | "other";
+
+/**
+ * Quebec contracts use French as their official-language companion. Elsewhere
+ * in Canada, Spanish and Portuguese contracts include English. Contracts
+ * requested in English or French remain single-language as requested.
+ */
+export function getContractLanguages(
+  requestedLanguage: string,
+  jurisdiction: ContractJurisdiction = "other",
+): ContractLanguage[] {
+  const language: ContractLanguage = requestedLanguage === "fr" || requestedLanguage === "es" || requestedLanguage === "pt"
+    ? requestedLanguage
+    : "en";
+  if (language === "en" || language === "fr") return [language];
+  return [language, jurisdiction === "qc" ? "fr" : "en"];
+}
+
 /**
  * Wrap contract text only at whitespace. In particular, an email address is
  * one token, so it is never split at `@`, a dot, or any other character.
@@ -63,13 +82,14 @@ function missingConfiguration() {
   return !process.env.SIGNWELL_API_KEY || !process.env.RESEND_API_KEY || !process.env.RESEND_FROM_EMAIL;
 }
 
-export async function createContractPdf(input: { name: string; email: string; addressAndPhone: string; preparationNotes: string; fee?: string }, consultant: ContractConsultant, language: string, assetOrigin: string, options: { testMode?: boolean } = {}): Promise<ContractPdf> {
+export async function createContractPdf(input: { name: string; email: string; addressAndPhone: string; preparationNotes: string; fee?: string }, consultant: ContractConsultant, language: string, assetOrigin: string, options: { testMode?: boolean; jurisdiction?: ContractJurisdiction } = {}): Promise<ContractPdf> {
   const french = "La consultation a pour objet d’examiner la situation du client en matière d’immigration ou de citoyenneté et de fournir des conseils sur les options disponibles, l’admissibilité, les risques et/ou les prochaines étapes. Elle ne comprend pas la préparation, le dépôt ou la représentation dans le cadre d’une demande ou d’une procédure. La consultante est autorisée et réglementée par le College of Immigration and Citizenship Consultants (CICC), l’organisme chargé de surveiller les consultants autorisés en immigration et citoyenneté au Canada. En signant, le client accepte l’objet, la portée et les honoraires de cette consultation.";
   const english = "The purpose of this consultation is to review the client’s immigration or citizenship situation and provide advice regarding available options, eligibility, risks and/or next steps. The consultation does not include preparation, submission or representation in an application or proceeding. The consultant is licensed and regulated by the College of Immigration and Citizenship Consultants (CICC), the regulatory body responsible for overseeing licensed immigration and citizenship consultants in Canada. By signing, the client agrees to the purpose, scope and fee of this consultation.";
   const spanish = "La consulta tiene como objetivo analizar la situación migratoria o de ciudadanía del cliente y brindar orientación sobre posibles opciones, elegibilidad, riesgos y/o próximos pasos. La consulta no incluye la preparación o presentación de solicitudes ni la representación del cliente. La consultora está autorizada y regulada por el College of Immigration and Citizenship Consultants (CICC), organismo regulador de los consultores autorizados de inmigración y ciudadanía en Canadá. Al firmar, el cliente acepta el propósito, alcance y tarifa de esta consulta.";
   const portuguese = "A consulta tem como objetivo analisar a situação migratória ou de cidadania do cliente e fornecer orientações sobre possíveis opções, elegibilidade, riscos e/ou próximos passos. A consulta não inclui preparação ou envio de processos nem representação do cliente. A consultora é licenciada e regulamentada pelo College of Immigration and Citizenship Consultants (CICC), órgão responsável pela regulamentação dos consultores de imigração e cidadania licenciados no Canadá. Ao assinar, o cliente concorda com o objetivo, escopo e valor da consulta.";
-  const firstLanguage = language === "en" ? english : language === "fr" ? french : language === "es" ? spanish : portuguese;
-  const hasFrenchVersion = false;
+  const contractText: Record<ContractLanguage, string> = { en: english, fr: french, es: spanish, pt: portuguese };
+  const contractLanguages = getContractLanguages(language, options.jurisdiction);
+  const hasOfficialLanguageCompanion = contractLanguages.length > 1;
   const pdf = await PDFDocument.create(); const page = pdf.addPage([612, 792]);
   const regular = await pdf.embedFont(StandardFonts.Helvetica); const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
   const navy = rgb(0.09, 0.14, 0.22), red = rgb(0.70, 0.14, 0.23); let y = 748;
@@ -115,9 +135,9 @@ export async function createContractPdf(input: { name: string; email: string; ad
     page.drawText(line, { x: contactTextX, y: y - 6 - i * contactLineHeight, size: safeFontSize, font: regular, color: navy });
   });
   y = contactBlockBottom - 22;
-  const bodyFontSize = hasFrenchVersion ? 9.2 : 10.5;
-  const bodyLineHeight = hasFrenchVersion ? 11.2 : 15;
-  const wrap = (text: string, max = hasFrenchVersion ? 106 : 92) => text.match(new RegExp(`.{1,${max}}(?:\\s|$)`, "g"))?.map((line) => line.trim()) ?? [text];
+  const bodyFontSize = hasOfficialLanguageCompanion ? 8.7 : contractLanguages[0] === "fr" ? 9.2 : 10.5;
+  const bodyLineHeight = hasOfficialLanguageCompanion ? 11.2 : contractLanguages[0] === "fr" ? 11.2 : 15;
+  const wrap = (text: string) => wrapContractText(text, 512, (value) => regular.widthOfTextAtSize(value, bodyFontSize));
   const drawParagraph = (text: string) => {
     for (const line of wrap(text)) {
       page.drawText(line, { x: 50, y, size: bodyFontSize, font: regular, color: navy });
@@ -125,15 +145,15 @@ export async function createContractPdf(input: { name: string; email: string; ad
     }
   };
 
-  drawParagraph(firstLanguage);
+  drawParagraph(contractText[contractLanguages[0]]);
 
-  if (hasFrenchVersion) {
+  if (hasOfficialLanguageCompanion) {
     y -= 6;
     page.drawLine({ start: { x: 50, y }, end: { x: 562, y }, thickness: 0.8, color: rgb(0.8, 0.83, 0.88) });
     y -= 16;
-    page.drawText("Version française", { x: 50, y, size: 10.5, font: bold, color: navy });
+    page.drawText(contractLanguages[1] === "fr" ? "Version française" : "English version", { x: 50, y, size: 9.5, font: bold, color: navy });
     y -= 13;
-    drawParagraph(french);
+    drawParagraph(contractText[contractLanguages[1]]);
   }
   const consultantIdentityTopY = Math.min(410, y - 8);
   const clientSignatureLabelY = consultantIdentityTopY;
