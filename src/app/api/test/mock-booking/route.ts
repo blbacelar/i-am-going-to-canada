@@ -24,6 +24,35 @@ export type ContractPdf = {
   signatureFields: ContractSignatureField[];
 };
 
+/**
+ * Wrap contract text only at whitespace. In particular, an email address is
+ * one token, so it is never split at `@`, a dot, or any other character.
+ * A single token that is wider than the available space is returned on its
+ * own line; the renderer will reduce that line's font size if needed.
+ */
+export function wrapContractText(
+  text: string,
+  maxWidth: number,
+  measure: (value: string) => number,
+): string[] {
+  const tokens = text.trim().split(/\s+/).filter(Boolean);
+  const lines: string[] = [];
+  let line = "";
+
+  for (const token of tokens) {
+    const candidate = line ? `${line} ${token}` : token;
+    if (line && measure(candidate) > maxWidth) {
+      lines.push(line);
+      line = token;
+    } else {
+      line = candidate;
+    }
+  }
+
+  if (line) lines.push(line);
+  return lines;
+}
+
 async function loadBrandAsset(assetOrigin: string, assetPath: string): Promise<Buffer> {
   const response = await fetch(new URL(assetPath, assetOrigin));
   if (!response.ok) throw new Error(`Unable to load contract asset: ${assetPath}`);
@@ -59,15 +88,33 @@ export async function createContractPdf(input: { name: string; email: string; ad
   page.drawText("Marina Snyder Immigration Consulting Inc.", { x: 334, y: y + 2, size: 6.5, font: regular, color: navy });
   page.drawText("Marina Snyder Consultation en Immigration Inc.", { x: 334, y: y - 8, size: 6.5, font: regular, color: navy });
   y -= 30;
-  const lines = [`Consultant: ${consultant.name} | ${consultant.credentialLabel} #${consultant.credentialValue}`, `Contact: ${consultant.contact}`, `Client: ${input.name}`, `Contact: ${input.addressAndPhone} | ${input.email}`];
-  if (input.fee?.trim()) lines.push(`Consultation Fee: ${input.fee.trim()}`);
+  const contactFontSize = 11;
   const contactBlockX = 50;
   const contactBlockWidth = 512;
-  const contactStartX = contactBlockX + (contactBlockWidth - Math.max(...lines.map((line) => regular.widthOfTextAtSize(line, 11)))) / 2;
-  page.drawRectangle({ x: contactBlockX, y: y - 80, width: contactBlockWidth, height: 90, color: rgb(0.97,0.98,0.99) });
-  page.drawRectangle({ x: contactBlockX, y: y - 80, width: 3, height: 90, color: red });
-  lines.forEach((line, i) => page.drawText(line, { x: contactStartX, y: y - 6 - i * 15, size: 11, font: regular, color: navy }));
-  y -= 112;
+  const contactTextX = contactBlockX + 6;
+  const contactTextWidth = contactBlockWidth - 12;
+  const contactFields = [
+    `Consultant: ${consultant.name} | ${consultant.credentialLabel} #${consultant.credentialValue}`,
+    `Contact: ${consultant.contact}`,
+    `Client: ${input.name}`,
+    `Contact: ${input.addressAndPhone}`,
+    `Email: ${input.email}`,
+  ];
+  if (input.fee?.trim()) contactFields.push(`Consultation Fee: ${input.fee.trim()}`);
+  const contactLines = contactFields.flatMap((field) =>
+    wrapContractText(field, contactTextWidth, (value) => regular.widthOfTextAtSize(value, contactFontSize)),
+  );
+  const contactLineHeight = 15;
+  const contactBlockHeight = contactLines.length * contactLineHeight + 30;
+  const contactBlockBottom = y + 10 - contactBlockHeight;
+  page.drawRectangle({ x: contactBlockX, y: contactBlockBottom, width: contactBlockWidth, height: contactBlockHeight, color: rgb(0.97,0.98,0.99) });
+  page.drawRectangle({ x: contactBlockX, y: contactBlockBottom, width: 3, height: contactBlockHeight, color: red });
+  contactLines.forEach((line, i) => {
+    const lineWidth = regular.widthOfTextAtSize(line, contactFontSize);
+    const safeFontSize = Math.min(contactFontSize, contactFontSize * (contactTextWidth / lineWidth));
+    page.drawText(line, { x: contactTextX, y: y - 6 - i * contactLineHeight, size: safeFontSize, font: regular, color: navy });
+  });
+  y = contactBlockBottom - 22;
   const bodyFontSize = hasFrenchVersion ? 9.2 : 10.5;
   const bodyLineHeight = hasFrenchVersion ? 11.2 : 15;
   const wrap = (text: string, max = hasFrenchVersion ? 106 : 92) => text.match(new RegExp(`.{1,${max}}(?:\\s|$)`, "g"))?.map((line) => line.trim()) ?? [text];

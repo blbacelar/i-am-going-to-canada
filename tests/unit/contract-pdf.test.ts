@@ -1,13 +1,22 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { createContractPdf } from "@/app/api/test/mock-booking/route";
+import { createContractPdf, wrapContractText } from "@/app/api/test/mock-booking/route";
 
 const brandDirectory = path.resolve(import.meta.dirname, "../../public/brand");
 
 afterEach(() => vi.unstubAllGlobals());
 
 describe("contract PDF generation", () => {
+  it("wraps contact details at whitespace and keeps an email address whole", () => {
+    const email = "lagoramosnutricionista@gmail.com";
+    const lines = wrapContractText(`Email: ${email}`, 15, (value) => value.length);
+
+    expect(lines).toEqual(["Email:", email]);
+    expect(lines.join(" ")).toContain(email);
+    expect(lines).not.toContain("lagoramosnutricionista@");
+  });
+
   it("loads branded assets over the deployment origin instead of the server filesystem", async () => {
     const assets = new Map([
       ["https://contract-test.example/brand/marina-ms-logo.png", await readFile(path.join(brandDirectory, "marina-ms-logo.png"))],
